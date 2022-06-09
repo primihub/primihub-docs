@@ -1,0 +1,8 @@
+{
+  "label": "接入你的数据",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "了解如何接入自定义数据源"
+  }
+}

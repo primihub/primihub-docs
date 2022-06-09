@@ -1,0 +1,24 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.featureSvg {
+  height: 180px;
+  width: 180px;
+  margin-bottom: 0.7rem;
+}
+
+
+.des{
+  font-size: 0.88rem;
+  width: 90%;
+  margin: 0 auto;
+  color: #000;
+}
+.desTitle{
+  color: #000;
+}
