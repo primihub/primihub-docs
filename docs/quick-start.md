@@ -54,7 +54,7 @@ cf875c1280be   primihub-node:1.0.5                  "/bin/bash -c './pri…"   1
 
 
 ```bash
-$ docker run --network=host -it primihub/primihub-node:1.0.5 primihub-cli --server=127.0.0.1:8050"
+$ docker run --network=host -it primihub/primihub-node:1.0.5 ./primihub-cli --server=127.0.0.1:8050"
 ```
 
 :::tip 请求任务的节点
