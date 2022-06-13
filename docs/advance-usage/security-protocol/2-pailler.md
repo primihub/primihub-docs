@@ -9,10 +9,16 @@ sidebar_position: 2
 
 :::tip 主要依据的论文
 
-Ma H, Han S, Lei H. Optimized Paillier’s Cryptosystem with Fast Encryption and Decryption[C]//Annual Computer Security Applications Conference. 2021: 106-118.
+Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and Decryption[C]//Annual Computer Security Applications Conference. 2021: 106-118.
 
 :::
 
+
+:::tip 💐 致谢
+
+ 感谢蚂蚁集团 Huanyu ma ，阿里巴巴双子座实验室 Cheng Hong 在实现、优化过程中的帮助与指导。
+
+:::
 
 ## c++ API
 
@@ -67,44 +73,64 @@ Ma H, Han S, Lei H. Optimized Paillier’s Cryptosystem with Fast Encryption and
 >
 > **Parameters**：k_sec - 加密标识，默认为112
 > 
-> **Returns**：pub - Opt_paillier_public_key, prv - Opt_paillier_secret_key 
+> **Returns**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> prv - Opt_paillier_secret_key 
 
 ##### function opt_paillier_encrypt_crt(pub, prv, plain_text)
 
 >CRT加密函数：该加密函数会同时使用公私钥优化加密过程
-
->**Parameters**：pub - Opt_paillier_public_key, 
->						  prv - Opt_paillier_secret_key, 
->						  plain_text - int 最大支持2048位
 >
->**Returns**：cipher_text - Opt_paillier_ciphertext
+>**Parameters**：
+> pub - Opt_paillier_public_key, 
+> 
+> prv - Opt_paillier_secret_key, 
+> 
+> plain_text - int 最大支持2048位
+>
+>**Returns**：
+> 
+> cipher_text - Opt_paillier_ciphertext
 
 ##### function opt_paillier_encrypt(pub, plain_text)
 
 > 加密函数：使用公钥加密明文plain_text
-> **Parameters**：pub - Opt_paillier_public_key
-> 						  plain_text - int 最大支持2048位
+> **Parameters**：
+> pub - Opt_paillier_public_key
+> 
+> plain_text - int 最大支持2048位
 > **Returns**：cipher_text - Opt_paillier_ciphertext 
 
 ##### function opt_paillier_decrypt_crt(pub, prv, cipher_text):
 
 > 解密函数：同时使用公私钥解密密文
-> **Parameters**：pub - Opt_paillier_public_key
-> 						  prv - Opt_paillier_secret_key
-> 						  cipher_text- Opt_paillier_ciphertext
+> **Parameters**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> prv - Opt_paillier_secret_key
+> 
+> cipher_text- Opt_paillier_ciphertext
 > **Returns**：decrypt_text_num - int 解密出来的整型明文
 
 ##### function opt_paillier_add(pub, op1_cipher_text, op2_cipher_text)
 
 > 密文加法函数：计算两个密文的同态加法
-> **Parameters**：pub - Opt_paillier_public_key
-> 						  op1_cipher_text - Opt_paillier_ciphertext
-> 						  op2_cipher_text- Opt_paillier_ciphertext
+> **Parameters**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> op1_cipher_text - Opt_paillier_ciphertext
+> 
+> op2_cipher_text- Opt_paillier_ciphertext
+> 
 > **Returns**：add_res_cipher_text - Opt_paillier_ciphertext 两个密文的同态加结果的密文
 
 ##### opt_paillier_c2py_test.py
 
-opt_paillier_c2py_warpper的python调用demo
+*** opt_paillier_c2py_warpper的python调用demo ***
 
 ```bash
 cd {your location}/primihub
@@ -131,39 +157,74 @@ checked: [1, 1, 1, 1]
 ##### class Opt_paillier_pack_ciphertext(object)
 
 >	Opt Paillier包密文类：存储包密文的信息。将多条明文打包，然后加密得到一个密文，称该密文为包密文。
->	Attributes：	ciphertexts - 密文列表。由于Opt Paillier的密文域有限，当明文数量超过阈值时，实际加>得到的是密文列表。
->							  pack_size - 该包密文含有的明文数量
->							  crtMod - 密文打包参数
+> 
+>	Attributes：	
+> ciphertexts - 密文列表。由于Opt Paillier的密文域有限，当明文数量超过阈值时，实际加
+> 得到的是密文列表。
+>
+> pack_size - 该包密文含有的明文数量
+>
+> crtMod - 密文打包参数
 
 ##### function **opt_paillier_pack_encrypt_crt**(pub, prv, plain_text_list, crt_mod = None):
-> CRT打包加密函数：该加密函数会同时使用公私钥优化打包加密过程。多条明文会加密到一个包密文中。> **Parameters**：pub - Opt_paillier_public_key						  prv - Opt_paillier_secret_key						  plain_text_list - 打包加密的明文列表，每个明文都是int类型，每个int最大可为70bit
-> 	  crt_mod - 包密文打包参数，若提供则使用所传入打包参数进行明文的打包与加密，否则使用一个随机的crt_mod
+> CRT打包加密函数：该加密函数会同时使用公私钥优化打包加密过程。多条明文会加密到一个包密文中。
+>  **Parameters**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> prv - Opt_paillier_secret_key
+> 
+> plain_text_list - 打包加密的明文列表，每个明文都是int类型，每个int最大可为70bit
+> 
+> crt_mod - 包密文打包参数，若提供则使用所传入打包参数进行明文的打包与加密，否则使用一个随机的crt_mod
 >
->	**Returns**：pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
+> **Returns**：
+> 
+> pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
 
 ##### function opt_paillier_pack_encrypt(pub, plain_text_list, crt_mod = None):
 
 > 
 > 打包加密函数：该加密函数使用公钥对一批明文进行打包加密。一批中的多条明文会加密到一个包密文中。
-> **Parameters**：pub - Opt_paillier_public_key
-> 						  plain_text_list - 打包加密的明文列表，每个明文都是int类型，每个int最大可为70bit
-> 						  crt_mod - 包密文打包参数，若提供则使用所传入打包参数进行明文的打包与加密，否则使用一个随机的crt_mod
-> **Returns**：pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
+> 
+> **Parameters**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> plain_text_list - 打包加密的明文列表，每个明文都是int类型，每个int最大可为70bit
+> 
+> crt_mod - 包密文打包参数，若提供则使用所传入打包参数进行明文的打包与加密，否则使用一个随机的crt_mod
+> 
+> **Returns**：
+> 
+> pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
 
 ##### function opt_paillier_pack_decrypt_crt(pub, prv, pack_cipher_text)
 
 > 包解密函数：同时使用公私钥解密包密文
-> **Parameters**：pub - Opt_paillier_public_key
-> 				  , prv - Opt_paillier_secret_key
-> 				  , pack_cipher_text - Opt_paillier_pack_ciphertext
+> 
+> **Parameters**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> prv - Opt_paillier_secret_key
+> 
+> pack_cipher_text - Opt_paillier_pack_ciphertext
+> 
 > **Returns**：decrypt_text_num_list - list 解密出来的整型明文列表
 
 ##### function opt_paillier_pack_add(pub, op1_pack_cipher_text, op2_pack_cipher_text)
 
 > 包密文加法函数：计算两个包密文的同态加法。传入的两个Opt_paillier_pack_ciphertext应拥有相同的pack_size以及crtMod。两个   	Opt_paillier_pack_ciphertext包内相同位置的数会相加。
->**Parameters**：pub - Opt_paillier_public_key
->						  op1_pack_cipher_text - Opt_paillier_pack_ciphertext
->						  op2_pack_cipher_text - Opt_paillier_pack_ciphertext
+> 
+>**Parameters**：
+> 
+> pub - Opt_paillier_public_key
+> 
+> op1_pack_cipher_text - Opt_paillier_pack_ciphertext
+> 
+> op2_pack_cipher_text - Opt_paillier_pack_ciphertext
+> 
 >**Returns**：add_res_cipher_text - Opt_paillier_pack_ciphertext两个包密文的同态加结果的包密文
 
 ##### opt_paillier_pack_c2py_test.py
@@ -187,7 +248,3 @@ The avg decryption cost is 46.557745933532715 ms.
 The avg addition   cost is 1.897873878479004 ms.
 ========================================================
 ```
-
-
-#### 致谢
-##### 感谢蚂蚁集团 Huanyu ma ，阿里巴巴双子座实验室 Cheng Hong 在实现、优化过程中的帮助与指导。

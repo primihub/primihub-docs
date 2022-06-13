@@ -22,5 +22,5 @@ primihub-cli --task_lang=cpp --task_type==ACTOR_TASK --task_code=="logistic_regr
 
 | task code | 参数 |
 | ---- | ---- |
-|logistic_regression| BatchSize: 数据大小 NumIters：迭代次数 TrainData: 训练数据集TestData: 测试数据集|
+| logistic_regression | BatchSize: 数据大小 NumIters：迭代次数 TrainData: 训练数据集TestData: 测试数据集 |
 
