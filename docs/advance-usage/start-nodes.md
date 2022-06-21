@@ -24,7 +24,7 @@ $ go run main.go
   $ ./primihub-node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
   ```
   ```bash
-  $ ./primihub-node ---node_id=node1 --service_port=50051 --config=./config/node1.yaml
+  $ ./primihub-node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
   ```
   ```bash
   $ ./primihub-node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
