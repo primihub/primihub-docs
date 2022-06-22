@@ -30,13 +30,13 @@ $ cd primihub
    容器包括：启动点、三个节点
 
   ```bash
-  $ docker-compose up
+  $ docker-compose up -d
   ```
 
 查看运行起来的docker容器：
 
 ```bash
-$ docker ps
+$ docker-compose ps -a
 ```
 ```
   CONTAINER ID   IMAGE                                COMMAND                  CREATED          STATUS          PORTS                                                                         NAMES
