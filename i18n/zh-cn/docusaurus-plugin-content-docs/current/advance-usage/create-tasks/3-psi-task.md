@@ -7,12 +7,19 @@ sidebar_position: 3
 
 *** 提交PSI任务的参数说明 ***
 
-创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type==PSI_TASK`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
+创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type=3`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
+
+如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
 
 ```bash
-./primihub-cli  --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data，clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
+./primihub-cli --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data，clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
 ```
 
+如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+
+```bash
+./bazel-bin/cli --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data，clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
+```
 ## 参数说明
 
 | 参数| 数据类型 | 参数示例 | 参数说明

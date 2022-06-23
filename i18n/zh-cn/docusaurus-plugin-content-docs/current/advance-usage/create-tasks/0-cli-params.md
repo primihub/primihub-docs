@@ -17,5 +17,5 @@ primihub-cli 的公共参数：
 --task_code (task code); default: "logistic_regression";
 --task_id (task id); default: "200";
 --task_lang (task language, proto or python); default: "proto";
---task_type (task type, 0-ACTOR_TASK, 1-PSI_TASK 2-PIR_TASK); default: 0;
+--task_type (task type, 0-ACTOR_TASK, 1-NODE_TASK, 2-PIR_TASK, 3-PSI_TASK, 4-NODE_PIR_TASK, 5-NODE_PSI_TASK); default: 0;
 ```
