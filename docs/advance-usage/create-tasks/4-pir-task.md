@@ -7,13 +7,19 @@ sidebar_position: 4
 
 *** 提交PIR任务的参数说明 ***
 
-创建隐私查询（PIR）任务需要使用以下参数组合 `--task_type==PIR_TASK`, 并通过`params`参数指定要查询index和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
+创建隐私查询（PIR）任务需要使用以下参数组合 `--task_type=2`, 并通过`params`参数指定要查询index和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
+
+如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
 
 ```bash
-primihub-cli --task_type==2  
---params=="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,outputFullFilename:STRING:0:/data/result/pir5.csv" --input_datasets="serverData"
+./primihub-cli --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,outputFullFilename:STRING:0:/data/result/pir5.csv" --input_datasets="serverData"
 ```
 
+如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+
+```bash
+./bazel-bin/cli --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,outputFullFilename:STRING:0:/data/result/pir5.csv" --input_datasets="serverData"
+```
 ## 参数说明
 
 | 参数| 数据类型 | 参数示例 | 参数说明

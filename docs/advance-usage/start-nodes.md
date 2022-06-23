@@ -18,16 +18,16 @@ $ go run main.go
 
   首先下载primihub 源码并编译，见[开发者文档-代码编译](docs/../../developer-docs/build)
 
-  在三个终端中分别运行
+  在编译完成后的代码根目录下，三个终端中分别运行
   
   ```bash
-  $ ./primihub-node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
+  $ ./bazel-bin/node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
   ```
   ```bash
-  $ ./primihub-node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
+  $ ./bazel-bin/node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
   ```
   ```bash
-  $ ./primihub-node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
+  $ ./bazel-bin/node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
   ```
 
 :::tip 接入自定义数据
