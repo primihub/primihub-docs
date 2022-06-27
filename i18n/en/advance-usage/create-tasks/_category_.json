@@ -1,0 +1,8 @@
+{
+  "label": "create task",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Create different types of tasks"
+  }
+}

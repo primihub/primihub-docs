@@ -1,0 +1,11 @@
+# Dataset authorization
+
+*** Authorize dataset requests ***
+
+
+
+Specify **node** for a dataset, specify **task** for use, specify **number of times**
+
+* TODO authorized plug-in interface
+
+* TODO extends custom dataset authorization plugin

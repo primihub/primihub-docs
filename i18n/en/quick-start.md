@@ -9,7 +9,7 @@ Run an Multi-Party Computing application in 5 minutes
 
 Install [docker](https://docs.docker.com/install/overview/) and [docker-compose](https://docs.docker.com/compose/install/)
 
-Download the code and switch to the code root path
+Download the code and switch to its root path
 
 ```
 $ git clone https://github.com/primihub/primihub.git
@@ -55,7 +55,7 @@ $ docker run --network=host -it primihub/primihub-node:1.0.5 ./primihub-cli --se
 
 :::tip The node requesting the task
 
-You can request computing tasks from any node in the computing cluster
+You can send a request of compute task to any node
 
 :::
 
