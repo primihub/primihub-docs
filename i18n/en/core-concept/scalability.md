@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ![Extensilbe](./extensilbe-layer.svg)
 
-Primihub可以从以下方面进行扩展。
+Primihub can be extended from the following aspects.
 
 ## Data source access extension
 

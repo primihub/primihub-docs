@@ -30,7 +30,7 @@ $ go run main.go
   $ ./bazel-bin/node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
   ```
 
-:::tip Import custom data
+:::tip Connect custom data
 
   The yaml configuration file specified by --config can connect custom data, see [Connect datasource](docs/../connect-datasource)
 

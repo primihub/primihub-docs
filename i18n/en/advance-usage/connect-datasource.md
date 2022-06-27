@@ -1,11 +1,11 @@
 ---
 sidebar_position: 2
 ---
-# Import Data
+# Connect Datasource
 
-*** Import custom datasets ***
+*** Connect custom datasets ***
 
-The yaml configuration file specified in the primihub-node startup parameter parameter *config* can specify the data set to be accessed. *datasets* need to be defined.
+In the startup parameters of primihub-node,the *yaml* configuration file specified by the parameter `--config` can specify the dataset to be accessed. *datasets* need to be defined.
 
 ```yaml
 datasets:

@@ -8,12 +8,12 @@ sidebar_position: 3
 
 :::tip About boostrap node
 
-* The boostrap node is the launch point of the p2p network for primihub node network dataset metadata registration and discovery
+* The boostrap node is the launch node of the p2p network for dataset metadata registration and discovery of primihub nodes network
 * There can be multiple boostrap nodes in the actual working network to increase system availability
   
 :::
 
-The yaml configuration file specified in the primihub-node startup parameter parameter config can specify the access startup point. A list of p2p/bootstrap_nodes needs to be defined.
+The yaml configuration file specified in the primihub-node startup parameter `--config` can specify the access startup point. A list of p2p/bootstrap_nodes needs to be defined.
 
 ```yaml
 

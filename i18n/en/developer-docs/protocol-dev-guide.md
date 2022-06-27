@@ -25,7 +25,7 @@ Used to calculate shared data, with multiplication as an example
 sf64Matrix<D> Envaluator::mul(const sf64Matrix<D>& left, const sf64Matrix<D>& right)；
 ```
 
-2.  Encryptor
+2. Encryptor
 Use communicators to exchange data with participants, represented as local data. Take int data as an example
 
 ```c++
@@ -47,9 +47,11 @@ Sh3Task Sh3Encryptor::remoteInt(Sh3Task dep, si64 & dest)
 
    To manage the communication channels of several participants for exchanging ciphertext data, it is necessary to define the communication channels and *getter* methods in the communicators of the participants according to the protocol model.
 
-4. Share random number generation and exchange (ShareGen)
+4. ShareGen
 
-   Used by the protocol to generate SecretShare random numbers
+   Share random number generation and exchange 
+   
+   Used for the protocol to generate SecretShare random numbers
 
 ### Class used
 - Runtime：Manage the list of asynchronous tasks used for CommPkg execution. In the Envaluator and Encryptor, you need to pass in a unique Runtime object reference.

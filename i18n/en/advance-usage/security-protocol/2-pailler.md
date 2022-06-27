@@ -7,7 +7,7 @@ sidebar_position: 2
 
 *** Underlying optimization implementation of Paillier cryptosystem ***
 
-:::tip Mainly based thesis
+:::tip Reference
 
 Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and Decryption[C]//Annual Computer Security Applications Conference. 2021: 106-118.
 
@@ -140,8 +140,8 @@ Release interface for memory resources.
 
 ```bash
 cd {your location}/primihub
-bazel build --config=linux :opt_paillier_c2py_test // 编译opt_paillier_c2py_warpper调用demo
-bazel-bin/opt_paillier_c2py_test // 运行demo
+bazel build --config=linux :opt_paillier_c2py_test // compile opt_paillier_c2py_warpper call demo
+bazel-bin/opt_paillier_c2py_test // run demo
 ```
 
 demo execution result example
@@ -204,7 +204,7 @@ checked: [1, 1, 1, 1]
 > 
 > **Returns**：
 > 
-> pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
+> pack_ciphertext - Opt_paillier_pack_ciphertext Packet ciphertext。If crt_mod is passed in,pack_ciphertext.crtMod=crt_mod。
 
 ##### function opt_paillier_pack_decrypt_crt(pub, prv, pack_cipher_text)
 

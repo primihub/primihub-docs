@@ -40,7 +40,7 @@ $ cd primihub/python
 #### Original Objective Function
 The original objective function is divided into two parts: one is the loss function, and the other is the regularization (used to control the complexity of the model).
 
-For the t-th tree, the i-th sample, the predicted value of the model is:$\hat{y}_{i}^{t}=\sum_{k=1}^{t}f_{k}(x_{i})=\hat{y}_{i}^{t-1}+f_{t}(x_{i})$。
+For the t-th tree, the i-th sample, the predicted value of the model is: $\hat{y}_{i}^{t}=\sum_{k=1}^{t}f_{k}(x_{i})=\hat{y}_{i}^{t-1}+f_{t}(x_{i})$。
 
 **Note: where $\hat{y}_{i}^{t}$ is the prediction result of sample i after the t-th iteration; $f_{t}(x_{i})$ is the model prediction of the t-th tree Result; $\hat{y}_{i}^{t-1}$ is the prediction result of the t-1th tree.**
 

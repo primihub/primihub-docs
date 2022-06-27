@@ -7,12 +7,12 @@ sidebar_position: 2
 
 *** Parameter description for submitting a federated learning task ***
 
-To create a federated learning task, you need to use the following parameter combination `--task_lang=python --task_type=0`, and specify the federated learning python code to run through the `task_code` parameter.
+To create a federated learning task, you need to use the following parameter combination `--task_lang=python --task_type=0`, and specify the federated learning python code by defining the `task_code` parameter.
 
 
-Example: start a federated learning xgboost task:
+For example, start a federated learning xgboost task:
 
-If it is started through docker-compose, execute `docker exec -it node0_primihub bash` to enter the node0_primihub container and execute the following command:
+If it is started through docker-compose, execute `docker exec -it node0_primihub bash` to enter the *node0_primihub* container and execute the following command:
 
 ```bash
 $ ./primihub-cli --task_lang=python --task_type=0 --task_code="./primihub_python/primihub/examples/disxgb.py"
