@@ -83,6 +83,11 @@ const config = {
             position: 'left',
           },
           {
+            href: 'https://gitee.com/donyleno',
+            label: 'Gitee',
+            position: 'left',
+          },
+          {
             href: 'https://gitcode.net/primihub/primihub',
             label: 'GitCode',
             position: 'left',
