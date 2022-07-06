@@ -56,7 +56,7 @@
             url: 
             password: 
 
-最后需要在mysql里执行"ddl.sql"和"init.sql"
+最后需要在mysql里执行"ddl.sql"
 
 ## 编译打包
 在linux下需要运行以下命令
