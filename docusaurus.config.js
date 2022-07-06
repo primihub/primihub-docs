@@ -82,10 +82,20 @@ const config = {
             label: 'GitHub',
             position: 'left',
           },
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // },
+          {
+            href: 'https://gitee.com/donyleno',
+            label: 'Gitee',
+            position: 'left',
+          },
+          {
+            href: 'https://gitcode.net/primihub/primihub',
+            label: 'GitCode',
+            position: 'left',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             href: 'https://primihub.com/index.html#scenario',
             label: '解决方案',
