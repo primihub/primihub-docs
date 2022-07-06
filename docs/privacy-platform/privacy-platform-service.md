@@ -58,6 +58,8 @@
 
 最后需要在mysql里执行"ddl.sql"
 
+注意的是：在base.json中需要修改以grpc前缀配置node grpc的地址
+
 ## 编译打包
 在linux下需要运行以下命令
 

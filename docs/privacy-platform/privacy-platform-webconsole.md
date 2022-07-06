@@ -2,28 +2,30 @@
 会用到 [node](https://nodejs.org/en/), [git](https://git-scm.com/). 项目是以如下标准为基础的[ES2015+](https://es6.ruanyifeng.com/)、[Vue.Js](https://vuejs.org/)、[Vuex](https://vuex.vuejs.org/)、[Vue-Router](https://router.vuejs.org/)、[antv-x6](https://x6.antv.vision/zh) 和 [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/).
 
 ## 服务开始
+1.进入项目一下目录
 ```bash
-# enter the project directory
 cd primihub-webconsole
-
-# install dependency
-npm install
-
-# develop
-npm run dev
 ```
-
-运行后会弹出以下链接 http://localhost:8080
-
-## 构建服务
-
+2.安装npm依赖
 ```bash
-# build for test environment
-npm run build:stage
-
-# build for production environment
-npm run build:prod
+npm install
 ```
+3.修改“vue.config.js”这个文件中target变量, 改成需要连接的网关地址
+```bash
+proxy: {
+  '/dev-api': {
+    target: 'your gateway url',
+    ws: true,
+    changeOrigin: true,
+    pathRewrite: {
+      '^/dev-api': ''
+    }
+  }
+}
+```
+4.启动项目
+```bash
+npm run dev
 
 ## 浏览器支持
 当前大部分浏览器和ie 10+.
