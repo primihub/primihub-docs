@@ -26,5 +26,13 @@
   "item.label.解决方案": {
     "message": "Solutions",
     "description": "Navbar item with label 解决方案"
+  },
+  "item.label.源代码": {
+    "message": "Code",
+    "description": "Navbar item with label 源代码"
+  },
+  "item.label.Gitee": {
+    "message": "Gitee",
+    "description": "Navbar item with label Gitee"
   }
 }

@@ -1,5 +1,5 @@
-# 隐私计算平台服务
-隐私计算平台服务是基于spring cloud构建的，并用maven进行编译
+# 管理平台服务节点
+管理平台服务是基于spring cloud构建的，并用maven进行编译
 
 ## 服务开始
 首先在启动项目之前需要用到以下依赖
@@ -10,7 +10,7 @@
 - redis 5.0+
 - RabbitMQ
 
-##修改配置
+## 修改配置
 需要先找到这两个位置:
 
     ./application/src/main/resources/

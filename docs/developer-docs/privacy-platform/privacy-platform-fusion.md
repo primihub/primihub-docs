@@ -1,5 +1,5 @@
-# 隐私计算平台中心节点
-隐私计算平台中心节点是基于spring boot，并用maven编译
+# 管理平台中心节点
+管理平台中心节点是基于spring boot，并用maven编译
 ## 服务开始
 首先在启动项目之前需要用到以下依赖
 - jdk 1.8
@@ -7,7 +7,7 @@
 - mysql 5.0+
 
 
-##修改配置
+## 修改配置
 需要先找到这个位置:
 
     ./fusion-api/src/main/resources/
