@@ -10,11 +10,9 @@ sidebar_position: 12
 
 ![assitant](/img/assitant.png) 
 
-## Slack
-欢迎加入[primihub的slack](https://primihub.slack.com/join/shared_invite/zt-1af0l22ar-jmTI2C_DPUd3QSuPuOsYdA#/shared-invite/email)平台寻找志同道合的小伙伴～
-
-
-## 关注公众号
-欢迎关注官方微信公众号，了解项目最新动态。
+## 关注公众号&slack
+欢迎关注我们的公众号和[slack主页](https://primihub.slack.com/join/shared_invite/zt-1af0l22ar-jmTI2C_DPUd3QSuPuOsYdA#/shared-invite/email)了解项目最新动态。
 
 ![qrcode](/img/qrcode.jpeg) 
+
+
