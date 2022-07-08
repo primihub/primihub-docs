@@ -78,9 +78,23 @@ const config = {
             label: '文档',
           },
           {
-            href: 'https://github.com/primihub/primihub',
-            label: 'GitHub',
+            type: 'dropdown',
+            label: '源代码',
             position: 'left',
+            items: [
+              {
+                href: 'https://github.com/primihub/primihub',
+                label: 'GitHub',
+              },
+              {
+                href: 'https://gitee.com/donyleno',
+                label: 'Gitee'
+              },
+              {
+                href: 'https://gitcode.net/primihub/primihub',
+                label: 'GitCode'
+              }
+            ],
           },
           // {
           //   type: 'localeDropdown',
@@ -110,16 +124,6 @@ const config = {
               {
                 label: '常见问题',
                 to: '/docs/faq',
-              },
-              {
-                html: `
-                <span>联系电话：400-7788-685</span>
-                  `,
-              },
-              {
-                html: `
-                <span>合作咨询：<a href = "mailto: abc@example.com">business@primihub.com</a></span>
-                  `,
               },
             ],
           },
