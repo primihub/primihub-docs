@@ -35,7 +35,7 @@ sidebar_position: 0
     @ph.context.function(role='host', protocol='xgboost', datasets=["label_dataset"], next_peer="*:12120")
     def func1(value):
         print("params: ", value)
-        # print(protocol, dataset, role, next_peer)
+        # do something
         return value + 1
 
     ```
@@ -45,7 +45,7 @@ sidebar_position: 0
     @ph.context.function(role='guest', protocol='xgboost', datasets=["guest_dataset"], next_peer="localhost:12120")
     def func2(value):
         print("params: ", value)
-        # print(protocol, dataset, role, next_peer)
+        # do something
         return value + 1
     ```
 
@@ -67,22 +67,20 @@ sidebar_position: 0
     from primihub import context, dataset
 
     # client init
-    # cli.init(config={"node": "192.168.99.16:50050", "cert": ""})
     cli.init(config={"node": "127.0.0.1:8051", "cert": ""})
-    # cli.init(config={"node": "192.168.1.103:8051", "cert": ""})
 
     # define a remote method
     @ph.context.function(role='host', protocol='xgboost', datasets=["label_dataset"], next_peer="*:12120")
     def func1(value):
+        # do something
         print("params: ", value)
-        # print(protocol, dataset, role, next_peer)
         return value + 1
 
     # define a remote method
     @ph.context.function(role='guest', protocol='xgboost', datasets=["guest_dataset"], next_peer="localhost:12120")
     def func2(value):
+        # do something
         print("params: ", value)
-        # print(protocol, dataset, role, next_peer)
         return value + 1
 
     # context
