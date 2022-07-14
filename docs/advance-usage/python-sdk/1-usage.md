@@ -8,10 +8,10 @@ sidebar_position: 0
 
 ## 前提
 
-- 在虚拟环境中正确安装了Primihub
-- 使用docker-compose启动节点应用
+- 安装了primihub python sdk
+- 使用docker-compose启动节点应用，见[快速开始](https://docs.primihub.com/docs/quick-start)
 
-## 在python文件中使用
+## 通Python Client 提交任务
 
 1. 新建Python文件
 2. 在文件开头引入primihub cli
@@ -57,7 +57,7 @@ sidebar_position: 0
     cli.remote_execute((func1, value1), (func2, value2))
    ```
 
-6. ***完整示例：***
+6. ***联邦学习示例：***
 
     ```
     # python sdk client demo
