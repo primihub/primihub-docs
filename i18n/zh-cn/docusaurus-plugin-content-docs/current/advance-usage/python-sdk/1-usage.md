@@ -90,6 +90,3 @@ sidebar_position: 0
 
     ```
 
-## 在python交互式解释器中使用
-
-  TODO
