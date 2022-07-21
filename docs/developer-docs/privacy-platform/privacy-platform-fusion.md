@@ -2,9 +2,9 @@
 管理平台中心节点是基于spring boot，并用maven编译
 ## 服务开始
 首先在启动项目之前需要用到以下依赖
-- jdk 1.8
-- maven
-- mysql 5.0+
+- [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
+- [maven](https://maven.apache.org/download.cgi)
+- [mysql 5.0+](https://dev.mysql.com/downloads/mysql)
 
 
 ## 修改配置
@@ -52,4 +52,4 @@
 
 执行完命令后检查下列端口是否启动:
     
-    http://localhost:8099/fusion/healthConnection
+    http://localhost:8090/fusion/healthConnection
