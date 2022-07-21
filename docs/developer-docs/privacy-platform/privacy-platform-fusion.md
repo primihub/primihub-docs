@@ -48,8 +48,8 @@
 ## 运行
 运行前需要确保所依赖的项目都是可用的而且配置文件都正确
 
-    java -jar -Dfile.encoding=UTF-8 ./fusion-api/target/*-SNAPSHOT.jar --server.port=8090
+    java -jar -Dfile.encoding=UTF-8 ./fusion-api/target/*-SNAPSHOT.jar --server.port=8099
 
 执行完命令后检查下列端口是否启动:
     
-    http://localhost:8090/fusion/healthConnection
+    http://localhost:8099/fusion/healthConnection
