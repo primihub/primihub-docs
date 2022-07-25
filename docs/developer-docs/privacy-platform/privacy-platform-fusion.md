@@ -30,13 +30,17 @@
             url: 
             password: 
 
-然后定位到script文件夹:
+然后我们定位到这个路径:
 
     ./script
-        init.sql
+        init.sh
 
+去这个路径下执行以下命令:
 
-最后需要在mysql里执行"init.sql"
+    cd ./script
+    sh init.sh [your mysql username] [your mysql password]
+
+或者在mysql管理端手动执行"init.sql".
 
 ## 编译打包
 运行以下命令:

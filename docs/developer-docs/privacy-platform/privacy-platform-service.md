@@ -56,7 +56,18 @@
             url: 
             password: 
 
-最后需要在mysql里执行"ddl.sql"
+
+然后我们定位到这个路径:
+
+    ./script
+        init.sh
+
+去这个路径下执行以下命令:
+
+    cd ./script
+    sh init.sh [your mysql username] [your mysql password]
+
+或者在mysql管理端手动执行"ddl.sql".
 
 注意的是：在base.json中需要修改以grpc前缀配置node grpc的地址
 
