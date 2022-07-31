@@ -28,7 +28,7 @@ $ git clone https://github.com/primihub/primihub.git
 * 编译
 ```bash
     $ ./pre_build.sh
-    $ bazel build --config=linux :node :cli
+    $ bazel build --config=linux :node :cli :opt_paillier_c2py
 ```
 
 ### mac
@@ -38,21 +38,21 @@ $ git clone https://github.com/primihub/primihub.git
  
 ```bash
     $ ./pre_build.sh
-    $ bazel build --config=darwin_x86_64 --config=macos :node :cli
+    $ bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
 ```
 
  *  Apple sillicon M1
 
 ```bash
     $ ./pre_build.sh
-    $ bazel build --config=darwin_arm64 --config=macos  :node :cli
+    $ bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
 ```
 
  *  MacOS Monterey with Apple M1
 
 ```bash
    $ ./pre_build.sh
-   $ bazel build --config=darwin --config=macos  :node :cli
+   $ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
 ```
 
 ### windows 
@@ -61,7 +61,7 @@ $ git clone https://github.com/primihub/primihub.git
 
 ```bash
     $ ./pre_build.sh
-    $ bazel build --config=windows :node :cli
+    $ bazel build --config=windows :node :cli :opt_paillier_c2py
 ```
 
 ### docker
