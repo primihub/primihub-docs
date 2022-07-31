@@ -8,7 +8,6 @@ sidebar_position: 1
 *** Primihub + Gramine 🎉 ***
 
 
-
 ![Info](./primihub_and_gramine_logo.jpg)
 
 
@@ -42,7 +41,7 @@ Primihub Node集群中节点的角色分为：调度节点、可信计算环境�
     cd primihub/python/primihub/TEE
     # 编译
     make SGX=1
-    #运行
+    # 运行
     gramine-sgx ./flight ./flight_server.py
     ```
 
@@ -51,12 +50,13 @@ Primihub Node集群中节点的角色分为：调度节点、可信计算环境�
 - cli上传任务，（通过python CLI提交TEE任务，并通过python提交TEE服务任务开始）
   
     ```bash
-    TODO CLI 命令行
+    ./primihub-cli --task_lang=proto --task_type=6 --params="datasets:STRING:0:train_party_1;train_party_2,server:STRING:0:YOUR_FLIGHT_SERVER_IP:8815"
     ```
+
 
 - 调度节点分配任务给数据提供节点
 - 调度节点通知数据提供节点开始上传数据（参数中包含：可信环境执行节点的连接参数、指定数据集），上传数据目前primihub使用的是apache arrow flight RPC协议
-- 数据提供节点上传数据
+- 数据提供节点向可信执行环境上传数据
 
 3. 通过python client 可以向可信环境执行节点发送可以开始运行
 - 执行环境计算并返回模型
@@ -64,10 +64,13 @@ Primihub Node集群中节点的角色分为：调度节点、可信计算环境�
 
 ## 计划的工作
 
-### 可信计算环境节点管理
-TODO
+### 可信执行环境节点管理
+有Primihub Node提供多方都认可的TEE执行环境，如何将确认多方认可的安全性是将要完成的工作，可能涉及到多签名和远程证明。
+
+
 ### 联邦学习
-TODO
+支持更复杂应用场景的联邦学习算法在TEE环境中执行。
+
 ### 远程证明
 远程证明允许硬件实体或硬件和软件的组合获得敏感数据提供方或外包方的信任。
 
