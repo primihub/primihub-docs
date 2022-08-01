@@ -1,0 +1,8 @@
+{
+  "label": "Data use authorization",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "The way of authorizing"
+  }
+}
