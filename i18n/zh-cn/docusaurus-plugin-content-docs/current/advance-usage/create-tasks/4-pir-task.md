@@ -18,7 +18,7 @@ sidebar_position: 4
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,databaseSize:STRING:0:569,outputFullFilename:STRING:0:/data/result/pir5.csv" --input_datasets="serverData"
+./bazel-bin/cli --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,databaseSize:STRING:0:20,outputFullFilename:STRING:0:/data/result/pir5.csv" --input_datasets="serverData"
 ```
 ## 参数说明
 
