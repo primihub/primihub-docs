@@ -8,7 +8,7 @@ sidebar_position: 2
 
 - 拥有一个k8s集群
 - 安装了helm，版本3.1以上，如未安装可通过 [这里](https://github.com/helm/helm/releases) 下载对应版本
-- 确认集群存在默认的StorageClass（执行kubectl get sc 获取的结果中，结果中含有'（default）'配置，实例如下）
+- 确认集群存在默认的StorageClass（执行kubectl get sc 获取的结果中，结果中含有'(default)'配置，示例如下）
 
 ```bash
 # kubectl get sc

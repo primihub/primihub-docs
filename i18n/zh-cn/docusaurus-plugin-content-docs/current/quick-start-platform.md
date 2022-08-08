@@ -16,7 +16,7 @@ http://demo3.primihub.com
 可在原语官网申请试用：https://primihub.com
 
 ![Apply](./primihub-platform-apply.png)
-
+![Apply1](/img/primihub01.png)
 
 ## 创建一个简单的项目
 ![sample_project](/img/sample_project.jpg) 
