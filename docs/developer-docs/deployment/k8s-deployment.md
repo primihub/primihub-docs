@@ -22,7 +22,7 @@ managed-nfs-storage (default)   fuseim.pri/ifs   Delete          Immediate      
 git clone https://github.com/primihub/primihub-deploy.git
 cd k8s-deploy
 export NAMESPACE="修改为你的namespace"
-bash primihub_deploy
+bash primihub_deploy.sh （或执行python3 deploy.py）
 ```
 
 执行完成后请耐心等待，镜像下载、数据初始化、服务启动等需要一点时间
