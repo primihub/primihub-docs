@@ -12,7 +12,7 @@ sidebar_position: 1
 
 ```bash
 git clone https://github.com/primihub/primihub-deploy.git
-cd docker-deploy
+cd primihub-deploy/docker-deploy
 bash deploy.sh
 ```
 

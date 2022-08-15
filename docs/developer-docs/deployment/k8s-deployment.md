@@ -73,6 +73,7 @@ http://k8s集群的任意一台机器的IP:30803
 
 执行以下脚本，将删除以上安装的所有服务
 ```bash
+export NAMESPACE="修改为你部署的namespace"
 bash primihub_delete.sh
 ```
 
