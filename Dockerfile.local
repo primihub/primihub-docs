@@ -7,9 +7,10 @@ WORKDIR /opt
 
 ADD . ./
 
-RUN npm install -g npm@8.15.1 \
+RUN cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current \
+  && npm install -g npm@8.15.1 \
   && npm install \
-  && npm run build:prod
+  && npm run build
 
 FROM nginx:1.20
 
