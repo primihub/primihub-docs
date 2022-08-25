@@ -16,18 +16,11 @@ http://demo3.primihub.com
 可在原语官网申请试用：https://primihub.com
 
 ![Apply](./primihub-platform-apply.png)
+![Apply1](/img/primihub01.png)
 
-
-## 创建一个简单的项目
-![sample_project](/img/sample_project.jpg) 
-
-按照目录我的项目->新建项目的指引选择并填写对应的内容，即可创建属于你自己的项目，申请资源后并等待协作方的审核:
-
-![sample_verification](/img/sample_verification.jpg) 
-
-审核通过后就可以创建模型了
-
-![sample_model](/img/sample_model.jpg) 
+:::tip
+具体操作，请见<strong>[管理平台操作说明](/docs/operating-instructions/resource)</strong>
+:::
 
 ## 服务部署
 在装本地服务前需要先启动node服务（完整的服务体验通常要两个以上）

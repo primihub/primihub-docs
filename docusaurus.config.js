@@ -87,7 +87,7 @@ const config = {
                 label: 'GitHub',
               },
               {
-                href: 'https://gitee.com/donyleno',
+                href: 'https://gitee.com/primihub',
                 label: 'Gitee'
               },
               {

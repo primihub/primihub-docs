@@ -3,12 +3,12 @@
 
 ## 服务开始
 首先在启动项目之前需要用到以下依赖
-- jdk 1.8
-- maven
-- nacos 2.0.3 or 2.0.4
-- mysql 5.0+
-- redis 5.0+
-- RabbitMQ
+- [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
+- [maven](https://maven.apache.org/download.cgi)
+- [nacos 2.0.3](https://github.com/alibaba/nacos/releases/tag/2.0.3) or [2.0.4](https://github.com/alibaba/nacos/releases/tag/2.0.4)
+- [mysql 5.0+](https://dev.mysql.com/downloads/mysql)
+- [redis 5.0+](https://redis.io/download/)
+- [RabbitMQ](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.10.6)
 
 ## 修改配置
 需要先找到这两个位置:
@@ -56,7 +56,18 @@
             url: 
             password: 
 
-最后需要在mysql里执行"ddl.sql"
+
+然后我们定位到这个路径:
+
+    ./script
+        init.sh
+
+去这个路径下执行以下命令:
+
+    cd ./script
+    sh init.sh [your mysql username] [your mysql password]
+
+或者在mysql管理端手动执行"ddl.sql".
 
 注意的是：在base.json中需要修改以grpc前缀配置node grpc的地址
 
