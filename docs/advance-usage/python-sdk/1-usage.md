@@ -10,7 +10,7 @@ sidebar_position: 0
 
 ## 简介
 
-![Introduction](./python-sdk/Primihub_CS_Des.drawio.png)
+![Introduction](./Primihub_CS_Des.drawio.png)
 
 ## 前提
 
