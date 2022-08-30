@@ -16,7 +16,7 @@ cd primihub-deploy/docker-deploy
 bash deploy.sh
 ```
 
-执行完成后请稍等2分钟等待数据库初始化和服务启动
+执行完成后请稍等几分钟等待数据库初始化和服务启动
 
 ### 查看部署结果
 
