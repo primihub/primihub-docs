@@ -20,7 +20,7 @@
     "description": "The label for category 核心特性 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.核心特性.link.generated-index.description": {
-    "message": "了解Primihub的核心特性",
+    "message": "了解PrimiHub的核心特性",
     "description": "The generated-index page description for category 核心特性 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.进阶使用": {
@@ -28,7 +28,7 @@
     "description": "The label for category 进阶使用 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.进阶使用.link.generated-index.description": {
-    "message": "学习如何使用Primihub进行更复杂的操作",
+    "message": "学习如何使用PrimiHub进行更复杂的操作",
     "description": "The generated-index page description for category 进阶使用 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.创建任务": {
@@ -52,7 +52,7 @@
     "description": "The label for category 联邦学习 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.联邦学习.link.generated-index.description": {
-    "message": "学习如何使用Primihub进行更复杂的操作",
+    "message": "学习如何使用PrimiHub进行更复杂的操作",
     "description": "The generated-index page description for category 联邦学习 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.开发者文档": {

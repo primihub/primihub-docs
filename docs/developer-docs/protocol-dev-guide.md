@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Primihub安全协议开发指南
+# PrimiHub安全协议开发指南
 
 *** 如何开发一个安全协议 *** 
 
@@ -10,7 +10,7 @@ sidebar_position: 2
 
 👨‍🎓 本文档面向安全协议开发和算法开发的工程师
 
-🕗 适用于Primihub v1.0 版本
+🕗 适用于PrimiHub v1.0 版本
 
 :::
 
