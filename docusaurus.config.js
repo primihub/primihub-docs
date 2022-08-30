@@ -8,8 +8,8 @@ const katex = require('rehype-katex');
 
 
 const config = {
-  title: 'Primihub 使用说明',
-  // tagline: 'Primihub are cool',
+  title: 'PrimiHub 使用说明',
+  // tagline: 'PrimiHub are cool',
   url: 'http://docs.primihub.com/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -66,7 +66,7 @@ const config = {
       navbar: {
         title: '首页',
         logo: {
-          alt: 'Primihub Logo',
+          alt: 'PrimiHub Logo',
           src: 'img/logo.png',
           srcDark: 'img/logo-dark.png'
         },
@@ -154,7 +154,7 @@ const config = {
                 href: 'https://github.com/primihub/primihub',
               },
               {
-                label: '关于Primihub',
+                label: '关于PrimiHub',
                 href: 'https://primihub.com/',
               },
               {
@@ -165,7 +165,7 @@ const config = {
             ],
           },
         ],
-        copyright: `<p>Copyright © ${new Date().getFullYear()} Primihub Project, Inc. Built with Docusaurus.</p><p>111</p>`,
+        copyright: `<p>Copyright © ${new Date().getFullYear()} PrimiHub Project, Inc. Built with Docusaurus.</p><p>111</p>`,
       },
       colorMode: {
         defaultMode: 'light',
