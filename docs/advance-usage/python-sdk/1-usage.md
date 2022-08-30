@@ -418,6 +418,4 @@ df_data = ph.dataset.get(data_ref)
     # cry_pri = "paillier"
     cli.async_remote_execute((xgb_host_logic, cry_pri), (xgb_guest_logic, cry_pri))
 
-    cli.start()
-
 ```
