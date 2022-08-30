@@ -79,10 +79,10 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 
 
 ## 核心特性
- 除了上面的MPC案例，Primihub还支持联邦学习、隐私求交(PSI)、隐私查询(PIR)特性，具体请见 Primihub [核心特性](../docs/core-concept/model) 
+ 除了上面的MPC案例，PrimiHub还支持联邦学习、隐私求交(PSI)、隐私查询(PIR)特性，具体请见 PrimiHub [核心特性](../docs/core-concept/model) 
 
 ## 进阶使用
-  想了解如何从原生应用启动以及关于如何利用Primihub的特性，实现更多应用，见 [进阶使用](../docs/advance-usage/start-nodes)
+  想了解如何从原生应用启动以及关于如何利用PrimiHub的特性，实现更多应用，见 [进阶使用](../docs/advance-usage/start-nodes)
 
 ## 开发者
   关于代码编译和如何贡献代码，请见 [开发者文档](../docs/developer-docs/build)

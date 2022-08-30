@@ -21,8 +21,19 @@ sidebar_position: 2
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
+
+## 参数说明
+
+| 参数| 数据类型 | 参数示例 | 参数说明
+| ---- | ---- | ---- | ---- |
+| params.predictFileName | STRING | /data/result/prediction.csv | 保存预测结果文件路径，仅出现在Host方 |
+| params.indicatorFileName | STRING | /data/result/indicator.json | 保存模型评估指标结果路径，仅出现在Host方 |
+| params.modelFileName  | STRING | /data/result/hostlookuptable.csv | 树结构保存路径，仅出现在Host方 |
+| params.hostLookupTable | STRING | /data/result/guestlookuptable.csv | Host方特征分割点保存路径|
+| params.guestLookupTable | STRING | /data/result/host/model | Guest方特征分割点保存路径 |
+
 
 在python文件中，算法开发者可以使用primihub python api指定：
 * 使用的数据集
