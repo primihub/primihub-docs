@@ -10,7 +10,7 @@ sidebar_position: 0
 
 ## 简介
 
-[![v2F11I.png](https://s1.ax1x.com/2022/08/25/v2F11I.png)](https://imgse.com/i/v2F11I)
+![Introduction](./python-sdk/Primihub_CS_Des.drawio.png)
 
 ## 前提
 
