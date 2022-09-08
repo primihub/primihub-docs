@@ -28,12 +28,11 @@ sidebar_position: 2
 
 | 参数| 数据类型 | 参数示例 | 参数说明
 | ---- | ---- | ---- | ---- |
-| params.predictFileName | STRING | /data/result/prediction.csv | 保存预测结果文件路径，仅出现在Host方 |
-| params.indicatorFileName | STRING | /data/result/indicator.json | 保存模型评估指标结果路径，仅出现在Host方 |
-| params.modelFileName  | STRING | /data/result/hostlookuptable.csv | 树结构保存路径，仅出现在Host方 |
-| params.hostLookupTable | STRING | /data/result/guestlookuptable.csv | Host方特征分割点保存路径|
-| params.guestLookupTable | STRING | /data/result/host/model | Guest方特征分割点保存路径 |
-
+| params.predictFileName | STRING | /data/result/prediction.csv | 预测结果文件，仅出现在Host方 |
+| params.indicatorFileName | STRING | /data/result/indicator.json | 模型评估指标结果文件，仅出现在Host方 |
+| params.hostLookupTable | STRING | /data/result/hostlookuptable.csv | Host方特征分割点结果文件|
+| params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest方特征分割点结果文件 |
+| params.modelFileName  | STRING | /data/result/host/model  | 树结构保存路径，仅出现在Host方 |
 
 在python文件中，算法开发者可以使用primihub python api指定：
 * 使用的数据集
