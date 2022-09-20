@@ -20,15 +20,17 @@ managed-nfs-storage (default)   fuseim.pri/ifs   Delete          Immediate      
 
 ```bash
 git clone https://github.com/primihub/primihub-deploy.git
-cd k8s-deploy
+cd primihub-deploy/k8s-deploy
 export NAMESPACE="修改为你的namespace"
-bash primihub_deploy
+bash primihub_deploy.sh （或执行python3 deploy.py）
 ```
 
-执行完成后请耐心等待，镜像下载、数据初始化、服务启动等需要一点时间
+执行完成后请耐心等待几分钟，镜像下载、数据初始化、服务启动等需要一点时间
 
 :::tip
-目前配置中指定了platform的nodePort端口，如需在一个集群多个namespace下部署，请自行修改 charts/platformchart/templates/platform-svc.yaml 文件第3行的端口
+目前配置中指定了platform的nodePort端口，如需在一个集群多个namespace下部署，请自行修改 
+charts/platformchart/templates/platform-svc.yaml 
+文件第3行的端口
 :::
 
 ### 查看部署结果
@@ -73,6 +75,7 @@ http://k8s集群的任意一台机器的IP:30803
 
 执行以下脚本，将删除以上安装的所有服务
 ```bash
+export NAMESPACE="修改为你部署的namespace"
 bash primihub_delete.sh
 ```
 

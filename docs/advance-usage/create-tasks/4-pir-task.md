@@ -3,11 +3,11 @@ sidebar_position: 4
 ---
 
 
-# 隐私查询（PIR）任务
+# 匿踪查询（PIR）任务
 
 *** 提交PIR任务的参数说明 ***
 
-创建隐私查询（PIR）任务需要使用以下参数组合 `--task_type=2`, 并通过`params`参数指定要查询index和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
+创建匿踪查询（PIR）任务需要使用以下参数组合 `--task_type=2`, 并通过`params`参数指定要查询index和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
 
 如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
 
