@@ -31,7 +31,7 @@ $ go run main.go
   ```
 
 :::tip 接入自定义数据
-  用过--config指定的yaml配置文件可以接入自定义数据，使用请见 [接入你的应用](docs/../connect-datasource)
+  用过--config指定的yaml配置文件可以接入自定义数据，使用请见 [接入你的数据](docs/../connect-datasource)
 :::
 
 TODO

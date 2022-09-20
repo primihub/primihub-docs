@@ -15,3 +15,9 @@ Unsupported config option for networks: 'testing_net'
 ```bash
 ERROR: Server Threadpool Exhausted
 ```
+
+3. 如果在启动node时遇到如下报错，请删除 `./localdb/*` 后再次启动
+```bash
+terminate called after throwing an instance of 'primihub::service::Error'
+已放弃 (核心已转储)
+```
