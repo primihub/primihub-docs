@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 
-# MPC任务
+# 多方安全计算（MPC）任务
 
 *** 提交MPC任务的参数说明 ***
 
