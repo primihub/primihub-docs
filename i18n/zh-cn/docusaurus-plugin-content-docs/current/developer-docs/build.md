@@ -8,7 +8,17 @@ sidebar_position: 1
 
 bazel 5.0.0， 安装和配置见[这里](https://docs.bazel.build/versions/5.0.0/install.html)
 
+Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 文件
 
+以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
+```
+$ apt update 
+$ apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
+$ apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
+$ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+
+$ npm install -g @bazel/bazelisk
+```
 ## 获取代码
 
 ```bash
@@ -24,35 +34,35 @@ $ git clone https://github.com/primihub/primihub.git
 
 ### linux
 * 依赖环境
-  gcc-8，g++-8，python3，python3-dev，cmake-3.20
+  gcc-8，g++-8，python3.7及以上，python3.7-dev，cmake-3.20
 * 编译
 ```bash
-    $ ./pre_build.sh
-    $ bazel build --config=linux :node :cli :opt_paillier_c2py
+$ ./pre_build.sh
+$ bazel build --config=linux :node :cli :opt_paillier_c2py
 ```
 
 ### mac
- * 依赖环境 clang 12+，python3，cmake-3.20
+ * 依赖环境 clang 12+，python3.7及以上，cmake-3.20
  
  * Apple Intel CPU
  
 ```bash
-    $ ./pre_build.sh
-    $ bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
+$ ./pre_build.sh
+$ bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
 ```
 
  *  Apple sillicon M1
 
 ```bash
-    $ ./pre_build.sh
-    $ bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
+$ ./pre_build.sh
+$ bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
 ```
 
  *  MacOS Monterey with Apple M1
 
 ```bash
-   $ ./pre_build.sh
-   $ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
+$ ./pre_build.sh
+$ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
 ```
 
 ### windows 
@@ -60,17 +70,22 @@ $ git clone https://github.com/primihub/primihub.git
 ***TODO 待测***
 
 ```bash
-    $ ./pre_build.sh
-    $ bazel build --config=windows :node :cli :opt_paillier_c2py
+$ ./pre_build.sh
+$ bazel build --config=windows :node :cli :opt_paillier_c2py
 ```
 
 ### docker
 使用代码根目录下的Dockerfile进行docker镜像编译
 
 ```
-docker build .
+$ docker build -t primihub/primihub-node .
 
 ```
+如果`build`时有依赖包下载不下来的情况，可通过如下命令在`build`时加上代理
+```
+$ docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "HTTPS_PROXY=http://你的代理地址" -t primihub/primihub-node .
+```
+
 
 :::caution Apple M1 docker 编译问题
 
