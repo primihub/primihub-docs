@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 
-# 联邦学习任务
+# 联邦学习（FL）任务
 
 *** 提交联邦学习任务的参数说明 ***
 
@@ -22,6 +22,16 @@ sidebar_position: 2
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+```
+
+:::tip
+如果遇到报错 "No module named 'primihub'", 在代码根目录下执行以下命令安装 primihub 平台库
+:::
+
+```bash
+cd python
+pip3 install -r requirements.txt 
+python3 setup.py install
 ```
 
 ## 参数说明
