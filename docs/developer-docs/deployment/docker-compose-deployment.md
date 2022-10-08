@@ -11,8 +11,8 @@ sidebar_position: 1
 ### 拉取代码，执行脚本，完成部署
 
 ```bash
-git clone https://github.com/primihub/primihub-deploy.git
-cd primihub-deploy/docker-deploy
+git clone https://github.com/primihub/primihub.git
+cd primihub/deploy/docker-deploy
 bash deploy.sh
 ```
 
