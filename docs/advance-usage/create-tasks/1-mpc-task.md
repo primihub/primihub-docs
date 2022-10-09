@@ -67,4 +67,4 @@ node1 和 node2 日志和 node0 类似，省略。
 | params.NumIters | INT32 | 100 | 迭代次数 |
 | params.TrainData | STRING | train_party_0;train_party_1;train_party_2 | 训练数据集 |
 | params.TestData | STRING | test_party_0;test_party_1;test_party_2 | 测试数据集 |
-
+| params.modelName | STRING | /tmp/lr_mode.csv | 生成模型的存储路径（包含模型文件名）| 
