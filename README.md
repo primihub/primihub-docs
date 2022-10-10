@@ -23,6 +23,12 @@ This command starts a local development server and opens up a browser window. Mo
 cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current
 ```
 
+You could start it with a particular language with the following command:
+
+```shell
+$ yarn start --locale en
+```
+
 ### Build
 
 ```
