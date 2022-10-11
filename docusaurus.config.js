@@ -96,10 +96,10 @@ const config = {
               }
             ],
           },
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             href: 'https://primihub.com/index.html#scenario',
             label: '解决方案',
