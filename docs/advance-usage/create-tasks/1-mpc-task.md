@@ -15,13 +15,13 @@ sidebar_position: 1
 如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
+./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2,modelName:STRING:0:/data/result/lr_mode.csv"
 ```
 
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
+./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2,modelName:STRING:0:/data/result/lr_mode.csv"
 ```
 分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
 
@@ -48,7 +48,7 @@ I20220922 07:42:46.114251    40 logistic.cc:70] Epochs : ( 0/100 )
 ···
 I20220922 07:43:22.827548    40 logistic.cc:70] Epochs : ( 99/100 )
 I20220922 07:43:23.188999    40 logistic.cc:581] Party 0 train finish.
-I20220922 07:43:23.193424    40 logistic.cc:613] Save model to data/100_200_party_0_lr.csv.
+I20220922 07:43:23.193424    40 logistic.cc:613] Save model to /data/result/lr_mode.csv.
 I20220922 07:43:23.195238    55 aby3_scheduler.cc:74] Node push task rpc succeeded.
 I20220922 07:43:23.195415    54 aby3_scheduler.cc:74] Node push task rpc succeeded.
 I20220922 07:43:23.196365    56 aby3_scheduler.cc:74] Node push task rpc succeeded.
@@ -67,4 +67,4 @@ node1 和 node2 日志和 node0 类似，省略。
 | params.NumIters | INT32 | 100 | 迭代次数 |
 | params.TrainData | STRING | train_party_0;train_party_1;train_party_2 | 训练数据集 |
 | params.TestData | STRING | test_party_0;test_party_1;test_party_2 | 测试数据集 |
-
+| params.modelName | STRING | /data/result/lr_mode.csv | 生成模型的存储路径（包含模型文件名）| 
