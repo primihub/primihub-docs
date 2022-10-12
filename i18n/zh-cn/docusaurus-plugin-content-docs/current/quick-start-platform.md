@@ -7,11 +7,11 @@ sidebar_position: 2
 ## 服务试用
 当前提供了三个试用平台：
 
-http://demo1.primihub.com
+http://node1.primihub.com
 
-http://demo2.primihub.com
+http://node2.primihub.com
 
-http://demo3.primihub.com
+http://node3.primihub.com
 
 可在原语官网申请试用：https://primihub.com
 
