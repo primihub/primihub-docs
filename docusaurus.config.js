@@ -48,8 +48,12 @@ const config = {
         },
         googleAnalytics: {
           trackingID: 'G-KLS723TJR0',
-          anonymizeIP: false,
+          anonymizeIP: true,
         },
+        gtag: {
+          trackingID: 'G-KLS723TJR0',
+          anonymizeIP: true,
+        }
       }),
     ],
   ],

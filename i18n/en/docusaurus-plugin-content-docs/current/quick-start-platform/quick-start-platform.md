@@ -5,11 +5,9 @@ sidebar_position: 1
 # Services Trial
 Three trial platforms are currently offered:
 
-http://demo1.primihub.com
-
-http://demo2.primihub.com
-
-http://demo3.primihub.com
+* https://node1.primihub.com
+* https://node2.primihub.com
+* https://node3.primihub.com
 
 You can apply for a trial on the website：https://primihub.com
 
