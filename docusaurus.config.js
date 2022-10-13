@@ -162,6 +162,14 @@ const config = {
                 href: 'https://github.com/primihub/primihub',
               },
               {
+                label: 'Twitter',
+                href: 'https://twitter.com/OpenPrimi',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCmbSodM232zm_Jod-z4Bv4A/featured',
+              },
+              {
                 label: '关于PrimiHub',
                 href: 'https://primihub.com/',
               },
