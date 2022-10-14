@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Resource Management
 
-## My Resources
+## My Resources 
 Once the user is done, the resources can be added.
 Click 「Resource Management」 - 「My Resources」 in the navigation bar to enter the 【My Resources】 .
 
