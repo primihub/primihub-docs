@@ -1,8 +1,8 @@
 {
-  "label": "Federated Learning",
+  "label": "联邦学习",
   "position": 6,
   "link": {
     "type": "generated-index",
-    "description": "学习如何使用 PrimiHub 进行更复杂的操作"
+    "description": "学习如何使用PrimiHub进行更复杂的操作"
   }
 }

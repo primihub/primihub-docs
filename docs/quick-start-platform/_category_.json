@@ -1,7 +1,6 @@
 {
-  "label": "Try It",
+  "label": "快速试用管理平台",
   "position": 2,
-  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": " "
