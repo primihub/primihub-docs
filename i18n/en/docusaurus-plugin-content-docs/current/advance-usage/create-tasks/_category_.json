@@ -1,0 +1,8 @@
+{
+  "label": "创建任务",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "创建不同类型的任务"
+  }
+}

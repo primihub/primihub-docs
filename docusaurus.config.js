@@ -46,6 +46,14 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleAnalytics: {
+          trackingID: 'G-KLS723TJR0',
+          anonymizeIP: true,
+        },
+        gtag: {
+          trackingID: 'G-KLS723TJR0',
+          anonymizeIP: true,
+        }
       }),
     ],
   ],
@@ -78,6 +86,12 @@ const config = {
             label: '文档',
           },
           {
+            type: 'doc',
+            docId: 'quick-start-platform/quick-start-platform',
+            position: 'right',
+            label: '快速体验',
+          },
+          {
             type: 'dropdown',
             label: '源代码',
             position: 'left',
@@ -96,14 +110,14 @@ const config = {
               }
             ],
           },
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // },
           {
-            href: 'https://primihub.com/index.html#scenario',
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://primihub.com/index.html#/scenario',
             label: '解决方案',
-            position: 'left'
+            position: 'left',
           },
         ],
       },
@@ -152,6 +166,14 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/primihub/primihub',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/OpenPrimi',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCmbSodM232zm_Jod-z4Bv4A/featured',
               },
               {
                 label: '关于PrimiHub',

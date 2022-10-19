@@ -5,13 +5,11 @@ sidebar_position: 2
 # 快速试用管理平台
 
 ## 服务试用
-当前提供了三个试用平台：
+当前提供了三个体验平台：
 
-http://node1.primihub.com
-
-http://node2.primihub.com
-
-http://node3.primihub.com
+* https://node1.primihub.com
+* https://node2.primihub.com
+* https://node3.primihub.com
 
 可在原语官网申请试用：https://primihub.com
 

@@ -34,5 +34,9 @@
   "item.label.Gitee": {
     "message": "Gitee",
     "description": "Navbar item with label Gitee"
+  },
+  "item.label.快速体验": {
+    "message": "Try It",
+    "description": "Have a quick try"
   }
 }
