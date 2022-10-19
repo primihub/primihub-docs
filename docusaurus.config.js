@@ -91,7 +91,7 @@ const config = {
                 label: 'Gitee'
               },
               {
-                href: 'https://gitcode.net/primihub/primihub',
+                href: 'https://gitcode.net/primihub',
                 label: 'GitCode'
               }
             ],
