@@ -8,24 +8,24 @@ sidebar_position: 2
 
 :::tip
 
-👨‍🎓 本文档面向安全协议开发和算法开发的工程师
+👨‍🎓 This document is intended for security protocol development and algorithm development engineers
 
-🕗 适用于PrimiHub v1.0 版本
+🕗 Works with PrimiHub v1.0
 
 :::
 
-## 如何开发一个新的多方安全计算协议
+## How to develop a new multi-party secure computation protocol
 
 
 ### 要继承实现的类
-1. 算子（ Envaluator）
+1. Envaluator
 用于计算共享数据，以乘法举例
 
 ```c++
 sf64Matrix<D> Envaluator::mul(const sf64Matrix<D>& left, const sf64Matrix<D>& right)；
 ```
 
-2.  密文数据表示 （Encryptor）
+2. Encryptor
 使用通信子与参与方交换数据，表示为本地数据。以int数据为例
 
 ```c++

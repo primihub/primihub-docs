@@ -2,15 +2,15 @@
 sidebar_position: 1
 ---
 
-# Compile
+# Build
 
-## Compile Tools
+## Build Tools
 
-bazel 5.0.0， 安装和配置见[这里](https://docs.bazel.build/versions/5.0.0/install.html)
+bazel 5.0.0， installation and configuration see [here](https://docs.bazel.build/versions/5.0.0/install.html)
 
-Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 文件
+Linux environment configuration refer to [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 
 
-以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
+For `ubuntu 20.04` ，run the following command to set up the base environment
 ```
 $ apt update 
 $ apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
@@ -19,30 +19,29 @@ $ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr
 
 $ npm install -g @bazel/bazelisk
 ```
-## 获取代码
+## Get the code
 
 ```bash
 $ git clone https://github.com/primihub/primihub.git
 ```
 
-## 编译
-:::tip 如果你无法直接访问github等开源代码仓库，需要自行设置代理，并设置*** HTTPS_PROXY *** 环境变量
-  
-  比如： HTTPS_PROXY=http://127.0.0.1:7890
+## Build
+:::tip  If you don't have direct access to an open source repository like github, you'll need to set up your own proxy and set the *** HTTPS_PROXY ***   environment variable  
+  Example： HTTPS_PROXY=http://127.0.0.1:7890
 
 :::
 
 ### linux
-* 依赖环境
-  gcc-8，g++-8，python3.7及以上，python3.7-dev，cmake-3.20
-* 编译
+* Environment
+  gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
+* Build
 ```bash
 $ ./pre_build.sh
 $ bazel build --config=linux :node :cli :opt_paillier_c2py
 ```
 
 ### mac
- * 依赖环境 clang 12+，python3.7及以上，cmake-3.20
+ * environment: clang 12+，python3.7 and higher，cmake-3.20
  
  * Apple Intel CPU
  
@@ -67,7 +66,7 @@ $ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
 
 ### windows 
 
-***TODO 待测***
+***TODO ***
 
 ```bash
 $ ./pre_build.sh
@@ -75,25 +74,25 @@ $ bazel build --config=windows :node :cli :opt_paillier_c2py
 ```
 
 ### docker
-使用代码根目录下的Dockerfile进行docker镜像编译
+Use the Dockerfile in the root directory to build the docker image
 
 ```
 $ docker build -t primihub/primihub-node .
 
 ```
-如果`build`时有依赖包下载不下来的情况，可通过如下命令在`build`时加上代理
+If the dependencies can't be downloaded during `build`, you can add a proxy to `build` by running the following command
 ```
-$ docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "HTTPS_PROXY=http://你的代理地址" -t primihub/primihub-node .
+$ docker build --build-arg "HTTP_PROXY=http://your proxy address" --build-arg "HTTPS_PROXY=http://your proxy address" -t primihub/primihub-node .
 ```
 
 
-:::caution Apple M1 docker 编译问题
+:::caution Apple M1 docker build problems
 
-在Apple M1设备上进行docker镜像编译，使用bazel 5.0.0会编译出错，这是bazel的bug，具体的问题见[bazel github issue #13925](https://github.com/bazelbuild/bazel/issues/13925)， 需要修改代码下的.bazelvsersion 文件内容为 `4d900ceea12919ad62012830a95e51f9ec1a48bb`
+When building docker images on Apple M1 devices, bazel 5.0.0 will cause build errors, which is a bug in bazel. Specific question see [bazel github issue #13925](https://github.com/bazelbuild/bazel/issues/13925), Need to modify the code .bazelvsersion file contents of `4d900ceea12919ad62012830a95e51f9ec1a48bb`
 
 :::
 
-## 编译常见问题
- 1. Bazel编译新增平台和工具链问题见[这里](https://docs.bazel.build/versions/5.0.0/platforms-intro.html)
+## Build FAQ
+ 1. Bazel build new platform and toolchain issues see[Here](https://docs.bazel.build/versions/5.0.0/platforms-intro.html)
 
      

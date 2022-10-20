@@ -7,25 +7,25 @@ sidebar_position: 2
 
 *** FL Task Parameters Description ***
 
-创建联邦学习任务需要使用以下参数组合 `--task_lang=python --task_type=0`, 并通过`task_code`参数指定要运行的联邦学习python代码。
+Creating a FL task requires the following parameters:`--task_lang=python --task_type=0`,and  specify the FL python code to run via the `task_code` parameter.
 
 
-举例：启动一个联邦学习xgboost任务：
+Example: launching a FL xgboosttask：
 
-如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+If starting with docker-compose, enter the node0_primihub container by running `docker exec -it node0_primihub bash` ，and run the following command：
 
 ```bash
 ./primihub-cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
-如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+If starting locally, run the following command from the compiled root directory:
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
 :::tip
-如果遇到报错 "No module named 'primihub'", 在代码根目录下执行以下命令安装 primihub 平台库
+If you get the error "No module named 'primihub'", run the following command from the root directory to install the primihub platform library
 :::
 
 ```bash
@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 python3 setup.py install
 ```
 
-分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的路径验证生成的结果文件是否正确
+Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
 ```
 node0:
 ...
@@ -85,21 +85,21 @@ I20220922 03:54:01.563899    26 fl_task.cc:195] <<<<<<<<< 🐍 Execute Python Co
 I20220922 03:54:01.563971    26 model.cc:68] get task status event: 200 SUCCESS , clientId:
 W20220922 03:54:01.563983    26 model.cc:84] session not found for task status event: 200
 ```
-## 参数说明
+## Parameter Description
 
-| 参数| 数据类型 | 参数示例 | 参数说明
+| parameter| data type | example | parameter description
 | ---- | ---- | ---- | ---- |
-| params.predictFileName | STRING | /data/result/prediction.csv | 预测结果文件，仅出现在Host方 |
-| params.indicatorFileName | STRING | /data/result/indicator.json | 模型评估指标结果文件，仅出现在Host方 |
-| params.hostLookupTable | STRING | /data/result/hostlookuptable.csv | Host方特征分割点结果文件|
-| params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest方特征分割点结果文件 |
-| params.modelFileName  | STRING | /data/result/host/model  | 树结构保存路径，仅出现在Host方 |
+| params.predictFileName | STRING | /data/result/prediction.csv | prediction result file, only appears at Host |
+| params.indicatorFileName | STRING | /data/result/indicator.json | model evaluation metrics result file, appearing only at Host |
+| params.hostLookupTable | STRING | /data/result/hostlookuptable.csv | Host feature split point result file|
+| params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest feature split point result file |
+| params.modelFileName  | STRING | /data/result/host/model  | The tree structure holds paths that occur only at Host |
 
-在python文件中，算法开发者可以使用primihub python api指定：
-* 使用的数据集
-* 算法使用的安全协议
+In a python file, the algorithm developer can specify using the primihub python api:
+* Dataset to use
+* The security protocol used by the algorithm
 
-关键的api如下：
+The key apis are as follows:
 ```python
 import primihub as ph
 

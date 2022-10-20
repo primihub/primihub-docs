@@ -6,7 +6,7 @@ sidebar_position: 0
 
 ***How to install***
 
-## 下载
+## Download
 
 ```
 git clone https://github.com/primihub/primihub.git
@@ -14,22 +14,22 @@ cd primihub/python
 ```
 
 :::tip
-建议新建虚拟环境，在虚拟环境中进行以下操作。
+It is recommended to create a new virtual environment, in which the following actions are performed
 :::
 
-## [编译](https://docs.primihub.com/docs/developer-docs/build)
+## [Compile](https://docs.primihub.com/docs/developer-docs/build)
 
-参考[编译说明](https://docs.primihub.com/docs/developer-docs/build)
+Refer to[Compile Description](https://docs.primihub.com/docs/developer-docs/build)
 :::tip
-导入primihub package 需要引用primihub c++底层的SDK，所以这里需要先进行编译。
+Importing the primihub package requires a reference to the primihub c++ low-level SDK, so we need to compile it first.
 :::
 
-## 安装
+## Install
 
 :::tip
-要想正确的安装primihub python sdk，注意要使用和编译primihub同样的Python解释器。
+To properly install the primihub python sdk, be sure to use the same Python interpreter used to compile primihub.
 :::
 
-1. 执行 `pip install --no-cache-dir  --force-reinstall -Iv grpcio grpcio_tools`
+1. Run `pip install --no-cache-dir  --force-reinstall -Iv grpcio grpcio_tools`
 
-2. 安装 primihub， 执行 `python setup.py install --user`
+2. Install primihub， and run `python setup.py install --user`

@@ -13,32 +13,32 @@ $ cd primihub/python
 ```
 
 
-## 快速验证明文纵向XGBoost
+## Fast verification of plaintext longitudinal XGBoost
 
-1. 安装所需包 `pip3 install -r requirements.txt` ，
+1. Install the required package `pip3 install -r requirements.txt` ，
 
-2. 安装 primihub 平台库， `python setup.py install --user` ，
+2. Install primihub platform libraries， `python setup.py install --user` ，
 
-3. 运行明文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb.py` 。
-
-
-## 快速验证密文纵向XGBoost（基于Paillier）
-
-1. 编译Paillier共享库，`bazel build --config=linux :opt_paillier_c2py_test` ，
-
-2. 将共享库复制到指定目录下，`cp bazel-bin/opt_paillier_c2py.so python/primihub/primitive/` ，
-
-3. 安装所需包 `pip3 install -r requirements.txt` ，（如果上一个应用已执行则忽略）
-
-4. 安装 primihub 平台库， `python setup.py install --user` ，
-
-5. 运行密文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb_en.py` 。
+3. Run the plaintext longitudinal XGBoost test application，`python python/primihub/tests/test_disxgb.py` 。
 
 
-## XGBoost原理
-### 目标函数
-#### 原始目标函数
-原始目标函数分为两个部分：一部分是损失函数，一部分是正则（用于控制模型的复杂度）。
+## Fast Verification of ciphertext Longitudinal XGBoost (Paillier based)
+
+1. Compile the Paillier shared library，`bazel build --config=linux :opt_paillier_c2py_test` ，
+
+2. Copy the shared library to the specified directory，`cp bazel-bin/opt_paillier_c2py.so python/primihub/primitive/` ，
+
+3. Install the required package `pip3 install -r requirements.txt` ，(Ignored if the previous application has already been executed)
+
+4. Install primihub platform libraries， `python setup.py install --user` ，
+
+5. Run the ciphertext longitudinal XGBoost test application，`python python/primihub/tests/test_disxgb_en.py` 。
+
+
+## XGBoost theory
+### The objective function
+#### Original objective function
+The original objective function has two parts: a loss function and a regularization (which controls the complexity of the model).
 
 对于第t棵树，第i个样本，模型的预测值为:$\hat{y}_{i}^{t}=\sum_{k=1}^{t}f_{k}(x_{i})=\hat{y}_{i}^{t-1}+f_{t}(x_{i})$。
 

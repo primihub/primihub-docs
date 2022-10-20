@@ -11,16 +11,16 @@ sidebar_position: 1
 ![Info](./primihub_and_gramine_logo.jpg)
 
 
-PrimiHub使用了Gramine Library OS作为可信计算环境（TEE）运行的支持。
+PrimiHub uses Gramine Library OS to support trusted computing environment (TEE)
 
 
-有这样的TEE使用场景：
+There are some use cases for TEE:
 
 ![SGX_Nodes](./SGX-Nodes.svg)
 
-两个数据所有者Bob和Alice有不同的敏感数据集，其他人想要用他们的数据训练一个模型，但他们都不能访问或查看对方的数据，因为数据是敏感的。
+Two data owners, Bob and Alice, have different sensitive datasets, and someone else wants to train a model with their data, but neither of them can access or view each other's data because the data is sensitive.
 
-PrimiHub Node集群中节点的角色分为：调度节点、可信计算环境执行节点、数据提供节点。
+The roles of nodes in PrimiHub Node cluster are: scheduler node, trusted computing environment execution node, and data provider node.
 
 任务发起方从CLI发起TEE计算任务，调度节点将给数据所有者Bob和Alice的数据提供角色节点发送TEE任务执行的调度命令，Bob和Alice的数据提供节点将向Gramine SGX运行的可信计算环境执行节点发送数据，并在可信环境中执行用户指定的计算，比如模型聚合计算。
 
@@ -71,8 +71,8 @@ PrimiHub Node集群中节点的角色分为：调度节点、可信计算环境�
 ### 联邦学习
 支持更复杂应用场景的联邦学习算法在TEE环境中执行。
 
-### 远程证明
-远程证明允许硬件实体或硬件和软件的组合获得敏感数据提供方或外包方的信任。
+### Remote attestation
+Remote attestation allows hardware entities or combinations of hardware and software to gain the trust of sensitive data providers or outsourcers.
 
 证明结果提供：
 - 被证明的软件的身份
