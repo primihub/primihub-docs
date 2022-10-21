@@ -7,21 +7,21 @@ sidebar_position: 3
 
 *** PSI Task Parameters Description ***
 
-创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type=3`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
+创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type=3`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。Creating a PSI task requires the following parameters:`--task_type=3`,the `params` parameter specifies the required client and server datasets,the `input_datasets` parameter specifies which datasets are in the' params' parameter
 
-如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+If starting with docker-compose, enter the node0_primihub container by running `docker exec -it node0_primihub bash` ，and run the following command：
 
 ```bash
 ./primihub-cli --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
 ```
 
-如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+If starting locally, run the following command from the compiled root directory:
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
 ```
 
-分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
+Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
 
 ```
 node0:
@@ -51,9 +51,9 @@ I20220922 07:16:06.321435    26 node.cc:169]  🤖️ Start create worker node2
 I20220922 07:16:06.321442    26 node.cc:173]  🤖️ Fininsh create worker node2
 I20220922 07:16:06.345343    26 psi_client_task.cc:257] Save PSI result to /data/result/psi_result.csv.
 ```
-## 参数说明
+## Parameter Description
 
-| 参数| 数据类型 | 参数示例 | 参数说明
+| parameter| data type | example | parameter description
 | ---- | ---- | ---- | ---- |
 | params.clientData | STRING | psi_client_data | 该参数值为psi服务的客户端数据标识符，系统调度节点通过该标识符找到注册该数据的工作节点，将psi任务发往该工作节点。（当前在用例在node1中注册客户端数据，在config目录中的配置文件是primihub_node1.yaml，添加数据的保存路径，设置该数据的description为"psi_client_data"，作为该数据标志符。标志符由用户自主设置，请求任务中的参数值与配置文件中的值保持一致）|
 | params.serverData | STRING | psi_server_data | 该参数值为psi服务的服务端数据标识符，系统调度节点通过该标识符找到注册该数据的工作节点，psi客户端节点将向该节点发送隐私求交请求。（用例中数据注册到节点node2中，数据注册方式与params.clientData参数说明描述相同）|

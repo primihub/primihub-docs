@@ -4,29 +4,30 @@ sidebar_position: 11
 
 # PrimiHub Open Source Community Governance
 
-为了给对 PrimiHub 项目感兴趣的人营造一个自由学习交流的空间，现推出 PrimiHub 开源社区。欢迎小伙伴踊跃发言～
+In order to create a space for people interested in the PrimiHub project to learn and communicate freely, the PrimiHub open source community is launched. Welcome to speak～
 
-在社区组织架构下面，下设三个不同的组织，PMC，User Group，Developer Group。  
+Under the community organization structure, there are three different organizations, PMC, User Group and Developer Group.  
 
-![架构图片](/img/organizationChart.png)
+![Architecture image](/img/organizationChart.png)
 
 ## PMC
-社区的顶层治理架构我们借鉴了 Apache 基金会的 PMC(Project Management Committee) 概念，即项目管理委员会，参与 PrimiHub 社区项目 PrimiHub 制定以及社区相关的重大决议。
+Top-level governance structure of the community We draw on the Apache Foundation concept of PMC(Project Management Committee), which is the project management committee that participates in the PrimiHub community project creation and major decisions related to the community.
 
 ## User Group
-User Group，即 PrimiHub User Group（PUG）是由 PrimiHub 用户发起的独立、非盈利的第三方组织，用户实行自我管理，旨在加强 PrimiHub 用户之间的交流和学习。TUG 的形式包括但不限于线上问答和技术文章分享、线下技术沙龙、走进名企、官方互动活动等等。TUG 成员可以通过线上、线下的活动，学习前沿技术知识，发表技术见解，共同建设 PrimiHub 项目。
-随着 PrimiHub 产品的成熟，PrimiHub 用户群体愈发壮大，用户在使用过程中遇到的问题反馈及实践经验，对于 PrimiHub 产品的完善及应用推广有着不可忽视的重要作用，希望用户与开发者有更好的交流互动，一起推动 PrimiHub 社区的健康发展。
+PrimiHub User Group (PUG), is an independent, non-profit, third-party organization initiated by PrimiHub users, which is self-administered by users and aims to enhance communication and learning among PrimiHub users. The forms of TUG include but are not limited to online Q&A and technical article sharing, offline technology salon, entering famous enterprises, official interactive activities, etc. TUG members can learn cutting-edge technology knowledge, express technical opinions, and jointly build PrimiHub projects through online and offline activities.
+
+With the maturity of PrimiHub products, PrimiHub user groups are growing. The problem feedback and practical experience encountered by users in the use process play an important role in the improvement of PrimiHub products and application promotion. It is hoped that users and developers can have better communication and interaction. Work together to promote a healthy PrimiHub community.
 
 ## Developer Group
-Developer Group，就是大家常说的开发者社区。在开发者社区中，包含大家耳熟能详的Contributor，Committer 和 Maintainer 。
+The Developer Group is often referred to as the developer community. In the developer community, it includes the well-known Contributor, Committer and Maintainer.
 
-![架构图片](/img/DeveloperGroup.png)
+![Architecture image](/img/DeveloperGroup.png)
 
 
-考虑到以后随着PrimiHub社区中项目越来越多，本身 PrimiHub 和 PrimiManager 项目也越来越复杂，所以 PrimiHub 社区引入了 特别兴趣小组（Special Interest Group，简称 SIG） 治理概念:   
+In view of the increasing number of projects in the PrimiHub community and the increasing complexity of PrimiHub and PrimiManager projects, the PrimiHub community introduced Special Interest groups (Special Interest groups). SIG) governance concept:   
   
 
-> 特别兴趣小组（Special Interest Group，简称 SIG），特别兴趣小组是一个非常古老的词语，它最早出现在上世纪 70 年代，因为 ARPAnet 网络所形成的各种 mailing list 邮件组，这个也是开源社区的雏形。PrimiHub 社区也沿用了这么一个古老且广泛应用于开源社区的组织形式（词语）。SIG 主要负责例如 PrimiHub 某个模块的开发和维护工作，对该模块代码的质量负责。满足条件的 Contributor 将被邀请加入专项兴趣小组，开发者们将在专项兴趣小组中获得来自 Tech Lead 们以及小组活跃 Committer 的持续指导，一边锻炼技术能力，一边优化和完善该模块。社区开发者们可通过专项兴趣小组逐渐从初始的 Contributor 成长为受到社区认可的Committer 和 Maintainer。一般而言每个专项兴趣小组都会周期性的组织会议，讨论最近进展和遇到的问题，所有的会议讨论都公开在社区上，方便感兴趣的同学一起参与和讨论。  
+> Special Interest Group (SIG), special interest group is a very old term, it first appeared in the 1970s, because the ARPAnet network formed a variety of mailing list mail groups, which is also the embryo of the open source community. The PrimiHub community also uses an old and widely used form of organization in the open source community. SIG is mainly responsible for the development and maintenance of a module, such as PrimiHub, and is responsible for the quality of the module code. The contributors who meet the conditions will be invited to join the special interest group, where developers will receive continuous guidance from Tech Lead and active Committer to improve and optimize the module while practicing their technical ability. Community developers can gradually grow from initial contributors to community recognized committers and maintainers through special interest groups. In general, each special interest group will organize periodic meetings to discuss recent progress and problems encountered. All the meetings are open to the community, so that interested students can participate and discuss together.  
   
 
-在PrimiHub项目中，PrimiHub 社区将其划分为：SIG of FL（联邦学习兴趣小组）、SIG of TEE（可信隐私计算小组）、SIG of HE（同态加密兴趣小组）、SIG of MPC（多方安全计算隐私小组）、SIG of HA(Hardware Acceleration，硬件加速兴趣小组)等
+In the PrimiHub project, the PrimiHub community divides it into: SIG of FL (Federated Learning Interest Group), SIG of TEE (Trusted Privacy Computing Group), SIG of HE (Homomorphic Encryption Interest Group), SIG of MPC (Multi-Party Secure Computing Privacy Group), SIG of HA(Hardware Acceleration group), Hardware Acceleration Interest Group)

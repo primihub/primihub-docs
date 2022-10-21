@@ -7,23 +7,22 @@ sidebar_position: 1
 
 *** MPC Task Parameters Description ***
 
-创建MPC任务需要使用以下参数组合`--task_lang=proto --task_type=0`, 并通过`task_code`参数指定要运行MPC算法。
-`params`参数指定了算法执行输入的参数, `input_datasets`参数指定了`params`参数中哪些参数是输入的数据集。
+Creating a MPC task requires the following parameters:`--task_lang=proto --task_type=0`, and specify the MPC algorithm to run via the `task_code` parameter.The`params`specifies the input parameters for the algorithm to execute.The `input_datasets`' parameter specifies which of the`params` parameters are the input datasets.
 
-举例：启动一个MPC的逻辑回归任务：
+Example: launching an MPC logistic regression task：
 
-如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+If starting with docker-compose, enter the node0_primihub container by running `docker exec -it node0_primihub bash`,and run the following command:
 
 ```bash
 ./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
 ```
 
-如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+If starting locally, run the following command from the compiled root directory: 
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
+./bazel-bin/cli --server="Your IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
 ```
-分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
+Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
 
 ```
 node0:
@@ -54,17 +53,18 @@ I20220922 07:43:23.195415    54 aby3_scheduler.cc:74] Node push task rpc succeed
 I20220922 07:43:23.196365    56 aby3_scheduler.cc:74] Node push task rpc succeeded.
 
 
-node1 和 node2 日志和 node0 类似，省略。
+node1 and node2 logs are similar to node0 and are omitted.
 ```
 
-上面的例子中，算法支持的参数名称在params中定义，`input_datasets`需要定义params中`TrainData` `TestData`是使用的数据集, 这两个参数中各有3个数据集参与本次计算任务。
+上面的例子中，算法支持的参数名称在params中定义，`input_datasets`需要定义params中`TrainData` `TestData`是使用的数据集, 这两个参数中各有3个数据集参与本次计算任务。In the above example, the parameter names of the algorithm are defined in params, 
 
-## 参数说明
+## Parameter Description
 
-| 参数| 数据类型 | 参数示例 | 参数说明
+| parameter| data type | example | parameter description
 | ---- | ---- | ---- | ---- |
-| params.BatchSize | INT32 | 128 | 数据大小 |
-| params.NumIters | INT32 | 100 | 迭代次数 |
-| params.TrainData | STRING | train_party_0;train_party_1;train_party_2 | 训练数据集 |
-| params.TestData | STRING | test_party_0;test_party_1;test_party_2 | 测试数据集 |
+| params.BatchSize | INT32 | 128 | data size |
+| params.NumIters | INT32 | 100 | iterations
+ |
+| params.TrainData | STRING | train_party_0;train_party_1;train_party_2 | training dataset |
+| params.TestData | STRING | test_party_0;test_party_1;test_party_2 | testing dataset |
 

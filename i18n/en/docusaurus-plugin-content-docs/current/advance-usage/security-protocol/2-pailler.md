@@ -7,71 +7,71 @@ sidebar_position: 2
 
 *** A low-level optimized implementation of the Paillier cryptosystem ***
 
-:::tip 主要依据的论文
+:::tip The main basis of the paper
 
 Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and Decryption[C]//Annual Computer Security Applications Conference. 2021: 106-118.
 
 :::
 
 
-:::tip 💐 致谢
+:::tip 💐 Acknowledge
 
- 感谢蚂蚁集团 Huanyu ma ，阿里巴巴双子座实验室 Cheng Hong 在实现、优化过程中的帮助与指导。
+Thanks to Huanyu ma of Ant Group and Cheng Hong of Alibaba Gemini Lab for their help and guidance in the process of implementation and optimization.
 
 :::
 
 ## c++ API
 
 ### opt_paillier_keygen
-该函数实现了改良的密钥生成逻辑，支持高效地生成112 bit安全级别的密钥对。
+This function implements an improved key generation logic to efficiently generate 112 bit key pairs.
 
 ### opt_paillier_set_plaintext, opt_paillier_get_plaintext
- set函数实现了正负整数向明文域的编码。get函数实现了明文域向整数的编码。
+ The set function encodes positive and negative integers into the plaintext field. The get function encodes the plaintext field into an integer.
 
 ### opt_paillier_encrypt
-实现了无需私钥参与的加密算法，
+This function implements the encryption algorithm without using the private key
 
 ### opt_paillier_encrypt_crt
-在加密方使用自己的公钥加密时，可调用需私钥参与的基于中国剩余定理的加密优化实现。
+When the encryption party uses its own public key to encrypt, it can call the encryption optimization implementation based on the Chinese Remainder theorem that requires the private key.
 
 ### opt_paillier_encrypt_crt_fb
-基于fixed-base优化算法，设置了滑动窗口大小为4 bit，同时使用了中国剩余定理优化，可进一步提升加密效率。
+Based on fixed-base optimization algorithm, the sliding window size is set to 4 bit, and the Chinese remainder theorem optimization is used to further improve the encryption efficiency.
 
 ### opt_paillier_decrypt
-实现了Paillier解密算法
+This function implements the Paillier decryption algorithm
 
 ### opt_paillier_decrypt_crt
-实现了基于中国剩余定理的解密优化算法，此外在合数模分解之上实现了指数优化算法。
+This function implements the decryption optimization algorithm based on the Chinese Remainder theorem. In addition, it implements the exponential optimization algorithm on the modular decomposition of composite.
 
 ### opt_paillier_add
-实现了同态加法，需传入两个密文，输出同态加法的密文结果。
+This function implements homomorphic addition, which takes two ciphertexts and outputs the ciphertext result of homomorphic addition.
 
 ### opt_paillier_constant_mul
-实现了常量乘法，其中op1是密文，op2是明文，输出op2乘以op1加密的明文的密态结果。
+This function implements constant multiplication, where op1 is the ciphertext and op2 is the plaintext, and outputs op2 multiplied by the encrypted plaintext of op1.
 
 ### opt_paillier_freepubkey，opt_paillier_freeprvkey
-内存资源的释放接口。
+This is the release interface for memory resources.
 
 ## Python API
 ### opt_paillier_c2py_warpper
 
 ##### class Opt_paillier_public_key(object)
 
-> Opt Paillier公钥类：存储公钥的信息。
+> Opt Paillier Public key class: Stores information about the public key.
 
 ##### class Opt_paillier_secret_key(object)
 
-> Opt Paillier私钥类：存储私钥的信息。
+> Opt Paillier Private Key class: Stores information about the private key.
 
 ##### class Opt_paillier_ciphertext(object)
 
-> Opt Paillier密文类：存储密文的信息。
+> Opt Paillier ciphertext class: Stores the information of the ciphertext.
 
 ##### function opt_paillier_keygen(k_sec)
 
-> 公私钥对生成函数
+> Public and private key pair generation function
 >
-> **Parameters**：k_sec - 加密标识，默认为112
+> **Parameters**：k_sec - Cryptographic identifier; default is 112
 > 
 > **Returns**：
 > 
@@ -81,14 +81,14 @@ Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and D
 
 ##### function opt_paillier_encrypt_crt(pub, prv, plain_text)
 
->CRT加密函数：该加密函数会同时使用公私钥优化加密过程
+>CRT encryption function: This encryption function optimizes the encryption process using both the public and private keys
 >
 >**Parameters**：
 > pub - Opt_paillier_public_key, 
 > 
 > prv - Opt_paillier_secret_key, 
 > 
-> plain_text - int 最大支持2048位
+> plain_text - int Up to 2048 bits are supported
 >
 >**Returns**：
 > 
@@ -96,16 +96,16 @@ Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and D
 
 ##### function opt_paillier_encrypt(pub, plain_text)
 
-> 加密函数：使用公钥加密明文plain_text
+> Encryption function: Encrypts plain_text with the public key
 > **Parameters**：
 > pub - Opt_paillier_public_key
 > 
-> plain_text - int 最大支持2048位
+> plain_text - int Up to 2048 bits are supported
 > **Returns**：cipher_text - Opt_paillier_ciphertext 
 
 ##### function opt_paillier_decrypt_crt(pub, prv, cipher_text):
 
-> 解密函数：同时使用公私钥解密密文
+> Decryption function: Decrypt the ciphertext using both public and private keys
 > **Parameters**：
 > 
 > pub - Opt_paillier_public_key
@@ -113,11 +113,11 @@ Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and D
 > prv - Opt_paillier_secret_key
 > 
 > cipher_text- Opt_paillier_ciphertext
-> **Returns**：decrypt_text_num - int 解密出来的整型明文
+> **Returns**：decrypt_text_num - int :Decrypted integer plaintext
 
 ##### function opt_paillier_add(pub, op1_cipher_text, op2_cipher_text)
 
-> 密文加法函数：计算两个密文的同态加法
+> Ciphertext addition function: computes the homomorphic addition of two ciphertexts
 > **Parameters**：
 > 
 > pub - Opt_paillier_public_key
@@ -126,7 +126,7 @@ Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and D
 > 
 > op2_cipher_text- Opt_paillier_ciphertext
 > 
-> **Returns**：add_res_cipher_text - Opt_paillier_ciphertext 两个密文的同态加结果的密文
+> **Returns**：add_res_cipher_text - Opt_paillier_ciphertext:The ciphertext of the homomorphism of the two ciphertexts plus the result
 
 ##### opt_paillier_c2py_test.py
 
@@ -134,11 +134,11 @@ Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and D
 
 ```bash
 cd {your location}/primihub
-bazel build --config=linux :opt_paillier_c2py_test // 编译opt_paillier_c2py_warpper调用demo
-bazel-bin/opt_paillier_c2py_test // 运行demo
+bazel build --config=linux :opt_paillier_c2py_test // compile opt_paillier_c2py_warpper call demo
+bazel-bin/opt_paillier_c2py_test // run demo
 ```
 
-demo执行结果实例
+demo executes the resulting instance
 
 ```bash
 ==================KeyGen is finished==================
@@ -156,52 +156,52 @@ checked: [1, 1, 1, 1]
 
 ##### class Opt_paillier_pack_ciphertext(object)
 
->	Opt Paillier包密文类：存储包密文的信息。将多条明文打包，然后加密得到一个密文，称该密文为包密文。
+>	Opt Paillier packet ciphertext class: Stores information about the packet ciphertext. Multiple plaintexts are packaged and then encrypted to obtain a ciphertext, which is called packet ciphertext.
 > 
 >	Attributes：	
-> ciphertexts - 密文列表。由于Opt Paillier的密文域有限，当明文数量超过阈值时，实际加
+> ciphertexts - Cipher list.由于Opt Paillier的密文域有限，当明文数量超过阈值时，实际加
 > 得到的是密文列表。
 >
-> pack_size - 该包密文含有的明文数量
+> pack_size - The number of plaintexts in the ciphertext of the packet
 >
-> crtMod - 密文打包参数
+> crtMod - Ciphertext packing parameters
 
 ##### function **opt_paillier_pack_encrypt_crt**(pub, prv, plain_text_list, crt_mod = None):
-> CRT打包加密函数：该加密函数会同时使用公私钥优化打包加密过程。多条明文会加密到一个包密文中。
+> CRT bundle encryption function: This function optimizes the bundle encryption process using both public and private keys. Multiple plaintexts are encrypted into a single packet ciphertext.
 >  **Parameters**：
 > 
 > pub - Opt_paillier_public_key
 > 
 > prv - Opt_paillier_secret_key
 > 
-> plain_text_list - 打包加密的明文列表，每个明文都是int类型，每个int最大可为70bit
+> plain_text_list - A list of encrypted plaintexts, each of which is an int with a maximum size of 70 bits
 > 
-> crt_mod - 包密文打包参数，若提供则使用所传入打包参数进行明文的打包与加密，否则使用一个随机的crt_mod
+> crt_mod - Package ciphertext packaging parameter, if provided, use the passed packaging parameter for plaintext packaging and encryption, otherwise use a random crt_mod
 >
 > **Returns**：
 > 
-> pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
+> pack_ciphertext - Opt_paillier_pack_ciphertext: pack_ciphertext. If crt_mod is passed，pack_ciphertext.crtMod=crt_mod。
 
 ##### function opt_paillier_pack_encrypt(pub, plain_text_list, crt_mod = None):
 
 > 
-> 打包加密函数：该加密函数使用公钥对一批明文进行打包加密。一批中的多条明文会加密到一个包密文中。
+> Packing encryption function: This encryption function encrypts a batch of plaintext using a public key. Multiple plaintexts in a batch are encrypted into a single packet ciphertext.
 > 
 > **Parameters**：
 > 
 > pub - Opt_paillier_public_key
 > 
-> plain_text_list - 打包加密的明文列表，每个明文都是int类型，每个int最大可为70bit
+> plain_text_list - A list of encrypted plaintexts, each of which is an int with a maximum size of 70 bits
 > 
-> crt_mod - 包密文打包参数，若提供则使用所传入打包参数进行明文的打包与加密，否则使用一个随机的crt_mod
+> crt_mod - Package_ciphertext packaging parameter, if provided, use the passed packaging parameter for plaintext packaging and encryption, otherwise use a random crt_mod
 > 
 > **Returns**：
 > 
-> pack_ciphertext - Opt_paillier_pack_ciphertext 包密文。若传入了crt_mod，则pack_ciphertext.crtMod=crt_mod。
+> pack_ciphertext - Opt_paillier_pack_ciphertext :package_cipher.If crt_mod is passed，pack_ciphertext.crtMod=crt_mod。
 
 ##### function opt_paillier_pack_decrypt_crt(pub, prv, pack_cipher_text)
 
-> 包解密函数：同时使用公私钥解密包密文
+> Packet decryption function: Decrypt the packet _ciphertext using both public and private keys
 > 
 > **Parameters**：
 > 
@@ -211,11 +211,11 @@ checked: [1, 1, 1, 1]
 > 
 > pack_cipher_text - Opt_paillier_pack_ciphertext
 > 
-> **Returns**：decrypt_text_num_list - list 解密出来的整型明文列表
+> **Returns**：decrypt_text_num_list - list : A list of decrypted integer plaintexts
 
 ##### function opt_paillier_pack_add(pub, op1_pack_cipher_text, op2_pack_cipher_text)
 
-> 包密文加法函数：计算两个包密文的同态加法。传入的两个Opt_paillier_pack_ciphertext应拥有相同的pack_size以及crtMod。两个   	Opt_paillier_pack_ciphertext包内相同位置的数会相加。
+> Packet_ciphertext addition function: computes the homomorphic addition of two packet_ciphertexts. The two opt_paillier_pack_ciphertexts passed in should have the same pack_size and crtMod. Numbers at the same position within the two Opt_paillier_pack_ciphertext packages are added together.
 > 
 >**Parameters**：
 > 
@@ -225,7 +225,7 @@ checked: [1, 1, 1, 1]
 > 
 > op2_pack_cipher_text - Opt_paillier_pack_ciphertext
 > 
->**Returns**：add_res_cipher_text - Opt_paillier_pack_ciphertext两个包密文的同态加结果的包密文
+>**Returns**：add_res_cipher_text - Opt_paillier_pack_ciphertext:The homomorphism of two packet ciphertexts plus the resulting packet ciphertext
 
 ##### opt_paillier_pack_c2py_test.py
 
@@ -233,11 +233,11 @@ opt_paillier_pack_c2py_warpper的python调用demo
 
 ```bash
 cd {your location}/primihub
-bazel build --config=linux :opt_paillier_pack_c2py_test // 编译opt_paillier_pack_c2py_warpper调用demo
-bazel-bin/opt_paillier_pack_c2py_test // 运行demo
+bazel build --config=linux :opt_paillier_pack_c2py_test // compile opt_paillier_pack_c2py_warpper call demo
+bazel-bin/opt_paillier_pack_c2py_test // run demo
 ```
 
-demo执行结果实例
+demo executes the resulting instance
 
 ```bash
 ==================KeyGen is finished==================

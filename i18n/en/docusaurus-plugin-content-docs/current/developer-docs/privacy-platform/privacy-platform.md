@@ -5,6 +5,6 @@ sidebar_position: 1
 # Management platform Architecture
 ![primihub frame](/img/primihub_frame.png) 
 
-目前是由各业务方（包括gateway、service、node）分享资源到不同的中心节点（fusion），再通过各自业务方的网关（gateway）进行数据复制，审核和认证，最后通知多方的node节点进行联邦计算和MPC等任务。
+At present, various business parties (including gateway, service and node) share resources to different central nodes (fusion), and then perform data replication, audit and authentication through their respective business parties' gateways, and finally notify multi-party nodes for tasks such as federated computing and MPC.
 
-由于各个业务方的服务是独立部署的，且进行分享的数据只是数据的简介，并不会泄露真正的数据，而通过node节点任务的执行保证了隐私计算的一系列安全操作。
+Since the services of each business party are independently deployed, and the data shared is only a brief introduction of the data, and the real data will not be leaked, a series of secure operations of private computing are guaranteed through the execution of node node tasks.

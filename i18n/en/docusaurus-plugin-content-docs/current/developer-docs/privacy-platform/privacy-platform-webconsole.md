@@ -1,17 +1,17 @@
 # Management Platform Console
 ## Prepare Dependency
-会用到 [node](https://nodejs.org/en/), [git](https://git-scm.com/). 项目是以如下标准为基础的[ES2015+](https://es6.ruanyifeng.com/)、[Vue.Js](https://vuejs.org/)、[Vuex](https://vuex.vuejs.org/)、[Vue-Router](https://router.vuejs.org/)、[antv-x6](https://x6.antv.vision/zh) 和 [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/).
+[node](https://nodejs.org/en/), [git](https://git-scm.com/). The project is based on the following criteria [ES2015+](https://es6.ruanyifeng.com/)、[Vue.Js](https://vuejs.org/)、[Vuex](https://vuex.vuejs.org/)、[Vue-Router](https://router.vuejs.org/)、[antv-x6](https://x6.antv.vision/zh) and [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/).
 
-## 服务开始
-1.进入项目一下目录
+## Start the Services
+1.Go to the following directory
 ```bash
 cd primihub-webconsole
 ```
-2.安装npm依赖
+2.Install npm dependencies
 ```bash
 npm install
 ```
-3.修改“vue.config.js”这个文件中target变量, 改成需要连接的网关地址
+3.Change the target variable in the "vue.config.js" file to the address of the gateway you want to connect to
 ```bash
 proxy: {
   '/dev-api': {
@@ -24,12 +24,12 @@ proxy: {
   }
 }
 ```
-4.启动项目
+4.Start the project
 ```bash
 npm run dev
 
-## 浏览器支持
-当前大部分浏览器和ie 10+.
+## Browser support
+Most current browsers and ie 10+.
 
 <html>
  <head></head>

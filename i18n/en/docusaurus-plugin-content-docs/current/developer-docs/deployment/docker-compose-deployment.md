@@ -8,7 +8,7 @@ sidebar_position: 1
 To avoid port collisions and network segment collisions, try to use a clean machine
 :::
 
-### 拉取代码，执行脚本，完成部署
+### Pull the code, execute the script, and deploy
 
 ```bash
 git clone https://github.com/primihub/primihub-deploy.git
@@ -16,9 +16,9 @@ cd primihub-deploy/docker-deploy
 bash deploy.sh
 ```
 
-执行完成后请稍等几分钟等待数据库初始化和服务启动
+Once the execution is complete, wait a few minutes for the database to initialize and the service to start
 
-### 查看部署结果
+### View deployment results
 
 ```bash
 # docker-compose ps -a
@@ -45,23 +45,22 @@ rabbitmq2           "docker-entrypoint.s…"   rabbitmq2               running  
 rabbitmq3           "docker-entrypoint.s…"   rabbitmq3               running             25672/tcp
 ```
 
-### 使用说明
+### Instructions
 
-docker-compose.yaml 文件中的nginx1、nginx2、nginx3 模拟 3 个机构的管理后台，启动完成后在浏览器分别访问
+nginx1, nginx2, and nginx3 in docker-compose.yaml file simulate the management background of three institutions, and they can be accessed in the browser after starting
 
-http://机器IP:30811
+http://IP:30811
 
-http://机器IP:30812
+http://IP:30812
 
-http://机器IP:30813
+http://IP:30813
 
-默认用户密码都是 admin / 123456
+Default user and password admin / 123456
 
-具体的联邦建模、隐私求交、匿踪查询等功能的操作步骤请参考 [快速试用管理平台](/docs/quick-start-platform)
-
-### 停止服务
+Please refer to [Quick Start Management Platform](/docs/quick-start-platform) for detailed operation steps of federated modeling, privacy intersection, hiding whereabouts query and other functions.
+### Stop the Service
 
 ```bash
-# 在启动服务的目录下执行
+# Execute in the directory where the service was started
 docker-compose down
 ```

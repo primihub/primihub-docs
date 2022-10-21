@@ -8,20 +8,20 @@ sidebar_position: 0
 
 ***How to use Python SDK***
 
-## 简介
+## Introduction
 
 ![Introduction](./Primihub_CS_Des.drawio.png)
 
-## 前提
+## Precondition
 
-- 安装了primihub python sdk
-- 使用docker-compose启动节点应用，见[快速开始](https://docs.primihub.com/docs/quick-start)
+- Install the primihub python sdk
+- Use the docker - compose Start node application, see[Quick Start](https://docs.primihub.com/docs/quick-start)
 
-## Python Client 初始化
+## Python Client initialization
 
-1. 新建Python文件
+1. Creating a new Python file
 
-2. 在文件开头引入primihub cli
+2. Import the primihub cli at the top of the file
 
    ```python
    import primihub as ph
@@ -29,25 +29,25 @@ sidebar_position: 0
    from primihub import context, dataset
    ```
 
-3. client 初始化,输入正确的node信息，和证书地址（TODO）
+3. client initialization, enter the correct node information, and certificate address (TODO)
 
    ```python
    cli.init(config={"node": "node_address:node_port", "cert": ""})
    ```
 
-## 上传下载数据集
+## Upload and download the dataset
 
-- 上传、下载
+-  Upload and download
 
   ```python
   d = {'col1': [2, 3], 'col2': [3, 4], 'col3': [4, 5]}
   df = pd.DataFrame(d)
   
-  # 上传
+  #  Upload
   data_ref = ph.dataset.put(df, "test_dataset_key")
   print(data_ref)
   
-  # 下载
+  #  Download
   df_data = ph.dataset.get(data_ref)
   
   
@@ -57,11 +57,11 @@ sidebar_position: 0
 
 
 
-## 提交任务
+## Submit a task
 
-1. 定义你的远程方法
+1. Define your remote method
 
-   - host远程方法
+   - host remote method
 
    ```python
    # define a remote method
@@ -73,7 +73,7 @@ sidebar_position: 0
    
    ```
 
-   - guest 远程方法
+   - guest remote method
 
    ```python
    # define a remote method
@@ -84,7 +84,7 @@ sidebar_position: 0
        return value + 1
    ```
 
-2. 执行函数调用
+2. Call executive function
 
    ```python
     value1 = 1
@@ -93,7 +93,7 @@ sidebar_position: 0
     cli.start()
    ```
 
-3. ***联邦学习示例：***
+3. ***Federated Learning Example：***
 
    ```python
    # python sdk client demo

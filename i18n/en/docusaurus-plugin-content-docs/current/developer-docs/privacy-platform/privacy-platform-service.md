@@ -1,8 +1,8 @@
 # Manage Platform service Nodes
 Manage Platform service is build on spring cloud，and compiled with maven
 
-## 服务开始
-首先在启动项目之前需要用到以下依赖
+## Start the service
+First, you'll need the following dependencies before starting the project
 - [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
 - [maven](https://maven.apache.org/download.cgi)
 - [nacos 2.0.3](https://github.com/alibaba/nacos/releases/tag/2.0.3) or [2.0.4](https://github.com/alibaba/nacos/releases/tag/2.0.4)
@@ -10,15 +10,15 @@ Manage Platform service is build on spring cloud，and compiled with maven
 - [redis 5.0+](https://redis.io/download/)
 - [RabbitMQ](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.10.6)
 
-## 修改配置
-需要先找到这两个位置:
+## Modify the configuration
+Find the location first:
 
     ./application/src/main/resources/
     ./gateway/src/main/resources/
 
-编辑"application.yaml"这个文件，将里面的配置改成依赖部署的地址（默认激活的环境为dev，可修改application-dev.yaml）
+Edit the "application.yaml" file and change the configuration to the location of the dependency deployment (the default is dev, you can change application-dev.yaml)
 
-特别是下面这些配置项需要注意：
+In particular, look out for the following configuration options：
 
     server:
       port: 
@@ -35,7 +35,7 @@ Manage Platform service is build on spring cloud，and compiled with maven
       config:
         server-addr:
 
-然后定位到script文件夹:
+And then we go to this path:
 
     ./script
         base.json
@@ -44,9 +44,9 @@ Manage Platform service is build on spring cloud，and compiled with maven
         init.sql
         redis.yaml
 
-接下来我们需要登录nacos的配置地址(usually http://localhost:8848/nacos) ,创建 base.json,database.yaml,redis.yaml这三个文件到你所配置的namespace下
+Next we need to log in to nacos configuration address (usually http://localhost:8848/nacos), create base.json,database.yaml,redis.yaml configuration by the three files to your namespace
 
-然后修改这些配置的依赖地址.
+Modify the dependency addresses for these configurations.
 
     spring:
       datasource:
@@ -57,35 +57,35 @@ Manage Platform service is build on spring cloud，and compiled with maven
             password: 
 
 
-然后我们定位到这个路径:
+go to the path:
 
     ./script
         init.sh
 
-去这个路径下执行以下命令:
+Execute the following command:
 
     cd ./script
     sh init.sh [your mysql username] [your mysql password]
 
-或者在mysql管理端手动执行"ddl.sql".
+Or execute "ddl.sql" manually in the mysql admin.
 
-注意的是：在base.json中需要修改以grpc前缀配置node grpc的地址
+Note: In base.json, you need to change the address where node grpc is prefixed with grpc
 
 ## 编译打包
-在linux下需要运行以下命令
+Execute the following command:
 
     mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true -Dos.detected.classifier=linux-x86_64
 
-当操作系统是windows或者是mac需要改这个参数"-Dos.detected.classifier"，改为"windows-x86_64" or "osx-x86_64".
+For windows or mac, change "-Dos.detected.classifier" to "windows-x86_64" or "osx-x86_64".
 
-只要完成信息出现就编译成功了
+As soon as the completion message appears, the compilation is successful
 
-## 运行
-运行前需要确保所依赖的项目都是可用的而且配置文件都正确
+## Run
+Make sure the dependencies are available and the configuration files are correct before you run them
 
     java -jar -Dfile.encoding=UTF-8 ./application/target/*-SNAPSHOT.jar --server.port=8090
     java -jar -Dfile.encoding=UTF-8 ./gateway/target/*-SNAPSHOT.jar --server.port=8088
 
-在不同的终端执行上面两条命令，然后检查下列端口是否启动:
+After executing the command, check whether the following ports are open:
     
     http://localhost:8088/sys/user/login
