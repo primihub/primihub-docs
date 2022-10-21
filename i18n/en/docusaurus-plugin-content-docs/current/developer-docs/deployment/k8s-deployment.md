@@ -6,9 +6,9 @@ sidebar_position: 2
 
 ### Requirments
 
-- 拥有一个k8s集群
-- 安装了helm，版本3.1以上，如未安装可通过 [这里](https://github.com/helm/helm/releases) 下载对应版本
-- 确认集群存在默认的StorageClass（执行kubectl get sc 获取的结果中，结果中含有'(default)'配置，示例如下）
+- Have a k8s cluster
+- Installed the helm, version 3.1 above, if not installed by [here]](https://github.com/helm/helm/releases) to download the corresponding version
+- Make sure there is a default StorageClass for the cluster (kubectl get sc returns a '(default)' configuration, as shown in the following example)
 
 ```bash
 # kubectl get sc
@@ -16,27 +16,25 @@ NAME                            PROVISIONER      RECLAIMPOLICY   VOLUMEBINDINGMO
 managed-nfs-storage (default)   fuseim.pri/ifs   Delete          Immediate           false                  19d
 ```
 
-### 开始安装
+### Installation
 
 ```bash
 git clone https://github.com/primihub/primihub-deploy.git
 cd primihub-deploy/k8s-deploy
-export NAMESPACE="修改为你的namespace"
-bash primihub_deploy.sh （或执行python3 deploy.py）
+export NAMESPACE="your namespace"
+bash primihub_deploy.sh （or execute python3 deploy.py）
 ```
 
-执行完成后请耐心等待几分钟，镜像下载、数据初始化、服务启动等需要一点时间
+After the execution is complete, please be patient for a few minutes, it will take some time for image download, data initialization, service startup, etc
 
 :::tip
-目前配置中指定了platform的nodePort端口，如需在一个集群多个namespace下部署，请自行修改 
-charts/platformchart/templates/platform-svc.yaml 
-文件第3行的端口
+Specified in the configuration of the platform nodePort port, if you need in a cluster deployment across multiple namespace, please modify charts/platformchart/templates/platform-svc.yaml file 3 lines of port
 :::
 
-### 查看部署结果
+### View deployment results
 
 ```bash
-# kubectl get pod -n "你的namespace"
+# kubectl get pod -n "your namespace"
 NAME                            READY   STATUS    RESTARTS   AGE
 application1-5b4c6b457d-25mfk   1/1     Running   0          5d18h
 application2-68446f7887-wjdxp   1/1     Running   0          5d19h
@@ -57,29 +55,29 @@ rabbitmq3-5cd59678cc-jx59r      1/1     Running   0          5d20h
 redis-595ff4c87b-ph6n6          1/1     Running   0          5d20h
 ```
 
-### 使用说明
+### Instructions 
 
-所有服务启动完成后在浏览器分别访问
+All services are accessed separately in the browser after they are started
 
-http://k8s集群的任意一台机器的IP:30801
+http://IP of any machine in the k8s cluster:30801
 
-http://k8s集群的任意一台机器的IP:30802
+http://IP of any machine in the k8s cluster:30802
 
-http://k8s集群的任意一台机器的IP:30803
+http://IP of any machine in the k8s cluster:30803
 
-3 个管理后台模拟 3 个机构，默认用户密码都是 admin / 123456
+Three management backgrounds simulate three institutions, and the default user, password is admin / 123456
 
-管理后台的具体操作步骤请参考 [快速试用管理平台](/docs/quick-start-platform)
+Please refer to [Quick Trial Management Platform](/docs/quick-start-platform) for specific operation steps of management background.
 
-### 删除服务
+### Remove the service
 
-执行以下脚本，将删除以上安装的所有服务
+Executing the following script will remove all the services installed above
 ```bash
-export NAMESPACE="修改为你部署的namespace"
+export NAMESPACE="change to the namespace you deploy"
 bash primihub_delete.sh
 ```
 
-### k8s操作常用命令
+### k8s common operation commands
 
 ```bash
 kubectl get pod -n <namespace> 获取对应的pod信息

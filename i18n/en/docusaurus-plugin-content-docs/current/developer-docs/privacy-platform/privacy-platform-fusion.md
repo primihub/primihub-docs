@@ -1,20 +1,20 @@
 # Management Platform Center Node
 Management Platform Center Node is build on spring boot，and compiled with maven
-## 服务开始
-首先在启动项目之前需要用到以下依赖
+## Start the service
+First, you'll need the following dependencies before starting the project
 - [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
 - [maven](https://maven.apache.org/download.cgi)
 - [mysql 5.0+](https://dev.mysql.com/downloads/mysql)
 
 
-## 修改配置
-需要先找到这个位置:
+## Modify the configuration
+Find the location first::
 
     ./fusion-api/src/main/resources/
 
-编辑"application.yaml"这个文件，将里面的配置改成依赖部署的地址（默认激活的环境为dev，可修改application-dev.yaml）
+Edit the "application.yaml" file and change the configuration to the location of the dependency deployment (the default is dev, you can change application-dev.yaml)
 
-特别是下面这些配置项需要注意：
+In particular, look out for the following configuration options:
 
     server:
       port: 
@@ -30,30 +30,30 @@ Management Platform Center Node is build on spring boot，and compiled with mave
             url: 
             password: 
 
-然后我们定位到这个路径:
+And then we go to this path:
 
     ./script
         init.sh
 
-去这个路径下执行以下命令:
+Execute the following command:
 
     cd ./script
     sh init.sh [your mysql username] [your mysql password]
 
-或者在mysql管理端手动执行"init.sql".
+Or manually execute "init.sql" in mysql admin.
 
 ## 编译打包
-运行以下命令:
+Execute the following command:
 
     mvn clean install -Dmaven.test.skip=true 
 
-只要完成信息出现就编译成功了
+As soon as the completion message appears, the compilation is successful
 
-## 运行
-运行前需要确保所依赖的项目都是可用的而且配置文件都正确
+## Run
+Make sure the dependencies are available and the configuration files are correct before you run them
 
     java -jar -Dfile.encoding=UTF-8 ./fusion-api/target/*-SNAPSHOT.jar --server.port=8099
 
-执行完命令后检查下列端口是否启动:
+After executing the command, check whether the following ports are open:
     
     http://localhost:8099/fusion/healthConnection

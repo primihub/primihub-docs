@@ -4,20 +4,20 @@ sidebar_position: 10
 
 # FAQ
 
-1. 如果使用docker-compose启动遇到如下报错，是因为docker-compose版本太低，请升级docker-compose版本到2.x.x，如不方便升级版本可在docker-compose.yml文件第一行添加 `version: '2'` 解决。
+1. If you encounter the following error when starting with docker-compose, it is because docker-compose version is too low, please upgrade docker-compose version to 2.x.x. If it is not convenient to upgrade the version, add 'version: '2'' to the first line of docker-compose.yml file.
 ```bash
 ERROR: The Compose file './docker-compose.yml' is invalid because:
 Unsupported config option for services: 'node1'
 Unsupported config option for networks: 'testing_net'
 ```
 
-2. 如果使用 `primihub-cli` 发送测试命令时，提示如下错误，原因是机器配置太低，至少需要4核8G
+2. If you send a test command using 'primihub-cli', you get the following error, because the machine configuration is too low, requiring at least 4 cores and 8 gigabyte
 ```bash
 ERROR: Server Threadpool Exhausted
 ```
 
-3. 如果在启动node时遇到如下报错，请删除 `./localdb/*` 后再次启动
+3. If you get the following error when starting node, remove the `./localdb/*` and start again
 ```bash
 terminate called after throwing an instance of 'primihub::service::Error'
-已放弃 (核心已转储)
+abandoned (core dumped)
 ```
