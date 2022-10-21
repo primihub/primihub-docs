@@ -60,7 +60,7 @@
     "description": "The label of footer link with label=安装使用 linking to /docs/advance-usage/start-nodes"
   },
   "link.item.label.常见问题": {
-    "message": "Problems",
+    "message": "FAQ",
     "description": "The label of footer link with label=常见问题 linking to /docs/faq"
   },
   "link.item.label.成为贡献者": {

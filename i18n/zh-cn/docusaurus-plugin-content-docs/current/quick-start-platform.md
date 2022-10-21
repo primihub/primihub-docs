@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: PrimiHub 开源隐私计算平台免费试用
 ---
 
 # 快速试用管理平台

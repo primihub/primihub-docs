@@ -1,66 +1,44 @@
 {
-  "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+  "sidebar.tutorialSidebar.doc.quick-start": {
+    "message": "Quick Start"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics": {
-    "message": "Tutorial - Basics",
-    "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.quick-start-platform": {
+    "message": "Try It"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
-    "message": "5 minutes to learn the most important Docusaurus concepts.",
-    "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.core-concept": {
+    "message": "Core Concept"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
-    "message": "Tutorial - Extras",
-    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.advance-usage": {
+    "message": "Advanced Usage"
   },
-  "sidebar.tutorialSidebar.category.核心特性": {
-    "message": "核心特性",
-    "description": "The label for category 核心特性 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.create-tasks": {
+    "message": "Create Task"
   },
-  "sidebar.tutorialSidebar.category.核心特性.link.generated-index.description": {
-    "message": "了解PrimiHub的核心特性",
-    "description": "The generated-index page description for category 核心特性 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.security-protocol": {
+    "message": "Security Protocol"
   },
-  "sidebar.tutorialSidebar.category.进阶使用": {
-    "message": "进阶使用",
-    "description": "The label for category 进阶使用 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.federated-learning": {
+    "message": "Federated Learning"
   },
-  "sidebar.tutorialSidebar.category.进阶使用.link.generated-index.description": {
-    "message": "学习如何使用PrimiHub进行更复杂的操作",
-    "description": "The generated-index page description for category 进阶使用 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.python-sdk": {
+    "message": "Python SDK"
   },
-  "sidebar.tutorialSidebar.category.创建任务": {
-    "message": "创建任务",
-    "description": "The label for category 创建任务 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.developer-docs": {
+    "message": "Developer Guide"
   },
-  "sidebar.tutorialSidebar.category.创建任务.link.generated-index.description": {
-    "message": "创建不同类型的任务",
-    "description": "The generated-index page description for category 创建任务 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.platform": {
+    "message": "Platform"
   },
-  "sidebar.tutorialSidebar.category.安全协议": {
-    "message": "安全协议",
-    "description": "The label for category 安全协议 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.deployment": {
+    "message": "Deployment"
   },
-  "sidebar.tutorialSidebar.category.安全协议.link.generated-index.description": {
-    "message": "详细介绍安全协议",
-    "description": "The generated-index page description for category 安全协议 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.doc.faq": {
+    "message": "FAQ"
   },
-  "sidebar.tutorialSidebar.category.联邦学习": {
-    "message": "联邦学习",
-    "description": "The label for category 联邦学习 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.doc.community": {
+    "message": "Community"
   },
-  "sidebar.tutorialSidebar.category.联邦学习.link.generated-index.description": {
-    "message": "学习如何使用PrimiHub进行更复杂的操作",
-    "description": "The generated-index page description for category 联邦学习 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.开发者文档": {
-    "message": "开发者文档",
-    "description": "The label for category 开发者文档 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.开发者文档.link.generated-index.description": {
-    "message": "如何开发",
-    "description": "The generated-index page description for category 开发者文档 in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.doc.contact": {
+    "message": "Contact Us"
   }
 }

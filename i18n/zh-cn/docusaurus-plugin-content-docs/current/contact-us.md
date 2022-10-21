@@ -14,5 +14,3 @@ sidebar_position: 12
 欢迎关注我们的公众号和[slack主页](https://primihub.slack.com/join/shared_invite/zt-1af0l22ar-jmTI2C_DPUd3QSuPuOsYdA#/shared-invite/email)了解项目最新动态。
 
 ![qrcode](/img/qrcode.jpeg) 
-
-

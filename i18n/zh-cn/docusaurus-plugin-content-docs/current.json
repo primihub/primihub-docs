@@ -1,18 +1,48 @@
 {
-  "version.label": {
-    "message": "Next",
-    "description": "The label for version current"
+  "sidebar.tutorialSidebar.doc.quick-start": {
+    "message": "快速开始",
+    "description": "5 分钟运行起来一个 MPC 应用"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics": {
-    "message": "Tutorial - Basics",
-    "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.quick-start-platform": {
+    "message": "快速试用"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
-    "message": "5 minutes to learn the most important Docusaurus concepts.",
-    "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.core-concept": {
+    "message": "核心特性"
   },
-  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
-    "message": "Tutorial - Extras",
-    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.advance-usage": {
+    "message": "进阶使用"
+  },
+  "sidebar.tutorialSidebar.category.create-tasks": {
+    "message": "创建任务"
+  },
+  "sidebar.tutorialSidebar.category.security-protocol": {
+    "message": "安全协议"
+  },
+  "sidebar.tutorialSidebar.category.federated-learning": {
+    "message": "联邦学习"
+  },
+  "sidebar.tutorialSidebar.category.python-sdk": {
+    "message": "Python SDK"
+  },
+  "sidebar.tutorialSidebar.category.developer-docs": {
+    "message": "开发者指南"
+  },
+  "sidebar.tutorialSidebar.category.platform": {
+    "message": "管理平台"
+  },
+  "sidebar.tutorialSidebar.category.deployment": {
+    "message": "部署"
+  },
+  "sidebar.tutorialSidebar.doc.faq": {
+    "message": "常见问题",
+    "description": "PrimiHub 开源隐私计算平台常见问题"
+  },
+  "sidebar.tutorialSidebar.doc.community": {
+    "message": "社区治理",
+    "description": "PrimiHub 开源隐私计算平台常见问题"
+  },
+  "sidebar.tutorialSidebar.doc.contact": {
+    "message": "联系我们",
+    "description": "PrimiHub 开源隐私计算平台常见问题"
   }
 }

@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -18,7 +17,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'primihub', // Usually your GitHub org/user name.
   projectName: 'primihub-docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -92,32 +91,14 @@ const config = {
             label: '快速体验',
           },
           {
-            type: 'dropdown',
-            label: '源代码',
-            position: 'left',
-            items: [
-              {
-                href: 'https://github.com/primihub/primihub',
-                label: 'GitHub',
-              },
-              {
-                href: 'https://gitee.com/primihub',
-                label: 'Gitee'
-              },
-              {
-                href: 'https://gitcode.net/primihub',
-                label: 'GitCode'
-              }
-            ],
+            href: 'https://github.com/primihub/primihub',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-          {
-            href: 'https://primihub.com/index.html#/scenario',
-            label: '解决方案',
-            position: 'left',
           },
         ],
       },
@@ -144,20 +125,10 @@ const config = {
           {
             title: '资源与社区',
             items: [
-              // {
-              //   label: 'OpenMPC',
-              //   href: 'https://www.openmpc.com/',
-              // },
               {
                 label: '成为贡献者',
-                href: 'https://github.com/primihub/primihub',
+                href: 'https://github.com/primihub/community',
               },
-              // {
-              //   html: `
-              //   <p>开放隐私计算</p>
-              //   <img src="/img/mpc.png" alt="open mpc qrcode" width="80" height="80" />
-              //     `,
-              // },
             ],
           },
           {
