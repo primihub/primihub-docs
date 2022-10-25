@@ -8,13 +8,17 @@ sidebar_position: 1
 To avoid port collisions and network segment collisions, try to use a clean machine
 :::
 
-### Pull the code, execute the script, and deploy
+### Download the installation package, execute the script, and deploy
 
 ```bash
-git clone https://github.com/primihub/primihub-deploy.git
-cd primihub-deploy/docker-deploy
+curl -s https://get.primihub.com/release/latest/docker-deploy.tar.gz | tar zxf -
+cd docker-deploy
 bash deploy.sh
 ```
+:::tip
+Ignore this error
+tar: Ignoring unknown extended header keyword `LIBARCHIVE.xattr.com.apple.FinderInfo'
+:::
 
 Once the execution is complete, wait a few minutes for the database to initialize and the service to start
 
