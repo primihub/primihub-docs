@@ -12,15 +12,17 @@ Minimum machine configuration requirement 4C8G
 
 Take 5 minutes to run an MPC application
 
-
 Install [docker](https://docs.docker.com/install/overview/) and [docker-compose](https://docs.docker.com/compose/install/)
 
-Download the code and switch to the code root path
+Download the `docker-compose` file:
 
 ```shell
-git clone https://github.com/primihub/primihub.git
-cd primihub
+curl https://get.primihub.com/release/1.4.0/docker-compose.yml -s -o docker-compose.yml
 ```
+
+:::tip
+Please specify the version in the URL if you need
+:::
 
 ## Run an MPC application
 ![Depolyment](./tutorial-depolyment.jpg)

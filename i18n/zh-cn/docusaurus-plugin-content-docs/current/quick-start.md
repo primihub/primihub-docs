@@ -15,13 +15,15 @@ keywords: [MPC, 快速开始]
 
 安装[docker](https://docs.docker.com/install/overview/)和[docker-compose](https://docs.docker.com/compose/install/)
 
-下载代码并切换到代码根路径
+下载 `docker-compose` 文件：
 
 ```shell
-git clone https://github.com/primihub/primihub.git
-cd primihub
+curl https://get.primihub.com/release/1.4.0/docker-compose.yml -s -o docker-compose.yml
 ```
 
+:::tip
+如需要特定版本，请在上面的 URL 中指定
+:::
 
 ## 运行一个MPC案例
 ![Depolyment](./tutorial-depolyment.jpg)
@@ -42,7 +44,7 @@ docker-compose up -d
 查看运行起来的docker容器：
 
 ```shell
- docker-compose ps -a
+docker-compose ps -a
 ```
 
 ```shell
