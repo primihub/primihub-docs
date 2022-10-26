@@ -1,5 +1,7 @@
 ---
 sidebar_position: 10
+description: 隐私计算常见问题
+keywords: [隐私计算常见问题]
 ---
 
 # 常见问题

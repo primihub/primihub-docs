@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 description: 5 分钟运行起来一个 MPC 应用
-keywords: [MPC, 快速开始]
+keywords: [多方安全计算, MPC]
 ---
 
 # 快速开始
