@@ -12,54 +12,51 @@ Minimum machine configuration requirement 4C8G
 
 Take 5 minutes to run an MPC application
 
-
 Install [docker](https://docs.docker.com/install/overview/) and [docker-compose](https://docs.docker.com/compose/install/)
 
-Download the code and switch to the code root path
+Download the `docker-compose` file:
 
 ```shell
-$ git clone https://github.com/primihub/primihub.git
-$ cd primihub
+curl https://get.primihub.com/release/1.4.0/docker-compose.yml -s -o docker-compose.yml
 ```
 
+:::tip
+Please specify the version in the URL if you need
+:::
 
 ## Run an MPC application
 ![Depolyment](./tutorial-depolyment.jpg)
 
-
 ### Start node
- 
 
- *** Start the node for testing  *** 
-   
-   Start up three docker containers using docker-compose.
-    The container includes: start node, three nodes
+*** Start the node for testing  *** 
 
-  ```bash
-  docker-compose up -d
-  ```
+Start up three docker containers using docker-compose.
+The container includes: start node, three nodes
+
+```bash
+docker-compose up -d
+```
 
 View a running docker container：
 
-```bash
- docker-compose ps -a
+```shell
+docker-compose ps -a
 ```
-```
+
+```shell
 CONTAINER ID   IMAGE                                COMMAND                  CREATED          STATUS          PORTS                                                                         NAMES
 cf875c1280be   primihub/primihub-node:latest        "/bin/bash -c './pri…"   11 minutes ago   Up 11 minutes   0.0.0.0:12120-12121->12120-12121/tcp, 0.0.0.0:8052->50050/tcp                 node2_primihub
 6a822ff5c6f7   primihub/primihub-node:latest        "/bin/bash -c './pri…"   11 minutes ago   Up 11 minutes   0.0.0.0:10120->12120/tcp, 0.0.0.0:10121->12121/tcp, 0.0.0.0:8050->50050/tcp   node0_primihub
 11d55ce06ff0   primihub/primihub-node:latest        "/bin/bash -c './pri…"   11 minutes ago   Up 11 minutes   0.0.0.0:11120->12120/tcp, 0.0.0.0:11121->12121/tcp, 0.0.0.0:8051->50050/tcp   node1_primihub
 68befa6ab2a5   primihub/simple-bootstrap-node:1.0   "/app/simple-bootstr…"   11 minutes ago   Up 11 minutes   0.0.0.0:4001->4001/tcp                                                        simple_bootstrap_node
-
 ```                                                   
-
 
 ### Create an MPC task
 
 *** Let three nodes jointly perform a logistic regression task of multi-party secure computation (MPC) ***
 
-
-```bash
+```shell
 docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --server="127.0.0.1:8050"
 ```
 
