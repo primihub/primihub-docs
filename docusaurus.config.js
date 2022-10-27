@@ -7,9 +7,9 @@ const katex = require('rehype-katex');
 
 
 const config = {
-  title: 'PrimiHub 使用说明',
+  title: 'PrimiHub',
   // tagline: 'PrimiHub are cool',
-  url: 'http://docs.primihub.com/',
+  url: 'https://docs.primihub.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -35,10 +35,10 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/primihub/primihub-docs/tree/main/',
+          editUrl: ({locale,version,docPath}) =>
+            `https://github.com/primihub/primihub-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/${version}/${docPath}`,
+          editLocalizedFiles: true,
+          showLastUpdateTime: true,
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
