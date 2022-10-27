@@ -231,35 +231,30 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "site-title": {
-    "message": "PrimiHub Instructions",
-    "description": "PrimiHub 使用说明"
+    "message": "PrimiHub Documentation"
   },
   "quick-start": {
-    "message": "Quick Start-5minutes ⏱",
-    "description": "快速开始-5分钟 ⏱"
+    "message": "Quick Start-5minutes ⏱"
   },
   "feature-1": {
-    "message": "Privacy Computing Data Security",
-    "description": "隐私计算数据安全"
+    "message": "Privacy Computing Data Security"
   },
   "feature-1-des": {
-    "message": "Integrates a variety of security solutions such as cryptography, machine learning technology and encryption hardware, breaks data silos, does not expose sensitive data of various participants, realizes data availability and invisible, and meets the needs of security and compliance.",
-    "description": "集成密码学、机器学习技术和加密硬件等多种安全方案，打破数据孤岛，不暴露各参与方敏感数据，实现数据可用不可见，满足安全、合规的需求。"
+    "message": "Integrates a variety of security solutions such as cryptography, machine learning technology and encryption hardware, breaks data silos, does not expose sensitive data of various participants, realizes data availability and invisible, and meets the needs of security and compliance."
   },
   "feature-2": {
-    "message": "Complex computing scenario requirements",
-    "description": "复杂计算场景需求"
+    "message": "Complex computing scenario requirements"
   },
   "feature-2-des": {
-    "message": "Relying on the accumulation of leading security technologies in the direction of data security and privacy protection such as MPC, TEE, FL, DP, etc., it ensures that the federal computing security is controllable. Rich built-in algorithms, flexible to meet complex computing scenarios.",
-    "description": "依托MPC、TEE、FL、DP等数据安全及隐私保护方向领先的安全技术积累，保障联邦计算安全可控。 内置算法丰富，灵活满足复杂计算场景。"
+    "message": "Relying on the accumulation of leading security technologies in the direction of data security and privacy protection such as MPC, TEE, FL, DP, etc., it ensures that the federal computing security is controllable. Rich built-in algorithms, flexible to meet complex computing scenarios."
   },
   "feature-3": {
-    "message": "Autonomous and efficient private deployment",
-    "description": "自主高效私有部署"
+    "message": "Autonomous and efficient private deployment"
   },
   "feature-3-des": {
-    "message": "Provide a one-stop end-to-end application service development platform to realize the analysis and mining of data value through visual interaction. Adopt strategies such as cluster distribution, concurrent computing, and algorithm optimization to achieve billion-scale big data computing and ensure the stability and efficiency of federal computing.",
-    "description": "提供一站式端到端的应用服务开发平台，通过可视化交互的方式，实现数据价值的分析与挖掘。采用集群分布式、并发计算、算法优化等策略，实现十亿级规模大数据计算，保障联邦计算稳定高效。"
+    "message": "Provide a one-stop end-to-end application service development platform to realize the analysis and mining of data value through visual interaction. Adopt strategies such as cluster distribution, concurrent computing, and algorithm optimization to achieve billion-scale big data computing and ensure the stability and efficiency of federal computing."
+  },
+  "site-description": {
+    "message": "Open Source data computation protect platform PrimiHub documentation"
   }
 }
