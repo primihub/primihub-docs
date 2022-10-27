@@ -1,41 +1,35 @@
 ---
 sidebar_position: 0
+keywords: [XGBoost]
+description: XGBoost 联邦学习原理介绍
 ---
 
-# xgboost
+# XGBoost
 
 *** 纵向联邦学习应用的实现 *** 
 
-
 ```
-$ git clone https://github.com/primihub/primihub.git
-$ cd primihub/python
+git clone https://github.com/primihub/primihub.git
+cd primihub
 ```
 
+在进行下面步骤前，先根据[这里的描述](../python-sdk/install)，安装 PrimiHub Python SDK。
 
-## 快速验证明文纵向XGBoost
+## 快速验证明文纵向 XGBoost
 
-1. 安装所需包 `pip3 install -r requirements.txt` ，
+运行明文纵向 XGBoost 测试应用
 
-2. 安装 primihub 平台库， `python setup.py install --user` ，
+```shell
+python python/primihub/tests/test_disxgb_en.py
+```
 
-3. 运行明文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb.py` 。
+## 快速验证密文纵向 XGBoost（基于Paillier）
 
+1. 编译 Paillier 共享库，`bazel build --config=linux :opt_paillier_c2py.so`
+1. 将共享库复制到指定目录下，`cp bazel-bin/opt_paillier_c2py.so python/primihub/primitive/`
+1. 运行密文纵向 XGBoost 测试应用，`python python/primihub/tests/test_disxgb_en.py`
 
-## 快速验证密文纵向XGBoost（基于Paillier）
-
-1. 编译Paillier共享库，`bazel build --config=linux :opt_paillier_c2py_test` ，
-
-2. 将共享库复制到指定目录下，`cp bazel-bin/opt_paillier_c2py.so python/primihub/primitive/` ，
-
-3. 安装所需包 `pip3 install -r requirements.txt` ，（如果上一个应用已执行则忽略）
-
-4. 安装 primihub 平台库， `python setup.py install --user` ，
-
-5. 运行密文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb_en.py` 。
-
-
-## XGBoost原理
+## XGBoost 原理
 ### 目标函数
 #### 原始目标函数
 原始目标函数分为两个部分：一部分是损失函数，一部分是正则（用于控制模型的复杂度）。

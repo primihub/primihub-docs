@@ -1,39 +1,33 @@
 ---
 sidebar_position: 0
+keywords: [XGBoost]
+description: Federated Learning XGBoost Introducation
 ---
 
-# xgboost
+# XGBoost
 
 *** Implementation of a Vertical Federated Learning application *** 
 
-
 ```
-$ git clone https://github.com/primihub/primihub.git
-$ cd primihub/python
+git clone https://github.com/primihub/primihub.git
+cd primihub
 ```
 
+Before get started, please install the PrimiHub Python SDK according to [this document](../python-sdk/install).
 
 ## Fast verification of plaintext longitudinal XGBoost
 
-1. Install the required package `pip3 install -r requirements.txt` ，
+Run the plaintext longitudinal XGBoost test application
 
-2. Install primihub platform libraries， `python setup.py install --user` ，
-
-3. Run the plaintext longitudinal XGBoost test application，`python python/primihub/tests/test_disxgb.py` 。
-
+```shell
+python python/primihub/tests/test_disxgb.py
+```
 
 ## Fast Verification of ciphertext Longitudinal XGBoost (Paillier based)
 
-1. Compile the Paillier shared library，`bazel build --config=linux :opt_paillier_c2py_test` ，
-
-2. Copy the shared library to the specified directory，`cp bazel-bin/opt_paillier_c2py.so python/primihub/primitive/` ，
-
-3. Install the required package `pip3 install -r requirements.txt` ，(Ignored if the previous application has already been executed)
-
-4. Install primihub platform libraries， `python setup.py install --user` ，
-
-5. Run the ciphertext longitudinal XGBoost test application，`python python/primihub/tests/test_disxgb_en.py` 。
-
+1. Compile the Paillier shared library with command `bazel build --config=linux :opt_paillier_c2py.so`
+1. Copy the shared library to the specified directory with command `cp bazel-bin/opt_paillier_c2py.so python/primihub/primitive/`
+1. Run the ciphertext longitudinal XGBoost test application，`python python/primihub/tests/test_disxgb_en.py`
 
 ## XGBoost theory
 ### The objective function
