@@ -8,15 +8,18 @@ sidebar_position: 1
 为避免端口冲突和网段冲突，请尽量使用干净的机器
 :::
 
-### 拉取代码，执行脚本，完成部署
+### 下载安装包，执行脚本，完成部署
 
 ```bash
-git clone https://github.com/primihub/primihub-deploy.git
-cd primihub-deploy/docker-deploy
+curl -s https://get.primihub.com/release/latest/docker-deploy.tar.gz | tar zxf -
+cd docker-deploy
 bash deploy.sh
 ```
+:::tip
+解压时提示 tar: Ignoring unknown extended header keyword `LIBARCHIVE.xattr.com.apple.FinderInfo' 可忽略
+:::
 
-执行完成后请稍等几分钟等待数据库初始化和服务启动
+执行完成后请稍等几分钟等待镜像下载、数据库初始化和服务启动
 
 ### 查看部署结果
 
