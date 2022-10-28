@@ -20,6 +20,37 @@ sidebar_position: 3
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
 ```
+
+分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
+
+```
+node0:
+···
+I20220922 07:16:06.318814    25 parser.cc:197]  🔍 PSItask found meta list from datasets: 2
+I20220922 07:16:06.318981    25 psi_scheduler.cc:254]  📧  Dispatch SubmitTask to PSI client node
+I20220922 07:16:06.319172    66 psi_scheduler.cc:200] dest node 172.28.1.12:50050
+I20220922 07:16:06.319336    67 psi_scheduler.cc:200] dest node 172.28.1.11:50050
+I20220922 07:16:06.321499    67 psi_scheduler.cc:209] Psi task server node is active.
+I20220922 07:16:06.346092    66 psi_scheduler.cc:207] Node push psi task rpc succeeded.
+
+
+node1:
+···
+I20220922 07:16:06.321259    26 node.cc:114] start to create worker for task
+I20220922 07:16:06.321269    26 node.cc:169]  🤖️ Start create worker node1
+I20220922 07:16:06.321276    26 node.cc:173]  🤖️ Fininsh create worker node1
+I20220922 07:16:06.328846    26 node.cc:155] Start to create PSI/PIR server task
+I20220922 07:16:06.328874    26 node.cc:169]  🤖️ Start create worker node1
+I20220922 07:16:06.328881    26 node.cc:173]  🤖️ Fininsh create worker node1
+
+
+node2:
+···
+I20220922 07:16:06.321429    26 node.cc:114] start to create worker for task
+I20220922 07:16:06.321435    26 node.cc:169]  🤖️ Start create worker node2
+I20220922 07:16:06.321442    26 node.cc:173]  🤖️ Fininsh create worker node2
+I20220922 07:16:06.345343    26 psi_client_task.cc:257] Save PSI result to /data/result/psi_result.csv.
+```
 ## 参数说明
 
 | 参数| 数据类型 | 参数示例 | 参数说明
