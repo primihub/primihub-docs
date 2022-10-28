@@ -16,19 +16,6 @@ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## i18n
-
-* eg. zh-cn
-```shell
-cp -r docs/** i18n/zh-cn/docusaurus-plugin-content-docs/current
-```
-
-You could start it with a particular language with the following command:
-
-```shell
-yarn start --locale en
-```
-
 ## Build
 
 ```shell
@@ -83,4 +70,10 @@ Please put translation items into the following JSON file if you want to add a t
 
 ```
 i18n/en/docusaurus-plugin-content-docs/current.json
+```
+
+You could start it with a particular language with the following command:
+
+```shell
+yarn start --locale en
 ```
