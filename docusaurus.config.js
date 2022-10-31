@@ -86,7 +86,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'quick-start-platform/quick-start-platform',
+            docId: 'quick-start-platform/online-service',
             position: 'right',
             label: '快速体验',
           },

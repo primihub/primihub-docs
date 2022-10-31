@@ -23,7 +23,7 @@ const sidebars = {
       type: 'category',
       label: 'quick-start-platform',
       items: [
-        'quick-start-platform/quick-start-platform',
+        'quick-start-platform/online-service',
         'quick-start-platform/resource',
         'quick-start-platform/project',
         'quick-start-platform/pir',
