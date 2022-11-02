@@ -1,4 +1,7 @@
 {
+  "sidebar.tutorialSidebar.doc.roadmap": {
+    "message": "Roadmap"
+  },
   "sidebar.tutorialSidebar.doc.quick-start": {
     "message": "Quick Start"
   },

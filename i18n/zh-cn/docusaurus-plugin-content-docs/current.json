@@ -1,4 +1,7 @@
 {
+  "sidebar.tutorialSidebar.doc.roadmap": {
+    "message": "路线图"
+  },
   "sidebar.tutorialSidebar.doc.quick-start": {
     "message": "快速开始",
     "description": "5 分钟运行起来一个 MPC 应用"
