@@ -110,6 +110,11 @@ const sidebars = {
     },
     {
       type: 'doc',
+      id: 'roadmap',
+      label: 'roadmap',
+    },
+    {
+      type: 'doc',
       id: 'faq',
       label: 'faq',
     },

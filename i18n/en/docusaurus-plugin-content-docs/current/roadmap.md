@@ -1,7 +1,7 @@
 ---
-sidebar_position: 2
-keywords: [roadmap, primihub]
-description: primihub open source roadmap
+sidebar_position: 6
+keywords: [Roadmap, PrimiHub Roadmap]
+description: PrimiHub open source roadmap
 ---
 
 # Roadmap

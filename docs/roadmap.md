@@ -1,7 +1,7 @@
 ---
-sidebar_position: 2
-keywords: [roadmap, primihub]
-description: primihub open source roadmap
+sidebar_position: 6
+keywords: [Roadmap, PrimiHub, PrimiHub 路线图]
+description: 开源隐私计算平台 PrimiHub 路线图
 ---
 
 # 路线图
@@ -11,7 +11,7 @@ description: primihub open source roadmap
 * 跨平台/跨语言
 * 缓存
 * 流式数据支持
-* python SDK
+* Python SDK
   * 定义数据集
   * 使用数据集
 * 增加应用案例
