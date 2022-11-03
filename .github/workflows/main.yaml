@@ -24,7 +24,6 @@ jobs:
         yarn build
 
   docker-image-build-and-publish:
-    needs: build-on-ubuntu
     runs-on: ubuntu-latest
     permissions:
       contents: read
