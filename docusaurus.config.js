@@ -36,7 +36,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({locale,version,docPath}) =>
-            `https://github.com/primihub/primihub-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/${version}/${docPath}`,
+            'https://github.com/primihub/primihub-docs/tree/main/',
           editLocalizedFiles: true,
           showLastUpdateTime: true,
           remarkPlugins: [math],
