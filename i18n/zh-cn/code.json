@@ -231,6 +231,9 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "site-title": {
-    "message": "PrimiHub 使用说明"
+    "message": "PrimiHub 官方文档"
+  },
+  "site-description": {
+    "message": "开源隐私计算平台 PrimiHub 官方文档"
   }
 }
