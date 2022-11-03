@@ -10,12 +10,14 @@ description: Start the PrimiHub node manually
  
 ## Running the Bootstrap Nodes
 
-```bash
+```shell
 git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
 go mod tidy
 go run main.go
+```
 
 Or run the bootstrap-node with docker
+```shell
 docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
 ```
 
