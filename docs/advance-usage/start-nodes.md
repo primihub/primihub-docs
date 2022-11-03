@@ -14,6 +14,9 @@ description: 手动启动 PrimiHub 节点
 git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
 go mod tidy
 go run main.go
+
+或直接使用docker运行启动节点
+docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
 ```
 
 ## 运行节点
