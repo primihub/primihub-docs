@@ -10,7 +10,16 @@ description: 手动启动 PrimiHub 节点
  
 ## 运行启动节点
 
-```bash
+您可以选择直接下载编译好的二进制文件：
+
+```shell
+curl -L https://github.com/primihub/simple-bootstrap-node/releases/download/v0.0.1/simple-bootstrap-node-darwin-amd64.tar.gz|tar xzv simple-bootstrap-node
+./simple-bootstrap-node
+```
+
+或者是在源码基础上编译：
+
+```shell
 git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
 go mod tidy
 go run main.go
@@ -22,13 +31,13 @@ go run main.go
 
 在编译完成后的代码根目录下，三个终端中分别运行
 
-```bash
+```shell
 ./bazel-bin/node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
 ```
-```bash
+```shell
 ./bazel-bin/node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
 ```
-```bash
+```shell
 ./bazel-bin/node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
 ```
 

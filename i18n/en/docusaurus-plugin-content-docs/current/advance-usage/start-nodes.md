@@ -10,7 +10,16 @@ description: Start the PrimiHub node manually
  
 ## Running the Bootstrap Nodes
 
-```bash
+You could directly download the binary file from GitHub release:
+
+```shell
+curl -L https://github.com/primihub/simple-bootstrap-node/releases/download/v0.0.1/simple-bootstrap-node-darwin-amd64.tar.gz|tar xzv simple-bootstrap-node
+./simple-bootstrap-node
+```
+
+or, compile it from the source code:
+
+```shell
 git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
 go mod tidy
 go run main.go
@@ -22,15 +31,15 @@ First download the Primihub source code and compile it，see the [Developer Docu
 
 Run it in three different terminals from the root directory:
 
-```bash
+```shell
 ./bazel-bin/node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
 ```
 
-```bash
+```shell
 ./bazel-bin/node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
 ```
 
-```bash
+```shell
 ./bazel-bin/node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
 ```
 
