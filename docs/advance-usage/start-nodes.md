@@ -16,6 +16,10 @@ go mod tidy
 go run main.go
 ```
 
+或直接使用docker运行启动节点
+```shell
+docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
+```
 ## 运行节点
 
 首先下载 PrimiHub 源码并编译，见[开发者文档-代码编译](docs/../../developer-docs/build)

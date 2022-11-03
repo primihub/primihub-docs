@@ -16,6 +16,11 @@ go mod tidy
 go run main.go
 ```
 
+Or run the bootstrap-node with docker
+```shell
+docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
+```
+
 ## Run Node
 
 First download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](docs/../../developer-docs/build).
