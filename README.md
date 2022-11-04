@@ -62,6 +62,18 @@ description: This is a brief introduction to the content
 
 > The metadata will make the search engine index our content easily.
 
+### Blog
+Please feel free to post your articles here. It should be related to data computation protection, even not related to PrimiHub.
+
+Please be aware of the following convention:
+
+* Put your articles under the [blog](blog) directory in Markdown format
+* Make sure your Markdown file name starts with the date format
+* Add the necessary front metadata in your Markdown file
+  * The metadata could contain `slug`, `title`, `authors`, and `tags`
+* Put all images under the [images](blog/images/) directory, and give them a readable name
+* Please put the author's information into [authors.yml](blog/authors.yml) if there is a new author
+
 ### Menu
 Please update [sidebars.js](sidebars.js) if you want to add a new menu item.
 
