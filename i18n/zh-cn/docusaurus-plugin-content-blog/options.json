@@ -1,14 +1,11 @@
 {
   "title": {
-    "message": "Blog",
-    "description": "The title for the blog used in SEO"
+    "message": "PrimiHub 开源社区博客"
   },
   "description": {
-    "message": "Blog",
-    "description": "The description for the blog used in SEO"
+    "message": "PrimiHub 开源社区博客，隐私计算开发者的聚集地"
   },
   "sidebar.title": {
-    "message": "Recent posts",
-    "description": "The label for the left sidebar"
+    "message": "最新文章"
   }
 }
