@@ -42,6 +42,11 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
+        blog: {
+          blogTitle: 'Docusaurus blog!',
+          blogDescription: 'A Docusaurus powered blog!',
+          postsPerPage: 'ALL',
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -83,6 +88,11 @@ const config = {
             docId: 'quick-start',
             position: 'left',
             label: '文档',
+          },
+          {
+            to: 'blog',
+            label: 'Blog',
+            position: 'left'
           },
           {
             type: 'doc',
