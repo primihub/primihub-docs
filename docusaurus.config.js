@@ -76,7 +76,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '首页',
+        title: 'PrimiHub',
         logo: {
           alt: 'PrimiHub Logo',
           src: 'img/logo.png',
@@ -87,7 +87,19 @@ const config = {
             type: 'doc',
             docId: 'quick-start',
             position: 'left',
-            label: '文档',
+            label: '快速开始',
+          },
+          {
+            type: 'doc',
+            docId: 'advance-usage/start-nodes',
+            position: 'left',
+            label: '教程',
+          },
+          {
+            type: 'doc',
+            docId: 'developer-docs/build',
+            position: 'left',
+            label: '开发者',
           },
           {
             to: 'blog',
@@ -97,8 +109,8 @@ const config = {
           {
             type: 'doc',
             docId: 'quick-start-platform/quick-start-platform',
-            position: 'right',
-            label: '快速体验',
+            position: 'left',
+            label: '🔥在线体验',
           },
           {
             href: 'https://github.com/primihub/primihub',

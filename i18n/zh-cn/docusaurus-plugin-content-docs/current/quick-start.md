@@ -2,6 +2,7 @@
 sidebar_position: 1
 description: 5 分钟运行起来一个 MPC 应用
 keywords: [多方安全计算, MPC]
+displayed_sidebar: tutorialSidebar
 ---
 
 # 快速开始
@@ -76,6 +77,8 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 :::
 
 了解更多有关如何创建 [PMC 任务](../docs/advance-usage/create-tasks/mpc-task)的细节。
+
+-------
 
 ## 核心特性
 除了上面的MPC案例，PrimiHub还支持联邦学习、隐私求交(PSI)、隐私查询(PIR)特性，具体请见 PrimiHub [核心特性](../docs/core-concept/model) 。

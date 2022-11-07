@@ -2,6 +2,7 @@
 sidebar_position: 1
 keywords: [boostrap]
 description: 手动启动 PrimiHub 节点
+displayed_sidebar: lensonsSidebar
 ---
 
 # 启动节点
