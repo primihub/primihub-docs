@@ -5,11 +5,11 @@ description: 手动启动 PrimiHub 节点
 displayed_sidebar: lensonsSidebar
 ---
 
-# 启动节点
+# 启动各节点
 
-*** 用 Golang 应用启动测试用的节点 *** 
+*** 启动用于运行任务的各个节点 *** 
  
-## 运行启动节点
+## 运行启动点
 
 您可以选择直接下载编译好的二进制文件：
 
