@@ -32,7 +32,14 @@ docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:
 ```
 ## 运行节点
 
-首先下载 PrimiHub 源码并编译，见[开发者文档-代码编译](docs/../../developer-docs/build)
+您可以选择直接下载编译好的二进制文件（当前只有 Darwin 下 amd64 架构的二进制文件）：
+
+```shell
+curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-node-darwin-amd64.tar.gz|tar xzv primihub-node
+./primihub-node
+```
+
+或者，下载 PrimiHub 源码并编译，见[开发者文档-代码编译](docs/../../developer-docs/build)
 
 在编译完成后的代码根目录下，三个终端中分别运行
 
