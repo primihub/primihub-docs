@@ -12,17 +12,28 @@ Linux environment configuration refer to [Dockerfile](https://github.com/primihu
 
 For `ubuntu 20.04` ，run the following command to set up the base environment
 ```
-$ apt update 
-$ apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
-$ apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
-$ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+apt update 
+apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
+apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
-$ npm install -g @bazel/bazelisk
+npm install -g @bazel/bazelisk
+
+# Keyword PIR based on the APSI library. The current APSI library communication is implemented in the form of mq, need to install mq and flatbuffer
+# The following are the keyword PIR dependencies installation steps
+git clone https://github.com/zeromq/libzmq.git
+cd libzmq && ./autogen.sh && ./configure && make && make install && ldconfig
+
+git clone https://github.com/zeromq/cppzmq.git
+cp cppzmq/zmq.hpp /usr/local/include/
+
+git clone https://github.com/google/flatbuffers.git
+cd flatbuffers && cmake -G "Unix Makefiles" && make && make install && ldconfig
 ```
 ## Get the code
 
 ```bash
-$ git clone https://github.com/primihub/primihub.git
+git clone https://github.com/primihub/primihub.git
 ```
 
 ## Build
@@ -36,8 +47,8 @@ $ git clone https://github.com/primihub/primihub.git
   gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
 * Build
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=linux :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=linux :node :cli :opt_paillier_c2py
 ```
 
 ### mac
@@ -46,22 +57,22 @@ $ bazel build --config=linux :node :cli :opt_paillier_c2py
  * Apple Intel CPU
  
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
 ```
 
  *  Apple sillicon M1
 
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
 ```
 
  *  MacOS Monterey with Apple M1
 
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
 ```
 
 ### windows 
@@ -69,20 +80,19 @@ $ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
 ***TODO ***
 
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=windows :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=windows :node :cli :opt_paillier_c2py
 ```
 
 ### docker
 Use the Dockerfile in the root directory to build the docker image
 
 ```
-$ docker build -t primihub/primihub-node .
-
+docker build -t primihub/primihub-node .
 ```
 If the dependencies can't be downloaded during `build`, you can add a proxy to `build` by running the following command
 ```
-$ docker build --build-arg "HTTP_PROXY=http://your proxy address" --build-arg "HTTPS_PROXY=http://your proxy address" -t primihub/primihub-node .
+docker build --build-arg "HTTP_PROXY=http://your proxy address" --build-arg "HTTPS_PROXY=http://your proxy address" -t primihub/primihub-node .
 ```
 
 

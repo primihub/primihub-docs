@@ -19,6 +19,17 @@ apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip ma
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
 npm install -g @bazel/bazelisk
+
+# 基于关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用 mq 的形式实现，需要安装 mq 和 flatbuffer
+# 以下是keyword PIR 的依赖安装步骤
+git clone https://github.com/zeromq/libzmq.git
+cd libzmq && ./autogen.sh && ./configure && make && make install && ldconfig
+
+git clone https://github.com/zeromq/cppzmq.git
+cp cppzmq/zmq.hpp /usr/local/include/
+
+git clone https://github.com/google/flatbuffers.git
+cd flatbuffers && cmake -G "Unix Makefiles" && make && make install && ldconfig
 ```
 ## 克隆代码
 
