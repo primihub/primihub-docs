@@ -71,20 +71,6 @@ I20220922 07:36:36.778131    35 pir_server_task.cc:187] request processed
 
 *** 提交基于关键字(keyword)查询的PIR任务的参数说明 ***
 
-## 编译依赖
-
-基于关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用mq的形式实现，需要预先安装下mq和flatbuffer
-macos安装：
-```shell
-mq相关组件
-brew install cppzmq zeromq
-flatbuffers-2.0.0 通过源码安装
-```
-ubuntu操作系统安装：
-```shell
-sudo apt-get install cppzmq zeromq
-flatbuffers-2.0.0 通过源码安装
-```
 ## 任务执行
 
 创建匿踪查询（PIR）任务需要使用以下参数组合 `--task_type=2`, 并通过`params`参数指定客户端和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
