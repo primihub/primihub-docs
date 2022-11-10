@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+description: This is resource management module,you can create, view, and edit resources.
+keywords: [Resource data, Derived Resource data]
 ---
 
 # Resource Management
