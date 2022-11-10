@@ -32,7 +32,14 @@ docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:
 
 ## Run Node
 
-First download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](docs/../../developer-docs/build).
+You could directly download the binary file from GitHub release (currently only have binary files on Darwin and amd64):
+
+```shell
+curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-node-darwin-amd64.tar.gz|tar xzv primihub-node
+./primihub-node
+```
+
+or, you could download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](docs/../../developer-docs/build).
 
 Run it in three different terminals from the root directory:
 
