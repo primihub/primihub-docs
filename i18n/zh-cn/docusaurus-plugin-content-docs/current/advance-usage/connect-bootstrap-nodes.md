@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+keywords: [连接启动点]
+description: 开源隐私计算平台 PrimiHub 连接启动点
 ---
 
 # 连接启动点

@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+keywords: [资源管理]
+description: 介绍开源隐私计算平台 PrimiHub 的资源管理模块
 ---
 
 # 资源管理
@@ -35,4 +37,4 @@ sidebar_position: 2
 
 ![resource4](/img/resource4.png) 
 
-该页面支持根据“中心节点”、“机构”、“数据资源 ID”、“名称”、“关键词”、“资源类型”进行搜索
+该页面支持根据“中心节点”、“机构”、“数据资源 ID”、“名称”、“关键词”、“资源类型”进行搜索。

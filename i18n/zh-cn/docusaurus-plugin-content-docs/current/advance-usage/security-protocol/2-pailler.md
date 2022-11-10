@@ -1,23 +1,21 @@
 ---
 sidebar_position: 2
+keywords: [Paillier]
+description: Paillier 密码系统的底层优化实现
 ---
 
 
 # Paillier
 
-*** Paillier密码系统的底层优化实现 ***
+*** Paillier 密码系统的底层优化实现 ***
 
 :::tip 主要依据的论文
-
 Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and Decryption[C]//Annual Computer Security Applications Conference. 2021: 106-118.
-
 :::
 
 
 :::tip 💐 致谢
-
- 感谢蚂蚁集团 Huanyu ma ，阿里巴巴双子座实验室 Cheng Hong 在实现、优化过程中的帮助与指导。
-
+感谢蚂蚁集团 Huanyu ma ，阿里巴巴双子座实验室 Cheng Hong 在实现、优化过程中的帮助与指导。
 :::
 
 ## c++ API

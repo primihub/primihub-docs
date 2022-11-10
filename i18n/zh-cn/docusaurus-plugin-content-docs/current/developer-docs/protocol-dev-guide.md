@@ -1,21 +1,20 @@
 ---
 sidebar_position: 2
+keywords: [安全协议开发指南]
+description: 介绍开源隐私计算平台 PrimiHub 的安全协议开发指南
 ---
 
-# PrimiHub安全协议开发指南
+# PrimiHub 安全协议开发指南
 
 *** 如何开发一个安全协议 *** 
 
 :::tip
-
 👨‍🎓 本文档面向安全协议开发和算法开发的工程师
 
-🕗 适用于PrimiHub v1.0 版本
-
+🕗 适用于 `PrimiHub v1.0` 版本
 :::
 
 ## 如何开发一个新的多方安全计算协议
-
 
 ### 要继承实现的类
 1. 算子（ Envaluator）

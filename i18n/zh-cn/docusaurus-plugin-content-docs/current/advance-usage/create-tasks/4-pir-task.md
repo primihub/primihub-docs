@@ -1,5 +1,7 @@
 ---
 sidebar_position: 4
+keywords: [匿踪查询（PIR）任务, PIR, 匿踪查询]
+description: 如何向开源隐私计算平台 PrimiHub 提交匿踪查询（PIR）任务
 ---
 
 
@@ -73,13 +75,21 @@ I20220922 07:36:36.778131    35 pir_server_task.cc:187] request processed
 
 ## 编译依赖
 
-基于关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用mq的形式实现，需要预先安装下mq和flatbuffer
-macos安装：
+基于关键字查询 PIR 任务是基于 APSI 库实现的，当前 APSI 库通信采用 mq 的形式实现，需要预先安装下 mq 和 flatbuffer
+
+### macos安装
 mq相关组件
+```shell
 brew install cppzmq zeromq
+```
+
 flatbuffers-2.0.0 通过源码安装
-ubuntu操作系统安装：
+
+### ubuntu操作系统安装
+```shell
 sudo apt-get install cppzmq zeromq
+```
+
 flatbuffers-2.0.0 通过源码安装
 
 ## 任务执行

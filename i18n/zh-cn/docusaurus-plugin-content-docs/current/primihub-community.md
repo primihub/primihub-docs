@@ -1,5 +1,7 @@
 ---
 sidebar_position: 11
+description: PrimiHub 开源社区治理
+keywords: [PrimiHub, 开源社区治理]
 ---
 
 # PrimiHub 开源社区治理
