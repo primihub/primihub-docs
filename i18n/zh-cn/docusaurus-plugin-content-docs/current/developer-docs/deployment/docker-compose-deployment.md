@@ -1,14 +1,16 @@
 ---
 sidebar_position: 1
+description: 使用 docker-compose 部署 PrimiHub 隐私计算开源平台
+keywords: [docker-compose]
 ---
 
-# 使用docker-compose部署
+# 使用 docker-compose 部署
 
 :::tip
 为避免端口冲突和网段冲突，请尽量使用干净的机器
 :::
 
-### 下载安装包，执行脚本，完成部署
+## 下载安装包，执行脚本，完成部署
 
 ```shell
 curl -s https://get.primihub.com/release/latest/docker-deploy.tar.gz | tar zxf -
@@ -22,7 +24,7 @@ bash deploy.sh
 
 执行完成后请稍等几分钟等待镜像下载、数据库初始化和服务启动
 
-### 查看部署结果
+## 查看部署结果
 
 ```bash
 # docker-compose ps -a
@@ -49,23 +51,30 @@ rabbitmq2           "docker-entrypoint.s…"   rabbitmq2               running  
 rabbitmq3           "docker-entrypoint.s…"   rabbitmq3               running             25672/tcp
 ```
 
-### 使用说明
+## 使用说明
 
-docker-compose.yaml 文件中的nginx1、nginx2、nginx3 模拟 3 个机构的管理后台，启动完成后在浏览器分别访问
+`docker-compose.yaml` 文件中的 nginx1、nginx2、nginx3 模拟 3 个机构的管理后台，启动完成后在浏览器分别访问：
 
-http://机器IP:30811
-
-http://机器IP:30812
-
-http://机器IP:30813
+* http://机器IP:30811
+* http://机器IP:30812
+* http://机器IP:30813
 
 默认用户密码都是 admin / 123456
 
-具体的联邦建模、隐私求交、匿踪查询等功能的操作步骤请参考 [快速试用管理平台](/docs/quick-start-platform)
+具体的联邦建模、隐私求交、匿踪查询等功能的操作步骤请参考[快速试用管理平台](/docs/quick-start-platform)。
 
-### 停止服务
+## 停止服务
 
 ```bash
 # 在启动服务的目录下执行
 docker-compose down
 ```
+
+## 节点容器介绍
+
+节点容器（例如：镜像 `primihub/primihub-node` 所在的容器）中有一些重要的目录，请参考如下说明：
+
+| 目录 | 说明 |
+|---|---|
+| `/app/config` | 包含数据源配置文件，例如：`/app/config/primihub_node0.yaml` 会作为某个节点的进程的启动时读取的数据源配置文件。 |
+| `/tmp` | 任务执行的临时输出文件 |

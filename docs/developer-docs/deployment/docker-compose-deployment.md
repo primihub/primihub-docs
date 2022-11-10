@@ -1,8 +1,10 @@
 ---
 sidebar_position: 1
+description: 使用 docker-compose 部署 PrimiHub 隐私计算开源平台
+keywords: [docker-compose]
 ---
 
-# 使用docker-compose部署
+# 使用 docker-compose 部署
 
 :::tip
 为避免端口冲突和网段冲突，请尽量使用干净的机器
