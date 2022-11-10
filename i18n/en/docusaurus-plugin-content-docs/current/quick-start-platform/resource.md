@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+description: This is resource management module,you can create, view, and edit resources.
+keywords: [Resource data, Derived Resource data]
 ---
 
 # Resource Management
@@ -36,3 +38,27 @@ In the navigation bar, click "Resource Management" - "Federated Resources" to en
 ![resource4](/img/resource4.png) 
 
 This page supports searching according to "central node", "institution", "data resource ID", "name", "keyword", "resource type"
+
+
+## Derived Data Resource
+
+### Generate Derived Data Resource
+
+createAfter the project and resource authorization is approved, the project creator can enter the "Project Details page" - "Task List". Click "New Task" to draw the task process. You can drag the component to the canvas.
+
+![image-20221107191018620](/img/20221109-192316.png)
+
+When components such as 「Data Alignment」, 「Outlier handling」, and「Missing Value handling」 are added to the task process, derived data resources are generated during task execution.
+
+
+### View Derived Data Resource
+
+You can view all the derived datasets in the "Project Details Page" - "Derived Data" or go to the "Resource Management page" - "Derived Data Resource list page".
+
+![image-20221107191239216](/img/20221109-192311.png)
+
+### Use Derived Data Resource
+
+Users can select derived resource data in the "Select Data Resource" component configuration of the task flow
+
+![image-20221107191557003](/img/20221109-192253.png)
