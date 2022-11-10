@@ -43,12 +43,18 @@ const config = {
           rehypePlugins: [katex],
         },
         blog: {
-          blogTitle: 'Docusaurus blog!',
-          blogDescription: 'A Docusaurus powered blog!',
+          blogTitle: 'PrimiHub 博客',
+          blogDescription: '开源隐私计算社区 PrimiHub 博客!',
           postsPerPage: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
         googleAnalytics: {
           trackingID: 'G-KLS723TJR0',
@@ -57,7 +63,7 @@ const config = {
         gtag: {
           trackingID: 'G-KLS723TJR0',
           anonymizeIP: true,
-        }
+        },
       }),
     ],
   ],
