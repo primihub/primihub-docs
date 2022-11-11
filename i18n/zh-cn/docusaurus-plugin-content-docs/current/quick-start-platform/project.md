@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+keywords: [项目管理]
+description: 介绍开源隐私计算平台 PrimiHub 的项目管理模块
 ---
 
 # 我的项目

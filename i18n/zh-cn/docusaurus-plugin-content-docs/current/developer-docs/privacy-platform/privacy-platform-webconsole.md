@@ -1,18 +1,26 @@
+---
+sidebar_position: 2
+keywords: [管理平台控制台]
+description: 介绍开源隐私计算平台 PrimiHub 的管理平台控制台
+---
+
 # 管理平台控制台
 ## 准备依赖
 会用到 [node](https://nodejs.org/en/), [git](https://git-scm.com/). 项目是以如下标准为基础的[ES2015+](https://es6.ruanyifeng.com/)、[Vue.Js](https://vuejs.org/)、[Vuex](https://vuex.vuejs.org/)、[Vue-Router](https://router.vuejs.org/)、[antv-x6](https://x6.antv.vision/zh) 和 [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/).
 
 ## 服务开始
 1.进入项目一下目录
-```bash
+```shell
 cd primihub-webconsole
 ```
-2.安装npm依赖
-```bash
+
+2.安装 `NPM` 依赖
+```shell
 npm install
 ```
-3.修改“vue.config.js”这个文件中target变量, 改成需要连接的网关地址
-```bash
+
+3.修改 `vue.config.js` 这个文件中 `target` 变量, 改成需要连接的网关地址
+```shell
 proxy: {
   '/dev-api': {
     target: 'your gateway url',
@@ -24,8 +32,9 @@ proxy: {
   }
 }
 ```
+
 4.启动项目
-```bash
+```shell
 npm run dev
 
 ## 浏览器支持
@@ -70,4 +79,4 @@ npm run dev
   </table>
  </body>
 </html>
-
+```

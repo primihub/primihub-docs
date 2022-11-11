@@ -1,5 +1,7 @@
 ---
 sidebar_position: 5
+keywords: [隐私求交]
+description: 介绍开源隐私计算平台 PrimiHub 的隐私求交模块
 ---
 
 # 隐私求交

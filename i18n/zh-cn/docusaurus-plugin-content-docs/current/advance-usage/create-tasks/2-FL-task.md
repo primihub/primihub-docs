@@ -1,27 +1,32 @@
 ---
 sidebar_position: 2
+keywords: [联邦学习（FL）任务]
+description: 如何向开源隐私计算平台 PrimiHub 提交联邦学习（FL）任务
 ---
-
 
 # 联邦学习（FL）任务
 
 *** 提交联邦学习任务的参数说明 ***
 
-创建联邦学习任务需要使用以下参数组合 `--task_lang=python --task_type=0`, 并通过`task_code`参数指定要运行的联邦学习python代码。
+创建联邦学习任务需要使用以下参数组合 `--task_lang=python --task_type=0`, 并通过 `task_code` 参数指定要运行的联邦学习 `Python` 代码。
 
 
-举例：启动一个联邦学习xgboost任务：
+举例：启动一个联邦学习 `xgboost` 任务：
 
-如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+如果是通过 `docker-compose` 启动，执行 `docker exec -it node0_primihub bash` 进入到 `node0_primihub` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+./primihub-cli --task_lang=python --task_type=0 \
+  --task_code="./python/primihub/examples/disxgb_en.py" \
+  --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+./bazel-bin/cli --server="你的IP:50050" --task_lang=python \
+  --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" \
+  --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
 :::tip
@@ -34,7 +39,8 @@ pip3 install -r requirements.txt
 python3 setup.py install
 ```
 
-分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的路径验证生成的结果文件是否正确
+分别观察 `node0`、`node1` 和 `node2` 的日志，有如下输出则代表任务运行成功，可参考参数说明中的路径验证生成的结果文件是否正确。
+
 ```
 node0:
 ...
@@ -95,11 +101,12 @@ W20220922 03:54:01.563983    26 model.cc:84] session not found for task status e
 | params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest方特征分割点结果文件 |
 | params.modelFileName  | STRING | /data/result/host/model  | 树结构保存路径，仅出现在Host方 |
 
-在python文件中，算法开发者可以使用primihub python api指定：
+在 `Python` 文件中，算法开发者可以使用 PrimiHub Python API 指定：
 * 使用的数据集
 * 算法使用的安全协议
 
-关键的api如下：
+关键的 API 如下：
+
 ```python
 import primihub as ph
 
@@ -115,5 +122,4 @@ def xgb_host_logic():
 def xgb_guest_logic():
   print("start xgx guest logic...")
   ...
-  
 ```

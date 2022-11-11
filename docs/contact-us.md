@@ -1,5 +1,7 @@
 ---
 sidebar_position: 12
+description: PrimiHub 开源社区参与方式
+keywords: [PrimiHub, 开源社区]
 ---
 
 # 联系我们

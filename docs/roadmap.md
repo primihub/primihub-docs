@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 keywords: [roadmap, primihub]
-description: primihub open source roadmap
+description: 开源隐私计算平台 PrimiHub 路线图
 ---
 
 # 路线图
@@ -23,4 +23,3 @@ description: primihub open source roadmap
 * 通信
   * 多协议自适应
   * 流复用
-  
