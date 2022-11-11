@@ -10,7 +10,7 @@ sidebar_position: 0
 
 ## 简介
 
-![Introduction](https://tva1.sinaimg.cn/large/008vxvgGly1h818gp8i75j30hl0ec3z2.jpg)
+![Introduction](./Primihub_CS_Des.drawio.png)
 
 ## 前提
 
