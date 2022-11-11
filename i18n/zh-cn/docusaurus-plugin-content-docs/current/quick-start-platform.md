@@ -1,8 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# 服务试用
+# 快速试用管理平台
+
+## 服务试用
 当前提供了三个体验平台：
 
 * https://node1.primihub.com
@@ -11,8 +13,12 @@ sidebar_position: 1
 
 可在原语官网申请试用：https://primihub.com
 
-![Apply](/img/primihub-platform-apply.png)
+![Apply](./primihub-platform-apply.png)
 ![Apply1](/img/primihub01.png)
+
+:::tip
+具体操作，请见<strong>[管理平台操作说明](/docs/operating-instructions/resource)</strong>
+:::
 
 ## 服务部署
 在装本地服务前需要先启动node服务（完整的服务体验通常要两个以上）
