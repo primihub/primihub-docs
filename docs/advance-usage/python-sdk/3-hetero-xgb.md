@@ -19,16 +19,11 @@ Host端：数据中拥有标签的一方
 Guest端：数据中没有标签的一方
 
 1. Host端基于自研高性能Paillier库以及随机种子生成公私钥，并将公钥发送给Guest端；
-
-1. Host端基于当前预测值和Label进行计算一阶导数与二阶导数，并将一阶与二阶导数进行半同态加密，然后发送至Guest端；
-
-1. Host端根据己端数据，计算Host_Best_Gain，同时Guest端计算所有可能的Guest_Best_Gain，并将Guest_Best_Gain加密后发送给Host端；
-
-1. Host端将从Guest端获取的加密Guest_Best_Gain进行解密，得到解密后的Guest_Best_Gain；
-
-1. 在Host端比较Host_Best_Gain与Guest_Best_Gain的大小，确定XGB树的最优分裂点；
-
-1. 重复步骤3、4、5，直到模型收敛或达到迭代最大次数，模型训练完成。
+2. Host端基于当前预测值和Label进行计算一阶导数与二阶导数，并将一阶与二阶导数进行半同态加密，然后发送至Guest端；
+3. Host端根据己端数据，计算Host_Best_Gain，同时Guest端计算所有可能的Guest_Best_Gain，并将Guest_Best_Gain加密后发送给Host端；
+4. Host端将从Guest端获取的加密Guest_Best_Gain进行解密，得到解密后的Guest_Best_Gain；
+5. 在Host端比较Host_Best_Gain与Guest_Best_Gain的大小，确定XGB树的最优分裂点；
+6. 重复步骤3、4、5，直到模型收敛或达到迭代最大次数，模型训练完成。
 
 ### 简化流程示意图
 
@@ -41,12 +36,9 @@ Guest端：数据中没有标签的一方
 ## 优化亮点
 
 1. 基于Ray的并行加速；
-
-1. 采用python底层的加速函数；
-
-1. 自研高性能Pallier库；
-
-1. 平衡Host与Guest端的计算资源，提高计算效率。
+2. 采用python底层的加速函数；
+3. 自研高性能Pallier库；
+4. 平衡Host与Guest端的计算资源，提高计算效率。
 
 ### Primihub Hetero XGB运行
 
@@ -56,7 +48,7 @@ Guest端：数据中没有标签的一方
 
 #### 环境安装
 
-```Python
+```shell
 apt update 
 apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
 apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
@@ -67,21 +59,21 @@ npm install -g @bazel/bazelisk
 
 #### 拉取primihub源码和镜像
 
-```Python
+```shell
 git clone https://github.com/primihub/primihub.git
 docker pull primihub/primihub-node:latest
 ```
 
 #### 启动或关闭container
 
-```Python
+```shell
 docker-compose up -d
 docker-compose down
 ```
 
 #### 进入任务启动节点
 
-```Python
+```shell
 docker exec -it node0_primihub bash
 ```
 
@@ -93,7 +85,7 @@ docker exec -it node0_primihub bash
 
 ### Hetero XGB Prediction
 
-```Python
+```
 
 ```
 
