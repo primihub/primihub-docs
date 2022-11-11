@@ -30,11 +30,11 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 ### 简化流程示意图(确认后更改图利标号123等)
 
-![img](https://tva1.sinaimg.cn/large/008vxvgGly1h817xc7tefj312w0mwwgi.jpg)
+![img](./homelr流程示意.jpg)
 
 ### Homo_LR算法优化
 
-![img](https://tva1.sinaimg.cn/large/008vxvgGly1h817xgaxyqj319i0j6411.jpg)
+![img](./Homo_LR算法优化.jpg)
 
 ## Homo LR优化亮点
 

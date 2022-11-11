@@ -32,11 +32,11 @@ Guest端：数据中没有标签的一方
 
 ### 简化流程示意图
 
-![img](https://tva1.sinaimg.cn/large/008vxvgGly1h817urf31rj30w00u0417.jpg)
+![img](./HeteroXGB简化流程示意图.jpg)
 
 ### Hetero_XGB算法优化
 
-![img](https://tva1.sinaimg.cn/large/008vxvgGly1h817v0c70ej31mf0u0n25.jpg)
+![img](./Hetero_XGB算法优化.jpg)
 
 ## 优化亮点
 
