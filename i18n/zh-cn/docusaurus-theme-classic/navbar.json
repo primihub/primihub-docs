@@ -1,18 +1,12 @@
 {
   "title": {
-    "message": "首页",
+    "message": "PrimiHub",
     "description": "The title in the navbar"
   },
-  "item.label.Tutorial": {
-    "message": "Tutorial",
-    "description": "Navbar item with label Tutorial"
-  },
   "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
+    "message": "博客"
   },
   "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
+    "message": "GitHub"
   }
 }

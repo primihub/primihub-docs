@@ -1,5 +1,7 @@
 ---
 sidebar_position: 0
+keywords: [PrimiHub Python SDK]
+description: 介绍如何安装 PrimiHub Python SDK
 ---
 
 # 安装
@@ -8,7 +10,7 @@ sidebar_position: 0
 
 ## 下载
 
-```
+```shell
 git clone https://github.com/primihub/primihub.git
 cd primihub/python
 ```
@@ -27,9 +29,8 @@ cd primihub/python
 ## 安装
 
 :::tip
-要想正确的安装primihub python sdk，注意要使用和编译primihub同样的Python解释器。
+要想正确的安装 PrimiHub Python SDK ，注意要使用和编译 `PrimiHub` 同样的 `Python` 解释器。
 :::
 
 1. 执行 `pip install --no-cache-dir  --force-reinstall -Iv grpcio grpcio_tools`
-
-2. 安装 primihub， 执行 `python setup.py install --user`
+1. 安装 `PrimiHub`， 执行 `python setup.py install --user`

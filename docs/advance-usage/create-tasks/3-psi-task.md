@@ -1,15 +1,17 @@
 ---
 sidebar_position: 3
+description: 通过开源隐私计算平台 PrimiHub 隐私求交（PSI）任务
+keywords: [隐私求交, PSI]
 ---
-
 
 # 隐私求交（PSI）任务
 
+## 提交任务
 *** 提交PSI任务的参数说明 ***
 
 创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type=3`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
 
-如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
 ./primihub-cli --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
@@ -21,6 +23,7 @@ sidebar_position: 3
 ./bazel-bin/cli --server="你的IP:50050" --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
 ```
 
+## 检查结果
 分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
 
 ```
@@ -63,4 +66,3 @@ I20220922 07:16:06.345343    26 psi_client_task.cc:257] Save PSI result to /data
 | params.serverIndex | INT32 | 1 | 表示psi服务端用表格形式的服务端数据的第几列数据进行求交，该参数取值范围[0，文件最大列-1]。 |
 | params.outputFullFilename | STRING | "/data/result/psi_result.csv" | 指定pis结果保存文件的文件名以及文件存储目录的绝对路径。 |
 | input_datasets | STRING | "clientData,serverData" | 该参数值指定params参数集合的数据集参数，实例中params.clientData和params.serverData是数据集参数，通过数据集参数值找到相关工作节点。 |
-

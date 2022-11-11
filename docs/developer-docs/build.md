@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+displayed_sidebar: developerSidebar
 ---
 
 # 代码编译
@@ -12,78 +13,88 @@ Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primi
 
 以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
 ```
-$ apt update 
-$ apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
-$ apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
-$ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+apt update 
+apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
+apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
-$ npm install -g @bazel/bazelisk
+npm install -g @bazel/bazelisk
+
+# 基于关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用 mq 的形式实现，需要安装 mq 和 flatbuffer
+# 以下是keyword PIR 的依赖安装步骤
+git clone https://github.com/zeromq/libzmq.git
+cd libzmq && ./autogen.sh && ./configure && make && make install && ldconfig
+
+git clone https://github.com/zeromq/cppzmq.git
+cp cppzmq/zmq.hpp /usr/local/include/
+
+git clone https://github.com/google/flatbuffers.git
+cd flatbuffers && cmake -G "Unix Makefiles" && make && make install && ldconfig
 ```
-## 获取代码
+## 克隆代码
 
 ```bash
-$ git clone https://github.com/primihub/primihub.git
+git clone https://github.com/primihub/primihub.git
 ```
 
 ## 编译
-:::tip 如果你无法直接访问github等开源代码仓库，需要自行设置代理，并设置*** HTTPS_PROXY *** 环境变量
-  
-  比如： HTTPS_PROXY=http://127.0.0.1:7890
-
+:::tip 如果你无法直接访问一部分地址，例如 GitHub，需要自行设置代理，并设置*** HTTPS_PROXY *** 环境变量
+比如： HTTPS_PROXY=http://127.0.0.1:7890
 :::
 
-### linux
+### Linux
 * 依赖环境
   gcc-8，g++-8，python3.7及以上，python3.7-dev，cmake-3.20
 * 编译
+
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=linux :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=linux :node :cli :opt_paillier_c2py
 ```
 
-### mac
+### macOS
  * 依赖环境 clang 12+，python3.7及以上，cmake-3.20
  
  * Apple Intel CPU
  
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
 ```
 
  *  Apple sillicon M1
 
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
 ```
 
  *  MacOS Monterey with Apple M1
 
 ```bash
-$ ./pre_build.sh
-$ bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
+./pre_build.sh
+bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
 ```
 
-### windows 
+### Windows 
 
 ***TODO 待测***
 
-```bash
-$ ./pre_build.sh
-$ bazel build --config=windows :node :cli :opt_paillier_c2py
+```shell
+./pre_build.sh
+bazel build --config=windows :node :cli :opt_paillier_c2py
 ```
 
-### docker
+### Docker
 使用代码根目录下的Dockerfile进行docker镜像编译
 
+```shell
+docker build -t primihub/primihub-node .
 ```
-$ docker build -t primihub/primihub-node .
 
-```
 如果`build`时有依赖包下载不下来的情况，可通过如下命令在`build`时加上代理
-```
-$ docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "HTTPS_PROXY=http://你的代理地址" -t primihub/primihub-node .
+```shell
+docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "HTTPS_PROXY=http://你的代理地址" -t primihub/primihub-node .
 ```
 
 
@@ -95,5 +106,3 @@ $ docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "H
 
 ## 编译常见问题
  1. Bazel编译新增平台和工具链问题见[这里](https://docs.bazel.build/versions/5.0.0/platforms-intro.html)
-
-     

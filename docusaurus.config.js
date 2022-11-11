@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -8,9 +7,9 @@ const katex = require('rehype-katex');
 
 
 const config = {
-  title: 'PrimiHub 使用说明',
+  title: 'PrimiHub',
   // tagline: 'PrimiHub are cool',
-  url: 'http://docs.primihub.com/',
+  url: 'https://docs.primihub.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -18,7 +17,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'primihub', // Usually your GitHub org/user name.
   projectName: 'primihub-docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -36,15 +35,26 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
+          editUrl: ({locale,version,docPath}) =>
             'https://github.com/primihub/primihub-docs/tree/main/',
+          editLocalizedFiles: true,
+          showLastUpdateTime: true,
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
+        blog: {
+          blogTitle: 'PrimiHub 博客',
+          blogDescription: '开源隐私计算社区 PrimiHub 博客!',
+          postsPerPage: 'ALL',
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
         googleAnalytics: {
           trackingID: 'G-KLS723TJR0',
@@ -53,7 +63,7 @@ const config = {
         gtag: {
           trackingID: 'G-KLS723TJR0',
           anonymizeIP: true,
-        }
+        },
       }),
     ],
   ],
@@ -72,7 +82,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '首页',
+        title: 'PrimiHub',
         logo: {
           alt: 'PrimiHub Logo',
           src: 'img/logo.png',
@@ -83,41 +93,40 @@ const config = {
             type: 'doc',
             docId: 'quick-start',
             position: 'left',
-            label: '文档',
+            label: '快速开始',
+          },
+          {
+            type: 'doc',
+            docId: 'advance-usage/start-nodes',
+            position: 'left',
+            label: '教程',
+          },
+          {
+            type: 'doc',
+            docId: 'developer-docs/build',
+            position: 'left',
+            label: '开发者',
+          },
+          {
+            to: 'blog',
+            label: 'Blog',
+            position: 'left'
           },
           {
             type: 'doc',
             docId: 'quick-start-platform/quick-start-platform',
-            position: 'right',
-            label: '快速体验',
+            position: 'left',
+            label: '🔥在线体验',
           },
           {
-            type: 'dropdown',
-            label: '源代码',
-            position: 'left',
-            items: [
-              {
-                href: 'https://github.com/primihub/primihub',
-                label: 'GitHub',
-              },
-              {
-                href: 'https://gitee.com/primihub',
-                label: 'Gitee'
-              },
-              {
-                href: 'https://gitcode.net/primihub',
-                label: 'GitCode'
-              }
-            ],
+            href: 'https://github.com/primihub/primihub',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-          {
-            href: 'https://primihub.com/index.html#/scenario',
-            label: '解决方案',
-            position: 'left',
           },
         ],
       },
@@ -144,20 +153,10 @@ const config = {
           {
             title: '资源与社区',
             items: [
-              // {
-              //   label: 'OpenMPC',
-              //   href: 'https://www.openmpc.com/',
-              // },
               {
                 label: '成为贡献者',
-                href: 'https://github.com/primihub/primihub',
+                href: 'https://github.com/primihub/community',
               },
-              // {
-              //   html: `
-              //   <p>开放隐私计算</p>
-              //   <img src="/img/mpc.png" alt="open mpc qrcode" width="80" height="80" />
-              //     `,
-              // },
             ],
           },
           {

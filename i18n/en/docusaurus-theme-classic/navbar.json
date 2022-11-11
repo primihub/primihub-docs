@@ -1,42 +1,20 @@
 {
   "title": {
-    "message": "PrimiHub",
-    "description": "The title in the navbar"
-  },
-  "item.label.Tutorial": {
-    "message": "Tutorial",
-    "description": "Navbar item with label Tutorial"
+    "message": "PrimiHub"
   },
   "item.label.Blog": {
-    "message": "Blog",
-    "description": "Navbar item with label Blog"
+    "message": "Blog"
   },
   "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
+    "message": "GitHub"
   },
   "item.label.文档": {
-    "message": "Docs",
-    "description": "Navbar item with label 文档"
-  },
-  "item.label.GitCode": {
-    "message": "GitCode",
-    "description": "Navbar item with label GitCode"
+    "message": "Docs"
   },
   "item.label.解决方案": {
-    "message": "Solutions",
-    "description": "Navbar item with label 解决方案"
+    "message": "Solutions"
   },
   "item.label.源代码": {
-    "message": "Code",
-    "description": "Navbar item with label 源代码"
-  },
-  "item.label.Gitee": {
-    "message": "Gitee",
-    "description": "Navbar item with label Gitee"
-  },
-  "item.label.快速体验": {
-    "message": "Try It",
-    "description": "Have a quick try"
+    "message": "Code"
   }
 }

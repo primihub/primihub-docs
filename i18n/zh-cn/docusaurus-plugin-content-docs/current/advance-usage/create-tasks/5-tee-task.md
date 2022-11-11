@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
+keywords: [可信执行环境（TEE）任务, TEE, 匿踪查询]
+description: 如何向开源隐私计算平台 PrimiHub 提交可信执行环境（TEE）任务
 ---
-
 
 # 可信执行环境（TEE）任务
 
@@ -10,23 +11,21 @@ sidebar_position: 1
 
 ![Info](./primihub_and_gramine_logo.jpg)
 
+`PrimiHub` 使用了 `Gramine Library OS` 作为可信计算环境（TEE）运行的支持。
 
-PrimiHub使用了Gramine Library OS作为可信计算环境（TEE）运行的支持。
-
-
-有这样的TEE使用场景：
+有这样的 `TEE` 使用场景：
 
 ![SGX_Nodes](./SGX-Nodes.svg)
 
-两个数据所有者Bob和Alice有不同的敏感数据集，其他人想要用他们的数据训练一个模型，但他们都不能访问或查看对方的数据，因为数据是敏感的。
+两个数据所有者 `Bob` 和 `Alice` 有不同的敏感数据集，其他人想要用他们的数据训练一个模型，但他们都不能访问或查看对方的数据，因为数据是敏感的。
 
-PrimiHub Node集群中节点的角色分为：调度节点、可信计算环境执行节点、数据提供节点。
+`PrimiHub Node` 集群中节点的角色分为：调度节点、可信计算环境执行节点、数据提供节点。
 
-任务发起方从CLI发起TEE计算任务，调度节点将给数据所有者Bob和Alice的数据提供角色节点发送TEE任务执行的调度命令，Bob和Alice的数据提供节点将向Gramine SGX运行的可信计算环境执行节点发送数据，并在可信环境中执行用户指定的计算，比如模型聚合计算。
+任务发起方从 `CLI` 发起TEE计算任务，调度节点将给数据所有者 `Bob` 和 `Alice` 的数据提供角色节点发送TEE任务执行的调度命令， `Bob` 和 `Alice` 的数据提供节点将向 `Gramine SGX` 运行的可信计算环境执行节点发送数据，并在可信环境中执行用户指定的计算，比如模型聚合计算。
 
-计算全部都在Intel SGX的飞地执行，不会损害 Alice 和 Bob 数据的隐私。
+计算全部都在 `Intel SGX` 的飞地执行，不会损害 `Alice` 和 `Bob` 数据的隐私。
 
-## 使用PrimiHub执行以上场景
+## 使用 `PrimiHub` 执行以上场景
 
 
 1. 准备可信执行环境

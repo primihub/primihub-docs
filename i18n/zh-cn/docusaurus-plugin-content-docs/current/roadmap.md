@@ -1,10 +1,10 @@
 ---
 sidebar_position: 2
+keywords: [roadmap, primihub]
+description: 开源隐私计算平台 PrimiHub 路线图
 ---
 
-
 # 路线图
-
 
 ## 数据
 * 序列化性能
@@ -24,4 +24,3 @@ sidebar_position: 2
   * 多协议自适应
   * 流复用
   
-

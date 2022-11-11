@@ -48,7 +48,7 @@ I20220922 07:42:46.114251    40 logistic.cc:70] Epochs : ( 0/100 )
 ···
 I20220922 07:43:22.827548    40 logistic.cc:70] Epochs : ( 99/100 )
 I20220922 07:43:23.188999    40 logistic.cc:581] Party 0 train finish.
-I20220922 07:43:23.193424    40 logistic.cc:613] Save model to /data/result/lr_mode.csv.
+I20220922 07:43:23.193424    40 logistic.cc:613] Save model to /data/result/lr_mode_0.csv.
 I20220922 07:43:23.195238    55 aby3_scheduler.cc:74] Node push task rpc succeeded.
 I20220922 07:43:23.195415    54 aby3_scheduler.cc:74] Node push task rpc succeeded.
 I20220922 07:43:23.196365    56 aby3_scheduler.cc:74] Node push task rpc succeeded.
