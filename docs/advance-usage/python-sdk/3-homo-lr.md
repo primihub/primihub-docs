@@ -1,9 +1,9 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 description: Homo LR Demo
 keywords: [横向联邦学习, Homo LR, Primihub SDK Demo]
 ---
-# 横向联邦学习
+# Homo LR Demo
 
 ## Example
 

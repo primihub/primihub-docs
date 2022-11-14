@@ -44,7 +44,7 @@ PrimiHub Node集群中节点的角色分为：调度节点、可信计算环境�
 
 2. 任务开始执行
 
-- 使用docker-compose 启动PrimiHub Node测试集群（../../../docs/quick-start）
+- 使用docker-compose 启动PrimiHub Node测试集群（[快速开始](../../../docs/quick-start)）
 - cli上传任务，（通过python CLI提交TEE任务，并通过python提交TEE服务任务开始）
   
     ```bash

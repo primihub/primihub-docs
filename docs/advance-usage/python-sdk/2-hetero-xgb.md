@@ -1,9 +1,9 @@
 ---
-sidebar_position: 10
+sidebar_position: 2
 description: Hetero XGB Demo
 keywords: [纵向联邦学习, Hetero XGB, Primihub SDK Demo]
 ---
-# 纵向联邦学习
+# Hetero XGB Demo
 
 ## Example
 
@@ -350,4 +350,3 @@ cli.async_remote_execute((xgb_host_logic, cry_pri), (xgb_guest_logic, cry_pri))
 
 
 ```
-
