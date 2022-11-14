@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
-description: 纵向联邦学习介绍及其应用场景 
-keywords: [纵向联邦学习, 纵向联邦应用场景, Hetero XGB, Primihub SDK Demo]
+description: Hetero XGB Demo
+keywords: [纵向联邦学习, Hetero XGB, Primihub SDK Demo]
 ---
 # 纵向联邦学习
 

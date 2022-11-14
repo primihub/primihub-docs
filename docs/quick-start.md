@@ -85,9 +85,9 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 
 :::tip传送门：
 
-[运行一个纵向联邦学习](https://docs.primihub.com/docs/advance-usage/fedreated-learning/hetero-xgb/)
+[运行一个纵向联邦学习](../docs/advance-usage/fedreated-learning/hetero-xgb/)
 
-[运行一个横向联邦学习](https://docs.primihub.com/docs/advance-usage/fedreated-learning/homo-lr/)
+[运行一个横向联邦学习](../docs/advance-usage/fedreated-learning/homo-lr/)
 
 :::
 

@@ -5,14 +5,11 @@ sidebar_position: 1
 
 # 可信执行环境（TEE）任务
 
-*** PrimiHub + Gramine 🎉 ***
-
+***PrimiHub + Gramine 🎉***
 
 ![Info](./primihub_and_gramine_logo.jpg)
 
-
 PrimiHub使用了Gramine Library OS作为可信计算环境（TEE）运行的支持。
-
 
 有这样的TEE使用场景：
 
@@ -28,12 +25,12 @@ PrimiHub Node集群中节点的角色分为：调度节点、可信计算环境�
 
 ## 使用PrimiHub执行以上场景
 
-
 1. 准备可信执行环境
+
 - 安装sgx驱动以及相关服务
-  - https://github.com/intel/linux-sgx
+  - <https://github.com/intel/linux-sgx>
 - 安装gramine 的执行环境
-  - https://gramine.readthedocs.io/en/latest/quickstart.html
+  - <https://gramine.readthedocs.io/en/latest/quickstart.html>
 - 编译PrimiHub 项目下的SGX的gramine server并运行
 
     ```bash
@@ -46,35 +43,38 @@ PrimiHub Node集群中节点的角色分为：调度节点、可信计算环境�
     ```
 
 2. 任务开始执行
-- 使用docker-compose 启动PrimiHub Node测试集群（https://docs.primihub.com/docs/quick-start）
+
+- 使用docker-compose 启动PrimiHub Node测试集群（../../../docs/quick-start）
 - cli上传任务，（通过python CLI提交TEE任务，并通过python提交TEE服务任务开始）
   
     ```bash
     ./primihub-cli --task_lang=proto --task_type=6 --params="datasets:STRING:0:train_party_1;train_party_2,server:STRING:0:YOUR_FLIGHT_SERVER_IP:8815"
     ```
 
-
 - 调度节点分配任务给数据提供节点
 - 调度节点通知数据提供节点开始上传数据（参数中包含：可信环境执行节点的连接参数、指定数据集），上传数据目前primihub使用的是apache arrow flight RPC协议
 - 数据提供节点向可信执行环境上传数据
 
 3. 通过python client 可以向可信环境执行节点发送可以开始运行
-- 执行环境计算并返回模型
 
+- 执行环境计算并返回模型
 
 ## 计划的工作
 
 ### 可信执行环境节点管理
+
 有PrimiHub Node提供多方都认可的TEE执行环境，如何将确认多方认可的安全性是将要完成的工作，可能涉及到多签名和远程证明。
 
-
 ### 联邦学习
+
 支持更复杂应用场景的联邦学习算法在TEE环境中执行。
 
 ### 远程证明
+
 远程证明允许硬件实体或硬件和软件的组合获得敏感数据提供方或外包方的信任。
 
 证明结果提供：
+
 - 被证明的软件的身份
 - 未测量状态的详细信息（例如执行模式）
 - 评估可能的软件篡改

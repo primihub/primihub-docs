@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 0
 description: 纵向联邦学习介绍及其应用场景 
 keywords: [纵向联邦学习, 纵向联邦应用场景, Hetero XGB, Primihub SDK Demo]
 ---
@@ -104,7 +104,7 @@ Guest端：数据中没有标签的一方
 ### Primihub Hetero XGB运行
 
 :::tip
-运行环境初始化，见[代码编译](https://docs.primihub.com/docs/developer-docs/build/)
+运行环境初始化，见[代码编译](../../../docs/developer-docs/build/)
 :::
 
 #### Hetero XGB Training
@@ -121,7 +121,7 @@ Guest端：数据中没有标签的一方
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
-* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](https://docs.primihub.com/docs/advance-usage/python-sdk/hetero-xgb)
+* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](../../../docs/advance-usage/python-sdk/hetero-xgb)
 
 #### Hetero XGB Prediction
 

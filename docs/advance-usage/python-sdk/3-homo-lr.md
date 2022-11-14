@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
-description: 横向联邦学习介绍及其应用场景
-keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK Demo]
+description: Homo LR Demo
+keywords: [横向联邦学习, Homo LR, Primihub SDK Demo]
 ---
 # 横向联邦学习
 
