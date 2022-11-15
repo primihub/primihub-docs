@@ -3,3 +3,5 @@ node_modules
 /build
 .idea
 .DS_Store
+i18n/en/docusaurus-plugin-content-docs/current/
+i18n/zh-cn/docusaurus-plugin-content-docs/current/

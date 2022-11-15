@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
 
 
 ---
@@ -15,7 +15,7 @@ sidebar_position: 0
 ## 前提
 
 - 安装了primihub python sdk
-- 使用docker-compose启动节点应用，见[快速开始](https://docs.primihub.com/docs/quick-start)
+- 使用docker-compose启动节点应用，见[快速开始](../../../docs/quick-start)
 
 ## Python Client 初始化
 
