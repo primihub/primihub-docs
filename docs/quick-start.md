@@ -16,7 +16,7 @@ displayed_sidebar: tutorialSidebar
 首先，安装 [docker](https://docs.docker.com/install/overview/) 和 [docker-compose](https://docs.docker.com/compose/install/) 后，然后下载 `docker-compose` 文件：
 
 ```shell
-curl https://get.primihub.com/release/1.4.5/docker-compose.yml -s -o docker-compose.yml
+curl https://get.primihub.com/release/latest/docker-compose.yml -s -o docker-compose.yml
 ```
 
 :::tip
