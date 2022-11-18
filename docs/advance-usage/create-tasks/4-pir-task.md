@@ -78,13 +78,13 @@ I20220922 07:36:36.778131    35 pir_server_task.cc:187] request processed
 如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_type=2 --params="clientData:STRING:0:pir_client_data,serverData:STRING:0:pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/opt/data/result/pir_result.csv" --input_datasets="clientData,serverData"
+./primihub-cli --task_type=2 --params="clientData:STRING:1:HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG;VjBWFAmqrPKraFuJwuiFaXJXvLskePqSqVKVwumyfulYWJPNkwfgHVyISSxsBKBi,serverData:STRING:0:keyword_pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/data/result/kw_pir_result.csv" --input_datasets="serverData"
 ```
 
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_type=2 --params="clientData:STRING:0:pir_client_data,serverData:STRING:0:pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/opt/data/result/pir_result.csv" --input_datasets="clientData,serverData"
+./bazel-bin/cli --server="你的IP:50050" --task_type=2 --params="clientData:STRING:1:HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG;VjBWFAmqrPKraFuJwuiFaXJXvLskePqSqVKVwumyfulYWJPNkwfgHVyISSxsBKBi,serverData:STRING:0:keyword_pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/data/result/kw_pir_result.csv" --input_datasets="serverData"
 ```
 
 
@@ -100,7 +100,7 @@ I20221026 16:17:16.703603 567770 node.cc:171]  🤖️ Fininsh create worker nod
 I20221026 16:17:16.703614 567770 worker.cc:39] Worker::execute task type: 4
 I20221026 16:17:16.703619 567770 worker.cc:93] get pirType: 1
 I20221026 16:17:16.703636 567770 keyword_pir_client_task.cc:43] dataset_path_: data/pir_client.csv
-I20221026 16:17:16.703640 567770 keyword_pir_client_task.cc:45] result_file_path_: /opt/data/result/pir_result.csv
+I20221026 16:17:16.703640 567770 keyword_pir_client_task.cc:45] result_file_path_: /data/result/kw_pir_result.csv
 I20221026 16:17:16.703644 567770 keyword_pir_client_task.cc:47] server_address_: 127.0.0.1:50051
 I20221026 16:17:16.703706 567770 keyword_pir_client_task.cc:123] begin to connect to server: tcp://127.0.0.1:1212
 I20221026 16:17:16.703859 567770 keyword_pir_client_task.cc:125] connect to server: tcp://127.0.0.1:1212 end
@@ -115,7 +115,7 @@ I20221026 16:17:21.786216 567770 keyword_pir_client_task.cc:166] Sending OPRF re
 I20221026 16:17:21.834780 567770 keyword_pir_client_task.cc:168] Received OPRF request for 2 items oprf_items: 2 label_keys: 2
 I20221026 16:17:21.834795 567770 keyword_pir_client_task.cc:174] Receiver::RequestOPRF end, begin to receiver.request_query
 I20221026 16:17:21.970415 567770 keyword_pir_client_task.cc:183] receiver.request_query end
-I20221026 16:17:21.970459 567770 keyword_pir_client_task.cc:98] result_file_path_: /opt/data/result/pir_result.csv
+I20221026 16:17:21.970459 567770 keyword_pir_client_task.cc:98] result_file_path_: /data/result/kw_pir_result.csv
 I20221026 16:17:21.971082 567804 pir_scheduler.cc:191] Node push pir task rpc succeeded for remot node: 127.0.0.1:50050
 I20221026 16:17:21.971101 567804 pir_scheduler.cc:195] dest_node: 127.0.0.1:50050 reply success
 I20221026 16:17:21.972643 567803 pir_scheduler.cc:191] Node push pir task rpc succeeded for remot node: 127.0.0.1:50051
@@ -144,8 +144,8 @@ I20221026 16:17:21.969250 567744 keyword_pir_server_task.cc:177] key word pir ta
 
 | 参数| 数据类型 | 参数示例 | 参数说明
 | ---- | ---- | ---- | ---- |
-| params.clientData | STRING | pir_client_data | 表示需要检索pir数据库中关键字的记录，（对于查询的每个关键字作为一条单独的记录，支持多个关键字同时查询）， 在任务发起后，通过该标识获取对应client节点端的数据配置并加载数据，用例中数据注册到节点node0中，在config目录中对应的配置文件为primihub_node0.yaml, 设置该数据的description为"pir_client_data"，作为该数据标志符。标志符用户可以自主设置，请求任务中的参数值与配置文件中标志符保持一致|
-| params.serverData | STRING | pir_server_data | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送匿踪查询请求。pir服务端加载该标识符对应文件生成pir数据库。（pir服务中调度节点默认作为pir服务的客户端节点。用例中数据注册到节点node1中，在config目中对应的配置文件是primihub_node1.yaml，添加数据的保存路径，设置该数据的description为"pir_server_data"，作为该数据标志符。标志符用户可以自主设置，请求任务中的参数值与配置文件中标志符保持一致））|
-| params.outputFullFilename | STRING | "/data/result/pir_result.csv" | 指定pir匿踪查询结果保存文件的文件名和文件所在目录的绝对路径。|
+| params.clientData | STRING | HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG | 表示需要检索pir数据库中关键字的记录，（对于查询的每个关键字作为一条单独的记录，支持多个关键字同时查询）， 在任务发起后，通过该标识获取对应client节点端的数据配置并加载数据，用例中数据注册到节点node1中，在config目录中对应的配置文件为primihub_node1.yaml, 设置该数据为 "keyword_pir_server_data" 对应的文件中包含的字符串 |
+| params.serverData | STRING | keyword_pir_server_data | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送匿踪查询请求。pir服务端加载该标识符对应文件生成pir数据库。（pir服务中调度节点默认作为pir服务的客户端节点。用例中数据注册到节点node1中，在config目中对应的配置文件是primihub_node1.yaml，添加数据的保存路径，设置该数据的description为"keyword_pir_server_data"，作为该数据标志符。标志符用户可以自主设置，请求任务中的参数值与配置文件中标志符保持一致））|
+| params.outputFullFilename | STRING | "/data/result/kw_pir_result.csv" | 指定pir匿踪查询结果保存文件的文件名和文件所在目录的绝对路径。|
 | params.pirType | INT32 | 1 | 指定发起的任务为基于关键字隐匿查询，参数为1代表基于关键字查询|
 | input_datasets | STRING | "serverData" | 该参数值指定params参数集合的数据集参数，实例中params.serverData是数据集参数，通过数据集参数值找到相关工作节点。|
