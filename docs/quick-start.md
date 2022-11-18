@@ -81,7 +81,7 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 
 ---
 
-了解更多有关如何创建 [PMC 任务](../docs/advance-usage/create-tasks/mpc-task)的细节。
+了解更多有关如何创建 [MPC 任务](../docs/advance-usage/create-tasks/mpc-task)的细节。
 
 :::tip传送门：
 
