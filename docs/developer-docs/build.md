@@ -27,14 +27,17 @@ wget https://github.com/zeromq/libzmq/archive/refs/tags/v4.3.4.tar.gz
 tar -zxf v4.3.4.tar.gz
 cd libzmq-4.3.4/ && mkdir build && cd build && cmake .. && make -j 8 && make install
 
+cd /opt
 wget https://github.com/zeromq/cppzmq/archive/refs/tags/v4.9.0.tar.gz
 tar -zxf v4.9.0.tar.gz
 cd cppzmq-4.9.0/ && mkdir build && cd build/ && cmake .. && make -j 8 install
 
+cd /opt
 wget https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
 tar -zxf v2.0.0.tar.gz
 cd flatbuffers-2.0.0/ && mkdir build && cd build/ && cmake .. && make -j 8 && make instal
 
+cd /opt
 wget https://sourceforge.net/projects/tclap/files/tclap-1.2.5.tar.gz
 tar -zxvf tclap-1.2.5.tar.gz
 cd tclap-1.2.5 && ./configure && make -j 8 && make install
