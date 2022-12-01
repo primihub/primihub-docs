@@ -23,7 +23,7 @@ curl https://get.primihub.com/release/latest/docker-compose.yml -s -o docker-com
 
 * 如需要特定版本，请在上面的 URL 中指定
 * 当前支持的平台为： `linux/amd64`，Docker 支持以模拟器的形式支持，但可能会[遇到一些诸如性能等已知问题](https://docs.docker.com/desktop/mac/apple-silicon/#known-issues)。
-* 如果遇到 Docker Hub 拉取镜像限制或其他问题，可以尝试通过环境变量来使用替换的镜像地址，例如： `REGISTRY=registry.cn-beijing.aliyuncs.com`
+* 如果遇到 Docker Hub 拉取镜像限制或其他问题，可以尝试通过环境变量来使用替换的镜像地址，例如： `echo "REGISTRY=registry.cn-beijing.aliyuncs.com" >> .env`
 :::
 
 ## 运行一个MPC案例
