@@ -18,15 +18,15 @@ sidebar_position: 1
 目录如下：
 
     ├─primihub-platform
-    ├─primihub-fusion
-    │   ├─fusion-api
-    │   └─script
-    ├─primihub-service
-    │   ├─application
-    │   ├─biz
-    │   ├─gateway
-    │   └─script
-    └─primihub-webconsole
+        ├─primihub-fusion
+        │   ├─fusion-api
+        │   └─script
+        ├─primihub-service
+        │   ├─application
+        │   ├─biz
+        │   ├─gateway
+        │   └─script
+        └─primihub-webconsole
 
 之后可以阅读以下三个连接来进行部署安装：
 - [primihub-fusion](/docs/developer-docs/privacy-platform/privacy-platform-fusion) : 用于群组交流，共享资源和资源查询
