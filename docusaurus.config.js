@@ -67,7 +67,12 @@ const config = {
       }),
     ],
   ],
-
+  scripts: [
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+    {
+      src: '/modal.js'
+    },
+  ],
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
@@ -76,6 +81,7 @@ const config = {
         'sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X',
       crossorigin: 'anonymous',
     },
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'
   ],
 
   themeConfig:
