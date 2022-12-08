@@ -1,14 +1,14 @@
 var div = document.createElement('div')
 div.innerHTML = `
-<button type="button" style="display: none;" id="modal-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" style="display: none;" id="modal-button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
 Launch demo modal
 </button>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered modal-lg">
   <div class="modal-content">
     <div class="modal-header">
-      <h3 class="modal-title" id="exampleModalLabel">感谢关注和使用</h3>
+      <h3 class="modal-title" id="modalLabel">感谢关注和使用</h3>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
