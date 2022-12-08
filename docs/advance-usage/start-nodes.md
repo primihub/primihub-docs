@@ -43,6 +43,24 @@ apt install redis -y  #Ubuntu
 systemctl start redis
 ```
 
+或者直接使用 `docker` 来快速启动 `redis`，先准备个简单的`redis`配置
+```
+cat > /opt/redis.conf << EOF
+daemonize no
+pidfile /var/run/redis.pid
+port 6379
+bind 0.0.0.0
+timeout 0
+requirepass primihub
+dbfilename dump.rdb
+dir /data
+EOF
+```
+然后执行下面的命令启动
+```
+docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+```
+
 ## 运行节点
 
 您可以选择直接下载编译好的二进制文件（当前只有 Darwin 下 amd64 架构的二进制文件）：

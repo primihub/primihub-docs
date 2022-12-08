@@ -43,6 +43,24 @@ Finally, use the following command to start `redis`
 systemctl start redis
 ```
 
+Or just use `docker` to quickly start `redis` and prepare a simple `redis` configuration first
+```
+cat > /opt/redis.conf << EOF
+daemonize no
+pidfile /var/run/redis.pid
+port 6379
+bind 0.0.0.0
+timeout 0
+requirepass primihub
+dbfilename dump.rdb
+dir /data
+EOF
+```
+Then execute the following command to start
+```
+docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+```
+
 
 ## Run Node
 
