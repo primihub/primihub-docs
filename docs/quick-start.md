@@ -13,7 +13,10 @@ displayed_sidebar: tutorialSidebar
 
 5 分钟运行起来一个 MPC（Secure multi-party computation, 安全多方计算）应用
 
-首先，安装 [docker](https://docs.docker.com/install/overview/) 和 [docker-compose](https://docs.docker.com/compose/install/) 后，然后下载 `docker-compose` 文件：
+首先，安装 [docker](https://docs.docker.com/install/overview/) 和 [docker-compose](https://docs.docker.com/compose/install/) ，或者下载我们整理好的 [安装包](https://primihub.oss-cn-beijing.aliyuncs.com/dev/docker20.10.tar.gz)，下载解压后执行 `bash install_docker.sh` 即完成`docker`和`docker-compose`的安装。
+
+
+然后下载 `docker-compose` 文件：
 
 ```shell
 curl https://get.primihub.com/release/latest/docker-compose.yml -s -o docker-compose.yml
@@ -34,8 +37,8 @@ curl https://get.primihub.com/release/latest/docker-compose.yml -s -o docker-com
 
 ***启动测试用的节点***
 
-使用 `docker-compose` 启动三个docker容器。
-容器包括：启动点、三个节点
+使用 `docker-compose` 启动容器。
+容器包括：启动点、redis（数据集查找默认使用redis）、三个节点
 
 ```shell
 docker-compose up -d
@@ -50,11 +53,12 @@ docker-compose ps -a
 你会看到类似下面的输出
 
 ```shell
-CONTAINER ID   IMAGE                                COMMAND                  CREATED          STATUS          PORTS                                                                         NAMES
-cf875c1280be   primihub/primihub-node:latest        "/bin/bash -c './pri…"   11 minutes ago   Up 11 minutes   0.0.0.0:12120-12121->12120-12121/tcp, 0.0.0.0:8052->50050/tcp                 node2_primihub
-6a822ff5c6f7   primihub/primihub-node:latest        "/bin/bash -c './pri…"   11 minutes ago   Up 11 minutes   0.0.0.0:10120->12120/tcp, 0.0.0.0:10121->12121/tcp, 0.0.0.0:8050->50050/tcp   node0_primihub
-11d55ce06ff0   primihub/primihub-node:latest        "/bin/bash -c './pri…"   11 minutes ago   Up 11 minutes   0.0.0.0:11120->12120/tcp, 0.0.0.0:11121->12121/tcp, 0.0.0.0:8051->50050/tcp   node1_primihub
-68befa6ab2a5   primihub/simple-bootstrap-node:1.0   "/app/simple-bootstr…"   11 minutes ago   Up 11 minutes   0.0.0.0:4001->4001/tcp                                                        simple_bootstrap_node
+NAME                    COMMAND                  SERVICE                 STATUS              PORTS
+node0_primihub          "/bin/bash -c './pri…"   node0                   running             0.0.0.0:6666->6666/tcp, 0.0.0.0:8050->50050/tcp
+node1_primihub          "/bin/bash -c './pri…"   node1                   running             0.0.0.0:6667->6667/tcp, 0.0.0.0:8051->50051/tcp
+node2_primihub          "/bin/bash -c './pri…"   node2                   running             0.0.0.0:6668->6668/tcp, 0.0.0.0:8052->50052/tcp
+redis                   "docker-entrypoint.s…"   redis                   running             0.0.0.0:6379->6379/tcp
+simple_bootstrap_node   "/app/simple-bootstr…"   simple_bootstrap_node   running             0.0.0.0:4001->4001/tcp
 ```
 
 ### 创建一个MPC任务

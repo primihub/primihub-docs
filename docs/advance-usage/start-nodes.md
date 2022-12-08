@@ -9,7 +9,7 @@ displayed_sidebar: lensonsSidebar
 
 *** 启动用于运行任务的各个节点 *** 
  
-## 运行启动点
+## 运行启动点（使用redis做数据集查找时该步骤可忽略）
 
 您可以选择直接下载编译好的二进制文件：
 
@@ -30,6 +30,19 @@ go run main.go
 ```shell
 docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
 ```
+## 启动redis (使用bootstrap_node做数据集查找时该步骤可忽略)
+
+使用 `CentOS` 或 `Ubuntu` 时，可直接使用下面的命令安装redis
+```
+yum install redis -y  #CentOS
+apt install redis -y  #Ubuntu
+```
+然后修改 `/etc/redis.conf` 文件中的 `requirepass` 字段设置 `redis` 密码，该密码需要和 `./config/node*.yaml` 文件 `redis_password` 字段的设置相同。
+最后使用以下命令来启动 `redis`
+```
+systemctl start redis
+```
+
 ## 运行节点
 
 您可以选择直接下载编译好的二进制文件（当前只有 Darwin 下 amd64 架构的二进制文件）：
