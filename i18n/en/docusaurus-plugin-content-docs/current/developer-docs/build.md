@@ -6,9 +6,7 @@ sidebar_position: 1
 
 ## Build Tools
 
-bazel 5.0.0， installation and configuration see [here](https://docs.bazel.build/versions/5.0.0/install.html)
-
-Linux environment configuration refer to [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 
+Linux environment configuration refer to [Dockerfile.build](https://github.com/primihub/primihub/blob/develop/Dockerfile.build) 
 
 For `ubuntu 20.04` ，run the following command to set up the base environment
 ```
@@ -32,7 +30,7 @@ git clone https://github.com/primihub/primihub.git
 
 ## Build
 :::tip  If you don't have direct access to an open source repository like github, you'll need to set up your own proxy and set the *** HTTPS_PROXY ***   environment variable  
-  Example： HTTPS_PROXY=http://127.0.0.1:7890
+  Example： https_proxy=http://127.0.0.1:7890
 
 :::
 
