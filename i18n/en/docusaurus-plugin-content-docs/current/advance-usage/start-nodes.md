@@ -7,30 +7,8 @@ description: Start the PrimiHub node manually
 # Bootstrap Nodes
 
  *** Start the test node via a Golang application *** 
- 
-## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
 
-You could directly download the binary file from GitHub release:
-
-```shell
-curl -L https://github.com/primihub/simple-bootstrap-node/releases/download/v0.0.1/simple-bootstrap-node-darwin-amd64.tar.gz|tar xzv simple-bootstrap-node
-./simple-bootstrap-node
-```
-
-or, compile it from the source code:
-
-```shell
-git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
-go mod tidy
-go run main.go
-```
-
-Or run the bootstrap-node with docker
-```shell
-docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
-```
-
-## Run redis (This step can be ignored when using bootstrap_node for dataset lookup)
+## Run redis (Recommended)
 
 When using `CentOS` or `Ubuntu`, you can install redis directly with the following command
 ```
@@ -59,6 +37,28 @@ EOF
 Then execute the following command to start
 ```
 docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+```
+ 
+## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
+
+You could directly download the binary file from GitHub release:
+
+```shell
+curl -L https://github.com/primihub/simple-bootstrap-node/releases/download/v0.0.1/simple-bootstrap-node-darwin-amd64.tar.gz|tar xzv simple-bootstrap-node
+./simple-bootstrap-node
+```
+
+or, compile it from the source code:
+
+```shell
+git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
+go mod tidy
+go run main.go
+```
+
+Or run the bootstrap-node with docker
+```shell
+docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
 ```
 
 

@@ -8,29 +8,8 @@ displayed_sidebar: lensonsSidebar
 # 启动各节点
 
 *** 启动用于运行任务的各个节点 *** 
- 
-## 运行启动点（使用redis做数据集查找时该步骤可忽略）
 
-您可以选择直接下载编译好的二进制文件：
-
-```shell
-curl -L https://github.com/primihub/simple-bootstrap-node/releases/download/v0.0.1/simple-bootstrap-node-darwin-amd64.tar.gz|tar xzv simple-bootstrap-node
-./simple-bootstrap-node
-```
-
-或者是在源码基础上编译：
-
-```shell
-git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
-go mod tidy
-go run main.go
-```
-
-或直接使用docker运行启动节点
-```shell
-docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
-```
-## 启动redis (使用bootstrap_node做数据集查找时该步骤可忽略)
+## 启动redis (推荐)
 
 使用 `CentOS` 或 `Ubuntu` 时，可直接使用下面的命令安装redis
 ```
@@ -59,6 +38,28 @@ EOF
 然后执行下面的命令启动
 ```
 docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+```
+ 
+## 运行启动点（使用redis做数据集查找时该步骤可忽略）
+
+您可以选择直接下载编译好的二进制文件：
+
+```shell
+curl -L https://github.com/primihub/simple-bootstrap-node/releases/download/v0.0.1/simple-bootstrap-node-darwin-amd64.tar.gz|tar xzv simple-bootstrap-node
+./simple-bootstrap-node
+```
+
+或者是在源码基础上编译：
+
+```shell
+git clone https://github.com/primihub/simple-bootstrap-node.git && cd simple-bootstrap-node
+go mod tidy
+go run main.go
+```
+
+或直接使用docker运行启动节点
+```shell
+docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
 ```
 
 ## 运行节点
