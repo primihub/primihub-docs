@@ -8,8 +8,7 @@ keywords: [docker-compose]
 
 :::tip
 为避免端口冲突和网段冲突，请尽量使用干净的机器
-
-目前提供docker部署包仅支持单机部署，同一内网中的多机部署及异地部署企业版中已支持，如需要可联系小助手了解。
+目前提供docker部署包仅支持单机部署，多机部署及异地部署企业版中已支持，如需要可联系小助手了解。
 :::
 
 ### 下载安装包，执行脚本，完成部署
@@ -34,23 +33,24 @@ NAME                COMMAND                  SERVICE                 STATUS     
 application1        "/bin/sh -c 'java -j…"   application1            running             
 application2        "/bin/sh -c 'java -j…"   application2            running             
 application3        "/bin/sh -c 'java -j…"   application3            running             
-bootstrap_node      "/app/simple-bootstr…"   simple_bootstrap_node   running             4001/tcp
+bootstrap-node      "/app/simple-bootstr…"   simple-bootstrap-node   running             4001/tcp
 fusion              "/bin/sh -c 'java -j…"   fusion                  running             
 gateway1            "/bin/sh -c 'java -j…"   gateway1                running             
 gateway2            "/bin/sh -c 'java -j…"   gateway2                running             
 gateway3            "/bin/sh -c 'java -j…"   gateway3                running             
+loki                "/usr/bin/loki -conf…"   loki                    running             0.0.0.0:3100->3100/tcp, :::3100->3100/tcp
+manage-web1         "/docker-entrypoint.…"   nginx1                  running             0.0.0.0:30811->80/tcp, :::30811->80/tcp
+manage-web2         "/docker-entrypoint.…"   nginx2                  running             0.0.0.0:30812->80/tcp, :::30812->80/tcp
+manage-web3         "/docker-entrypoint.…"   nginx3                  running             0.0.0.0:30813->80/tcp, :::30813->80/tcp
 mysql               "docker-entrypoint.s…"   mysql                   running             0.0.0.0:3306->3306/tcp, :::3306->3306/tcp
 nacos-server        "bin/docker-startup.…"   nacos                   running             0.0.0.0:8848->8848/tcp, 0.0.0.0:9555->9555/tcp, 0.0.0.0:9848->9848/tcp, :::8848->8848/tcp, :::9555->9555/tcp, :::9848->9848/tcp
-primihub-redis      "docker-entrypoint.s…"   redis                   running             6379/tcp
-primihub-web1       "/docker-entrypoint.…"   nginx1                  running             0.0.0.0:30811->80/tcp, :::30811->80/tcp
-primihub-web2       "/docker-entrypoint.…"   nginx2                  running             0.0.0.0:30812->80/tcp, :::30812->80/tcp
-primihub-web3       "/docker-entrypoint.…"   nginx3                  running             0.0.0.0:30813->80/tcp, :::30813->80/tcp
-primihub_node0      "/bin/bash -c './pri…"   node0                   running             0.0.0.0:8050->50050/tcp, :::8050->50050/tcp
-primihub_node1      "/bin/bash -c './pri…"   node1                   running             0.0.0.0:8051->50051/tcp, :::8051->50051/tcp
-primihub_node2      "/bin/bash -c './pri…"   node2                   running             0.0.0.0:8052->50052/tcp, :::8052->50052/tcp
+primihub-node0      "/bin/bash -c './pri…"   node0                   running             0.0.0.0:6666->6666/tcp, 0.0.0.0:50050->50050/tcp, :::6666->6666/tcp, :::50050->50050/tcp
+primihub-node1      "/bin/bash -c './pri…"   node1                   running             0.0.0.0:6667->6667/tcp, 0.0.0.0:50051->50051/tcp, :::6667->6667/tcp, :::50051->50051/tcp
+primihub-node2      "/bin/bash -c './pri…"   node2                   running             0.0.0.0:6668->6668/tcp, 0.0.0.0:50052->50052/tcp, :::6668->6668/tcp, :::50052->50052/tcp
 rabbitmq1           "docker-entrypoint.s…"   rabbitmq1               running             25672/tcp
 rabbitmq2           "docker-entrypoint.s…"   rabbitmq2               running             25672/tcp
 rabbitmq3           "docker-entrypoint.s…"   rabbitmq3               running             25672/tcp
+redis               "docker-entrypoint.s…"   redis                   running             6379/tcp
 ```
 
 ### 使用说明
