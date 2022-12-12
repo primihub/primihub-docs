@@ -8,7 +8,7 @@ description: Start the PrimiHub node manually
 
  *** Start the test node via a Golang application *** 
  
-## Running the Bootstrap Nodes
+## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
 
 You could directly download the binary file from GitHub release:
 
@@ -29,6 +29,38 @@ Or run the bootstrap-node with docker
 ```shell
 docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
 ```
+
+## Run redis (This step can be ignored when using bootstrap_node for dataset lookup)
+
+When using `CentOS` or `Ubuntu`, you can install redis directly with the following command
+```
+yum install redis -y  #CentOS
+apt install redis -y  #Ubuntu
+```
+Then change the `requirepass` field in the `/etc/redis.conf` file to set the `redis` password, which needs to be the same as the `. /config/node*.yaml` file in the `redis_password` field.
+Finally, use the following command to start `redis`
+```
+systemctl start redis
+```
+
+Or just use `docker` to quickly start `redis` and prepare a simple `redis` configuration first
+```
+cat > /opt/redis.conf << EOF
+daemonize no
+pidfile /var/run/redis.pid
+port 6379
+bind 0.0.0.0
+timeout 0
+requirepass primihub
+dbfilename dump.rdb
+dir /data
+EOF
+```
+Then execute the following command to start
+```
+docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+```
+
 
 ## Run Node
 

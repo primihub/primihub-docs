@@ -5,11 +5,9 @@ displayed_sidebar: developerSidebar
 
 # 代码编译
 
-## 依赖编译工具
+## 配置环境
 
-bazel 5.0.0， 安装和配置见[这里](https://docs.bazel.build/versions/5.0.0/install.html)
-
-Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 文件
+Linux 环境配置步骤可参考 [Dockerfile.build](https://github.com/primihub/primihub/blob/develop/Dockerfile.build) 文件
 
 以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
 ```
@@ -20,27 +18,9 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/b
 
 npm install -g @bazel/bazelisk
 
-# 基于关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用 mq 的形式实现，需要安装 mq 和 flatbuffer
-# 以下是keyword PIR 的依赖安装步骤
-cd /opt
-wget https://github.com/zeromq/libzmq/archive/refs/tags/v4.3.4.tar.gz
-tar -zxf v4.3.4.tar.gz
-cd libzmq-4.3.4/ && mkdir build && cd build && cmake .. && make -j 8 && make install
-
-cd /opt
-wget https://github.com/zeromq/cppzmq/archive/refs/tags/v4.9.0.tar.gz
-tar -zxf v4.9.0.tar.gz
-cd cppzmq-4.9.0/ && mkdir build && cd build/ && cmake .. && make -j 8 install
-
-cd /opt
-wget https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
-tar -zxf v2.0.0.tar.gz
-cd flatbuffers-2.0.0/ && mkdir build && cd build/ && cmake .. && make -j 8 && make instal
-
-cd /opt
-wget https://sourceforge.net/projects/tclap/files/tclap-1.2.5.tar.gz
-tar -zxvf tclap-1.2.5.tar.gz
-cd tclap-1.2.5 && ./configure && make -j 8 && make install
+# 关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用 mq 的形式实现，需要安装 mq 和 flatbuffer
+# 执行primihub仓库根目录下的 pre_keywordpir.sh 脚本即可完成 keyword PIR 的依赖安装
+bash pre_keywordpir.sh
 ```
 ## 克隆代码
 
@@ -49,8 +29,8 @@ git clone https://github.com/primihub/primihub.git
 ```
 
 ## 编译
-:::tip 如果你无法直接访问一部分地址，例如 GitHub，需要自行设置代理，并设置*** HTTPS_PROXY *** 环境变量
-比如： HTTPS_PROXY=http://127.0.0.1:7890
+:::tip 如果你无法直接访问一部分地址，例如 GitHub，需要自行设置代理，并设置*** https_proxy *** 环境变量
+比如： https_proxy=http://127.0.0.1:7890
 :::
 
 ### Linux

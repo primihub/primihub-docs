@@ -6,9 +6,7 @@ sidebar_position: 1
 
 ## Build Tools
 
-bazel 5.0.0， installation and configuration see [here](https://docs.bazel.build/versions/5.0.0/install.html)
-
-Linux environment configuration refer to [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 
+Linux environment configuration refer to [Dockerfile.build](https://github.com/primihub/primihub/blob/develop/Dockerfile.build) 
 
 For `ubuntu 20.04` ，run the following command to set up the base environment
 ```
@@ -20,24 +18,9 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/b
 npm install -g @bazel/bazelisk
 
 # Keyword PIR based on the APSI library. The current APSI library communication is implemented in the form of mq, need to install mq and flatbuffer
-# The following are the keyword PIR dependencies installation steps
+# Execute the pre_keywordpir.sh script in the primihub repository root to complete the installation of the keyword PIR dependency
 
-cd /opt
-wget https://github.com/zeromq/libzmq/archive/refs/tags/v4.3.4.tar.gz
-tar -zxf v4.3.4.tar.gz
-cd libzmq-4.3.4/ && mkdir build && cd build && cmake .. && make -j 8 && make install
-
-wget https://github.com/zeromq/cppzmq/archive/refs/tags/v4.9.0.tar.gz
-tar -zxf v4.9.0.tar.gz
-cd cppzmq-4.9.0/ && mkdir build && cd build/ && cmake .. && make -j 8install
-
-wget https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz
-tar -zxf v2.0.0.tar.gz
-cd flatbuffers-2.0.0/ && mkdir build && cd build/ && cmake .. && make -j 8&& make instal
-
-wget https://sourceforge.net/projects/tclap/files/tclap-1.2.5.tar.gz
-tar -zxvf tclap-1.2.5.tar.gz
-cd tclap-1.2.5 && ./configure && make -j 8 && make install
+bash pre_keywordpir.sh
 ```
 ## Get the code
 
@@ -47,7 +30,7 @@ git clone https://github.com/primihub/primihub.git
 
 ## Build
 :::tip  If you don't have direct access to an open source repository like github, you'll need to set up your own proxy and set the *** HTTPS_PROXY ***   environment variable  
-  Example： HTTPS_PROXY=http://127.0.0.1:7890
+  Example： https_proxy=http://127.0.0.1:7890
 
 :::
 
