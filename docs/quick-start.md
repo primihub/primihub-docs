@@ -16,16 +16,16 @@ displayed_sidebar: tutorialSidebar
 首先，安装 [docker](https://docs.docker.com/install/overview/) 和 [docker-compose](https://docs.docker.com/compose/install/) ，或者下载我们整理好的 [安装包](https://primihub.oss-cn-beijing.aliyuncs.com/dev/docker20.10.tar.gz)，下载解压后执行 `bash install_docker.sh` 即完成`docker`和`docker-compose`的安装。
 
 
-然后下载 `docker-compose` 文件：
+然后下载仓库并进入到代码根目录：
 
 ```shell
-curl https://get.primihub.com/release/latest/docker-compose.yml -s -o docker-compose.yml
+git clone https://github.com/primihub/primihub.git
+cd primihub
 ```
 
 :::tip
-
-* 如需要特定版本，请在上面的 URL 中指定
-* 当前支持的平台为： `linux/amd64`，Docker 支持以模拟器的形式支持，但可能会[遇到一些诸如性能等已知问题](https://docs.docker.com/desktop/mac/apple-silicon/#known-issues)。
+* 国内用户如访问GitHub缓慢可使用Gitee仓库地址：https://gitee.com/primihub/primihub.git
+* 当前支持的平台为： `linux/amd64`，ARM 平台上 Docker 支持以模拟器的形式运行，但可能会[遇到一些诸如性能等已知问题](https://docs.docker.com/desktop/mac/apple-silicon/#known-issues)。
 * 如果遇到 Docker Hub 拉取镜像限制或其他问题，可以尝试通过环境变量来使用替换的镜像地址，例如： `echo "REGISTRY=registry.cn-beijing.aliyuncs.com" >> .env`
 :::
 
