@@ -61,6 +61,11 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 ./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr.py --params="predictFileName:STRING:0:/app/pred_acc.csv,modelFileName:STRING:0:/app/lr_model.pl"
 ```
 
+#### Homo LR Prediction
+```bash
+./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/app/test.csv,modelFileName:STRING:0:/app/lr_model.pl"
+```
+
 - 通过Python SDK Client启动，见[Python SDK homo-lr-demo](../../../docs/advance-usage/python-sdk/homo-lr)
 
 ### 参考文献
