@@ -35,8 +35,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({locale,version,docPath}) =>
-            'https://github.com/primihub/primihub-docs/tree/main/',
+          editUrl: 'https://github.com/primihub/primihub-docs/tree/main/',
           editLocalizedFiles: true,
           showLastUpdateTime: true,
           remarkPlugins: [math],
