@@ -16,11 +16,6 @@ apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip ma
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
 npm install -g @bazel/bazelisk
-
-# Keyword PIR based on the APSI library. The current APSI library communication is implemented in the form of mq, need to install mq and flatbuffer
-# Execute the pre_keywordpir.sh script in the primihub repository root to complete the installation of the keyword PIR dependency
-
-bash pre_keywordpir.sh
 ```
 ## Get the code
 
@@ -40,7 +35,7 @@ git clone https://github.com/primihub/primihub.git
 * Build
 ```bash
 ./pre_build.sh
-bazel build --config=linux :node :cli :opt_paillier_c2py
+bazel build --config=linux --define cpu=amd64 --define microsoft-apsi=true :node :cli :opt_paillier_c2py
 ```
 
 ### mac
