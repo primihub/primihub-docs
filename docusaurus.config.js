@@ -173,12 +173,12 @@ const config = {
                 href: 'https://github.com/primihub/primihub',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/OpenPrimi',
+                label: 'Gitee',
+                href: 'https://gitee.com/primihub/primihub',
               },
               {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCmbSodM232zm_Jod-z4Bv4A/featured',
+                label: 'Twitter',
+                href: 'https://twitter.com/OpenPrimi',
               },
               {
                 label: '关于PrimiHub',
