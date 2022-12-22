@@ -17,17 +17,16 @@ apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip ma
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
 npm install -g @bazel/bazelisk
-
-# 关键字查询PIR任务是基于APSI库实现的，当前APSI库通信采用 mq 的形式实现，需要安装 mq 和 flatbuffer
-# 执行primihub仓库根目录下的 pre_keywordpir.sh 脚本即可完成 keyword PIR 的依赖安装
-bash pre_keywordpir.sh
 ```
 ## 克隆代码
 
 ```bash
 git clone https://github.com/primihub/primihub.git
 ```
-
+国内用户如果`GitHub`访问缓慢推荐使用`Gitee`地址
+```bash
+git clone https://gitee.com/primihub/primihub.git
+```
 ## 编译
 :::tip 如果你无法直接访问一部分地址，例如 GitHub，需要自行设置代理，并设置*** https_proxy *** 环境变量
 比如： https_proxy=http://127.0.0.1:7890
@@ -40,7 +39,7 @@ git clone https://github.com/primihub/primihub.git
 
 ```bash
 ./pre_build.sh
-bazel build --config=linux :node :cli :opt_paillier_c2py
+bazel build --config=linux --define cpu=amd64 --define microsoft-apsi=true :node :cli :opt_paillier_c2py
 ```
 
 ### macOS
