@@ -12,7 +12,7 @@ Creating a FL task requires the following parameters:`--task_lang=python --task_
 
 Example: launching a FL xgboosttask：
 
-If starting with docker-compose, enter the node0_primihub container by running `docker exec -it node0_primihub bash` ，and run the following command：
+If starting with docker-compose, enter the primihub-node0 container by running `docker exec -it primihub-node0 bash` ，and run the following command：
 
 ```bash
 ./primihub-cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/disxgb_en.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"

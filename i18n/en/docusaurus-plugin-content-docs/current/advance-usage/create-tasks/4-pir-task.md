@@ -9,7 +9,7 @@ sidebar_position: 4
 
 Creating a PIR task requires the following parameters:`--task_type=2`,and specify the index and the server-side dataset to query via `params`.The 'input_datasets' parameter specifies which datasets are in the' params' parameter
 
-If starting with docker-compose, enter the node0_primihub container by running`docker exec -it node0_primihub bash` ，and run the following command：
+If starting with docker-compose, enter the primihub-node0 container by running`docker exec -it primihub-node0 bash` ，and run the following command：
 
 ```bash
 ./primihub-cli --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,databaseSize:STRING:0:20,outputFullFilename:STRING:0:/data/result/pir_result.csv" --input_datasets="serverData"
