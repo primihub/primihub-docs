@@ -12,7 +12,7 @@ sidebar_position: 2
 
 举例：启动一个联邦学习xgboost任务：
 
-如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到primihub-node0 容器，执行以下命令：
 
 ```bash
 ./primihub-cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb.py" --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
