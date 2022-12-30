@@ -11,7 +11,7 @@ Creating a MPC task requires the following parameters:`--task_lang=proto --task_
 
 Example: launching an MPC logistic regression task：
 
-If starting with docker-compose, enter the node0_primihub container by running `docker exec -it node0_primihub bash`,and run the following command:
+If starting with docker-compose, enter the primihub-node0 container by running `docker exec -it primihub-node0 bash`,and run the following command:
 
 ```bash
 ./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
