@@ -49,7 +49,7 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 运行：
 
-- 如果是通过docker-compose启动，执行 `docker exec -it node0_primihub bash` 进入到node0_primihub 容器，执行以下命令：
+- 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到primihub-node0 容器，执行以下命令：
 
 ```Python
 ./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr.py --params="predictFileName:STRING:0:/app/pred_acc.csv,modelFileName:STRING:0:/app/lr_model.pl"
