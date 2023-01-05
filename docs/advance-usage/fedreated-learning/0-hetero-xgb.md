@@ -109,7 +109,7 @@ Guest端：数据中没有标签的一方
 
 #### Hetero XGB Training
 
-* 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到primihub-node0 容器，执行以下命令：
+* 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```Python
 ./primihub-cli --task_lang=python --task_code=./python/primihub/examples/hetero_xgb.py --params="predictFileName:STRING:0:/data/result/prediction.csv, indicatorFileName:STRING:0:/data/result/indicator.json, hostLookupTable:STRING:0:/data/result/hostlookuptable.csv, guestLookupTable:STRING:0:/data/result/guestlookuptable.csv, modelFileName:STRING:0:/data/result/host/model"
