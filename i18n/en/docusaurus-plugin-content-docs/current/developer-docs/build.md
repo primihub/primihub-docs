@@ -35,7 +35,7 @@ git clone https://github.com/primihub/primihub.git
 * Build
 ```bash
 ./pre_build.sh
-bazel build --config=linux --define cpu=amd64 --define microsoft-apsi=true :node :cli :opt_paillier_c2py
+bazel build --config=linux --define cpu=amd64 --define microsoft-apsi=true :node :cli :opt_paillier_c2py :linkcontext
 ```
 
 ### mac
@@ -45,21 +45,21 @@ bazel build --config=linux --define cpu=amd64 --define microsoft-apsi=true :node
  
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py
+bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py :linkcontext
 ```
 
  *  Apple sillicon M1
 
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py
+bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py :linkcontext
 ```
 
  *  MacOS Monterey with Apple M1
 
 ```bash
 ./pre_build.sh
-bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py
+bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py :linkcontext
 ```
 
 ### windows 
