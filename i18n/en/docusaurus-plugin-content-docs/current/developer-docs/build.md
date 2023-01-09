@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Build Tools
 
-Linux environment configuration refer to [Dockerfile.build](https://github.com/primihub/primihub/blob/develop/Dockerfile.build) 
+Linux environment configuration refer to [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 
 
 For `ubuntu 20.04` ，run the following command to set up the base environment
 ```
@@ -35,7 +35,10 @@ git clone https://github.com/primihub/primihub.git
 * Build
 ```bash
 ./pre_build.sh
-bazel build --config=linux --define cpu=amd64 --define microsoft-apsi=true :node :cli :opt_paillier_c2py :linkcontext
+bazel build --config=linux_x86_64 :node :cli :opt_paillier_c2py :linkcontext
+
+# Arm
+bazel build --config=linux_aarch64 :node :cli :opt_paillier_c2py :linkcontext
 ```
 
 ### mac

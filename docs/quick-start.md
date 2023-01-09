@@ -8,7 +8,7 @@ displayed_sidebar: tutorialSidebar
 # 快速开始
 
 :::tip
-机器的最低配置要求 4核8G
+机器的最低配置要求 4核8G，支持`avx` 指令集，可通过`lscpu | grep avx` 验证
 :::
 
 5 分钟运行起来一个 MPC（Secure multi-party computation, 安全多方计算）应用
