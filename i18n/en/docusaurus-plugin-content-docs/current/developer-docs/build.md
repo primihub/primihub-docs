@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Build Tools
 
-Linux environment configuration refer to [Dockerfile.build](https://github.com/primihub/primihub/blob/develop/Dockerfile.build) 
+Linux environment configuration refer to [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 
 
 For `ubuntu 20.04` ，run the following command to set up the base environment
 ```

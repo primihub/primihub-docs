@@ -7,7 +7,7 @@ displayed_sidebar: developerSidebar
 
 ## 配置环境
 
-Linux 环境配置步骤可参考 [Dockerfile.build](https://github.com/primihub/primihub/blob/develop/Dockerfile.build) 文件
+Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 文件
 
 以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
 ```
