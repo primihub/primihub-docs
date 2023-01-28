@@ -18,3 +18,4 @@ displayed_sidebar: lensonsSidebar
 | 全同态加密 | Fully Homomorphic Encryption | FHE | 如果一个加密函数同时满足加法同态和乘法同态，称为全同态加密。 |
 | 零知识证明 | Zero-knowledge Proof | ZKP | 由S.Goldwasser、S.Micali及C.Rackoff在20世纪80年代初提出的。它指的是证明者能够在不向验证者提供任何有用的信息的情况下，使验证者相信某个论断是正确的。 |
 | 可信执行环境 | Trusted Execution Environment | TEE | 基于硬件安全的 CPU 实现了基于内存隔离的安全计算，可在保证计算效率的前提下完成隐私保护的计算。 |
+| 差分隐私 | Differential Privacy | DP | 由Dwork等人提出的一种保护隐私的数据共享方法，可以实现仅分享描述数据的一些统计特征，而不能反推单一记录的内容，其主要思想是添加扰动或噪声。 |
