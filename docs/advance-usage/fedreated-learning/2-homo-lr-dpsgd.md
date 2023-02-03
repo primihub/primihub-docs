@@ -65,13 +65,13 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
         + 剪裁阈值偏小时，大部分梯度被剪裁，累加后的梯度偏差较大
 
-        + <img src="./grad_clip_effect.png" width="60%" height="60%"/>
+        + <img src="/img/grad_clip_effect.png" width="60%" height="60%"/>
 
     - $C$越小，噪声的方差越大，添加的噪声越大
 
     - 计算隐私预算不需要参数$C$，故不影响隐私预算的大小
 
-    - <img src="./select_l2_norm_clip.png" width="40%" height="40%"/>
+    - <img src="/img/select_l2_norm_clip.png" width="50%" height="50%"/>
 
 2. 噪声参数$\sigma$：影响模型的性能和隐私预算的大小
 
@@ -79,7 +79,7 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
     - $\sigma$越小，隐私预算越大，安全性越弱
 
-    - <img src="./select_noise_multiplier.png" width="40%" height="40%"/>
+    - <img src="/img/select_noise_multiplier.png" width="50%" height="50%"/>
 
 ## 隐私预算的计算
 
@@ -113,7 +113,7 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
 4. 代码样例
 
-```Python
+```python
 import dp_accounting
 
 noise_multiplier = 1.0
@@ -141,9 +141,13 @@ def compute_epsilon(steps):
 ```
 
 ## 安全浮点数噪声生成
+
 使用：`config`中设置`'secure_mode': True`
+
 1. `sum(gauss(0, 1) for i in range(2 * n)) / sqrt(2 * n)`
+
     - 原理：高斯分布累加后还是高斯分布$\frac{1}{\sqrt{2n}}\sum_{i=1}^{2n}\mathcal{N}_i(0,1) \sim\mathcal{N}(0,1)$
+
 2. n>1，一般取`n=2`
 
 ## Primihub Homo LR DP-SGD运行
@@ -173,7 +177,7 @@ def compute_epsilon(steps):
 
 - 通过Python SDK Client启动，见[Python SDK homo-lr-demo](../../../docs/advance-usage/python-sdk/homo-lr)
 
-### 参考文献
+## 参考文献
 
 1. Abadi, Martin, Andy Chu, Ian Goodfellow, H. Brendan McMahan, Ilya Mironov, Kunal Talwar, and Li Zhang. "Deep learning with differential privacy." In Proceedings of the 2016 ACM SIGSAC conference on computer and communications security, pp. 308-318. 2016. <https://arxiv.org/pdf/1607.00133.pdf>
 2. Mironov, Ilya, Kunal Talwar, and Li Zhang. "Renyi differential privacy of the sampled gaussian mechanism." arXiv preprint arXiv:1908.10530 (2019). <https://arxiv.org/pdf/1908.10530.pdf>
