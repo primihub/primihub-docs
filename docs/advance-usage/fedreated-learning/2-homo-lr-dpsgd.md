@@ -65,13 +65,13 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
         + 剪裁阈值偏小时，大部分梯度被剪裁，累加后的梯度偏差较大
 
-        + <img src="./grad_clip_effect.png" width="60%" height="60%">
+        + <img src="./grad_clip_effect.png" width="60%" height="60%"/>
 
     - $C$越小，噪声的方差越大，添加的噪声越大
 
     - 计算隐私预算不需要参数$C$，故不影响隐私预算的大小
 
-    - <img src="./select_l2_norm_clip.png" width="60%" height="60%">
+    - <img src="./select_l2_norm_clip.png" width="40%" height="40%"/>
 
 2. 噪声参数$\sigma$：影响模型的性能和隐私预算的大小
 
@@ -79,7 +79,7 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
     - $\sigma$越小，隐私预算越大，安全性越弱
 
-    - <img src="./select_noise_multiplier.png" width="60%" height="60%">
+    - <img src="./select_noise_multiplier.png" width="40%" height="40%"/>
 
 ## 隐私预算的计算
 
