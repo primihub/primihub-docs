@@ -41,7 +41,7 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
     - $\bar{g}_i=g_i/\max\Big(1,\frac{\|g_i\|_2}{C}\Big)$
 
-3. 添加噪声并更新参数
+3. 梯度中添加噪声
 
     - $\mathcal{N}$为高斯噪声，$\sigma$为噪声参数
 
@@ -160,7 +160,7 @@ def compute_epsilon(steps):
 
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
-```Python
+```bash
 ./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_dpsgd.py --params="predictFileName:STRING:0:/app/pred_acc.csv,modelFileName:STRING:0:/app/lr_model.pl"
 ```
 
