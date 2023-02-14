@@ -17,13 +17,13 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
 1. 计算一个batch数据的梯度并取均值
 
-    - $g$为梯度，$n$为batch size，$\mathcal{L}$为损失函数，$x$为特征，$y$为标签，下标$i$表示第$i$条数据
+    - $g$为梯度，$n$为batch size，$\nabla_{\omega}$指对$\omega$求导数，$\omega$为训练参数，$\mathcal{L}$为损失函数，$x$为特征，$y$为标签，下标$i$表示第$i$条数据
 
-    - $g=\frac{1}{n}\sum_i{\mathcal{L}(x_i, y_i)}$
+    - $g=\frac{1}{n}\sum_i{\nabla_{\omega}\mathcal{L}(x_i, y_i)}$
 
 2. 更新参数
 
-    - $\omega$为训练参数，$\alpha$为学习率
+    - $\alpha$为学习率
 
     - $\omega:=\omega-\alpha\cdot g$
 
@@ -33,7 +33,7 @@ keywords: [横向联邦学习, 差分隐私, Homo LR, SGD]
 
     - $g_i$为第$i$条数据的梯度
 
-    - $g_i=\mathcal{L}(x_i, y_i)$
+    - $g_i=\nabla_{\omega}\mathcal{L}(x_i, y_i)$
 
 2. 单样本梯度剪裁
 
