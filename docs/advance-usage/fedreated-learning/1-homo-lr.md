@@ -52,18 +52,18 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_paillier.py --params="predictFileName:STRING:0:/app/pred_acc.csv,modelFileName:STRING:0:/app/lr_model.pl"
+./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_paillier.py --params="predictFileName:STRING:0:/data/result/pred_acc.csv,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
 
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_paillier.py --params="predictFileName:STRING:0:/app/pred_acc.csv,modelFileName:STRING:0:/app/lr_model.pl"
+./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_paillier.py --params="predictFileName:STRING:0:/data/result/pred_acc.csv,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
 
 #### Homo LR Prediction
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/app/test.csv,modelFileName:STRING:0:/app/lr_model.pl"
+./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/test.csv,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
 
 - 通过Python SDK Client启动，见[Python SDK homo-lr-demo](../../../docs/advance-usage/python-sdk/homo-lr)
