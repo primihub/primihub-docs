@@ -12,7 +12,7 @@ Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primi
 以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
 ```
 apt update 
-apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake
+apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake libmysqlclient-dev
 apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
