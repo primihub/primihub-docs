@@ -15,13 +15,13 @@ sidebar_position: 1
 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2,modelName:STRING:0:/data/result/lr_mode.csv"
+./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,Data_File:STRING:0:train_party_0;train_party_1;train_party_2,modelName:STRING:0:/data/result/lr_mode.csv" --input_datasets="Data_File"
 ```
 
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2,modelName:STRING:0:/data/result/lr_mode.csv"
+./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,Data_File:STRING:0:train_party_0;train_party_1;train_party_2,modelName:STRING:0:/data/result/lr_mode.csv" --input_datasets="Data_File"
 ```
 分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
 
@@ -57,7 +57,7 @@ I20220922 07:43:23.196365    56 aby3_scheduler.cc:74] Node push task rpc succeed
 node1 和 node2 日志和 node0 类似，省略。
 ```
 
-上面的例子中，算法支持的参数名称在params中定义，`input_datasets`需要定义params中`TrainData` `TestData`是使用的数据集, 这两个参数中各有3个数据集参与本次计算任务。
+上面的例子中，算法支持的参数名称在params中定义，`input_datasets`对应的值为"Data_File"，算法会将三方的数据集中80%样本作为训练集、20%样本作为测试集。
 
 ## 参数说明
 
@@ -65,6 +65,5 @@ node1 和 node2 日志和 node0 类似，省略。
 | ---- | ---- | ---- | ---- |
 | params.BatchSize | INT32 | 128 | 数据大小 |
 | params.NumIters | INT32 | 100 | 迭代次数 |
-| params.TrainData | STRING | train_party_0;train_party_1;train_party_2 | 训练数据集 |
-| params.TestData | STRING | test_party_0;test_party_1;test_party_2 | 测试数据集 |
+| params.Data_File | STRING | train_party_0;train_party_1;train_party_2 | 训练数据集 |
 | params.modelName | STRING | /data/result/lr_mode.csv | 生成模型的存储路径（包含模型文件名）| 
