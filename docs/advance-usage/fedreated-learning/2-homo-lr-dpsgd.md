@@ -171,6 +171,14 @@ def compute_epsilon(steps):
 ```
 
 #### Homo LR Prediction
+
+- docker-compose启动
+
+```bash
+./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
+```
+- 本地编译启动
+
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
