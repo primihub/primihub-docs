@@ -32,3 +32,8 @@ failed to create network test_testing_net: Error response from daemon: Pool over
 ```
 
 请检查 `docker-compose` 中指定的网段是否已经被占用，考虑删除已有的，或者更[改网段配置](https://docs.docker.com/compose/networking/)后重新启动。
+
+5. configure: error: No usable m4 in $PATH or /usr/5bin (see config.log for reasons).
+安装M4库，ubuntu安装命令如下：
+sudo apt-get install m4
+
