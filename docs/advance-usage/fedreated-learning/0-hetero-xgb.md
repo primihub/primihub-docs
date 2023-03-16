@@ -109,10 +109,14 @@ Guest端：数据中没有标签的一方
 
 #### Hetero XGB Training
 
+*** 提交联邦学习任务的参数说明 ***
+
+创建联邦学习任务需要使用以下参数组合 `--task_lang=python --task_type=0`, 并通过`task_code`参数指定要运行的联邦学习python代码。
+
 * 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_lang=python --task_code=./python/primihub/examples/hetero_xgb_grpc.py --params="predictFileName:STRING:0:/data/result/prediction.csv, indicatorFileName:STRING:0:/data/result/indicator.json, hostLookupTable:STRING:0:/data/result/hostlookuptable.csv, guestLookupTable:STRING:0:/data/result/guestlookuptable.csv, modelFileName:STRING:0:/data/result/host/model"
+./primihub-cli --task_lang=python --task_code=./python/primihub/examples/hetero_xgb_grpc.py --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
 * 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
@@ -121,13 +125,41 @@ Guest端：数据中没有标签的一方
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb_grpc.py" --params="predictFileName:STRING:0:/data/result/train_prediction.csv,indicatorFileName:STRING:0:/data/result/train_indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
 
+:::tip
+如果遇到报错 "No module named 'primihub'", 在代码根目录下执行以下命令安装 primihub 平台库
+:::
+
+```bash
+cd python
+pip3 install -r requirements.txt 
+python3 setup.py install
+```
+
 * 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](../../../docs/advance-usage/python-sdk/hetero-xgb)
 
 #### Hetero XGB Prediction
 
+* docker-compose启动
+
+```bash
+./primihub-cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb_infer.py" --params="predictFileName:STRING:0:/data/result/test_prediction.csv,indicatorFileName:STRING:0:/data/result/test_indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+```
+
+* 本地编译启动
+
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb_infer.py" --params="predictFileName:STRING:0:/data/result/test_prediction.csv,indicatorFileName:STRING:0:/data/result/test_indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
 ```
+
+## 参数说明
+
+| 参数| 数据类型 | 参数示例 | 参数说明
+| ---- | ---- | ---- | ---- |
+| params.predictFileName | STRING | /data/result/prediction.csv | 预测结果文件，仅出现在Host方 |
+| params.indicatorFileName | STRING | /data/result/indicator.json | 模型评估指标结果文件，仅出现在Host方 |
+| params.hostLookupTable | STRING | /data/result/hostlookuptable.csv | Host方特征分割点结果文件|
+| params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest方特征分割点结果文件 |
+| params.modelFileName  | STRING | /data/result/host/model  | 树结构保存路径，仅出现在Host方 |
 
 ## 快速验证密文纵向XGBoost（基于Paillier）
 
