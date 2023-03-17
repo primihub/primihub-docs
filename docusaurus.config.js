@@ -97,19 +97,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'quick-start',
-            position: 'left',
-            label: '快速开始',
-          },
-          {
-            type: 'doc',
             docId: 'advance-usage/start-nodes',
             position: 'left',
-            label: '教程',
+            label: '文档',
           },
           {
             type: 'doc',
-            docId: 'developer-docs/build',
+            docId: 'developer-docs/roadmap',
             position: 'left',
             label: '开发者',
           },
@@ -144,7 +138,7 @@ const config = {
             items: [
               {
                 label: '快速开始',
-                to: '/docs/quick-start',
+                to: '/docs/advance-usage/quick-start',
               },
               {
                 label: '安装使用',
@@ -152,7 +146,7 @@ const config = {
               },
               {
                 label: '常见问题',
-                to: '/docs/faq',
+                to: '/docs/advance-usage/faq',
               },
             ],
           },
@@ -161,6 +155,10 @@ const config = {
             items: [
               {
                 label: '成为贡献者',
+                href: 'https://github.com/primihub/community',
+              },
+              {
+                label: 'PrimiHub社区',
                 href: 'https://github.com/primihub/community',
               },
             ],

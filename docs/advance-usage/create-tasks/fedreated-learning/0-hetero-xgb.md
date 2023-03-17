@@ -3,7 +3,7 @@ sidebar_position: 0
 description: 纵向联邦学习介绍及其应用场景 
 keywords: [纵向联邦学习, 纵向联邦应用场景, Hetero XGB, Primihub SDK Demo]
 ---
-# 纵向联邦学习
+# 纵向联邦学习（XGB）
 
 ## 纵向联邦学习及其应用场景
 
@@ -88,11 +88,11 @@ Guest端：数据中没有标签的一方
 
 ### 简化流程示意图
 
-![img](./HeteroXGB简化流程示意图.jpg)
+![img](/img/HeteroXGB简化流程示意图.jpg)
 
 ### Hetero_XGB算法优化
 
-![img](./Hetero_XGB算法优化.jpg)
+![img](/img/Hetero_XGB算法优化.jpg)
 
 ## 优化亮点
 
@@ -102,10 +102,6 @@ Guest端：数据中没有标签的一方
 4. 平衡Host与Guest端的计算资源，提高计算效率。
 
 ### Primihub Hetero XGB运行
-
-:::tip
-运行环境初始化，见[代码编译](../../../docs/developer-docs/build/)
-:::
 
 #### Hetero XGB Training
 
@@ -135,7 +131,7 @@ pip3 install -r requirements.txt
 python3 setup.py install
 ```
 
-* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](../../../docs/advance-usage/python-sdk/hetero-xgb)
+* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](/docs/advance-usage/python-sdk/hetero-xgb)
 
 #### Hetero XGB Prediction
 

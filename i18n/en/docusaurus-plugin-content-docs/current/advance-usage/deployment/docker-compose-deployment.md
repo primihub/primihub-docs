@@ -27,7 +27,6 @@ Once the execution is complete, wait a few minutes for the database to initializ
 ```bash
 # docker-compose ps -a
 NAME                COMMAND                  SERVICE                 STATUS              PORTS
-NAME                COMMAND                  SERVICE                 STATUS              PORTS
 application1        "/bin/sh -c 'java -j…"   application1            running             
 application2        "/bin/sh -c 'java -j…"   application2            running             
 application3        "/bin/sh -c 'java -j…"   application3            running             

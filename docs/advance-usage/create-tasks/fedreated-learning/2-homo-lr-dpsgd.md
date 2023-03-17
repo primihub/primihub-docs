@@ -152,12 +152,6 @@ def compute_epsilon(steps):
 
 ## Primihub Homo LR DP-SGD运行
 
-:::tip
-运行环境初始化，见[代码编译](../../../docs/developer-docs/build/)
-:::
-
-运行：
-
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
@@ -182,8 +176,6 @@ def compute_epsilon(steps):
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
-
-- 通过Python SDK Client启动，见[Python SDK homo-lr-demo](../../../docs/advance-usage/python-sdk/homo-lr)
 
 ## 参考文献
 

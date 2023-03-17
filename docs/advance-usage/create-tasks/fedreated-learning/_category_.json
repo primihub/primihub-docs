@@ -1,6 +1,6 @@
 {
-  "label": "联邦学习",
-  "position": 6,
+  "label": "联邦学习任务",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": "学习如何使用PrimiHub进行更复杂的操作"

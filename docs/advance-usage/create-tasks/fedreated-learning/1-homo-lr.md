@@ -3,7 +3,7 @@ sidebar_position: 1
 description: 横向联邦学习介绍及其应用场景
 keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK Demo]
 ---
-# 横向联邦学习
+# 横向联邦学习（LR）
 
 ## 横向联邦学习及其应用场景
 
@@ -30,11 +30,11 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 ### 简化流程示意图
 
-![img](./homolr流程示意.PNG)
+![img](/img/homolr流程示意.PNG)
 
 ### Homo_LR算法优化
 
-![img](./Homo_LR算法优化.jpg)
+![img](/img/Homo_LR算法优化.jpg)
 
 ## Homo LR优化亮点
 
@@ -43,11 +43,6 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 ### Primihub Homo LR运行
 
-:::tip
-运行环境初始化，见[代码编译](../../../docs/developer-docs/build/)
-:::
-
-运行：
 
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
@@ -74,7 +69,7 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 ./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
 
-- 通过Python SDK Client启动，见[Python SDK homo-lr-demo](../../../docs/advance-usage/python-sdk/homo-lr)
+- 通过Python SDK Client启动，见[Python SDK homo-lr-demo](/docs/advance-usage/python-sdk/homo-lr)
 
 ### 参考文献
 

@@ -15,7 +15,7 @@ sidebar_position: 1
 ## 前提
 
 - 安装了primihub python sdk
-- 使用docker-compose启动节点应用，见[快速开始](../../../docs/quick-start)
+- 启动了`primihub-node`节点应用
 
 ## Python Client 初始化
 

@@ -3,16 +3,11 @@ sidebar_position: 1
 ---
 
 # 服务试用
-当前提供了三个体验平台：
+当前提供了三个体验平台模拟三个参与方：
 
 * https://node1.primihub.com
 * https://node2.primihub.com
 * https://node3.primihub.com
-
-可在原语官网申请试用：https://primihub.com
-
-![Apply](/img/primihub-platform-apply.png)
-![Apply1](/img/primihub01.png)
 
 ## 管理平台操作说明手册
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 keywords: [boostrap]
 description: 手动启动 PrimiHub 节点
 displayed_sidebar: lensonsSidebar
@@ -71,7 +71,7 @@ curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-no
 ./primihub-node
 ```
 
-或者，下载 PrimiHub 源码并编译，见[开发者文档-代码编译](docs/../../developer-docs/build)
+或者，下载 PrimiHub 源码并编译，见[代码编译](docs/../build)
 
 在编译完成后的代码根目录下，三个终端中分别运行
 

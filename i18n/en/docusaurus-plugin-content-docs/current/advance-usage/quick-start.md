@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 description: Start an MPC Application in 5 minutes
 keywords: [MPC, QuickStart]
 ---
@@ -23,7 +23,7 @@ cd primihub
 ```
 
 ## Run an MPC application
-![Depolyment](./tutorial-depolyment.jpg)
+![Depolyment](/img/tutorial-depolyment.jpg)
 
 ### Start node
 
@@ -74,11 +74,3 @@ In this case, primihub-cli will request a ABY3 tripartite logistic regression te
 
 :::
 
-## Core features
-In addition to the MPC examples above, PrimiHub also supports Federated Learning, Private Intersection (PSI), and Private Query (PIR) features, as described in the PrimiHub [Core features](../docs/core-concept/model) .
-
-## Use the advanced
-Want to learn how to start a native app and how to leverage PrimiHub features to implement more apps, see [Advanced Usage](../docs/advance-usage/start-nodes)
-
-## Developer
-See [Developer Documentation](../docs/developer-docs/build) for instructions on compiling code and how to contribute
