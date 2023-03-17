@@ -131,7 +131,7 @@ pip3 install -r requirements.txt
 python3 setup.py install
 ```
 
-* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](../../../docs/advance-usage/python-sdk/hetero-xgb)
+* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](/docs/advance-usage/python-sdk/hetero-xgb)
 
 #### Hetero XGB Prediction
 
