@@ -61,7 +61,7 @@
   },
   "link.item.label.常见问题": {
     "message": "Problems",
-    "description": "The label of footer link with label=常见问题 linking to /docs/faq"
+    "description": "The label of footer link with label=常见问题 linking to /docs/advance-usage/faq"
   },
   "link.item.label.成为贡献者": {
     "message": "Join us",

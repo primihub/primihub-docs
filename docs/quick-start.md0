@@ -2,7 +2,7 @@
 sidebar_position: 1
 description: 5 分钟运行起来一个 MPC 应用
 keywords: [多方安全计算, MPC]
-displayed_sidebar: tutorialSidebar
+displayed_sidebar: lensonsSidebar
 ---
 
 # 快速开始
@@ -25,13 +25,13 @@ cd primihub
 
 :::tip
 * 国内用户如访问GitHub缓慢可使用Gitee仓库地址：https://gitee.com/primihub/primihub.git
-* 当前支持的平台为： `linux/amd64`，ARM 平台上 Docker 支持以模拟器的形式运行，但可能会[遇到一些诸如性能等已知问题](https://docs.docker.com/desktop/mac/apple-silicon/#known-issues)。
+* 当前支持的平台为： `linux/amd64`，`linux/arm64`
 * 如果遇到 Docker Hub 拉取镜像限制或其他问题，可以尝试通过环境变量来使用替换的镜像地址，例如： `echo "REGISTRY=registry.cn-beijing.aliyuncs.com" >> .env`
 :::
 
 ## 运行一个MPC案例
 
-![Depolyment](./tutorial-depolyment.jpg)
+![Depolyment](/img/tutorial-depolyment.jpg)
 
 ### 启动节点
 
@@ -87,21 +87,12 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 
 了解更多有关如何创建 [MPC 任务](../docs/advance-usage/create-tasks/mpc-task)的细节。
 
-:::tip传送门：
-
-[运行一个纵向联邦学习](../docs/advance-usage/fedreated-learning/hetero-xgb/)
-
-[运行一个横向联邦学习](../docs/advance-usage/fedreated-learning/homo-lr/)
-
-:::
-
-### 查看MPC任务计算结果
 
 -------
 
 ## 核心特性
 
-除了上面的MPC案例，PrimiHub还支持联邦学习、隐私求交(PSI)、隐私查询(PIR)特性，具体请见 PrimiHub [核心特性](../docs/core-concept/model) 。
+除了上面的MPC案例，PrimiHub还支持联邦学习、隐私求交(PSI)、隐私查询(PIR)特性，具体请见 PrimiHub [核心特性](/developer-docs/core-concept/model) 。
 
 ## 进阶使用
 
@@ -109,4 +100,4 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 
 ## 开发者
 
-关于代码编译和如何贡献代码，请见[开发者文档](../docs/developer-docs/build)。
+关于代码编译和如何贡献代码，请见[开发者文档](../docs/advance-usage/build)。

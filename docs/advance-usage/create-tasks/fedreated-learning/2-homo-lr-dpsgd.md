@@ -152,12 +152,6 @@ def compute_epsilon(steps):
 
 ## Primihub Homo LR DP-SGD运行
 
-:::tip
-运行环境初始化，见[代码编译](../../../docs/developer-docs/build/)
-:::
-
-运行：
-
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash

@@ -1,6 +1,7 @@
 ---
-sidebar_position: 1
-displayed_sidebar: developerSidebar
+sidebar_position: 5
+keywords: [PrimiHub编译]
+displayed_sidebar: lensonsSidebar
 ---
 
 # 代码编译
@@ -90,12 +91,13 @@ docker build -t primihub/primihub-node .
 docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "HTTPS_PROXY=http://你的代理地址" -t primihub/primihub-node .
 ```
 
-
+<!-- 
 :::caution Apple M1 docker 编译问题
 
 在Apple M1设备上进行docker镜像编译，使用bazel 5.0.0会编译出错，这是bazel的bug，具体的问题见[bazel github issue #13925](https://github.com/bazelbuild/bazel/issues/13925)， 需要修改代码下的.bazelvsersion 文件内容为 `4d900ceea12919ad62012830a95e51f9ec1a48bb`
 
-:::
+::: 
+-->
 
 ## 编译常见问题
  1. Bazel编译新增平台和工具链问题见[这里](https://docs.bazel.build/versions/5.0.0/platforms-intro.html)

@@ -3,7 +3,7 @@ sidebar_position: 1
 description: 横向联邦学习介绍及其应用场景
 keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK Demo]
 ---
-# 横向联邦学习
+# 横向联邦学习（LR）
 
 ## 横向联邦学习及其应用场景
 
@@ -30,11 +30,11 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 ### 简化流程示意图
 
-![img](./homolr流程示意.PNG)
+![img](/img/homolr流程示意.PNG)
 
 ### Homo_LR算法优化
 
-![img](./Homo_LR算法优化.jpg)
+![img](/img/Homo_LR算法优化.jpg)
 
 ## Homo LR优化亮点
 
@@ -43,11 +43,6 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 ### Primihub Homo LR运行
 
-:::tip
-运行环境初始化，见[代码编译](../../../docs/developer-docs/build/)
-:::
-
-运行：
 
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
