@@ -17,9 +17,9 @@ cd primihub/python
 It is recommended to create a new virtual environment, in which the following actions are performed
 :::
 
-## [Compile](https://docs.primihub.com/docs/developer-docs/build)
+## [Compile](https://docs.primihub.com/en/docs/advance-usage/build)
 
-Refer to[Compile Description](https://docs.primihub.com/docs/developer-docs/build)
+Refer to[Compile Description](https://docs.primihub.com/en/docs/advance-usage/build)
 :::tip
 Importing the primihub package requires a reference to the primihub c++ low-level SDK, so we need to compile it first.
 :::
