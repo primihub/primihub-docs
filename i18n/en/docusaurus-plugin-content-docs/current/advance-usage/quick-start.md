@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 description: Start an MPC Application in 5 minutes
 keywords: [MPC, QuickStart]
 ---
@@ -23,7 +23,7 @@ cd primihub
 ```
 
 ## Run an MPC application
-![Depolyment](./tutorial-depolyment.jpg)
+![Depolyment](/img/tutorial-depolyment.jpg)
 
 ### Start node
 
