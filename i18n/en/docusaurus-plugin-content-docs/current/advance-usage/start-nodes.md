@@ -71,7 +71,7 @@ curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-no
 ./primihub-node
 ```
 
-or, you could download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](docs/../../developer-docs/build).
+or, you could download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](./build).
 
 Run it in three different terminals from the root directory:
 
