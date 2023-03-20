@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 1
 description: Start an MPC Application in 5 minutes
 keywords: [MPC, QuickStart]
 ---

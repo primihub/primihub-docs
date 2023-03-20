@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 keywords: [bootstrap]
 description: Start the PrimiHub node manually
 ---
@@ -39,7 +39,7 @@ Then execute the following command to start
 docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
 ```
  
-## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
+<!-- ## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
 
 You could directly download the binary file from GitHub release:
 
@@ -59,16 +59,15 @@ go run main.go
 Or run the bootstrap-node with docker
 ```shell
 docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
-```
+``` -->
 
 
 ## Run Node
 
-You could directly download the binary file from GitHub release (currently only have binary files on Darwin and amd64):
+You could directly download the binary file from GitHub release:
 
 ```shell
-curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-node-darwin-amd64.tar.gz|tar xzv primihub-node
-./primihub-node
+curl -L https://github.com/primihub/primihub/releases/download/1.6.4/primihub-linux-amd64.tar.gz | tar xzv
 ```
 
 or, you could download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](./build).
@@ -88,6 +87,6 @@ Run it in three different terminals from the root directory:
 ```
 
 :::tip Connect custom data
-You could use the flag `--config` to specific a custom data by a YAML configuration file, see also [connect datasource](docs/../connect-datasource).
+You could use the flag `--config` to specific a custom data by a YAML configuration file, see also [connect datasource](./connect-datasource).
 :::
 

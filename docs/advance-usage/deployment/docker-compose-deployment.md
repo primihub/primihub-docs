@@ -6,6 +6,8 @@ keywords: [docker-compose]
 
 # 使用 docker-compose 部署
 
+*** 部署完整的PrimiHub隐私计算管理平台 *** 
+
 :::tip
 为避免端口冲突和网段冲突，请尽量使用干净的机器
 目前提供docker部署包仅支持单机部署，多机部署及异地部署企业版中已支持，如需要可联系小助手了解。
@@ -33,7 +35,6 @@ NAME                COMMAND                  SERVICE                 STATUS     
 application1        "/bin/sh -c 'java -j…"   application1            running             
 application2        "/bin/sh -c 'java -j…"   application2            running             
 application3        "/bin/sh -c 'java -j…"   application3            running             
-bootstrap-node      "/app/simple-bootstr…"   simple-bootstrap-node   running             4001/tcp
 fusion              "/bin/sh -c 'java -j…"   fusion                  running             
 gateway1            "/bin/sh -c 'java -j…"   gateway1                running             
 gateway2            "/bin/sh -c 'java -j…"   gateway2                running             

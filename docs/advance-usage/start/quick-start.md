@@ -24,9 +24,6 @@ cd primihub
 :::tip
 * 国内用户如访问GitHub缓慢可使用Gitee仓库地址：https://gitee.com/primihub/primihub.git
 * 当前支持的平台为： `amd64`，`arm64`
-* 如果遇到 Docker Hub 拉取镜像缓慢，可以通过环境变量来使用阿里云的镜像地址
-
- `echo "REGISTRY=registry.cn-beijing.aliyuncs.com" >> .env`
 :::
 
 <!-- ## 运行一个MPC案例
@@ -50,7 +47,7 @@ docker-compose up -d
 docker-compose ps -a
 ```
 
-你会看到类似下面的输出
+看到如下输出则启动正常
 
 ```shell
 NAME                    COMMAND                  SERVICE                 STATUS              PORTS
@@ -60,9 +57,11 @@ primihub-node2          "/bin/bash -c './pri…"   node2                   runni
 redis                   "docker-entrypoint.s…"   redis                   running             0.0.0.0:6379->6379/tcp
 ```
 
-### 创建一个MPC任务
+### 创建任务
 
-***让三个节点共同执行一个多方安全计算（MPC）的逻辑回归任务***
+启动成功后可以参考创建任务页面发起任务。
+
+<!-- ***让三个节点共同执行一个多方安全计算（MPC）的逻辑回归任务***
 
 ```shell
 docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --server="127.0.0.1:8050"
@@ -80,6 +79,6 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
  3. 做什么样的隐私计算任务
 
 在这个例子中primihub-cli会使用默认参数向***node 0***请求一个ABY3的三方逻辑回归测试任务，关于cli可以指定的参数请见 ***[公共参数](../create-tasks/cli-params)***
-:::
+::: -->
 
 
