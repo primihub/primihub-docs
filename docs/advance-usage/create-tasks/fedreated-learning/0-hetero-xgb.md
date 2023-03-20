@@ -157,12 +157,12 @@ python3 setup.py install
 | params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest方特征分割点结果文件 |
 | params.modelFileName  | STRING | /data/result/host/model  | 树结构保存路径，仅出现在Host方 |
 
-## 快速验证密文纵向XGBoost（基于Paillier）
+<!-- ## 快速验证密文纵向XGBoost（基于Paillier）
 
 1. 编译Paillier共享库，`bazel build --config=linux :opt_paillier_c2py_test`
 2. 安装所需包 `pip3 install -r requirements.txt` ，（如果上一个应用已执行则忽略）
 3. 安装 primihub 平台库， `python setup.py install --user` ，
-4. 运行密文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb_en.py` 。
+4. 运行密文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb_en.py` 。 -->
 
 ### 参考文献
 

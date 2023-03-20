@@ -1,10 +1,10 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 keywords: [PrimiHub编译]
 displayed_sidebar: lensonsSidebar
 ---
 
-# 代码编译
+# 本地编译启动
 
 ## 配置环境
 
@@ -35,39 +35,43 @@ git clone https://gitee.com/primihub/primihub.git
 
 ### Linux
 * 依赖环境
-  gcc-8，g++-8，python3.7及以上，python3.7-dev，cmake-3.20
-* 编译
+  gcc-8，g++-8，python3.8及以上，python3.8-dev，cmake-3.20
 
 ```bash
 ./pre_build.sh
-bazel build --config=linux_x86_64 :node :cli :opt_paillier_c2py :linkcontext
+bazel build --config=linux_x86_64 :node :cli :py_main :opt_paillier_c2py :linkcontext
 
 # Arm机器使用
-bazel build --config=linux_aarch64 :node :cli :opt_paillier_c2py :linkcontext
+bazel build --config=linux_aarch64 :node :cli :py_main :opt_paillier_c2py :linkcontext
+```
+
+编译完成后在代码根目录下，三个终端中分别运行以下命令启动节点
+
+```shell
+./bazel-bin/node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
+```
+```shell
+./bazel-bin/node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
+```
+```shell
+./bazel-bin/node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
 ```
 
 ### macOS
- * 依赖环境 clang 12+，python3.7及以上，cmake-3.20
+ * 依赖环境 clang 12+，python3.8及以上，cmake-3.20
  
  * Apple Intel CPU
  
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py :linkcontext
+bazel build --config=darwin_x86_64 :node :cli :py_main :opt_paillier_c2py :linkcontext
 ```
 
  *  Apple sillicon M1
 
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py :linkcontext
-```
-
- *  MacOS Monterey with Apple M1
-
-```bash
-./pre_build.sh
-bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py :linkcontext
+bazel build --config=darwin_arm64 :node :cli :py_main :opt_paillier_c2py :linkcontext
 ```
 
 ### Windows 

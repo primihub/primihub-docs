@@ -97,7 +97,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'advance-usage/start-nodes',
+            docId: 'advance-usage/start/quick-start',
             position: 'left',
             label: '文档',
           },
@@ -138,11 +138,7 @@ const config = {
             items: [
               {
                 label: '快速开始',
-                to: '/docs/advance-usage/quick-start',
-              },
-              {
-                label: '安装使用',
-                to: '/docs/advance-usage/start-nodes',
+                to: '/docs/advance-usage/start/quick-start',
               },
               {
                 label: '常见问题',
