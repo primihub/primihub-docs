@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 4
 keywords: [隐私计算数据接入]
 description: 介绍如何通过 YAML 文件格式向 PrimiHub 导入数据
 ---

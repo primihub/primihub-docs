@@ -17,7 +17,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className={clsx('button button--lg', styles.button)}
-            to="/docs/advance-usage/quick-start">
+            to="/docs/advance-usage/start/quick-start">
               <Translate id="quick-start">快速开始-5分钟 ⏱ </Translate>
           </Link>
         </div>

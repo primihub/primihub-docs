@@ -1,15 +1,15 @@
 ---
 sidebar_position: 2
 keywords: [boostrap]
-description: 手动启动 PrimiHub 节点
+description: 下载二进制启动 PrimiHub 节点
 displayed_sidebar: lensonsSidebar
 ---
 
-# 启动各节点
+# 下载二进制文件启动
 
 *** 启动用于运行任务的各个节点 *** 
 
-## 启动redis (推荐)
+## 启动redis
 
 使用 `CentOS` 或 `Ubuntu` 时，可直接使用下面的命令安装redis
 ```
@@ -40,7 +40,7 @@ EOF
 docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
 ```
  
-## 运行启动点（使用redis做数据集查找时该步骤可忽略）
+<!-- ## 运行启动点（使用redis做数据集查找时该步骤可忽略）
 
 您可以选择直接下载编译好的二进制文件：
 
@@ -60,20 +60,23 @@ go run main.go
 或直接使用docker运行启动节点
 ```shell
 docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:1.0
-```
+``` -->
 
 ## 运行节点
 
-您可以选择直接下载编译好的二进制文件（当前只有 Darwin 下 amd64 架构的二进制文件）：
+下载仓库并进入到代码根目录：
 
 ```shell
-curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-node-darwin-amd64.tar.gz|tar xzv primihub-node
-./primihub-node
+git clone https://github.com/primihub/primihub.git
+cd primihub
+```
+直接下载编译好的二进制文件，在GitHub [release页面](https://github.com/primihub/primihub/releases) 可以查看最新版本。
+
+```shell
+curl -L https://github.com/primihub/primihub/releases/download/1.6.4/primihub-linux-amd64.tar.gz | tar xzv
 ```
 
-或者，下载 PrimiHub 源码并编译，见[代码编译](docs/../build)
-
-在编译完成后的代码根目录下，三个终端中分别运行
+在下载解压完成后的代码根目录下，三个终端中分别运行
 
 ```shell
 ./bazel-bin/node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
@@ -86,5 +89,5 @@ curl -L https://github.com/primihub/primihub/releases/download/1.4.5/primihub-no
 ```
 
 :::tip 接入自定义数据
-用过--config指定的yaml配置文件可以接入自定义数据，使用请见 [接入你的数据](docs/../connect-datasource)
+用过--config指定的yaml配置文件可以接入自定义数据，使用请见 [接入你的数据](./connect-datasource)
 :::
