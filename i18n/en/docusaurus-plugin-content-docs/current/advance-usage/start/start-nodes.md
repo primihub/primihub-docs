@@ -15,28 +15,19 @@ When using `CentOS` or `Ubuntu`, you can install redis directly with the followi
 yum install redis -y  #CentOS
 apt install redis -y  #Ubuntu
 ```
-Then change the `requirepass` field in the `/etc/redis.conf` file to set the `redis` password, which needs to be the same as the `. /config/node*.yaml` file in the `redis_password` field.
+Then change the `requirepass` field in the `/etc/redis/redis.conf` file to set the `redis` password, which needs to be the same as the `. /config/node*.yaml` file in the `redis_password` field.
+```
+sed -i 's/# requirepass foobared/requirepass primihub/' /etc/redis/redis.conf
+```
 Finally, use the following command to start `redis`
 ```
 systemctl start redis
 ```
 
-Or just use `docker` to quickly start `redis` and prepare a simple `redis` configuration first
+Or just use `docker` to quickly start `redis`
+
 ```
-cat > /opt/redis.conf << EOF
-daemonize no
-pidfile /var/run/redis.pid
-port 6379
-bind 0.0.0.0
-timeout 0
-requirepass primihub
-dbfilename dump.rdb
-dir /data
-EOF
-```
-Then execute the following command to start
-```
-docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+docker run --name redis -p 6379:6379 -d redis:latest --requirepass "primihub"
 ```
  
 <!-- ## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
@@ -64,13 +55,21 @@ docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:
 
 ## Run Node
 
-You could directly download the binary file from GitHub release:
+Download the repository and go to the root of the code:
+
+```shell
+git clone https://github.com/primihub/primihub.git
+cd primihub
+```
+Install runtime dependencies (python must be 3.8)
+```
+apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
+```
+Download the compiled binaries and check out the latest version on GitHub [release page](https://github.com/primihub/primihub/releases).
 
 ```shell
 curl -L https://github.com/primihub/primihub/releases/download/1.6.4/primihub-linux-amd64.tar.gz | tar xzv
 ```
-
-or, you could download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](./build).
 
 Run it in three different terminals from the root directory:
 
