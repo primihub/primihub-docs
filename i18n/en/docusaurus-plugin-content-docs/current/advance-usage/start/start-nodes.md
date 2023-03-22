@@ -16,6 +16,9 @@ yum install redis -y  #CentOS
 apt install redis -y  #Ubuntu
 ```
 Then change the `requirepass` field in the `/etc/redis/redis.conf` file to set the `redis` password, which needs to be the same as the `. /config/node*.yaml` file in the `redis_password` field.
+```
+sed -i 's/# requirepass foobared/requirepass primihub/' /etc/redis/redis.conf
+```
 Finally, use the following command to start `redis`
 ```
 systemctl start redis
