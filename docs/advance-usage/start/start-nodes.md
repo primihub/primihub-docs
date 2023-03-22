@@ -11,33 +11,20 @@ displayed_sidebar: lensonsSidebar
 
 ## 启动redis
 
-使用 `CentOS` 或 `Ubuntu` 时，可直接使用下面的命令安装redis
+1. 直接安装
 ```
 yum install redis -y  #CentOS
 apt install redis -y  #Ubuntu
 ```
-然后修改 `/etc/redis.conf` 文件中的 `requirepass` 字段设置 `redis` 密码，该密码需要和 `./config/node*.yaml` 文件 `redis_password` 字段的设置相同。
+然后修改 `/etc/redis/redis.conf` 文件中的 `requirepass` 字段设置 `redis` 密码，该密码需要和 `./config/node*.yaml` 文件 `redis_password` 字段的设置相同。
 最后使用以下命令来启动 `redis`
 ```
 systemctl start redis
 ```
+2. docker启动
 
-或者直接使用 `docker` 来快速启动 `redis`，先准备个简单的`redis`配置
 ```
-cat > /opt/redis.conf << EOF
-daemonize no
-pidfile /var/run/redis.pid
-port 6379
-bind 0.0.0.0
-timeout 0
-requirepass primihub
-dbfilename dump.rdb
-dir /data
-EOF
-```
-然后执行下面的命令启动
-```
-docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+docker run --name redis -p 6379:6379 -d redis:latest --requirepass "primihub"
 ```
  
 <!-- ## 运行启动点（使用redis做数据集查找时该步骤可忽略）

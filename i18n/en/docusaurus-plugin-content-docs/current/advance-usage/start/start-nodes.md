@@ -15,28 +15,16 @@ When using `CentOS` or `Ubuntu`, you can install redis directly with the followi
 yum install redis -y  #CentOS
 apt install redis -y  #Ubuntu
 ```
-Then change the `requirepass` field in the `/etc/redis.conf` file to set the `redis` password, which needs to be the same as the `. /config/node*.yaml` file in the `redis_password` field.
+Then change the `requirepass` field in the `/etc/redis/redis.conf` file to set the `redis` password, which needs to be the same as the `. /config/node*.yaml` file in the `redis_password` field.
 Finally, use the following command to start `redis`
 ```
 systemctl start redis
 ```
 
-Or just use `docker` to quickly start `redis` and prepare a simple `redis` configuration first
+Or just use `docker` to quickly start `redis`
+
 ```
-cat > /opt/redis.conf << EOF
-daemonize no
-pidfile /var/run/redis.pid
-port 6379
-bind 0.0.0.0
-timeout 0
-requirepass primihub
-dbfilename dump.rdb
-dir /data
-EOF
-```
-Then execute the following command to start
-```
-docker run -p 6379:6379 --name redis -v /opt/redis.conf:/etc/redis/redis.conf -d redis:latest redis-server /etc/redis/redis.conf
+docker run --name redis -p 6379:6379 -d redis:latest --requirepass "primihub"
 ```
  
 <!-- ## Running the Bootstrap Nodes （This step can be ignored when using redis for dataset lookup）
