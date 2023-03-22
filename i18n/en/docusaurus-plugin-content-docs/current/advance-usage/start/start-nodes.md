@@ -55,13 +55,21 @@ docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:
 
 ## Run Node
 
-You could directly download the binary file from GitHub release:
+Download the repository and go to the root of the code:
+
+```shell
+git clone https://github.com/primihub/primihub.git
+cd primihub
+```
+Install runtime dependencies (python must be 3.8)
+```
+apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
+```
+Download the compiled binaries and check out the latest version on GitHub [release page](https://github.com/primihub/primihub/releases).
 
 ```shell
 curl -L https://github.com/primihub/primihub/releases/download/1.6.4/primihub-linux-amd64.tar.gz | tar xzv
 ```
-
-or, you could download the Primihub source code and compile it，see the [Developer Documentation-Code Compilation](./build).
 
 Run it in three different terminals from the root directory:
 

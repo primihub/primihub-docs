@@ -60,7 +60,11 @@ docker run --name bootstrap-node -d -p 4001:4001 primihub/simple-bootstrap-node:
 git clone https://github.com/primihub/primihub.git
 cd primihub
 ```
-直接下载编译好的二进制文件，在GitHub [release页面](https://github.com/primihub/primihub/releases) 可以查看最新版本。
+安装运行依赖环境(python必须是3.8)
+```
+apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
+```
+下载编译好的二进制文件，在GitHub [release页面](https://github.com/primihub/primihub/releases) 可以查看最新版本。
 
 ```shell
 curl -L https://github.com/primihub/primihub/releases/download/1.6.4/primihub-linux-amd64.tar.gz | tar xzv
