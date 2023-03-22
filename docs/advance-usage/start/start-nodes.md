@@ -89,5 +89,5 @@ curl -L https://github.com/primihub/primihub/releases/download/1.6.4/primihub-li
 ```
 
 :::tip 接入自定义数据
-用过--config指定的yaml配置文件可以接入自定义数据，使用请见 [接入你的数据](./connect-datasource)
+通过--config指定的yaml配置文件可以接入自定义数据，使用请见 [接入你的数据](./connect-datasource)
 :::
