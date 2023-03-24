@@ -15,45 +15,9 @@
     "message": "Tutorial - Extras",
     "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.核心特性": {
-    "message": "核心特性",
-    "description": "The label for category 核心特性 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.核心特性.link.generated-index.description": {
-    "message": "了解PrimiHub的核心特性",
-    "description": "The generated-index page description for category 核心特性 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.进阶使用": {
-    "message": "进阶使用",
-    "description": "The label for category 进阶使用 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.进阶使用.link.generated-index.description": {
-    "message": "学习如何使用PrimiHub进行更复杂的操作",
-    "description": "The generated-index page description for category 进阶使用 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.创建任务": {
-    "message": "创建任务",
-    "description": "The label for category 创建任务 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.创建任务.link.generated-index.description": {
-    "message": "创建不同类型的任务",
-    "description": "The generated-index page description for category 创建任务 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.安全协议": {
-    "message": "安全协议",
-    "description": "The label for category 安全协议 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.安全协议.link.generated-index.description": {
     "message": "详细介绍安全协议",
     "description": "The generated-index page description for category 安全协议 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.联邦学习": {
-    "message": "联邦学习",
-    "description": "The label for category 联邦学习 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.联邦学习.link.generated-index.description": {
-    "message": "学习如何使用PrimiHub进行更复杂的操作",
-    "description": "The generated-index page description for category 联邦学习 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.开发者文档": {
     "message": "开发者文档",
@@ -62,5 +26,69 @@
   "sidebar.tutorialSidebar.category.开发者文档.link.generated-index.description": {
     "message": "如何开发",
     "description": "The generated-index page description for category 开发者文档 in sidebar tutorialSidebar"
+  },
+  "sidebar.lensonsSidebar.category.快速上手": {
+    "message": "Quick Start",
+    "description": "The label for category 快速上手 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.快速上手.link.generated-index.description": {
+    "message": "How to quickly start PrimiHub",
+    "description": "The generated-index page description for category 快速上手 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.创建任务": {
+    "message": "Create Task",
+    "description": "The label for category 创建任务 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.创建任务.link.generated-index.description": {
+    "message": "Create different types of tasks with PrimiHub",
+    "description": "The generated-index page description for category 创建任务 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.联邦学习任务": {
+    "message": "Federated learning tasks",
+    "description": "The label for category 联邦学习任务 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.联邦学习任务.link.generated-index.description": {
+    "message": "Learn how to create federated learning tasks with PrimiHub",
+    "description": "The generated-index page description for category 联邦学习任务 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.Python SDK Client": {
+    "message": "Python SDK Client",
+    "description": "The label for category Python SDK Client in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.Python SDK Client.link.generated-index.description": {
+    "message": "Learn how to use the PrimiHub Python SDK",
+    "description": "The generated-index page description for category Python SDK Client in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.部署": {
+    "message": "Deploy",
+    "description": "The label for category 部署 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.部署.link.generated-index.description": {
+    "message": "Docker/K8S Deploy",
+    "description": "The generated-index page description for category 部署 in sidebar lensonsSidebar"
+  },
+  "sidebar.developerSidebar.category.安全协议": {
+    "message": "Security Protocol",
+    "description": "The label for category 安全协议 in sidebar developerSidebar"
+  },
+  "sidebar.developerSidebar.category.安全协议.link.generated-index.description": {
+    "message": "详细介绍隐私计算相关的安全协议，以及这些协议与 PrimiHub 的关系",
+    "description": "The generated-index page description for category 安全协议 in sidebar developerSidebar"
+  },
+  "sidebar.developerSidebar.category.核心特性": {
+    "message": "Core Features",
+    "description": "The label for category 核心特性 in sidebar developerSidebar"
+  },
+  "sidebar.developerSidebar.category.核心特性.link.generated-index.description": {
+    "message": "Learn about the core features of PrimiHub",
+    "description": "The generated-index page description for category 核心特性 in sidebar developerSidebar"
+  },
+  "sidebar.developerSidebar.category.管理平台": {
+    "message": "Management Platform",
+    "description": "The label for category 管理平台 in sidebar developerSidebar"
+  },
+  "sidebar.developerSidebar.category.管理平台.link.generated-index.description": {
+    "message": " ",
+    "description": "The generated-index page description for category 管理平台 in sidebar developerSidebar"
   }
 }

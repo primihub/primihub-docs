@@ -1,20 +1,31 @@
 {
   "title": {
-    "message": "PrimiHub"
+    "message": "PrimiHub",
+    "description": "The title in the navbar"
   },
   "item.label.Blog": {
-    "message": "Blog"
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
   },
   "item.label.GitHub": {
     "message": "GitHub"
   },
   "item.label.文档": {
-    "message": "Docs"
+    "message": "Docs",
+    "description": "Navbar item with label 文档"
   },
   "item.label.解决方案": {
     "message": "Solutions"
   },
   "item.label.源代码": {
     "message": "Code"
+  },
+  "item.label.开发者": {
+    "message": "Developer",
+    "description": "Navbar item with label 开发者"
+  },
+  "item.label.🔥在线体验": {
+    "message": "🔥Online Experience",
+    "description": "Navbar item with label 🔥在线体验"
   }
 }

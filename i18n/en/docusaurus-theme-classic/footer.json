@@ -25,7 +25,7 @@
   },
   "link.item.label.Twitter": {
     "message": "Twitter",
-    "description": "The label of footer link with label=Twitter linking to https://twitter.com/docusaurus"
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/OpenPrimi"
   },
   "link.item.label.Blog": {
     "message": "Blog",
@@ -53,7 +53,7 @@
   },
   "link.item.label.快速开始": {
     "message": "Quick Start",
-    "description": "The label of footer link with label=快速开始 linking to /docs/quick-start"
+    "description": "The label of footer link with label=快速开始 linking to /docs/advance-usage/start/quick-start"
   },
   "link.item.label.安装使用": {
     "message": "Installation",
@@ -65,10 +65,18 @@
   },
   "link.item.label.成为贡献者": {
     "message": "Join us",
-    "description": "The label of footer link with label=成为贡献者 linking to https://github.com/primihub/primihub"
+    "description": "The label of footer link with label=成为贡献者 linking to https://github.com/primihub/community"
   },
   "link.item.label.关于PrimiHub": {
     "message": "About PrimiHub",
     "description": "The label of footer link with label=关于PrimiHub linking to https://primihub.com/"
+  },
+  "link.item.label.PrimiHub社区": {
+    "message": "PrimiHub Community",
+    "description": "The label of footer link with label=PrimiHub社区 linking to https://github.com/primihub/community"
+  },
+  "link.item.label.Gitee": {
+    "message": "Gitee",
+    "description": "The label of footer link with label=Gitee linking to https://gitee.com/primihub/primihub"
   }
 }
