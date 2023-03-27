@@ -16,12 +16,16 @@ sidebar_position: 1
 
 ```bash
 ./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,Data_File:STRING:0:train_party_0;train_party_1;train_party_2,modelName:STRING:0:/data/result/lr_mode.csv" --input_datasets="Data_File"
+
+./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
 
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,Data_File:STRING:0:train_party_0;train_party_1;train_party_2,modelName:STRING:0:/data/result/lr_mode.csv" --input_datasets="Data_File"
+
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```
 分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
 
@@ -32,7 +36,7 @@ I20220922 07:42:45.991482    40 node.cc:114] start to create worker for task
 I20220922 07:42:45.991490    40 node.cc:169]  🤖️ Start create worker node0
 I20220922 07:42:45.991498    40 node.cc:173]  🤖️ Fininsh create worker node0
 I20220922 07:42:45.991870    40 logistic.cc:127] Note party id of this node is 0.
-I20220922 07:42:45.991905    40 worker.cc:47]  🚀 Worker start execute task 
+I20220922 07:42:45.991905    40 worker.cc:47]  🚀 Worker start execute task
 I20220922 07:42:45.991930    40 logistic.cc:187] Train data /tmp/train_party_0.csv, test data /tmp/test_party_0.csv.
 I20220922 07:42:46.003528    40 logistic.cc:303] [Next] Init server session, party 0, ip 172.28.1.10, port 12120, name sess_0_1.
 I20220922 07:42:46.003578    40 logistic.cc:309] [Prev] Init server session, party 0, ip 172.28.1.10, port 12120, name sess_0_2.
@@ -66,4 +70,4 @@ node1 和 node2 日志和 node0 类似，省略。
 | params.BatchSize | INT32 | 128 | 数据大小 |
 | params.NumIters | INT32 | 100 | 迭代次数 |
 | params.Data_File | STRING | train_party_0;train_party_1;train_party_2 | 训练数据集 |
-| params.modelName | STRING | /data/result/lr_mode.csv | 生成模型的存储路径（包含模型文件名）| 
+| params.modelName | STRING | /data/result/lr_mode.csv | 生成模型的存储路径（包含模型文件名）|

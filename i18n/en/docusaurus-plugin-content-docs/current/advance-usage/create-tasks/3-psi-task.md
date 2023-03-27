@@ -13,12 +13,20 @@ If starting with docker-compose, enter the primihub-node0 container by running `
 
 ```bash
 ./primihub-cli --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
+or:
+
+./primihub-cli --task_config_file="example/psi_ecdh_task_conf.json"
+./primihub-cli --task_config_file="example/psi_kkrt_task_conf.json"
 ```
 
 If starting locally, run the following command from the compiled root directory:
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
+
+or:
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/psi_ecdh_task_conf.json"
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/psi_kkrt_task_conf.json"
 ```
 
 Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.

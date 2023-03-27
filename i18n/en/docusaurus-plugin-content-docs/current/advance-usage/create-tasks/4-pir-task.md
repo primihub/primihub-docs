@@ -12,13 +12,17 @@ Creating a PIR task requires the following parameters:`--task_type=2`,and specif
 If starting with docker-compose, enter the primihub-node0 container by running`docker exec -it primihub-node0 bash` ，and run the following command：
 
 ```bash
-./primihub-cli --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,databaseSize:STRING:0:20,outputFullFilename:STRING:0:/data/result/pir_result.csv" --input_datasets="serverData"
+./primihub-cli --task_type=2 --params="clientData:STRING:1:HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG;VjBWFAmqrPKraFuJwuiFaXJXvLskePqSqVKVwumyfulYWJPNkwfgHVyISSxsBKBi,serverData:STRING:0:keyword_pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/data/result/kw_pir_result.csv" --input_datasets="serverData"
+or:
+./primihub-cli --task_config_file="example/keyword_pir_task_conf.json"
 ```
 
 If starting locally, run the following command from the compiled root directory:
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_type=2 --params="queryIndeies:STRING:0:11,serverData:STRING:0:pir_server_data,databaseSize:STRING:0:20,outputFullFilename:STRING:0:/data/result/pir_result.csv" --input_datasets="serverData"
+./bazel-bin/cli --server="你的IP:50050" --task_type=2 --params="clientData:STRING:1:HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG;VjBWFAmqrPKraFuJwuiFaXJXvLskePqSqVKVwumyfulYWJPNkwfgHVyISSxsBKBi,serverData:STRING:0:keyword_pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/data/result/kw_pir_result.csv" --input_datasets="serverData"
+or:
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/keyword_pir_task_conf.json"
 ```
 
 Observe the logs of `node0`and`node1` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
@@ -57,11 +61,11 @@ I20220922 07:36:36.778131    35 pir_server_task.cc:187] request processed
 ```
 
 ## Parameter Description
-
 | parameter| data type | example | parameter description
 | ---- | ---- | ---- | ---- |
-| params.queryIndeies | STRING | 11 | 表示检索pir数据库index值为11数据记录，index值不能超过数据库的记录数，否则出错。（当前版本pir支持一次请求包含多个index，index值之间用英文逗号分割，而由于当前命令行请求中逗号用于分割参数，所以命令行启动任务只包含1个index值。）|
-| params.serverData | STRING | pir_server_data | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送匿踪查询请求。pir服务端加载该标识符对应文件生成pir数据库。（pir服务中调度节点默认作为pir服务的客户端节点。用例中数据注册到节点node1中，在config目中对应的配置文件是primihub_node1.yaml，添加数据的保存路径，设置该数据的description为"pir_server_data"，作为该数据标志符。标志符用户可以自主设置，请求任务中的参数值与配置文件中标志符保持一致））|
-| params.databaseSize | STRING | 20 | 表示检索的pir数据库的数据记录数量，当前版本pir需要从cli通知客户端节点数据库的规模，如果未提供该参数或者该参数设置错误则会引发pir报错。 |
-| params.outputFullFilename | STRING | "/data/result/pir_result.csv" | 指定pir匿踪查询结果保存文件的文件名和文件所在目录的绝对路径。|
-| input_datasets | STRING | "serverData" | 该参数值指定params参数集合的数据集参数，实例中params.serverData是数据集参数，通过数据集参数值找到相关工作节点。|
+| params.clientData | STRING | HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG | keyword for client to query from the server |
+| params.serverData | STRING | keyword_pir_server_data | id of server dataset |
+| params.outputFullFilename | STRING | "/data/result/kw_pir_result.csv" | path to save query result。|
+| params.pirType | INT32 | 1 | pir type, 1 for keyword pir |
+| input_datasets | STRING | "serverData" | datasets which used to search the location of the dataset。|
+

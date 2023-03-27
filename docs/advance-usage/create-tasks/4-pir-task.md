@@ -15,12 +15,16 @@ sidebar_position: 4
 
 ```bash
 ./primihub-cli --task_type=2 --params="clientData:STRING:1:HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG;VjBWFAmqrPKraFuJwuiFaXJXvLskePqSqVKVwumyfulYWJPNkwfgHVyISSxsBKBi,serverData:STRING:0:keyword_pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/data/result/kw_pir_result.csv" --input_datasets="serverData"
+或者
+./primihub-cli --task_config_file="example/keyword_pir_task_conf.json"
 ```
 
 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=2 --params="clientData:STRING:1:HXfUhjJCfMssfPIjhDBXeMyZFmfbIAYvijkSCsyqvoGsJwcFhZiYIYSpFDdTUxvG;VjBWFAmqrPKraFuJwuiFaXJXvLskePqSqVKVwumyfulYWJPNkwfgHVyISSxsBKBi,serverData:STRING:0:keyword_pir_server_data,pirType:INT32:0:1,outputFullFilename:STRING:0:/data/result/kw_pir_result.csv" --input_datasets="serverData"
+
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/keyword_pir_task_conf.json"
 ```
 
 
