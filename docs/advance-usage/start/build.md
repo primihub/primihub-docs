@@ -12,7 +12,7 @@ Linux 环境配置步骤可参考 [Dockerfile](https://github.com/primihub/primi
 
 以 `ubuntu 20.04` 系统为例，执行如下命令即可完成基础环境配置
 ```
-apt update 
+apt update
 apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake libmysqlclient-dev
 apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
@@ -35,46 +35,43 @@ git clone https://gitee.com/primihub/primihub.git
 
 ### Linux
 * 依赖环境
-  gcc-8，g++-8，python3.8及以上，python3.8-dev，cmake-3.20
+  gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.20
 
 ```bash
 ./pre_build.sh
-bazel build --config=linux_x86_64 :node :cli :py_main :opt_paillier_c2py :linkcontext
+make linux_x86_64
 
 # Arm机器使用
-bazel build --config=linux_aarch64 :node :cli :py_main :opt_paillier_c2py :linkcontext
+make linux_aarch64
 ```
 
-编译完成后在代码根目录下，三个终端中分别运行以下命令启动节点
+编译完成后在代码根目录下执行如下命令
 
 ```shell
-./bazel-bin/node --node_id=node0 --service_port=50050 --config=./config/node0.yaml
+sed -i /PYTHONPATH/d start_server.sh
+/bin/bash start_server.sh
 ```
-```shell
-./bazel-bin/node --node_id=node1 --service_port=50051 --config=./config/node1.yaml
-```
-```shell
-./bazel-bin/node --node_id=node2 --service_port=50052 --config=./config/node2.yaml
-```
+将启动三个服务节点，其相关日志分别保存在log_node0, log_node1, log_node2中
+
 
 ### macOS
- * 依赖环境 clang 12+，python3.8及以上，cmake-3.20
- 
+ * 依赖环境 clang 12+，python3.8，cmake-3.20
+
  * Apple Intel CPU
- 
+
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_x86_64 :node :cli :py_main :opt_paillier_c2py :linkcontext
+make darwin_x86_64
 ```
 
  *  Apple sillicon M1
 
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_arm64 :node :cli :py_main :opt_paillier_c2py :linkcontext
+make darwin_arm64
 ```
 
-### Windows 
+### Windows
 
 ***TODO 待测***
 
@@ -95,12 +92,12 @@ docker build -t primihub/primihub-node .
 docker build --build-arg "HTTP_PROXY=http://你的代理地址" --build-arg "HTTPS_PROXY=http://你的代理地址" -t primihub/primihub-node .
 ```
 
-<!-- 
+<!--
 :::caution Apple M1 docker 编译问题
 
 在Apple M1设备上进行docker镜像编译，使用bazel 5.0.0会编译出错，这是bazel的bug，具体的问题见[bazel github issue #13925](https://github.com/bazelbuild/bazel/issues/13925)， 需要修改代码下的.bazelvsersion 文件内容为 `4d900ceea12919ad62012830a95e51f9ec1a48bb`
 
-::: 
+:::
 -->
 
 ## 编译常见问题

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-description: 纵向联邦学习介绍及其应用场景 
+description: 纵向联邦学习介绍及其应用场景
 keywords: [纵向联邦学习, 纵向联邦应用场景, Hetero XGB, Primihub SDK Demo]
 ---
 # 纵向联邦学习（XGB）
@@ -113,12 +113,16 @@ Guest端：数据中没有标签的一方
 
 ```bash
 ./primihub-cli --task_lang=python --task_code=./python/primihub/examples/hetero_xgb_grpc.py --params="predictFileName:STRING:0:/data/result/prediction.csv,indicatorFileName:STRING:0:/data/result/indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+
+./primihub-cli --task_config_file="example/fl_hetero_xgb_task_conf.json"
 ```
 
 * 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb_grpc.py" --params="predictFileName:STRING:0:/data/result/train_prediction.csv,indicatorFileName:STRING:0:/data/result/train_indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/fl_hetero_xgb_task_conf.json"
 ```
 
 :::tip
@@ -127,7 +131,7 @@ Guest端：数据中没有标签的一方
 
 ```bash
 cd python
-pip3 install -r requirements.txt 
+pip3 install -r requirements.txt
 python3 setup.py install
 ```
 

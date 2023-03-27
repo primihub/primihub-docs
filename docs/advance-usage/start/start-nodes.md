@@ -7,7 +7,7 @@ displayed_sidebar: lensonsSidebar
 
 # 下载二进制文件启动
 
-*** 启动用于运行任务的各个节点 *** 
+*** 启动用于运行任务的各个节点 ***
 
 ## 启动redis
 
@@ -29,7 +29,7 @@ systemctl start redis
 ```
 docker run --name redis -p 6379:6379 -d redis:latest --requirepass "primihub"
 ```
- 
+
 <!-- ## 运行启动点（使用redis做数据集查找时该步骤可忽略）
 
 您可以选择直接下载编译好的二进制文件：
