@@ -9,7 +9,7 @@ primihub-cli 的公共参数：
 
 
 ```bash
---input_datasets (input datasets name list); default: TrainData,TestData;
+--input_datasets (input datasets name list); default: "TrainData,TestData";
 --job_id (job id); default: "100";
 --params (task params, format is <name, type, is array, value>);
   default: BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2;
