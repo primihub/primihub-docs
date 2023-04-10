@@ -8,6 +8,10 @@ description: Start the PrimiHub node manually
 
  *** Start the test node via a Golang application *** 
 
+ :::tip
+Since the binaries are compiled with Ubuntu 20.04 and other systems depend on different versions, they are currently only supported on Ubuntu 20.04
+:::
+
 ## Run redis (Recommended)
 
 When using `CentOS` or `Ubuntu`, you can install redis directly with the following command

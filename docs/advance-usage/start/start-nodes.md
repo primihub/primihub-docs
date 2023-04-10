@@ -8,7 +8,9 @@ displayed_sidebar: lensonsSidebar
 # 下载二进制文件启动
 
 *** 启动用于运行任务的各个节点 ***
-
+:::tip
+由于二进制文件使用Ubuntu20.04系统编译，别的系统依赖的版本不一致，目前仅支持在Ubuntu20.04系统上使用
+:::
 ## 启动redis
 
 1. 直接安装
