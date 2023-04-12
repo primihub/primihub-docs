@@ -19,6 +19,23 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/b
 
 npm install -g @bazel/bazelisk
 ```
+
+`CentOS 7` 系统基础环境配置
+```
+yum -y install python-devel gmp-devel centos-release-scl libtool ninja-build git npm pkg-config unzip make
+yum -y install devtoolset-8-gcc*
+yum install rh-python38 rh-python38-python-devel
+scl enable devtoolset-8 bash
+scl enable rh-python38 bash
+
+# cmake需要安装3.22.0以上版本
+wget https://cmake.org/files/v3.22/cmake-3.22.6-linux-`arch`.tar.gz
+tar -xzvf cmake-3.22.6-linux-`arch`.tar.gz 
+chmod +x cmake-3.22.6-linux-`arch`/bin/cmake 
+ln -s `pwd`/cmake-3.22.6-linux-`arch`/bin/cmake /usr/bin/cmake
+
+npm install -g @bazel/bazelisk
+```
 ## 克隆代码
 
 ```bash
@@ -35,7 +52,7 @@ git clone https://gitee.com/primihub/primihub.git
 
 ### Linux
 * 依赖环境
-  gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.20
+  gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
 
 ```bash
 ./pre_build.sh
@@ -49,7 +66,7 @@ make linux_aarch64
 
 ```shell
 sed -i /PYTHONPATH/d start_server.sh
-/bin/bash start_server.sh
+bash start_server.sh
 ```
 将启动三个服务节点，其相关日志分别保存在log_node0, log_node1, log_node2中
 

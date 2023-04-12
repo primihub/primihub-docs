@@ -17,6 +17,22 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/b
 
 npm install -g @bazel/bazelisk
 ```
+
+`CentOS 7` system basic environment configuration
+```
+yum -y install python-devel gmp-devel centos-release-scl libtool ninja-build git npm pkg-config unzip make
+yum -y install devtoolset-8-gcc*
+yum install rh-python38 rh-python38-python-devel
+scl enable devtoolset-8 bash
+scl enable rh-python38 bash
+
+wget https://cmake.org/files/v3.22/cmake-3.22.6-linux-`arch`.tar.gz
+tar -xzvf cmake-3.22.6-linux-`arch`.tar.gz 
+chmod +x cmake-3.22.6-linux-`arch`/bin/cmake 
+ln -s `pwd`/cmake-3.22.6-linux-`arch`/bin/cmake /usr/bin/cmake
+
+npm install -g @bazel/bazelisk
+```
 ## Get the code
 
 ```bash
