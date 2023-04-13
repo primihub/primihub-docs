@@ -27,11 +27,6 @@ yum -y install rh-python38 rh-python38-python-devel
 scl enable devtoolset-8 bash
 scl enable rh-python38 bash
 
-wget https://cmake.org/files/v3.22/cmake-3.22.6-linux-`arch`.tar.gz
-tar -xzf cmake-3.22.6-linux-`arch`.tar.gz
-chmod +x cmake-3.22.6-linux-`arch`/bin/cmake
-ln -s `pwd`/cmake-3.22.6-linux-`arch`/bin/cmake /usr/bin/cmake
-
 npm install -g @bazel/bazelisk
 
 # Check the version of libstdc++.so.6, if it is the default 6.0.19, you need to upgrade the version

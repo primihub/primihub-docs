@@ -29,12 +29,6 @@ yum -y install rh-python38 rh-python38-python-devel
 scl enable devtoolset-8 bash
 scl enable rh-python38 bash
 
-# cmake需要安装3.22.0以上版本
-wget https://cmake.org/files/v3.22/cmake-3.22.6-linux-`arch`.tar.gz
-tar -xzf cmake-3.22.6-linux-`arch`.tar.gz
-chmod +x cmake-3.22.6-linux-`arch`/bin/cmake
-ln -s `pwd`/cmake-3.22.6-linux-`arch`/bin/cmake /usr/bin/cmake
-
 npm install -g @bazel/bazelisk
 
 # 查看libstdc++.so.6链接的版本,如果是默认的6.0.19则需要升级版本
