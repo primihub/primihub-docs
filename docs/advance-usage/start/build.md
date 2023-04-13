@@ -26,8 +26,9 @@ yum -y install epel-release
 yum -y install python-devel gmp-devel centos-release-scl libtool ninja-build git npm make
 yum -y install devtoolset-8-gcc*
 yum -y install rh-python38 rh-python38-python-devel
-scl enable devtoolset-8 bash
-scl enable rh-python38 bash
+echo "source /opt/rh/devtoolset-8/enable" >> /etc/profile
+echo "source /opt/rh/rh-python38/enable" >> /etc/profile
+source /etc/profile
 
 npm install -g @bazel/bazelisk
 
