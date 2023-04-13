@@ -22,9 +22,10 @@ npm install -g @bazel/bazelisk
 
 `CentOS 7` 系统基础环境配置
 ```
-yum -y install python-devel gmp-devel centos-release-scl libtool ninja-build git npm pkg-config unzip make
+yum -y install epel-release
+yum -y install python-devel gmp-devel centos-release-scl libtool ninja-build git npm make
 yum -y install devtoolset-8-gcc*
-yum install rh-python38 rh-python38-python-devel
+yum -y install rh-python38 rh-python38-python-devel
 scl enable devtoolset-8 bash
 scl enable rh-python38 bash
 
@@ -35,6 +36,14 @@ chmod +x cmake-3.22.6-linux-`arch`/bin/cmake
 ln -s `pwd`/cmake-3.22.6-linux-`arch`/bin/cmake /usr/bin/cmake
 
 npm install -g @bazel/bazelisk
+
+# 查看libstdc++.so.6链接的版本,如果是默认的6.0.19则需要升级版本
+ls -l /usr/lib64/libstdc++.so.6
+wget https://primihub.oss-cn-beijing.aliyuncs.com/tools/libstdc.so_.6.0.26.zip
+unzip libstdc.so_.6.0.26.zip
+cp libstdc++.so.6.0.26 /usr/lib64
+rm /usr/lib64/libstdc++.so.6
+ln -s /usr/lib64/libstdc++.so.6.0.26 /usr/lib64/libstdc++.so.6
 ```
 ## 克隆代码
 
