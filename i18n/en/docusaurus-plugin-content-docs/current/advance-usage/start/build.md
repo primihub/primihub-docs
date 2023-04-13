@@ -28,8 +28,8 @@ scl enable devtoolset-8 bash
 scl enable rh-python38 bash
 
 wget https://cmake.org/files/v3.22/cmake-3.22.6-linux-`arch`.tar.gz
-tar -xzvf cmake-3.22.6-linux-`arch`.tar.gz 
-chmod +x cmake-3.22.6-linux-`arch`/bin/cmake 
+tar -xzf cmake-3.22.6-linux-`arch`.tar.gz
+chmod +x cmake-3.22.6-linux-`arch`/bin/cmake
 ln -s `pwd`/cmake-3.22.6-linux-`arch`/bin/cmake /usr/bin/cmake
 
 npm install -g @bazel/bazelisk
@@ -38,8 +38,8 @@ npm install -g @bazel/bazelisk
 ls -l /usr/lib64/libstdc++.so.6
 wget https://primihub.oss-cn-beijing.aliyuncs.com/tools/libstdc.so_.6.0.26.zip
 unzip libstdc.so_.6.0.26.zip
-cp libstdc++.so.6.0.26 /usr/lib64
-rm /usr/lib64/libstdc++.so.6
+mv libstdc++.so.6.0.26 /usr/lib64
+rm -f /usr/lib64/libstdc++.so.6
 ln -s /usr/lib64/libstdc++.so.6.0.26 /usr/lib64/libstdc++.so.6
 ```
 ## Get the code
