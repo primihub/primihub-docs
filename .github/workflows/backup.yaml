@@ -1,19 +1,23 @@
-name: Backup Git repository
+name: Sync to Gitee
 
 on:
-  workflow_dispatch:
   push:
     branches:
-    - main
+      - main
 
 jobs:
-  BackupGit:
+  sync:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - name: backup
-      uses: jenkins-zh/git-backup-actions@v0.0.7
-      env:
-        GIT_DEPLOY_KEY: ${{ secrets.GIT_DEPLOY_KEY }}
-        TARGET_GIT: "git@gitee.com:primihub/primihub-docs.git"
-        BRANCH: main
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Sync to Gitee
+      uses: mirrorhubio/gitee-sync@v2
+      with:
+        source_repo: ${{ github.repository }}
+        source_branch: ${{ github.ref }}
+        target_repo: primihub/primihub-docs
+        target_branch: main
+        gitee_token: ${{ secrets.GITEE_TOKEN }}
