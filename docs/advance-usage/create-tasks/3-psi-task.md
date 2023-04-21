@@ -16,7 +16,7 @@ keywords: [隐私求交, PSI]
 
 ```bash
 ./primihub-cli --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
-或者：
+或：
 ./primihub-cli --task_config_file="example/psi_ecdh_task_conf.json"
 ./primihub-cli --task_config_file="example/psi_kkrt_task_conf.json"
 ```
@@ -25,7 +25,7 @@ keywords: [隐私求交, PSI]
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=3 --params="clientData:STRING:0:psi_client_data,serverData:STRING:0:psi_server_data,clientIndex:INT32:0:0,serverIndex:INT32:0:1,psiType:INT32:0:0,psiTag:INT32:0:0,outputFullFilename:STRING:0:/data/result/psi_result.csv" --input_datasets="clientData,serverData"
-或者：
+或：
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/psi_ecdh_task_conf.json"
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/psi_kkrt_task_conf.json"
 ```
