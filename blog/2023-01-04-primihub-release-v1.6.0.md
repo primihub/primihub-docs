@@ -9,7 +9,7 @@ tags: [release]
 
 <!--truncate-->
 
-## 更新功能
+## Feature
 
 - 支持GRPC作为PSI和PIR任务中的通信
 - 基于Ray-cluster并行加速处理数据加解密和密文求和，提高模型训练效率数十倍
