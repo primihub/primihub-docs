@@ -10,7 +10,6 @@ sidebar_position: 0
 
 ```
 git clone https://github.com/primihub/primihub.git
-cd primihub/python
 ```
 
 :::tip
@@ -29,7 +28,9 @@ cd primihub/python
 :::tip
 要想正确的安装primihub python sdk，注意要使用和编译primihub同样的Python解释器。
 :::
-
-1. 执行 `pip install --no-cache-dir  --force-reinstall -Iv grpcio grpcio_tools`
-
-2. 安装 primihub， 执行 `python setup.py install --user`
+```
+cd primihub/python
+# 安装需求模块
+pip install --no-cache-dir  --force-reinstall -Iv grpcio grpcio_tools
+python setup.py install --user
+```
