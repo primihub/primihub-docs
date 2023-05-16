@@ -9,38 +9,13 @@ Three trial platforms are currently offered:
 * https://node2.primihub.com
 * https://node3.primihub.com
 
-You can apply for a trial on the website：https://primihub.com
+## Management Platform Operating Instructions Manual
 
-![Apply](/img/primihub-platform-apply.png)
-![Apply1](/img/primihub01.png)
+* [Online Link](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
+* [Download Link](https://primihub.oss-cn-beijing.aliyuncs.com/PrimiHub%E4%BA%A7%E5%93%81%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8Cv1.5.5.pdf)
 
-## Service Deployment
-Befor installing local services, you need to first start node service(the complete service experience usually requires more than two)
-You need to install git to download the code
+## Test Resources Download
 
-    git clone https://github.com/primihub/primihub-platform.git
-
-Directory as follows：
-
-    ├─primihub-platform
-    ├─primihub-fusion
-    │   ├─fusion-api
-    │   └─script
-    ├─primihub-service
-    │   ├─application
-    │   ├─biz
-    │   ├─gateway
-    │   └─script
-    └─primihub-webconsole
-
-Then you can read the following three connections to deploy and instal：
-- [primihub-fusion](/docs/developer-docs/privacy-platform/privacy-platform-fusion) : 
-Used for group communication, sharing resources and resource query
-
-- [primihub-service](/docs/developer-docs/privacy-platform/privacy-platform-service) : Provides most of the services and API
-- [primihub-webconsole](/docs/developer-docs/privacy-platform/privacy-platform-webconsole) : Visual operation console
-
-## Developer
-  About code compilation and how to contribute code，see [Developer Documentation](/docs/developer-docs/privacy-platform/)
+* [Test Resources Download](https://primihub.oss-cn-beijing.aliyuncs.com/dataset/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E8%B5%84%E6%BA%90.zip)
 
 
