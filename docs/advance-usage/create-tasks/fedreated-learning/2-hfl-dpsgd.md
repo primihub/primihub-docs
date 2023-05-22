@@ -38,9 +38,9 @@ keywords: [横向联邦学习, 差分隐私, DP-SGD]
 
 1. 计算一个batch数据的梯度并取均值
 
-    - $g=\frac{1}{n}\sum_i{\nabla_{\omega}\mathcal{L}(x_i, y_i)}$
+    - $g=\frac{1}{B}\sum_i{\nabla_{\omega}\mathcal{L}(x_i, y_i)}$
 
-2. 更新参数
+2. 更新模型参数
 
     - $\omega:=\omega-\eta\cdot g$
 
@@ -56,13 +56,13 @@ keywords: [横向联邦学习, 差分隐私, DP-SGD]
 
 3. 梯度中添加噪声
 
-    - $\tilde{g}=\frac{1}{n}\Big[\sum_i\bar{g}_i+\mathcal{N}(0,\sigma^2 C^2)\Big]$
+    - $\tilde{g}=\frac{1}{B}\Big[\sum_i\bar{g}_i+\mathcal{N}(0,\sigma^2 C^2)\Big]$
 
     - 高斯噪声的方差取决于$C$和$\sigma$的乘积
 
     - 隐私预算$\epsilon$仅取决于参数$\sigma$，与$C$无关
 
-4. 更新参数
+4. 更新模型参数
 
     - $\omega:=\omega-\eta\cdot \tilde{g}$
 
@@ -142,6 +142,7 @@ keywords: [横向联邦学习, 差分隐私, DP-SGD]
 
 ```python
 import dp_accounting
+import logging
 
 noise_multiplier = 1.0
 batch_size = 256
