@@ -1,5 +1,5 @@
 {
-  "label": "联邦学习任务",
+  "label": "联邦学习（FL）任务",
   "position": 2,
   "link": {
     "type": "generated-index",

@@ -189,7 +189,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
 ```
 相关参数配置说明如下：
 - party_access_info：设置每个节点的 IP 和地址
-- roles：设置每一个参与方的角色行为，例如 Alice 和 Bob 是 server，Charlie 是 client
+- roles：设置每一个参与方的角色行为，例如 Alice 和 Bob 是 client，Charlie 是 server
 - parameters：设置参数，其中：
   - 公共参数：
     - aggration_iter：聚合几次
