@@ -105,7 +105,7 @@ Guest端：数据中没有标签的一方
 
 #### Hetero XGB Training
 
-*** 提交联邦学习任务的参数说明 ***
+***提交联邦学习任务的参数说明***
 
 创建联邦学习任务需要使用以下参数组合 `--task_lang=python --task_type=0`, 并通过`task_code`参数指定要运行的联邦学习python代码。
 
@@ -134,8 +134,6 @@ cd python
 pip3 install -r requirements.txt
 python3 setup.py install
 ```
-
-* 通过Python SDK Client启动，见[Python SDK hetero-xgb-demo](/docs/advance-usage/python-sdk/hetero-xgb)
 
 #### Hetero XGB Prediction
 

@@ -43,7 +43,6 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 
 ### Primihub Homo LR运行
 
-
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
@@ -63,13 +62,12 @@ keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK D
 ```bash
 ./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
+
 - 本地编译启动
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
 ```
-
-- 通过Python SDK Client启动，见[Python SDK homo-lr-demo](/docs/advance-usage/python-sdk/homo-lr)
 
 ### 参考文献
 
