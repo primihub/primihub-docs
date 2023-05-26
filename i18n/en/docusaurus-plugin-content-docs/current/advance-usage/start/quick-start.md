@@ -7,13 +7,22 @@ keywords: [MPC, QuickStart]
 # Quick Start
 
 :::tip
-Minimum machine configuration requirement 4C8G
+Minimum machine configuration requirement 4C16G
 :::
 
-Take 5 minutes to run an MPC application
+### Install [docker](https://docs.docker.com/install/overview/) and [docker-compose](https://docs.docker.com/compose/install/)
 
+You can refer to the official documentation to install it yourself or download the following installation package
+```
+wget https://primihub.oss-cn-beijing.aliyuncs.com/dev/docker20.10.tar.gz
+tar xf docker20.10.tar.gz
+bash install_docker.sh
 
-Install [docker](https://docs.docker.com/install/overview/) and [docker-compose](https://docs.docker.com/compose/install/)
+# Verify
+docker -v
+docker-compose version
+```
+### Start node
 
 Download the code and switch to the code root path
 
@@ -21,16 +30,12 @@ Download the code and switch to the code root path
 git clone https://github.com/primihub/primihub.git
 cd primihub
 ```
-
-## Run an MPC application
-![Depolyment](/img/tutorial-depolyment.jpg)
-
-### Start node
-
-*** Start the node for testing  *** 
+:::tip
+* Currently supported platforms are： `amd64`，`arm64`
+:::
 
 Start up three docker containers using docker-compose.
-The container includes: bootstrap node, redis(default), three nodes
+The container includes: three meta serives, three primihub-nodes
 
 ```bash
 docker-compose up -d
@@ -43,34 +48,15 @@ docker-compose ps -a
 ```
 
 ```shell
-NAME                    COMMAND                  SERVICE                 STATUS              PORTS
-node0_primihub          "/bin/bash -c './pri…"   node0                   running             0.0.0.0:6666->6666/tcp, 0.0.0.0:8050->50050/tcp
-node1_primihub          "/bin/bash -c './pri…"   node1                   running             0.0.0.0:6667->6667/tcp, 0.0.0.0:8051->50051/tcp
-node2_primihub          "/bin/bash -c './pri…"   node2                   running             0.0.0.0:6668->6668/tcp, 0.0.0.0:8052->50052/tcp
-redis                   "docker-entrypoint.s…"   redis                   running             0.0.0.0:6379->6379/tcp
-simple_bootstrap_node   "/app/simple-bootstr…"   simple_bootstrap_node   running             0.0.0.0:4001->4001/tcp
+NAME                COMMAND                  SERVICE             STATUS              PORTS
+primihub-meta0      "/bin/bash -c 'java …"   meta0               running (healthy)   
+primihub-meta1      "/bin/bash -c 'java …"   meta1               running (healthy)   
+primihub-meta2      "/bin/bash -c 'java …"   meta2               running (healthy)   
+primihub-node0      "/bin/bash -c './pri…"   node0               running             50050/tcp
+primihub-node1      "/bin/bash -c './pri…"   node1               running             50050/tcp
+primihub-node2      "/bin/bash -c './pri…"   node2               running             50050/tcp
 ```                                                   
 
-### Create an MPC task
+### Create task
 
-*** Let three nodes jointly perform a logistic regression task of multi-party secure computation (MPC) ***
-
-```shell
-docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --server="127.0.0.1:8050"
-```
-
-:::tip The node that requested the task
-  You can request a task from any node in your cluster
-:::
-
-:::tip Available task parameters
-
-With primihub-cli, the following parameters can be specified
- 1. Request which node to start the task
- 2. Which shared datasets to use
- 3. What kind of privacy computing tasks to do
- 
-In this case, primihub-cli will request a ABY3 tripartite logistic regression testing task from*** node 0 ***with default parameters. For the parameters that the cli can specify, see *** [Create Tasks](../docs/advance-usage/create-tasks/cli-params) ***
-
-:::
-
+After the startup is successful, you can refer to[create task](https://docs.primihub.com/docs/category/%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1) run tasks.

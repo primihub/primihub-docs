@@ -14,15 +14,13 @@ Example: launching an MPC logistic regression task：
 If starting with docker-compose, enter the primihub-node0 container by running `docker exec -it primihub-node0 bash`,and run the following command:
 
 ```bash
-./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
+./primihub-cli --server="Your IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```
 
 If starting locally, run the following command from the compiled root directory:
 
 ```bash
-./bazel-bin/cli --server="Your IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,TrainData:STRING:0:train_party_0;train_party_1;train_party_2,TestData:STRING:0:test_party_0;test_party_1;test_party_2"
-or:
-./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
+./bazel-bin/node --server="Your IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```
 Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
 
