@@ -55,10 +55,10 @@ git clone https://gitee.com/primihub/primihub.git
 :::
 
 ### Linux
-* 依赖环境
-  gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
+依赖环境 gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
 
 ```bash
+# 必须先执行脚本再编译
 ./pre_build.sh
 make linux_x86_64
 
@@ -66,14 +66,14 @@ make linux_x86_64
 make linux_aarch64
 ```
 
-编译完成后在代码根目录下执行如下命令
+编译完成后在启动服务之前，需要先启动`meta service`服务，参照 [这儿](https://docs.primihub.com/docs/advance-usage/start/start-nodes) 的步骤
+
+启动`meta service`服务后，在代码根目录下执行如下命令启动节点，其相关日志分别保存在log_node0, log_node1, log_node2文件中
 
 ```shell
 sed -i /PYTHONPATH/d start_server.sh
 bash start_server.sh
 ```
-将启动三个服务节点，其相关日志分别保存在log_node0, log_node1, log_node2中
-
 
 ### macOS
  * 依赖环境 clang 12+，python3.8，cmake-3.20

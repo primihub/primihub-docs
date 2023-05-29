@@ -12,19 +12,15 @@ sidebar_position: 1
 
 举例：启动一个MPC的逻辑回归任务：
 
-如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
+通过`docker-compose`启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,Data_File:STRING:0:train_party_0;train_party_1;train_party_2,modelName:STRING:0:/data/result/lr_mode.csv" --input_datasets="Data_File"
-或：
 ./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
 
-如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_lang=proto --task_type=0 --task_code="logistic_regression" --params="BatchSize:INT32:0:128,NumIters:INT32:0:100,Data_File:STRING:0:train_party_0;train_party_1;train_party_2,modelName:STRING:0:/data/result/lr_mode.csv" --input_datasets="Data_File"
-或：
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```
 分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确

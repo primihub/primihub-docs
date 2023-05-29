@@ -56,10 +56,19 @@ git clone https://github.com/primihub/primihub.git
 * Build
 ```bash
 ./pre_build.sh
-bazel build --config=linux_x86_64 :node :cli :opt_paillier_c2py :linkcontext
+make linux_x86_64
 
 # Arm
-bazel build --config=linux_aarch64 :node :cli :opt_paillier_c2py :linkcontext
+make linux_aarch64
+```
+
+After compiling, you need to start the `meta service` service before starting the service, refer to [here](https://docs.primihub.com/docs/advance-usage/start/start-nodes) 
+
+After starting the `meta service` service, execute the following command in the root directory of the code to start the node, and its related logs are saved in log_node0, log_node1, log_node2 files respectively
+
+```shell
+sed -i /PYTHONPATH/d start_server.sh
+bash start_server.sh
 ```
 
 ### mac
@@ -69,21 +78,14 @@ bazel build --config=linux_aarch64 :node :cli :opt_paillier_c2py :linkcontext
  
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_x86_64 --config=macos :node :cli :opt_paillier_c2py :linkcontext
+make darwin_x86_64
 ```
 
  *  Apple sillicon M1
 
 ```bash
 ./pre_build.sh
-bazel build --config=darwin_arm64 --config=macos  :node :cli :opt_paillier_c2py :linkcontext
-```
-
- *  MacOS Monterey with Apple M1
-
-```bash
-./pre_build.sh
-bazel build --config=darwin --config=macos  :node :cli :opt_paillier_c2py :linkcontext
+make darwin_arm64
 ```
 
 ### windows 
