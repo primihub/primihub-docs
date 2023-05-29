@@ -50,16 +50,13 @@ git clone https://github.com/primihub/primihub.git
 
 :::
 
-### linux
-* Environment
-  gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
-* Build
+### linux & Mac
+Linux Environment: gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
+Mac Environment: clang 12+，python3.7 and higher，cmake-3.20
+
 ```bash
 ./pre_build.sh
-make linux_x86_64
-
-# Arm
-make linux_aarch64
+make
 ```
 
 After compiling, you need to start the `meta service` service before starting the service, refer to [here](https://docs.primihub.com/docs/advance-usage/start/start-nodes) 
@@ -69,23 +66,6 @@ After starting the `meta service` service, execute the following command in the 
 ```shell
 sed -i /PYTHONPATH/d start_server.sh
 bash start_server.sh
-```
-
-### mac
- * environment: clang 12+，python3.7 and higher，cmake-3.20
- 
- * Apple Intel CPU
- 
-```bash
-./pre_build.sh
-make darwin_x86_64
-```
-
- *  Apple sillicon M1
-
-```bash
-./pre_build.sh
-make darwin_arm64
 ```
 
 ### windows 
