@@ -54,16 +54,14 @@ git clone https://gitee.com/primihub/primihub.git
 比如： https_proxy=http://127.0.0.1:7890
 :::
 
-### Linux
-依赖环境 gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
+### Linux & MacOS
+Linux 依赖环境 gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
+MacOS 依赖环境 clang 12+，python3.8，cmake-3.20
 
 ```bash
 # 必须先执行脚本再编译
 ./pre_build.sh
-make linux_x86_64
-
-# Arm机器使用
-make linux_aarch64
+make
 ```
 
 编译完成后在启动服务之前，需要先启动`meta service`服务，参照 [这儿](https://docs.primihub.com/docs/advance-usage/start/start-nodes) 的步骤
@@ -73,23 +71,6 @@ make linux_aarch64
 ```shell
 sed -i /PYTHONPATH/d start_server.sh
 bash start_server.sh
-```
-
-### macOS
- * 依赖环境 clang 12+，python3.8，cmake-3.20
-
- * Apple Intel CPU
-
-```bash
-./pre_build.sh
-make darwin_x86_64
-```
-
- *  Apple sillicon M1
-
-```bash
-./pre_build.sh
-make darwin_arm64
 ```
 
 ### Windows
