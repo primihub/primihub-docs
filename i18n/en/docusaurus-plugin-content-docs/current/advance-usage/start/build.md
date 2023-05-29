@@ -51,8 +51,8 @@ git clone https://github.com/primihub/primihub.git
 :::
 
 ### linux & Mac
-Linux Environment: gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
-Mac Environment: clang 12+，python3.7 and higher，cmake-3.20
+* Linux Environment: gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
+* Mac Environment: clang 12+，python3.7 and higher，cmake-3.20
 
 ```bash
 ./pre_build.sh
