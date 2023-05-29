@@ -55,8 +55,8 @@ git clone https://gitee.com/primihub/primihub.git
 :::
 
 ### Linux & MacOS
-Linux 依赖环境 gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
-MacOS 依赖环境 clang 12+，python3.8，cmake-3.20
+* Linux 依赖环境 gcc-8，g++-8，python3.8，python3.8-dev，cmake-3.22
+* MacOS 依赖环境 clang 12+，python3.8，cmake-3.20
 
 ```bash
 # 必须先执行脚本再编译
