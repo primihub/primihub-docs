@@ -68,16 +68,6 @@ class ExampleGuest(BaseModel):
 ```json
 {
     "party_info": {
-        "Bob": {
-            "ip": "127.0.0.1",
-            "port": "50051",
-            "use_tls": false
-        },
-        "Charlie": {
-            "ip": "127.0.0.1",
-            "port": "50052",
-            "use_tls": false
-        },
         "task_manager": "127.0.0.1:50050"
     },
     "component_params": {
@@ -106,7 +96,7 @@ class ExampleGuest(BaseModel):
 }
 ```
 
-``party_info``包含各节点的信息：``Bob``、``Charlie``为角色代称，``task_manager``为管理节点。
+``party_info``包含节点的信息：``task_manager``为管理节点。
 
 ``component_params``包含三个参数：``roles``、``common_params``、``role_params``
 
@@ -122,14 +112,8 @@ class ExampleGuest(BaseModel):
 
 <https://docs.primihub.com/docs/advance-usage/start/start-nodes>
 
-跳转路径
-
-```bash
-cd primihub/python/primihub/new_FL
-```
-
 发起任务
 
 ```bash
-python3 sdk/submit.py tests/example/dev_example.json
+submit python/primihub/new_FL/tests/example/dev_example.json
 ```

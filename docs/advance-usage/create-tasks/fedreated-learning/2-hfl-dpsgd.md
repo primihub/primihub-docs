@@ -187,13 +187,19 @@ def compute_epsilon(steps):
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_dpsgd.py --params="predictFileName:STRING:0:/data/result/lr_train_predict.csv,indicatorFileName:STRING:0:/data/result/lr_train_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
+./primihub-cli --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
 ```
 
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_dpsgd.py --params="predictFileName:STRING:0:/data/result/lr_train_predict.csv,indicatorFileName:STRING:0:/data/result/lr_train_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
+```
+
+- 或者通过Python SDK启动
+
+```bash
+submit python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json
 ```
 
 ### 7.2 Prediction
@@ -201,13 +207,19 @@ def compute_epsilon(steps):
 - docker-compose启动
 
 ```bash
-./primihub-cli --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
+./primihub-cli --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_type=0 --task_lang=python --task_code=./python/primihub/FL/model/logistic_regression/homo_lr_infer.py --params="predictFileName:STRING:0:/data/result/lr_test_predict.csv,indicatorFileName:STRING:0:/data/result/lr_test_indicator.json,modelFileName:STRING:0:/data/result/lr_model.pl"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+```
+
+- Python SDK启动
+
+```bash
+submit python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_predict.json
 ```
 
 ## 8. 参考文献

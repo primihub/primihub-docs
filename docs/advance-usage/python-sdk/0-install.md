@@ -8,7 +8,7 @@ sidebar_position: 0
 
 ## 下载
 
-```
+```bash
 git clone https://github.com/primihub/primihub.git
 ```
 
