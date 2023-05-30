@@ -10,10 +10,11 @@ keywords: [联邦学习, 大模型]
 配置要求：最低显存需求 7G
 
 步骤分为几个流程：
+
 1. 部署 PrimiHub，参考[这里](https://docs.primihub.com/docs/advance-usage/start/build)
 2. 安装 PrimiHub SDK，参考[这里](https://docs.primihub.com/docs/advance-usage/python-sdk/install)
 3. 部署 ChatGLM-6B
-4. 启动节点 
+4. 启动节点
 5. 发起任务并查看结果
 
 ## 部署 ChatGLM-6B
@@ -21,17 +22,21 @@ keywords: [联邦学习, 大模型]
 ChatGLM 详细文档可参考[这里](https://github.com/THUDM/ChatGLM-6B)，在此将做进一步的解释，以帮助用户充分理解该流程。
 
 ### 根据自己的GPU型号安装驱动
+
 参考[官网](https://www.nvidia.cn/Download/index.aspx?lang=cn)
 
 ### 安装 CUDA 版本 PyTorch
+
 推荐使用显卡进行加速，并安装 PyTorch 以及相应版本的 CUDA。
 首先确认本地安装的版本，如果为 True，则可以跳过该步骤
-```Python
+
+```python
 import torch   
 torch.__version__'2.0.0'   
 torch.cuda.is_available()   
 True  
 ```
+
 否则，需先在 PyTorch [官网](https://pytorch.org/) 确认目前 GPU 版本要求，例如以下配置。注意，此时最好先确认 CUDA 版本，再进行 PyTorch 安装。
 ![img](/img/cuda1.png)
 
@@ -44,7 +49,8 @@ True
 :::
 
 安装完成后，使用如下命令确认版本号以及是否安装成功。如果结果是11.8，说明安装正确。
-```shell
+
+```bash
 /usr/local/cuda/bin/nvcc --version
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2022 NVIDIA Corporation
@@ -54,19 +60,21 @@ Build cuda_11.8.r11.8/compiler.31833905_0
 ```
 
 ### 部署 ChatGLM
-```
+
+```bash
 git clone https://github.com/THUDM/ChatGLM-6B.git
 cd ChatGLM-6B
 pip install -r requirements.txt
 ```
-下载预训练模型：https://huggingface.co/THUDM/chatglm-6b-int4/tree/main
+
+下载预训练模型：<https://huggingface.co/THUDM/chatglm-6b-int4/tree/main>
 作为后续模型的输入。
 
 配置完成后，在 ChatGLM-6B 下使用如下命令测试。注意："THUDM/chatglm-6b" 需要替换为本地预训练模型的路径。
 
 例如这里的示例是"/home/primihub/czl/chatglm-6b-int4"
 
-```Python
+```python
 >>> from transformers import AutoTokenizer, AutoModel
 >>> tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True)
 >>> model = AutoModel.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True).half().cuda()
@@ -87,13 +95,17 @@ pip install -r requirements.txt
 
 如果这些方法无法帮助你入睡,你可以考虑咨询医生或睡眠专家,寻求进一步的建议。
 ```
+
 如果上述能够正常运行，那么，恭喜你，库安装与模型预测没问题了。后续我们将说明如何进行模型训练。
 安装如下依赖：
-```shell
+
+```bash
 pip install rouge_chinese nltk jieba datasets
 ```
+
 安装完成后，则可进行训练。训练很简单，在 ~/ChatGLM-6B/ptuning 下运行下述代码即可。
-```shell
+
+```bash
 bash train.sh
 
 cat train.sh
@@ -123,96 +135,112 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
     --pre_seq_len $PRE_SEQ_LEN \
     --quantization_bit 4
 ```
+
 参数说明：
+
 - train_file 为训练数据文件
 - model_name_or_path 为预训练模型的位置
 - output_dir为落盘的位置
 其他的参数比较容易，可以参考原项目地址。使用官方文档的数据集 AdvertiseGen 即可完成训练。确认训练能够完成后，我们将演示如何使用 PrimiHub 实现联邦训练。
 
 ## 使用 PrimiHub 实现联邦大模型训练
+
 配置 Json 文件，修改 primihub/python/primihub/new_FL/tests/example/ChatGlm.json 参数：
-```
+
+```json
 {
-    "party_access_info": {
-        "Alice":
-            {
-                "ip": "172.21.1.58",
-                "port": "50050",
-                "use_tls": false
-            },
-        "Bob":
-            {
-                "ip": "172.21.1.58",
-                "port": "50051",
-                "use_tls": false
-            },
-        "Charlie":
-            {
-                "ip": "172.21.1.58",
-                "port": "50052",
-                "use_tls": false
-            },
+    "party_info": {
+        "Alice": {
+            "ip": "172.21.1.58",
+            "port": "50050",
+            "use_tls": false
+        },
+        "Bob": {
+            "ip": "172.21.1.63",
+            "port": "50051",
+            "use_tls": false
+        },
+        "Charlie": {
+            "ip": "172.21.1.58",
+            "port": "50052",
+            "use_tls": false
+        },
         "task_manager": "127.0.0.1:50050"
     },
-    "roles":
-        {"client":["Alice", "Bob"],
-        "server": ["Charlie"]},
-    "tasks":[
-        {
-        "model": "Chat_glm",
-        "process": "train",
-        "parameters": {
+    "component_params": {
+        "roles": {
+            "server": "Charlie",
+            "client": [
+                "Alice",
+                "Bob"
+            ]
+        },
+        "common_params": {
+            "model": "Chat_glm",
+            "process": "train",
             "aggration_iter": 2,
-            "train_iter": 3,
-            "Alice" : 
-                    {"path": "/home/primihub/czl/ChatGLM-6B-Med/ptuning",
-                    "train_file": "Meddata/train.json",
-                    "validation_file": "Meddata/train.json",
-                    "prompt_column": "prompt",
-                    "response_column": "response",
-                    "history_column": "history",
-                    "model_name_or_path": "/home/primihub/czl/chatglm-6b-int4",
-                    "output_dir": "output/Alice_result",
-                    "num_examples": 10},
-            "Bob":{"path": "/home/primihub/czl/ChatGLM-6B/ptuning",
-                    "train_file": "AdvertiseGen/train.json",
-                    "validation_file": "AdvertiseGen/dev.json",
-                    "prompt_column": "content",
-                    "response_column": "summary",
-                    "model_name_or_path": "/home/primihub/czl/chatglm-6b-int4",
-                    "output_dir": "output/Bob_result",
-                    "num_examples": 10}
+            "train_iter": 3
+        },
+        "role_params": {
+            "Alice": {
+                "path": "/home/primihub/czl/ChatGLM-6B-Med/ptuning",
+                "train_file": "Meddata/train.json",
+                "validation_file": "Meddata/train.json",
+                "prompt_column": "prompt",
+                "response_column": "response",
+                "history_column": "history",
+                "model_name_or_path": "/home/primihub/czl/chatglm-6b-int4",
+                "output_dir": "output/Alice_result",
+                "num_examples": 10
+            },
+            "Bob": {
+                "path": "/home/primihub/czl/ChatGLM-6B/ptuning",
+                "train_file": "AdvertiseGen/train.json",
+                "validation_file": "AdvertiseGen/dev.json",
+                "prompt_column": "content",
+                "response_column": "summary",
+                "model_name_or_path": "/home/primihub/czl/chatglm-6b-int4",
+                "output_dir": "output/Bob_result",
+                "num_examples": 10
+            }
         }
     }
-    ]
 }
 ```
+
 相关参数配置说明如下：
-- party_access_info：设置每个节点的 IP 和地址
-- roles：设置每一个参与方的角色行为，例如 Alice 和 Bob 是 client，Charlie 是 server
-- parameters：设置参数，其中：
-  - 公共参数：
+
+- party_info：设置每个节点的 IP 和地址
+- component_params：设置参数，其中：
+  - roles：设置每一个参与方的角色行为，例如 Alice 和 Bob 是 client，Charlie 是 server
+  - common_params是公共参数：
     - aggration_iter：聚合几次
     - train_iter: 每一轮聚合训练几轮
-  - 每一方的参数设置：
+  - role_params是每一方的参数设置：
     - Path: 本地 ChatGLM-6B 项目的路径
     - train_file, validation_file, prompt_column, response_column, history_column, model_name_or_path, output_dir: 同 train.bash
     - num_examples: 每一方的数据量
 
 配置完成后，在 primihub/python/primihub/new_FL 目录下通过下述代码即可发起任务。
-```
+
+```bash
 python3 sdk/submit.py tests/example/ChatGlm.json
 ```
+
 ### 进行大模型的部署
+
 训练完成后，可以在每一方的 output 路径下，看到 checkpoint 文件，类似：
-```
+
+```bash
 primihub@primihub58:~/czl/ChatGLM-6B-Med/ptuning/output/Alice_result$ ls
 all_results.json  checkpoint-3  trainer_state.json  train_results.json
 primihub@primihub58:~/czl/ChatGLM-6B-Med/ptuning/output/Alice_result$
 ```
+
 之后，使用 primihub/python/primihub/new_FL/algorithm/example/load_model.py 即可体验模型。
 注意修改以下相关目录，以和自己的目录适配：
-```
+
+```python
 import os
 import platform
 import signal
