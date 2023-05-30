@@ -128,7 +128,7 @@ Guest端：数据中没有标签的一方
 ```bash
 cd python
 pip3 install -r requirements.txt
-python3 setup.py install
+python3 setup.py install --user
 ```
 
 #### Hetero XGB Prediction

@@ -28,9 +28,9 @@ git clone https://github.com/primihub/primihub.git
 :::tip
 要想正确的安装primihub python sdk，注意要使用和编译primihub同样的Python解释器。
 :::
-```
+
+```bash
 cd primihub/python
-# 安装需求模块
-pip install --no-cache-dir  --force-reinstall -Iv grpcio grpcio_tools
-python setup.py install --user
+pip3 install -r requirements.txt
+python3 setup.py install --user
 ```
