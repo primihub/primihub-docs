@@ -152,17 +152,17 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
     "party_info": {
         "Alice": {
             "ip": "172.21.1.58",
-            "port": "50050",
+            "port": 50050,
             "use_tls": false
         },
         "Bob": {
             "ip": "172.21.1.63",
-            "port": "50051",
+            "port": 50051,
             "use_tls": false
         },
         "Charlie": {
             "ip": "172.21.1.58",
-            "port": "50052",
+            "port": 50052,
             "use_tls": false
         },
         "task_manager": "127.0.0.1:50050"
@@ -224,7 +224,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
 配置完成后，在 primihub/python/primihub/new_FL 目录下通过下述代码即可发起任务。
 
 ```bash
-python3 sdk/submit.py tests/example/ChatGlm.json
+submit python/primihub/new_FL/tests/example/ChatGlm.json
 ```
 
 ### 进行大模型的部署

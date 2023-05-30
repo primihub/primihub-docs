@@ -112,13 +112,19 @@ Guest端：数据中没有标签的一方
 * 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_config_file="example/hetero_xgb.json"
+./primihub-cli --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb.json"
 ```
 
 * 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/hetero_xgb.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb.json"
+```
+
+* 或者通过Python SDK启动
+
+```bash
+submit python/primihub/new_FL/tests/example/hetero_xgb.json
 ```
 
 :::tip
@@ -136,13 +142,19 @@ python3 setup.py install --user
 * docker-compose启动
 
 ```bash
-./primihub-cli --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb_infer.py" --params="predictFileName:STRING:0:/data/result/test_prediction.csv,indicatorFileName:STRING:0:/data/result/test_indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+./primihub-cli --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb_infer.json"
 ```
 
 * 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_lang=python --task_type=0 --task_code="./python/primihub/examples/hetero_xgb_infer.py" --params="predictFileName:STRING:0:/data/result/test_prediction.csv,indicatorFileName:STRING:0:/data/result/test_indicator.json,hostLookupTable:STRING:0:/data/result/hostlookuptable.csv,guestLookupTable:STRING:0:/data/result/guestlookuptable.csv,modelFileName:STRING:0:/data/result/host/model"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb_infer.json"
+```
+
+* Python SDK启动
+
+```bash
+submit python/primihub/new_FL/tests/example/hetero_xgb_infer.json
 ```
 
 ## 参数说明
