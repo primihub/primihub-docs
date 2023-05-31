@@ -1,9 +1,9 @@
 ---
 sidebar_position: 0
-description: 纵向联邦学习介绍及其应用场景
-keywords: [纵向联邦学习, 纵向联邦应用场景, Hetero XGB, Primihub SDK Demo]
+description: 纵向联邦简介及纵向XGB算法
+keywords: [VFL, XGBoost, Paillier]
 ---
-# 纵向联邦学习（XGB）
+# 纵向XGBoost
 
 ## 纵向联邦学习及其应用场景
 

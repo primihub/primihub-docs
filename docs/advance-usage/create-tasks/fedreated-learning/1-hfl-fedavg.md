@@ -4,7 +4,7 @@ description: 横向联邦简介及FedAvg算法原理
 keywords: [HFL, FedAvg]
 ---
 
-# 横向联邦FedAvg算法
+# 横向FedAvg算法
 
 ## 1. 简介
 

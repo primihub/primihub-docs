@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-description: 联邦大模型
+description: 横向联邦大模型简介
 keywords: [HFL, LLM, FedAvg]
 ---
 # 横向联邦大模型
