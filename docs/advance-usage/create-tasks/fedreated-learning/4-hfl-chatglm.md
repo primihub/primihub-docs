@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
-description: 联邦大模型
-keywords: [联邦学习, 大模型]
+sidebar_position: 4
+description: 横向联邦大模型简介
+keywords: [HFL, LLM, FedAvg]
 ---
-# 联邦大模型
+# 横向联邦大模型
 
 目前 PrimiHub 已支持基于 ChatGLM-6B 的联邦大模型，本文档将演示如何使用 PrimiHub 实现联邦大模型。
 
@@ -64,7 +64,7 @@ Build cuda_11.8.r11.8/compiler.31833905_0
 ```bash
 git clone https://github.com/THUDM/ChatGLM-6B.git
 cd ChatGLM-6B
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 下载预训练模型：<https://huggingface.co/THUDM/chatglm-6b-int4/tree/main>
@@ -100,7 +100,7 @@ pip install -r requirements.txt
 安装如下依赖：
 
 ```bash
-pip install rouge_chinese nltk jieba datasets
+pip3 install rouge_chinese nltk jieba datasets
 ```
 
 安装完成后，则可进行训练。训练很简单，在 ~/ChatGLM-6B/ptuning 下运行下述代码即可。
@@ -145,7 +145,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
 
 ## 使用 PrimiHub 实现联邦大模型训练
 
-配置 Json 文件，修改 primihub/python/primihub/new_FL/tests/example/ChatGlm.json 参数：
+配置 Json 文件，修改 primihub/python/primihub/FL/tests/chatglm/ChatGlm.json 参数：
 
 ```json
 {
@@ -221,10 +221,10 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
     - train_file, validation_file, prompt_column, response_column, history_column, model_name_or_path, output_dir: 同 train.bash
     - num_examples: 每一方的数据量
 
-配置完成后，在 primihub/python/primihub/new_FL 目录下通过下述代码即可发起任务。
+配置完成后，通过下述代码即可发起任务。
 
 ```bash
-submit python/primihub/new_FL/tests/example/ChatGlm.json
+submit python/primihub/FL/tests/chatglm/ChatGlm.json
 ```
 
 ### 进行大模型的部署
@@ -237,7 +237,7 @@ all_results.json  checkpoint-3  trainer_state.json  train_results.json
 primihub@primihub58:~/czl/ChatGLM-6B-Med/ptuning/output/Alice_result$
 ```
 
-之后，使用 primihub/python/primihub/new_FL/algorithm/example/load_model.py 即可体验模型。
+之后，使用 python/primihub/FL/algorithm/chatglm/load_model.py 即可体验模型。
 注意修改以下相关目录，以和自己的目录适配：
 
 ```python

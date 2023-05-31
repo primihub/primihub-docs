@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 description: 梯度扰动差分隐私算法
-keywords: [横向联邦学习, 差分隐私, DP-SGD]
+keywords: [Gradient, Differential Privacy, DP-SGD]
 ---
 
-# 横向联邦学习DP-SGD算法
+# 横向DP-SGD算法
 
 ## 1. 简介
 
@@ -187,19 +187,19 @@ def compute_epsilon(steps):
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
+./primihub-cli --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
 ```
 
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
 ```
 
 - 或者通过Python SDK启动
 
 ```bash
-submit python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json
+submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json
 ```
 
 ### 7.2 Prediction
@@ -207,24 +207,27 @@ submit python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_dpsg
 - docker-compose启动
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+./primihub-cli --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - Python SDK启动
 
 ```bash
-submit python/primihub/new_FL/tests/linear/logistic_regression/hfl_binclass_predict.json
+submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json
 ```
 
 ## 8. 参考文献
 
 1. Abadi, Martin, Andy Chu, Ian Goodfellow, H. Brendan McMahan, Ilya Mironov, Kunal Talwar, and Li Zhang. "Deep learning with differential privacy." In Proceedings of the 2016 ACM SIGSAC conference on computer and communications security, pp. 308-318. 2016. <https://arxiv.org/pdf/1607.00133.pdf>
+
 2. Mironov, Ilya, Kunal Talwar, and Li Zhang. "Renyi differential privacy of the sampled gaussian mechanism." arXiv preprint arXiv:1908.10530 (2019). <https://arxiv.org/pdf/1908.10530.pdf>
+
 3. Holohan, Naoise, and Stefano Braghin. "Secure random sampling in differential privacy." In European Symposium on Research in Computer Security, pp. 523-542. Springer, Cham, 2021. <https://arxiv.org/pdf/2107.10138.pdf>
+
 4. <https://github.com/pytorch/opacus/pull/260>

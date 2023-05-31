@@ -1,9 +1,9 @@
 ---
 sidebar_position: 0
-description: 纵向联邦学习介绍及其应用场景
-keywords: [纵向联邦学习, 纵向联邦应用场景, Hetero XGB, Primihub SDK Demo]
+description: 纵向联邦简介及纵向XGB算法
+keywords: [VFL, XGBoost, Paillier]
 ---
-# 纵向联邦学习（XGB）
+# 纵向XGBoost
 
 ## 纵向联邦学习及其应用场景
 
@@ -112,19 +112,19 @@ Guest端：数据中没有标签的一方
 * 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb.json"
+./primihub-cli --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb.json"
 ```
 
 * 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb.json"
 ```
 
 * 或者通过Python SDK启动
 
 ```bash
-submit python/primihub/new_FL/tests/example/hetero_xgb.json
+submit python/primihub/FL/tests/xgboost/hetero_xgb.json
 ```
 
 :::tip
@@ -142,19 +142,19 @@ python3 setup.py install --user
 * docker-compose启动
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb_infer.json"
+./primihub-cli --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb_infer.json"
 ```
 
 * 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/new_FL/tests/example/hetero_xgb_infer.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb_infer.json"
 ```
 
 * Python SDK启动
 
 ```bash
-submit python/primihub/new_FL/tests/example/hetero_xgb_infer.json
+submit python/primihub/FL/tests/xgboost/hetero_xgb_infer.json
 ```
 
 ## 参数说明
