@@ -1,19 +1,9 @@
 ---
-sidebar_position: 1
-description: 横向联邦学习介绍及其应用场景
-keywords: [横向联邦学习, 横向联邦应用场景, Homo LR, Primihub SDK Demo]
+sidebar_position: 2
+description: 横向LR Paillier方案介绍
+keywords: [HFL, Logistic Regression, Paillier]
 ---
 # 横向联邦LR Paillier
-
-## 横向联邦学习及其应用场景
-
-### 定义
-
-横向联邦学习也称为按样本划分的联邦学习（Sample-Partitioned Federated Learning或Example-Partitioned Federated Learning），可以应用于联邦学习的各个参与方的数据集有相同的特征空间和不同的样本空间的场景。
-
-### 场景
-
-横向联邦学习的本质是样本的联合，适用于参与者之间业态相同但触达客户不同，即特征重叠多，用户重叠少时的场景，比如不同地区的银行间，他们的业务相似（特征相似），但用户不同（样本不同）。再比如，有两家不同地区银行 — 上海与杭州两地的两家银行，它们的用户群体分别来自上海与杭州的居住人口，用户的交集相对较小。由于银行间的业务相似，记录的用户特征大概率是相同的。因此，横向联邦学习可以被考虑用来构建联合模型。
 
 ## Homo LR
 

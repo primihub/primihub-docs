@@ -1,7 +1,7 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 description: 梯度扰动差分隐私算法
-keywords: [横向联邦学习, 差分隐私, DP-SGD]
+keywords: [Gradient, Differential Privacy, DP-SGD]
 ---
 
 # 横向联邦DP-SGD算法

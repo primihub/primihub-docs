@@ -1,7 +1,7 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 description: 联邦大模型
-keywords: [联邦学习, 大模型]
+keywords: [HFL, LLM, FedAvg]
 ---
 # 横向联邦大模型
 
