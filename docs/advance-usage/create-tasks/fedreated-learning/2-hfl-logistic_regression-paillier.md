@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-description: 横向Logistic Regression Paillier方案介绍
+description: Paillier半同态下进行联邦模型训练
 keywords: [HFL, Logistic Regression, Paillier]
 ---
-# 横向Logistic Regression Paillier方案
+# 横向联邦Paillier方案
 
 ## 1. 简介
 
@@ -59,7 +59,9 @@ keywords: [HFL, Logistic Regression, Paillier]
 
 ## 3. 梯度和loss近似计算
 
-由于Paillier不支持密文状态下的乘法、指数、对数、比较运算，因此在计算梯度和loss时需要近似。以LR为例，$y\in\{0,1\}$，为简化公式，此处省略$b$（截距或bias）
+- 由于Paillier不支持密文状态下的乘法、指数、对数、比较运算，因此在计算梯度和loss时需要近似
+
+- 以Logistic Regression二分类$y\in\{0,1\}$为例，为简化公式，此处省略$b$（截距或bias）
 
 ### 3.1 梯度近似计算
 
