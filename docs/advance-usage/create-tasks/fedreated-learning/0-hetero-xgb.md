@@ -1,9 +1,9 @@
 ---
 sidebar_position: 0
-description: 纵向联邦简介及纵向XGB算法
+description: 纵向联邦简介及纵向XGBoost算法
 keywords: [VFL, XGBoost, Paillier]
 ---
-# 纵向XGBoost
+# 纵向联邦XGBoost
 
 ## 纵向联邦学习及其应用场景
 

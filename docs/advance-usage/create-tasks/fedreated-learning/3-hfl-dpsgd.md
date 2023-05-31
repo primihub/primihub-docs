@@ -4,7 +4,7 @@ description: 梯度扰动差分隐私算法
 keywords: [Gradient, Differential Privacy, DP-SGD]
 ---
 
-# 横向DP-SGD算法
+# 横向联邦DP-SGD算法
 
 ## 1. 简介
 
@@ -90,13 +90,13 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
     - 剪裁阈值偏小时，大部分梯度被剪裁，累加后的梯度偏差较大
 
-    - <img src="/img/grad_clip_effect.png" width="60%" height="60%"/>
+    - <img src="/img/grad_clip_effect.png" width="55%" height="55%"/>
 
 2. $C$越小，噪声的方差越大，添加的噪声越大
 
 3. 计算隐私预算不需要参数$C$，故不影响隐私预算的大小
 
-<img src="/img/select_l2_norm_clip.png" width="50%" height="50%"/>
+<img src="/img/select_l2_norm_clip.png" width="42%" height="42%"/>
 
 ### 4.2 噪声参数$\sigma$
 
@@ -106,7 +106,7 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
 2. $\sigma$越小，隐私预算越大，安全性越弱
 
-<img src="/img/select_noise_multiplier.png" width="50%" height="50%"/>
+<img src="/img/select_noise_multiplier.png" width="42%" height="42%"/>
 
 ## 5. 隐私预算的计算
 

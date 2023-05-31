@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-description: 横向联邦大模型简介
+description: 基于ChatGLM-6B实现横向联邦大模型训练
 keywords: [HFL, LLM, FedAvg]
 ---
 # 横向联邦大模型
