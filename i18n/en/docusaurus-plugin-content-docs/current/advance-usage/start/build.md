@@ -64,7 +64,6 @@ After compiling, you need to start the `meta service` service before starting th
 After starting the `meta service` service, execute the following command in the root directory of the code to start the node, and its related logs are saved in log_node0, log_node1, log_node2 files respectively
 
 ```shell
-sed -i /PYTHONPATH/d start_server.sh
 bash start_server.sh
 ```
 
