@@ -16,6 +16,7 @@ You can refer to the official documentation to install it yourself or download t
 ```
 wget https://primihub.oss-cn-beijing.aliyuncs.com/dev/docker20.10.tar.gz
 tar xf docker20.10.tar.gz
+cd docker20.10/
 bash install_docker.sh
 
 # Verify
