@@ -145,7 +145,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
 
 ## 使用 PrimiHub 实现联邦大模型训练
 
-配置 Json 文件，修改 primihub/python/primihub/FL/tests/chatglm/ChatGlm.json 参数：
+配置 Json 文件，修改 example/FL/chatglm/ChatGlm.json 参数：
 
 ```json
 {
@@ -224,7 +224,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
 配置完成后，通过下述代码即可发起任务。
 
 ```bash
-submit python/primihub/FL/tests/chatglm/ChatGlm.json
+submit example/FL/chatglm/ChatGlm.json
 ```
 
 ### 进行大模型的部署

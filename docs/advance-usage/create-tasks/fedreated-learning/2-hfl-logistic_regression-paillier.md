@@ -148,19 +148,19 @@ $\text{gcd}(x,y)$最大公约数，$\text{lcm}(x,y)$最小公倍数，$L(x)=\fra
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_paillier.json"
+./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_paillier.json"
 ```
 
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_paillier.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/logistic_regression/hfl_binclass_paillier.json"
 ```
 
 - 或者通过Python SDK启动
 
 ```bash
-submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_paillier.json
+submit example/FL/logistic_regression/hfl_binclass_paillier.json
 ```
 
 ### 6.2 Prediction
@@ -168,19 +168,19 @@ submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_paillier
 - docker-compose启动
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - Python SDK启动
 
 ```bash
-submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json
+submit example/FL/logistic_regression/hfl_binclass_predict.json
 ```
 
 ## 7. 参考文献
