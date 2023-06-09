@@ -60,6 +60,48 @@ $\Omega_\omega=\frac{n_1\omega_1+n_2\omega_2}{n_1+n_2}=\frac{n_1(\Omega-\alpha\c
 
 为节省通信次数，client可以在本地迭代多轮后再上传本地模型，即client迭代$t$轮后，server聚合一轮
 
-## 6. 参考文献
+## 6. HFL Neural Network FedAvg 运行
+
+### 6.1 Training
+
+- 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
+
+```bash
+./primihub-cli --task_config_file="example/FL/neural_network/hfl_binclass_plaintext.json"
+```
+
+- 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+
+```bash
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/neural_network/hfl_binclass_plaintext.json"
+```
+
+- 或者通过Python SDK启动
+
+```bash
+submit example/FL/neural_network/hfl_binclass_plaintext.json
+```
+
+### 6.2 Prediction
+
+- docker-compose启动
+
+```bash
+./primihub-cli --task_config_file="example/FL/neural_network/hfl_binclass_predict.json"
+```
+
+- 本地编译启动
+
+```bash
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/neural_network/hfl_binclass_predict.json"
+```
+
+- Python SDK启动
+
+```bash
+submit example/FL/neural_network/hfl_binclass_predict.json
+```
+
+## 7. 参考文献
 
 1. McMahan, Brendan, Eider Moore, Daniel Ramage, Seth Hampson, and Blaise Aguera y Arcas. "Communication-efficient learning of deep networks from decentralized data." In Artificial intelligence and statistics, pp. 1273-1282. PMLR, 2017. <https://arxiv.org/pdf/1602.05629.pdf>

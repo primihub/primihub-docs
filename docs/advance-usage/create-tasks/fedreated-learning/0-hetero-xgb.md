@@ -112,19 +112,19 @@ Guest端：数据中没有标签的一方
 * 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb.json"
+./primihub-cli --task_config_file="example/FL/xgboost/hetero_xgb.json"
 ```
 
 * 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/xgboost/hetero_xgb.json"
 ```
 
 * 或者通过Python SDK启动
 
 ```bash
-submit python/primihub/FL/tests/xgboost/hetero_xgb.json
+submit example/FL/xgboost/hetero_xgb.json
 ```
 
 :::tip
@@ -142,19 +142,19 @@ python3 setup.py install --user
 * docker-compose启动
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb_infer.json"
+./primihub-cli --task_config_file="example/FL/xgboost/hetero_xgb_infer.json"
 ```
 
 * 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/xgboost/hetero_xgb_infer.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/xgboost/hetero_xgb_infer.json"
 ```
 
 * Python SDK启动
 
 ```bash
-submit python/primihub/FL/tests/xgboost/hetero_xgb_infer.json
+submit example/FL/xgboost/hetero_xgb_infer.json
 ```
 
 ## 参数说明
@@ -166,13 +166,6 @@ submit python/primihub/FL/tests/xgboost/hetero_xgb_infer.json
 | params.hostLookupTable | STRING | /data/result/hostlookuptable.csv | Host方特征分割点结果文件|
 | params.guestLookupTable | STRING | /data/result/guestlookuptable.csv | Guest方特征分割点结果文件 |
 | params.modelFileName  | STRING | /data/result/host/model  | 树结构保存路径，仅出现在Host方 |
-
-<!-- ## 快速验证密文纵向XGBoost（基于Paillier）
-
-1. 编译Paillier共享库，`bazel build --config=linux :opt_paillier_c2py_test`
-2. 安装所需包 `pip3 install -r requirements.txt` ，（如果上一个应用已执行则忽略）
-3. 安装 primihub 平台库， `python setup.py install --user` ，
-4. 运行密文纵向XGBoost测试应用，`python python/primihub/tests/test_disxgb_en.py` 。 -->
 
 ### 参考文献
 

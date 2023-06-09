@@ -19,7 +19,7 @@ Python SDK是为了让用户能够简单开发自己算法的工具。具有易�
 ### 1. 实现基类模型的run方法
 
 ```python
-from primihub.FL.algorithm.utils.base import BaseModel
+from primihub.FL.utils.base import BaseModel
 
 class ExampleHost(BaseModel):
 
@@ -35,7 +35,7 @@ class ExampleHost(BaseModel):
 ```
 
 ```python
-from primihub.FL.algorithm.utils.base import BaseModel
+from primihub.FL.utils.base import BaseModel
 
 class ExampleGuest(BaseModel):
 
@@ -54,8 +54,8 @@ class ExampleGuest(BaseModel):
 
 ```json
 "example": {
-        "guest": "primihub.FL.algorithm.example.example_guest.ExampleGuest",
-        "host": "primihub.FL.algorithm.example.example_host.ExampleHost"
+        "guest": "primihub.FL.example.example_guest.ExampleGuest",
+        "host": "primihub.FL.example.example_host.ExampleHost"
     },
 ```
 
@@ -115,5 +115,5 @@ class ExampleGuest(BaseModel):
 发起任务
 
 ```bash
-submit python/primihub/FL/tests/example/example.json
+submit example/FL/example/example.json
 ```

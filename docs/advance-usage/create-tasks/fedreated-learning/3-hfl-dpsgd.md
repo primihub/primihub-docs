@@ -187,19 +187,19 @@ def compute_epsilon(steps):
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
+./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_dpsgd.json"
 ```
 
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/logistic_regression/hfl_binclass_dpsgd.json"
 ```
 
 - 或者通过Python SDK启动
 
 ```bash
-submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.json
+submit example/FL/logistic_regression/hfl_binclass_dpsgd.json
 ```
 
 ### 7.2 Prediction
@@ -207,19 +207,19 @@ submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_dpsgd.js
 - docker-compose启动
 
 ```bash
-./primihub-cli --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json"
+./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - Python SDK启动
 
 ```bash
-submit python/primihub/FL/tests/linear/logistic_regression/hfl_binclass_predict.json
+submit example/FL/logistic_regression/hfl_binclass_predict.json
 ```
 
 ## 8. 参考文献
