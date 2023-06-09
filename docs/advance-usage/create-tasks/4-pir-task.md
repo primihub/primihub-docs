@@ -5,19 +5,17 @@ sidebar_position: 4
 
 # 匿踪查询（PIR）任务
 
+隐私查询（Private Information Retrieval，PIR）功能是指在不暴露参与方私有数据的情况下，实现对数据的查询和分析。
+## 提交任务
 *** 提交基于关键字(keyword)查询的PIR任务的参数说明 ***
 
-## 任务执行
-
-创建匿踪查询（PIR）任务需要使用以下参数组合 `--task_type=2`, 并通过`params`参数指定客户端和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
-
-如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
+通过`docker-compose`启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
 ```bash
 ./primihub-cli --task_config_file="example/keyword_pir_task_conf.json"
 ```
 
-如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
+下载二进制文件或本地编译启动，在代码根目录下执行以下命令：
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/keyword_pir_task_conf.json"
@@ -25,7 +23,7 @@ sidebar_position: 4
 
 
 分别观察`node0`和`node1`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
-注意：启动node的时候可以指定日志级别GLOG_logtostderr=1 GLOG_v=5 其中GLOG_v中指定的参数，数字越大代表打印的日志越详细，当中只使用到level=5
+注意：启动node的时候可以指定日志级别GLOG_logtostderr=1 GLOG_v=5 其中GLOG_v中指定的参数，数字越大代表打印的日志越详细
 
 ```
 node0:

@@ -5,12 +5,11 @@ sidebar_position: 1
 
 # 多方安全计算（MPC）任务
 
-*** 提交MPC任务的参数说明 ***
+多方安全计算（Multi-Party Computation，MPC）功能是指多个参与方在不暴露私有数据的情况下，共同完成一项计算任务的过程。
 
-创建MPC任务需要使用以下参数组合`--task_lang=proto --task_type=0`, 并通过`task_code`参数指定要运行MPC算法。
-`params`参数指定了算法执行输入的参数, `input_datasets`参数指定了`params`参数中哪些参数是输入的数据集。
+## 提交任务
 
-举例：启动一个MPC的逻辑回归任务：
+启动一个MPC的逻辑回归任务：
 
 通过`docker-compose`启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
@@ -18,12 +17,12 @@ sidebar_position: 1
 ./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
 
-本地编译启动，在编译完成后的代码根目录下执行以下命令：
+下载二进制文件或本地编译启动，在代码根目录下执行以下命令：
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```
-分别观察`node0`、`node1`和`node2`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
+分别观察`node0`、`node1`和`node2`的日志，有结果文件生成则代表任务运行成功。
 
 ```
 node0:
@@ -48,7 +47,7 @@ I20220922 07:42:46.114251    40 logistic.cc:70] Epochs : ( 0/100 )
 ···
 I20220922 07:43:22.827548    40 logistic.cc:70] Epochs : ( 99/100 )
 I20220922 07:43:23.188999    40 logistic.cc:581] Party 0 train finish.
-I20220922 07:43:23.193424    40 logistic.cc:613] Save model to /data/result/lr_mode_0.csv.
+I20220922 07:43:23.193424    40 logistic.cc:613] Save model to data/result/lr_mode_0.csv.
 I20220922 07:43:23.195238    55 aby3_scheduler.cc:74] Node push task rpc succeeded.
 I20220922 07:43:23.195415    54 aby3_scheduler.cc:74] Node push task rpc succeeded.
 I20220922 07:43:23.196365    56 aby3_scheduler.cc:74] Node push task rpc succeeded.

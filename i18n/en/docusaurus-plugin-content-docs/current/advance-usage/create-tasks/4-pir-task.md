@@ -7,8 +7,6 @@ sidebar_position: 4
 
 *** PIR Task Parameters Description ***
 
-Creating a PIR task requires the following parameters:`--task_type=2`,and specify the index and the server-side dataset to query via `params`.The 'input_datasets' parameter specifies which datasets are in the' params' parameter
-
 If starting with docker-compose, enter the primihub-node0 container by running`docker exec -it primihub-node0 bash` ，and run the following command：
 
 ```bash

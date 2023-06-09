@@ -7,8 +7,6 @@ sidebar_position: 3
 
 *** PSI Task Parameters Description ***
 
-创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type=3`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。Creating a PSI task requires the following parameters:`--task_type=3`,the `params` parameter specifies the required client and server datasets,the `input_datasets` parameter specifies which datasets are in the' params' parameter
-
 If starting with docker-compose, enter the primihub-node0 container by running `docker exec -it primihub-node0 bash` ，and run the following command：
 
 ```bash

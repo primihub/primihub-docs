@@ -7,14 +7,12 @@ sidebar_position: 1
 
 *** MPC Task Parameters Description ***
 
-Creating a MPC task requires the following parameters:`--task_lang=proto --task_type=0`, and specify the MPC algorithm to run via the `task_code` parameter.The`params`specifies the input parameters for the algorithm to execute.The `input_datasets`' parameter specifies which of the`params` parameters are the input datasets.
-
 Example: launching an MPC logistic regression task：
 
 If starting with docker-compose, enter the primihub-node0 container by running `docker exec -it primihub-node0 bash`,and run the following command:
 
 ```bash
-./primihub-cli --server="Your IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
+./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
 
 If starting locally, run the following command from the compiled root directory:
