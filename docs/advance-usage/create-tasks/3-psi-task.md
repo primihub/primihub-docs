@@ -5,19 +5,16 @@ keywords: [隐私求交, PSI]
 ---
 
 # 隐私求交（PSI）任务
-
+隐私求交（Private Set Intersection，PSI）功能是指在不暴露参与方私有数据的情况下，实现两个或多个参与方之间的数据交集计算。
 ## 提交任务
-*** 提交PSI任务的参数说明 ***
 
-创建隐私求交（PSI）任务需要使用以下参数组合 `--task_type=3`, 并通过`params`参数指定要求交的客户端数据集和服务端数据集, `input_datasets`参数指定`params`参数中的哪些是数据集。
-
-`docker-compose`启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：(以下两个任务使用了不同协议)
+通过`docker-compose`启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：(以下两个任务使用了不同协议)
 ```bash
 ./primihub-cli --task_config_file="example/psi_ecdh_task_conf.json"
 ./primihub-cli --task_config_file="example/psi_kkrt_task_conf.json"
 ```
 
-本地编译启动，在编译完成后的代码根目录下执行以下命令：
+下载二进制文件或本地编译启动，在代码根目录下执行以下命令：
 
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/psi_ecdh_task_conf.json"

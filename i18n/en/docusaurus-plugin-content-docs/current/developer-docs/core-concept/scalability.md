@@ -33,13 +33,13 @@ Currently PrimiHub only supports Protobuf and Python
 ## Semantic Layer Extension
 
 * According to the semantics (context) of multi-party security, the semantic layer parser infers which task scheduling to use and creates different types of schedulers
-* The scheduler starts Woker on distributed nodes according to the assigned task type
-* Distributed node workers start corresponding tasks according to their assigned semantics
+* The scheduler starts Worker on distributed nodes according to the assigned task type
+* Distributed node Worker start corresponding tasks according to their assigned semantics
 * Task run using the selected protocol
 
 ## Protocol Layer Extension
 
-The term "security protocol" is used here. Protocol extensions correspond to upper layer Task extensions, including ABY3, PSI, PIR, cheeth, secure xgboost, etc. Cryptographic engineers can develop custom security protocols according to protocol specifications and access PrimiHub platform
+The term "security protocol" is used here. Protocol extensions correspond to upper layer Task extensions, including ABY3, PSI, PIR, Cheetah, secure XGBoost, etc. Cryptographic engineers can develop custom security protocols according to protocol specifications and access PrimiHub platform
 
  
 :::tip 
