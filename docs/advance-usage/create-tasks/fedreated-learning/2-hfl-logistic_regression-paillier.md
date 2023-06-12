@@ -89,11 +89,13 @@ keywords: [HFL, Logistic Regression, Paillier]
 
 2. loss近似计算公式
 
-    - 计算loss近似：$\mathcal{L}(z)\approx (1-2y)z$
+    - 将loss函数在原点进行一阶泰勒展开
 
-        - $y=0$：$\mathcal{L}(z)\approx z$
+        - $\mathcal{L}'(z)=-y[1-h(z)]+(1-y)h(z)=h(z)-y$
 
-        - $y=1$：$\mathcal{L}(z)\approx -z$
+        - $\mathcal{L}(z)\approx \mathcal{L}(0)+\frac{\mathcal{L}'(0)}{1!}z=\ln2+(\frac{1}{2}-y)z$
+
+    - 计算loss近似（去掉常数项）：$\mathcal{L}(z)\approx(\frac{1}{2}-y)z$
 
     - 正则化部分的loss无法计算
 
