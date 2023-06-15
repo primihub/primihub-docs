@@ -21,46 +21,58 @@ If starting locally, run the following command from the compiled root directory:
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/psi_kkrt_task_conf.json"
 ```
 
-Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
+Observe the logs of `node0`and`node1` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
 
 ```
 node0:
 ···
-I20220922 07:16:06.318814    25 parser.cc:197]  🔍 PSItask found meta list from datasets: 2
-I20220922 07:16:06.318981    25 psi_scheduler.cc:254]  📧  Dispatch SubmitTask to PSI client node
-I20220922 07:16:06.319172    66 psi_scheduler.cc:200] dest node 172.28.1.12:50050
-I20220922 07:16:06.319336    67 psi_scheduler.cc:200] dest node 172.28.1.11:50050
-I20220922 07:16:06.321499    67 psi_scheduler.cc:209] Psi task server node is active.
-I20220922 07:16:06.346092    66 psi_scheduler.cc:207] Node push psi task rpc succeeded.
+I20230614 17:25:05.435564    46 node.cc:749] start to schedule task, task_type: 3
+I20230614 17:25:05.435674    46 node.cc:1069]  🤖️ Start create worker node0 worker id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.435745    46 node.cc:1073]  🤖️ Fininsh create worker node0 worker id: 043795b3-66f4-490b-8d50-124608432c12
+E20230614 17:25:05.435909    46 proto_parser.cc:56] party_datasets: 2
+I20230614 17:25:05.464829    60 scheduler.cc:111] dest node node0:primihub-node0:50050:0:
+I20230614 17:25:05.464947    61 scheduler.cc:111] dest node node1:primihub-node1:50051:0:
+I20230614 17:25:05.468982    59 node.cc:848] start to create worker for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.469048    59 node.cc:1069]  🤖️ Start create worker node0 worker id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.469089    59 node.cc:1073]  🤖️ Fininsh create worker node0 worker id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.469316    59 node.cc:858] create worker thread future for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
+I20230614 17:25:05.469419    63 node.cc:821] begin to execute task
+I20230614 17:25:05.471896    62 worker.cc:122] Request id: 043795b3-66f4-490b-8d50-124608432c12 update party: CLIENT status to: RUNNING
+I20230614 17:25:05.472594    63 worker.cc:70] Worker start execute task 
+I20230614 17:25:05.472652    59 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
+I20230614 17:25:05.473728    62 worker.cc:122] Request id: 043795b3-66f4-490b-8d50-124608432c12 update party: SERVER status to: RUNNING
+I20230614 17:25:05.488062    63 psi_kkrt_task.cc:372] start recv.
+I20230614 17:25:05.702018    63 psi_kkrt_task.cc:402] kkrt psi run success
+I20230614 17:25:05.708776    63 psi_task.cc:212] Save PSI result to data/result/psi_result.csv.
+I20230614 17:25:05.710378   184 worker.cc:119] collected finished party count: 1
+I20230614 17:25:05.710426   184 worker.cc:122] Request id: 043795b3-66f4-490b-8d50-124608432c12 update party: CLIENT status to: SUCCESS
+I20230614 17:25:05.714468   184 worker.cc:119] collected finished party count: 2
+I20230614 17:25:05.714504   184 worker.cc:122] Request id: 043795b3-66f4-490b-8d50-124608432c12 update party: SERVER status to: SUCCESS
 
 
 node1:
 ···
-I20220922 07:16:06.321259    26 node.cc:114] start to create worker for task
-I20220922 07:16:06.321269    26 node.cc:169]  🤖️ Start create worker node1
-I20220922 07:16:06.321276    26 node.cc:173]  🤖️ Fininsh create worker node1
-I20220922 07:16:06.328846    26 node.cc:155] Start to create PSI/PIR server task
-I20220922 07:16:06.328874    26 node.cc:169]  🤖️ Start create worker node1
-I20220922 07:16:06.328881    26 node.cc:173]  🤖️ Fininsh create worker node1
-
-
-node2:
-···
-I20220922 07:16:06.321429    26 node.cc:114] start to create worker for task
-I20220922 07:16:06.321435    26 node.cc:169]  🤖️ Start create worker node2
-I20220922 07:16:06.321442    26 node.cc:173]  🤖️ Fininsh create worker node2
-I20220922 07:16:06.345343    26 psi_client_task.cc:257] Save PSI result to /data/result/psi_result.csv.
+I20230614 17:25:05.469849    54 node.cc:848] start to create worker for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.469933    54 node.cc:1069]  🤖️ Start create worker node1 worker id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.469978    54 node.cc:1073]  🤖️ Fininsh create worker node1 worker id: 043795b3-66f4-490b-8d50-124608432c12
+I20230614 17:25:05.470230    54 node.cc:858] create worker thread future for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
+I20230614 17:25:05.470335    57 node.cc:821] begin to execute task
+I20230614 17:25:05.474314    57 worker.cc:70] Worker start execute task 
+I20230614 17:25:05.474380    54 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
+I20230614 17:25:05.497123    57 psi_kkrt_task.cc:386] start send
+I20230614 17:25:05.701987    57 psi_kkrt_task.cc:402] kkrt psi run success
+I20230614 17:25:05.713833    57 psi_task.cc:212] Save PSI result to data/result/server/psi_result.csv.
 ```
 ## Parameter Description
 
 | parameter| data type | example | parameter description
 | ---- | ---- | ---- | ---- |
-| params.clientData | STRING | psi_client_data | 该参数值为psi服务的客户端数据标识符，系统调度节点通过该标识符找到注册该数据的工作节点，将psi任务发往该工作节点。（当前在用例在node1中注册客户端数据，在config目录中的配置文件是primihub_node1.yaml，添加数据的保存路径，设置该数据的description为"psi_client_data"，作为该数据标志符。标志符由用户自主设置，请求任务中的参数值与配置文件中的值保持一致）|
-| params.serverData | STRING | psi_server_data | 该参数值为psi服务的服务端数据标识符，系统调度节点通过该标识符找到注册该数据的工作节点，psi客户端节点将向该节点发送隐私求交请求。（用例中数据注册到节点node2中，数据注册方式与params.clientData参数说明描述相同）|
-| params.psiType | INT32 | 0或者1 | 0表示该psi任务是求数据交集，1表示该psi任务是求数据的差集。|
-| params.psiTag | INT32 | 0或者1 | psi支持多种底层协议实现，通过该参数区分，当前支持协议：0-ECDH,1-KKRT。|
-| params.clientIndex | INT32 | 0 | 表示psi客服端用表格形式的客服端数据的第几列数据进行求交，该参数值取值范围[0，文件最大列-1]。|
-| params.serverIndex | INT32 | 1 | 表示psi服务端用表格形式的服务端数据的第几列数据进行求交，该参数取值范围[0，文件最大列-1]。 |
-| params.outputFullFilename | STRING | "/data/result/psi_result.csv" | 指定pis结果保存文件的文件名以及文件存储目录的绝对路径。 |
-| input_datasets | STRING | "clientData,serverData" | 该参数值指定params参数集合的数据集参数，实例中params.clientData和params.serverData是数据集参数，通过数据集参数值找到相关工作节点。 |
+| params.clientIndex | INT32 | 0 | Indicates that the psi client intersects with the first column of the client data, the parameter takes values in the range [0, file maximum column-1]. |
+| params.serverIndex | INT32 | 0 | Indicates that the psi server intersects with the first column of the server-side data, and the parameter takes the value range [0, file maximum column-1]. |
+| params.psiType | INT32 | 0 or 1 | 0: find the intersection of the data, 1: find the difference of the data |
+| params.psiTag | INT32 | 0 or 1 | si supports multiple underlying protocol implementations, distinguished by this parameter, 0: ECDH,1: KKRT |
+| params.outputFullFilename | STRING | "data/result/psi_result.csv" | Client result file save path |
+| params.sync_result_to_server | INT32 | 0 or 1 | If or not the client synchronizes the result to the server. 1: push, 0: no push |
+| params.server_outputFullFilname | STRING | "data/result/server/psi_result.csv" | Server-side result file save path |
+| party_datasets | STRING | "psi_client_data,psi_server_data" | The value of this parameter is the client-side and server-side data identifier of the psi service, through which the system dispatch node finds the working node that registers the data. (The current use case registers the client data in node0, adds the path to save the data in config/primihub_node0.yaml, and sets the description of the data to "psi_client_data" as the data identifier. (The identifier is set by the user, and the parameter value in the request task is consistent with the value in the configuration file) |
 
