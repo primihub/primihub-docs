@@ -72,7 +72,7 @@ pip3 install -r requirements.txt
 
 配置完成后，在 ChatGLM-6B 下使用如下命令测试。注意："THUDM/chatglm-6b" 需要替换为本地预训练模型的路径。
 
-例如这里的示例是"/home/primihub/czl/chatglm-6b-int4"
+例如这里的示例是"~/czl/chatglm-6b-int4"
 
 ```python
 >>> from transformers import AutoTokenizer, AutoModel
@@ -119,7 +119,7 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
     --prompt_column content \
     --response_column summary \
     --overwrite_cache \
-    --model_name_or_path  /home/primihub/czl/chatglm-6b-int4\
+    --model_name_or_path  ~/czl/chatglm-6b-int4\
     --output_dir output/adgen-chatglm-6b-pt-$PRE_SEQ_LEN-$LR \
     --overwrite_output_dir \
     --max_source_length 64 \
@@ -183,23 +183,23 @@ CUDA_VISIBLE_DEVICES=0 python3 main.py \
         },
         "role_params": {
             "Alice": {
-                "path": "/home/primihub/czl/ChatGLM-6B-Med/ptuning",
+                "path": "~/czl/ChatGLM-6B-Med/ptuning",
                 "train_file": "Meddata/train.json",
                 "validation_file": "Meddata/train.json",
                 "prompt_column": "prompt",
                 "response_column": "response",
                 "history_column": "history",
-                "model_name_or_path": "/home/primihub/czl/chatglm-6b-int4",
+                "model_name_or_path": "~/czl/chatglm-6b-int4",
                 "output_dir": "output/Alice_result",
                 "num_examples": 10
             },
             "Bob": {
-                "path": "/home/primihub/czl/ChatGLM-6B/ptuning",
+                "path": "~/czl/ChatGLM-6B/ptuning",
                 "train_file": "AdvertiseGen/train.json",
                 "validation_file": "AdvertiseGen/dev.json",
                 "prompt_column": "content",
                 "response_column": "summary",
-                "model_name_or_path": "/home/primihub/czl/chatglm-6b-int4",
+                "model_name_or_path": "~/czl/chatglm-6b-int4",
                 "output_dir": "output/Bob_result",
                 "num_examples": 10
             }
@@ -237,7 +237,7 @@ all_results.json  checkpoint-3  trainer_state.json  train_results.json
 primihub@primihub58:~/czl/ChatGLM-6B-Med/ptuning/output/Alice_result$
 ```
 
-之后，使用 python/primihub/FL/algorithm/chatglm/load_model.py 即可体验模型。
+之后，使用``python primihub/FL/algorithm/chatglm/load_model.py``即可体验模型。
 注意修改以下相关目录，以和自己的目录适配：
 
 ```python
@@ -254,9 +254,9 @@ from transformers import AutoConfig, AutoModel, AutoTokenizer
 # 载入Tokenizer
 tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True)
 
-model_name_or_path = "/home/primihub/czl/chatglm-6b-int4"
+model_name_or_path = "~/czl/chatglm-6b-int4"
 pre_seq_len = 128
 quantization_bit = 4
-CHECKPOINT_PATH = "/home/primihub/czl/ChatGLM-6B-Med/ptuning/output/Alice_result/checkpoint-3"
+CHECKPOINT_PATH = "~/czl/ChatGLM-6B-Med/ptuning/output/Alice_result/checkpoint-3"
 
 ```
