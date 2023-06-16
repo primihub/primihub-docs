@@ -11,8 +11,16 @@ displayed_sidebar: lensonsSidebar
 :::
 ### 启动 meta service
 
-需要先自行安装JDK8环境
-
+需要先安装JDK8环境
+```bash
+# Ubuntu
+apt install openjdk-8-jdk
+# CentOS
+yum -y install java
+# MacOS
+brew install --build-from-source openjdk@8
+```
+下载`Meta service`安装包启动
 ```bash
 wget https://primihub.oss-cn-beijing.aliyuncs.com/tools/meta_service.tar.gz
 tar -zxf meta_service.tar.gz
@@ -80,7 +88,7 @@ apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
 下载编译好的二进制文件，在GitHub [release页面](https://github.com/primihub/primihub/releases) 可以查看最新版本。
 
 ```shell
-curl -L https://github.com/primihub/primihub/releases/download/1.6.5/primihub-linux-amd64.tar.gz | tar xzf
+curl -L https://github.com/primihub/primihub/releases/download/1.6.6/primihub-linux-amd64.tar.gz | tar xz
 ```
 在下载解压完成后，执行`start_server.sh`启动节点
 

@@ -63,8 +63,9 @@ git clone https://gitee.com/primihub/primihub.git
 ./pre_build.sh
 make
 ```
+:::tip 编译完成后在启动服务之前，需要先启动`meta service`服务，参照 [这儿](https://docs.primihub.com/docs/advance-usage/start/start-nodes) 的步骤
+:::
 
-编译完成后在启动服务之前，需要先启动`meta service`服务，参照 [这儿](https://docs.primihub.com/docs/advance-usage/start/start-nodes) 的步骤
 
 启动`meta service`服务后，在代码根目录下执行以下脚本启动节点，其相关日志分别保存在log_node0, log_node1, log_node2文件中
 
