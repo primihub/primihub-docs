@@ -14,6 +14,16 @@ Currently the binaries are only supported for Ubuntu 20.04 and MacOS systems
 
 You need to install the JDK8 environment first
 
+```bash
+# Ubuntu
+apt install openjdk-8-jdk
+# CentOS
+yum -y install java
+# MacOS
+brew install --build-from-source openjdk@8
+```
+
+Download the `Meta service` installation package and start
 
 ```bash
 wget https://primihub.oss-cn-beijing.aliyuncs.com/tools/meta_service.tar.gz
@@ -42,7 +52,7 @@ apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
 Download the compiled binaries and check out the latest version on GitHub [release page](https://github.com/primihub/primihub/releases).
 
 ```shell
-curl -L https://github.com/primihub/primihub/releases/download/1.6.5/primihub-linux-amd64.tar.gz | tar xz
+curl -L https://github.com/primihub/primihub/releases/download/1.6.6/primihub-linux-amd64.tar.gz | tar xz
 ```
 
 After downloading and unpacking, execute `start_server.sh` to start the node
