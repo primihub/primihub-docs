@@ -64,6 +64,14 @@ primihub-node1      "/bin/bash -c './pri…"   node1               running      
 primihub-node2      "/bin/bash -c './pri…"   node2               running             50050/tcp
 ```
 
+查看日志
+```
+# docker logs -f primihub-node0
+I20230619 19:18:38.774282     1 service.cc:205] 💾 Restore dataset from local storage...
+I20230619 19:18:39.279953     1 service.cc:171] 📃 Load default datasets from config: /app/config/primihub_node0.yaml
+I20230619 19:18:40.231341     1 main.cc:55] server runing in no tls mode
+I20230619 19:18:40.232587     1 main.cc:86]  💻 Node listening on port: 50050
+```
 ### 创建任务
 
 启动成功后可以参考[创建任务](https://docs.primihub.com/docs/category/%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1)页面发起任务。

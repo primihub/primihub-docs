@@ -18,7 +18,7 @@ If starting with docker-compose, enter the primihub-node0 container by running `
 If starting locally, run the following command from the compiled root directory:
 
 ```bash
-./bazel-bin/node --server="Your IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
+./bazel-bin/node --task_config_file="example/mpc_lr_task_conf.json"
 ```
 Observe the logs of `node0`、`node1`and`node2` respectively,and the following output means that the task runs successfully. Refer to the result file path in the parameter description to verify whether the generated result file is correct.
 

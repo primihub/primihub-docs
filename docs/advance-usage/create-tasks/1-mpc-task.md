@@ -20,7 +20,7 @@ sidebar_position: 1
 下载二进制文件或本地编译启动，在代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
+./bazel-bin/cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
 分别观察`node0`、`node1`和`node2`的日志，有结果文件生成则代表任务运行成功。
 

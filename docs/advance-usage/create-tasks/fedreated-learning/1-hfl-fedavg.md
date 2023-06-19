@@ -73,7 +73,7 @@ $\Omega_\omega=\frac{n_1\omega_1+n_2\omega_2}{n_1+n_2}=\frac{n_1(\Omega-\alpha\c
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/neural_network/hfl_binclass_plaintext.json"
+./bazel-bin/cli --task_config_file="example/FL/neural_network/hfl_binclass_plaintext.json"
 ```
 
 - 或者通过Python SDK启动
@@ -93,7 +93,7 @@ submit example/FL/neural_network/hfl_binclass_plaintext.json
 - 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/neural_network/hfl_binclass_predict.json"
+./bazel-bin/cli --task_config_file="example/FL/neural_network/hfl_binclass_predict.json"
 ```
 
 - Python SDK启动
