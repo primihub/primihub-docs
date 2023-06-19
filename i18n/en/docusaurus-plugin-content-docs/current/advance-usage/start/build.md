@@ -67,6 +67,14 @@ After starting the `meta service` service, execute the following command in the 
 bash start_server.sh
 ```
 
+Check the logs, the following will start normally
+```
+# tail -f log_node0
+...
+I20230619 18:53:17.816563 29477 grpc_impl.cc:49] PutMeta to node: [:127.0.0.1:7977:0:] rpc succeeded.
+I20230619 18:53:17.817224 29477 main.cc:55] server runing in no tls mode
+I20230619 18:53:17.818142 29477 main.cc:86]  💻 Node listening on port: 50050
+```
 ### windows 
 
 ***TODO ***

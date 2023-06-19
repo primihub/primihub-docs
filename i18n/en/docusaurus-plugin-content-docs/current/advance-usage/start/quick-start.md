@@ -57,7 +57,7 @@ primihub-node0      "/bin/bash -c './pri…"   node0               running      
 primihub-node1      "/bin/bash -c './pri…"   node1               running             50050/tcp
 primihub-node2      "/bin/bash -c './pri…"   node2               running             50050/tcp
 ```
-View logs
+Check the logs
 ```
 # docker logs -f primihub-node0
 I20230619 19:18:38.774282     1 service.cc:205] 💾 Restore dataset from local storage...
