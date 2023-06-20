@@ -56,8 +56,15 @@ primihub-meta2      "/bin/bash -c 'java …"   meta2               running (heal
 primihub-node0      "/bin/bash -c './pri…"   node0               running             50050/tcp
 primihub-node1      "/bin/bash -c './pri…"   node1               running             50050/tcp
 primihub-node2      "/bin/bash -c './pri…"   node2               running             50050/tcp
-```                                                   
-
+```
+Check the logs
+```
+# docker logs -f primihub-node0
+I20230619 19:18:38.774282     1 service.cc:205] 💾 Restore dataset from local storage...
+I20230619 19:18:39.279953     1 service.cc:171] 📃 Load default datasets from config: /app/config/primihub_node0.yaml
+I20230619 19:18:40.231341     1 main.cc:55] server runing in no tls mode
+I20230619 19:18:40.232587     1 main.cc:86]  💻 Node listening on port: 50050
+```
 ### Create task
 
 After the startup is successful, you can refer to[create task](https://docs.primihub.com/docs/category/%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1) run tasks.

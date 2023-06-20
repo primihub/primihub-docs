@@ -18,7 +18,7 @@ sidebar_position: 4
 下载二进制文件或本地编译启动，在代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/keyword_pir_task_conf.json"
+./bazel-bin/cli --task_config_file="example/keyword_pir_task_conf.json"
 ```
 
 分别观察`node0`和`node1`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确

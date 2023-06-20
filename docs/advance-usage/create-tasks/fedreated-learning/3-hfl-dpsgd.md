@@ -193,7 +193,7 @@ def compute_epsilon(steps):
 - 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/logistic_regression/hfl_binclass_dpsgd.json"
+./bazel-bin/cli --task_config_file="example/FL/logistic_regression/hfl_binclass_dpsgd.json"
 ```
 
 - 或者通过Python SDK启动
@@ -213,7 +213,7 @@ submit example/FL/logistic_regression/hfl_binclass_dpsgd.json
 - 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
+./bazel-bin/cli --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
 ```
 
 - Python SDK启动

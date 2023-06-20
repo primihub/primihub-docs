@@ -6,11 +6,12 @@ keywords: [隐私计算常见问题, PrimiHub 常见问题, PrimiHub FAQ]
 
 # 常见问题
 
-1. 如果使用 `docker-compose` 启动遇到如下报错，是因为 `docker-compose` 版本太低，请升级 `docker-compose` 版本到2.x.x，如不方便升级版本可在 `docker-compose.yml` 文件第一行添加 `version: '2'` 解决
+1. 如果使用 `docker-compose` 启动遇到如下报错，是因为 `docker-compose` 版本太低，请升级 `docker-compose` 版本到2.x.x
 ```shell
-ERROR: The Compose file './docker-compose.yml' is invalid because:
-Unsupported config option for services: 'node1'
-Unsupported config option for networks: 'testing_net'
+ERROR: The Compose file './docker-compose.yaml' is invalid because:
+services.node0.depends_on contains an invalid type, it should be an array
+services.node1.depends_on contains an invalid type, it should be an array
+services.node2.depends_on contains an invalid type, it should be an array
 ```
 
 2. 如果使用 `primihub-cli` 发送测试命令时，提示如下错误，原因是机器配置太低，至少需要4核8G
@@ -38,4 +39,20 @@ failed to create network test_testing_net: Error response from daemon: Pool over
 安装M4库，ubuntu安装命令如下：
 ```
 sudo apt-get install m4
+```
+6. 如果在下载二进制文件或本地编译后启动时遇到如下报错
+```
+W20230619 18:50:22.585558 21601 grpc_impl.cc:52] PutMeta to Node [:127.0.0.1:7977:0:] rpc failed. 14: failed to connect to all addresses
+W20230619 18:50:22.585599 21601 grpc_impl.cc:59] PutMeta to Node [:127.0.0.1:7977:0:] rpc failed. reaches max retry times: 3 abort this operation
+I20230619 18:50:22.586076 21601 main.cc:55] server runing in no tls mode
+I20230619 18:50:22.586817 21601 main.cc:86]  💻 Node listening on port: 50050
+```
+先确认Meta service是否正常启动，如正常则替换 `config/node*.yaml` 文件中的 `127.0.0.1` 为你的主机IP
+```bash
+host_ip=`hostname -I | awk '{print $1}'`
+sed -ri 's/127.0.0.1/'$host_ip'/g' config/node*.yaml
+```
+启动正常后发起任务时也需要指定主机IP地址，例如MPC任务
+```bash
+./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```

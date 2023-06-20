@@ -118,7 +118,7 @@ Guest端：数据中没有标签的一方
 * 如果是在本地编译启动，在编译完成后的代码根目录下执行以下命令：
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/xgboost/hetero_xgb.json"
+./bazel-bin/cli --task_config_file="example/FL/xgboost/hetero_xgb.json"
 ```
 
 * 或者通过Python SDK启动
@@ -148,7 +148,7 @@ python3 setup.py install --user
 * 本地编译启动
 
 ```bash
-./bazel-bin/cli --server="127.0.0.1:50050" --task_config_file="example/FL/xgboost/hetero_xgb_infer.json"
+./bazel-bin/cli --task_config_file="example/FL/xgboost/hetero_xgb_infer.json"
 ```
 
 * Python SDK启动
