@@ -66,12 +66,12 @@ const config = {
       }),
     ],
   ],
-  scripts: [
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
-    {
-      src: '/js/modal.js'
-    },
-  ],
+  // scripts: [
+  //   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+  //   {
+  //     src: '/js/modal.js'
+  //   },
+  // ],
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css',
