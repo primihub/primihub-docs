@@ -10,7 +10,7 @@ keywords: [docker-compose]
 To avoid port collisionssegment collisions, try to use a clean machine
 :::
 
-### 部署要求
+### Deployment Request
 
 * Machine configuration minimum 8 cores 16G, disk 40G
 * `docker-compose` version greater than 2.2
@@ -64,7 +64,7 @@ http://IP:30813
 
 Default user and password admin / 123456
 
-Please refer to [Quick Start Management Platform](/docs/quick-start-platform) for detailed operation steps of federated modeling, privacy intersection, hiding whereabouts query and other functions.
+For instructions on how to use the platform, please refer to the [Operating Instructions Manual for the Management Platform](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 ### Stop the Service
 
 ```bash

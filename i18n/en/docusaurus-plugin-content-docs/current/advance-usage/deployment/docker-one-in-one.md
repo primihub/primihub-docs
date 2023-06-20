@@ -90,7 +90,7 @@ http://IP:30080
 
 Default user and password admin / 123456
 
-After the first login, you need to configure the node information in the node management, please refer to [Operation Manual](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg) for details.
+For instructions on how to use the platform, please refer to the [Operating Instructions Manual for the Management Platform](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 
 
 ### Stop the Service

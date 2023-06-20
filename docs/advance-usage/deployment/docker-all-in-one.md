@@ -4,7 +4,7 @@ description: 使用 docker-compose 单机部署 PrimiHub 隐私计算平台
 keywords: [docker-compose]
 ---
 
-# docker-compose 单机部署
+# docker-compose单机部署
 
 *** 部署完整的PrimiHub隐私计算管理平台 *** 
 
@@ -93,7 +93,7 @@ http://机器IP:30813
 
 默认用户密码都是 admin / 123456
 
-具体的联邦学习、隐私求交、隐匿查询等功能的操作步骤请参考 [管理平台操作说明手册](/docs/quick-start-platform)
+平台的使用说明请参考 [管理平台操作说明手册](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 
 ### 停止服务
 

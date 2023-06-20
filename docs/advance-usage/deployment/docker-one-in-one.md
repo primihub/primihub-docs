@@ -4,7 +4,7 @@ description: 使用 docker-compose 多机/异地部署 PrimiHub 隐私计算平�
 keywords: [docker-compose]
 ---
 
-# docker-compose 多机/异地部署
+# docker-compose多机/异地部署
 
 ### 部署要求
 
@@ -94,7 +94,7 @@ http://第三台机器的IP:30080
 
 默认用户密码都是 admin / 123456
 
-第一次登录后需要在节点管理里配置节点信息，具体操作步骤请看 [操作手册](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
+平台的使用说明请参考 [管理平台操作说明手册](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 
 
 ### 停止服务
