@@ -1,28 +1,28 @@
 ---
 sidebar_position: 1
-description: 使用 docker-compose 部署 PrimiHub 隐私计算开源平台
+description: 使用 docker-compose 单机部署 PrimiHub 隐私计算平台
 keywords: [docker-compose]
 ---
 
-# 使用 docker-compose 部署
+# docker-compose单机部署
 
 *** 部署完整的PrimiHub隐私计算管理平台 *** 
 
 :::tip
-为避免端口冲突和网段冲突，请尽量使用干净的机器，目前提供的docker部署包仅支持单机部署，多机部署及异地部署企业版中已支持，如需要可联系小助手了解。
+为避免端口冲突，请尽量使用干净的机器
 :::
+### 部署要求
 
-### 下载安装包，执行脚本，完成部署
+* 机器配置最低8核16G，磁盘40G
+* `docker-compose` 版本大于2.2
 
-```shell
-curl -s https://get.primihub.com/release/latest/docker-deploy.tar.gz | tar zxf -
-cd docker-deploy
+### 下载代码，执行脚本，完成部署
+
+```bash
+git clone https://github.com/primihub/primihub-deploy.git
+cd primihub-deploy/docker-all-in-one
 bash deploy.sh
 ```
-
-:::tip
-解压时提示 tar: Ignoring unknown extended header keyword `LIBARCHIVE.xattr.com.apple.FinderInfo' 可忽略
-:::
 
 执行完成后请等待镜像下载、数据库初始化和服务启动，确认MySQL，Nacos，application等应用状态为`healthy`则启动完成✅
 
@@ -55,6 +55,32 @@ rabbitmq2           "docker-entrypoint.s…"   rabbitmq2           running      
 redis               "docker-entrypoint.s…"   redis               running             6379/tcp
 ```
 
+### 安装loki插件(可选)
+
+如需开启在页面上显示日志的功能，则需要先安装 `loki` 的 `docker plugin`
+
+```bash
+docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+```
+
+然后配置收集所有docker容器的日志
+```bash
+# vim /etc/docker/daemon.json  添加以下内容
+{
+  "log-driver": "loki",
+  "log-opts": {
+    "loki-url": "http://127.0.0.1:3100/loki/api/v1/push",
+    "max-size": "50m",
+    "max-file": "10"
+  }
+}
+```
+
+配置好之后重启docker服务
+```bash
+systemctl restart docker
+```
+
 ### 使用说明
 
 docker-compose.yaml 文件中的nginx1、nginx2、nginx3 模拟 3 个机构的管理后台，启动完成后在浏览器分别访问
@@ -67,7 +93,7 @@ http://机器IP:30813
 
 默认用户密码都是 admin / 123456
 
-具体的联邦学习、隐私求交、隐匿查询等功能的操作步骤请参考 [管理平台操作说明手册](/docs/quick-start-platform)
+平台的使用说明请参考 [管理平台操作说明手册](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 
 ### 停止服务
 

@@ -1,24 +1,27 @@
 ---
 sidebar_position: 1
+description: Use docker-compose to deploy PrimiHub privacy computing platform on a single machine
+keywords: [docker-compose]
 ---
 
-# Use docker-compose for deployment
+# docker-all-in-one
 
 :::tip
-To avoid port collisions and network segment collisions, try to use a clean machine
+To avoid port collisionssegment collisions, try to use a clean machine
 :::
 
-### Download the installation package, execute the script, and deploy
+### Deployment Request
+
+* Machine configuration minimum 8 cores 16G, disk 40G
+* `docker-compose` version greater than 2.2
+
+### Download the code, execute the script, and deploy
 
 ```bash
-curl -s https://get.primihub.com/release/latest/docker-deploy.tar.gz | tar zxf -
-cd docker-deploy
+git clone https://github.com/primihub/primihub-deploy.git
+cd primihub-deploy/docker-all-in-one
 bash deploy.sh
 ```
-:::tip
-Ignore this error
-tar: Ignoring unknown extended header keyword `LIBARCHIVE.xattr.com.apple.FinderInfo'
-:::
 
 Once the execution is complete, wait a few minutes for the database to initialize and the service to start
 
@@ -61,7 +64,7 @@ http://IP:30813
 
 Default user and password admin / 123456
 
-Please refer to [Quick Start Management Platform](/docs/quick-start-platform) for detailed operation steps of federated modeling, privacy intersection, hiding whereabouts query and other functions.
+For instructions on how to use the platform, please refer to the [Operating Instructions Manual for the Management Platform](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 ### Stop the Service
 
 ```bash

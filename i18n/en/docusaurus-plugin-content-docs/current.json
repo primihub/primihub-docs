@@ -90,5 +90,13 @@
   "sidebar.developerSidebar.category.管理平台.link.generated-index.description": {
     "message": " ",
     "description": "The generated-index page description for category 管理平台 in sidebar developerSidebar"
+  },
+  "sidebar.lensonsSidebar.category.联邦学习（FL）任务": {
+    "message": "联邦学习（FL）任务",
+    "description": "The label for category 联邦学习（FL）任务 in sidebar lensonsSidebar"
+  },
+  "sidebar.lensonsSidebar.category.联邦学习（FL）任务.link.generated-index.description": {
+    "message": "联邦学习简介及算法原理",
+    "description": "The generated-index page description for category 联邦学习（FL）任务 in sidebar lensonsSidebar"
   }
 }

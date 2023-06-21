@@ -3,6 +3,6 @@
   "position": 8,
   "link": {
     "type": "generated-index",
-    "description": "Docker/K8S 部署"
+    "description": "使用 Docker/K8S 完整部署 PrimiHub 隐私计算平台"
   }
 }
