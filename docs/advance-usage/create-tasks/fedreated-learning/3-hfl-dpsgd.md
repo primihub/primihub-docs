@@ -12,9 +12,9 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
 2. $\epsilon$称为隐私预算，$\epsilon$越小安全性越高
 
-## 2. SGD和DP-SGD算法对比
+## 2. 符号说明
 
-| 符号 | 名称 |
+| 符号 | 说明 |
 |---|---|
 | $g$ | 梯度 |
 | $g_i$ | 第$i$个样本的梯度 |
@@ -34,7 +34,9 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 | $\mathcal{N}$ | 高斯噪声 |
 | $\sigma$ | 噪声参数 |
 
-### 2.1 SGD算法步骤
+## 3. SGD和DP-SGD算法对比
+
+### 3.1 SGD算法步骤
 
 1. 计算一个batch数据的梯度并取均值
 
@@ -44,7 +46,7 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
     - $\omega:=\omega-\eta\cdot g$
 
-### 2.2 DP-SGD算法步骤
+### 3.2 DP-SGD算法步骤
 
 1. 计算单样本的梯度
 
@@ -66,19 +68,19 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
     - $\omega:=\omega-\eta\cdot \tilde{g}$
 
-## 3. DataLoader对比
+## 4. DataLoader对比
 
-### 3.1 DataLoader
+### 4.1 DataLoader
 
 每次根据batch size，序列化选取批量数据，取完后对数据洗牌
 
-### 3.2 DPDataLoader
+### 4.2 DPDataLoader
 
 每次根据采样率$q$进行有放回泊松采样，选取批量数据
 
-## 4. DP超参数的影响
+## 5. DP超参数的影响
 
-### 4.1 剪裁阈值$C$
+### 5.1 剪裁阈值$C$
 
 影响梯度偏差和噪声的方差，但不影响隐私预算的大小
 
@@ -98,7 +100,7 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
 <img src="/img/select_l2_norm_clip.png" width="42%" height="42%"/>
 
-### 4.2 噪声参数$\sigma$
+### 5.2 噪声参数$\sigma$
 
 影响模型的性能和隐私预算的大小
 
@@ -108,7 +110,7 @@ keywords: [Gradient, Differential Privacy, DP-SGD]
 
 <img src="/img/select_noise_multiplier.png" width="42%" height="42%"/>
 
-## 5. 隐私预算的计算
+## 6. 隐私预算的计算
 
 1. 安装: `pip install dp-accounting`
 
@@ -170,7 +172,7 @@ def compute_epsilon(steps):
     return accountant.get_epsilon(target_delta=delta)
 ```
 
-## 6. 安全浮点数噪声生成
+## 7. 安全浮点数噪声生成
 
 使用：设置`'secure_mode'`为`True`
 
@@ -180,9 +182,9 @@ def compute_epsilon(steps):
 
 2. n>1，根据效率和计算复杂性考虑，一般取n=2
 
-## 7. HFL Logistic Regression DP-SGD运行
+## 8. HFL Logistic Regression DP-SGD运行
 
-### 7.1 Training
+### 8.1 Training
 
 - 如果是通过docker-compose启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
 
@@ -202,7 +204,7 @@ def compute_epsilon(steps):
 submit example/FL/logistic_regression/hfl_binclass_dpsgd.json
 ```
 
-### 7.2 Prediction
+### 8.2 Prediction
 
 - docker-compose启动
 
@@ -222,7 +224,7 @@ submit example/FL/logistic_regression/hfl_binclass_dpsgd.json
 submit example/FL/logistic_regression/hfl_binclass_predict.json
 ```
 
-## 8. 参考文献
+## 9. 参考文献
 
 1. Abadi, Martin, Andy Chu, Ian Goodfellow, H. Brendan McMahan, Ilya Mironov, Kunal Talwar, and Li Zhang. "Deep learning with differential privacy." In Proceedings of the 2016 ACM SIGSAC conference on computer and communications security, pp. 308-318. 2016. <https://arxiv.org/pdf/1607.00133.pdf>
 
