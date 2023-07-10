@@ -77,12 +77,7 @@ I20230619 18:53:17.818142 29477 main.cc:86]  💻 Node listening on port: 50050
 ```
 ### windows 
 
-***TODO ***
-
-```bash
-./pre_build.sh
-bazel build --config=windows :node :cli :opt_paillier_c2py
-```
+***Not supported yet, you can use WSL ***
 
 ### docker
 Use the Dockerfile in the root directory to build the docker image

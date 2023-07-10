@@ -83,12 +83,7 @@ I20230619 18:53:17.818142 29477 main.cc:86]  💻 Node listening on port: 50050
 
 ### Windows
 
-***TODO 待测***
-
-```shell
-./pre_build.sh
-bazel build --config=windows :node :cli :opt_paillier_c2py :linkcontext
-```
+***暂不支持，可使用 WSL***
 
 ### Docker
 使用代码根目录下的Dockerfile进行docker镜像编译
