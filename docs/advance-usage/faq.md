@@ -54,5 +54,5 @@ sed -ri 's/127.0.0.1/'$host_ip'/g' config/node*.yaml
 ```
 启动正常后发起任务时也需要指定主机IP地址，例如MPC任务
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
+./primihub-cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```

@@ -37,5 +37,5 @@ sed -ri 's/127.0.0.1/'$host_ip'/g' config/node*.yaml
 ```
 You also need to specify the IP address of the host when launching a task after starting normally, e.g. MPC task
 ```bash
-./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
+./primihub-cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```

@@ -11,17 +11,12 @@ sidebar_position: 1
 
 启动一个MPC的逻辑回归任务：
 
-通过`docker-compose`启动，执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器，执行以下命令：
+下载二进制文件或本地编译启动，在代码根目录下执行以下命令，通过`docker-compose`启动时，先执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器中，再执行以下命令：
 
 ```bash
 ./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
 
-下载二进制文件或本地编译启动，在代码根目录下执行以下命令：
-
-```bash
-./bazel-bin/cli --task_config_file="example/mpc_lr_task_conf.json"
-```
 分别观察`node0`、`node1`和`node2`的日志，有结果文件生成则代表任务运行成功。
 
 ```
