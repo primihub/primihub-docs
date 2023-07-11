@@ -10,19 +10,16 @@ description: Start the PrimiHub node manually
 Currently the binaries are only supported for Ubuntu 20.04 and MacOS systems
 :::
 
-## Run meta service
 
-You need to install the JDK8 environment first
+Install the JDK8 environment
 
 ```bash
 # Ubuntu
 apt install openjdk-8-jdk
-# CentOS
-yum -y install java
 # MacOS
 brew install --build-from-source openjdk@8
 ```
-
+<!-- 
 Download the `Meta service` installation package and start
 
 ```bash
@@ -41,7 +38,7 @@ ps -ef | grep fusion-simple.jar
 root     298757       1 99 13:33 pts/8    00:00:10 java -jar fusion-simple.jar --server.port=7877 --grpc.server.port=7977 --db.path=/home/cuibo/meta_service/storage/node0 --collaborate=http://127.0.0.1:7878/,http://127.0.0.1:7879/
 root     298758       1 99 13:33 pts/8    00:00:10 java -jar fusion-simple.jar --server.port=7878 --grpc.server.port=7978 --db.path=/home/cuibo/meta_service/storage/node1 --collaborate=http://127.0.0.1:7877/,http://127.0.0.1:7879/
 root     298759       1 99 13:33 pts/8    00:00:10 java -jar fusion-simple.jar --server.port=7879 --grpc.server.port=7979 --db.path=/home/cuibo/meta_service/storage/node2 --collaborate=http://127.0.0.1:7878/,http://127.0.0.1:7877/
-```
+``` -->
 
 ## Run Node
 
@@ -60,7 +57,14 @@ After downloading and unpacking, execute `start_server.sh` to start the node
 ```shell
 bash start_server.sh
 ```
-
+Check the log, it starts normally as follows
+```
+# tail -f log_node0
+...
+I20230619 18:53:17.816563 29477 grpc_impl.cc:49] PutMeta to node: [:127.0.0.1:7977:0:] rpc succeeded.
+I20230619 18:53:17.817224 29477 main.cc:55] server runing in no tls mode
+I20230619 18:53:17.818142 29477 main.cc:86]  💻 Node listening on port: 50050
+```
 :::tip Connect custom data
 You could use the flag `--config` to specific a custom data by a YAML configuration file, see also [connect datasource](./connect-datasource).
 :::
