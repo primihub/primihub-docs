@@ -66,6 +66,9 @@ const config = {
       }),
     ],
   ],
+  scripts:[
+    {src: 'https://hm.baidu.com/hm.js?bf065b71d1590208a69fb8ec84279904',  async: true}
+  ],
   // scripts: [
   //   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
   //   {
