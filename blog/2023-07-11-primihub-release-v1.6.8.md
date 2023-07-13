@@ -1,11 +1,11 @@
 ---
-slug: primihub-release-v1.6.7
-title: PrimiHub v1.6.7 发布
+slug: primihub-release-v1.6.8
+title: PrimiHub v1.6.8 发布
 authors: primihub
 tags: [release]
 ---
 
-开源隐私计算平台 PrimiHub [v1.6.7](https://github.com/primihub/primihub/releases/tag/1.6.7) 发布了！
+开源隐私计算平台 PrimiHub [v1.6.8](https://github.com/primihub/primihub/releases/tag/1.6.8) 发布了！
 
 ## 新增特性
 
