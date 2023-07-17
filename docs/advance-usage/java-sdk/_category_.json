@@ -1,0 +1,8 @@
+{
+  "label": "Java SDK Client",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "学习如何使用PrimiHub Java SDK发起任务"
+  }
+}
