@@ -56,3 +56,13 @@ sed -ri 's/127.0.0.1/'$host_ip'/g' config/node*.yaml
 ```bash
 ./bazel-bin/cli --server="你的IP:50050" --task_config_file="example/mpc_lr_task_conf.json"
 ```
+7. primihub-meta、primihub-service工程grpc编译问题
+
+提示在工程中有以下错误信息程序包java_worker不存在、程序包Common不存在
+```xml
+    修改环境配置,常见的os系统有windows-x86_64、osx-x86_64、linux-x86_64根据系统更换下面的value即可
+    <properties>
+        <os.detected.classifier>windows-x86_64</os.detected.classifier>
+    </properties>
+```
+其他系统环境请参考os-maven-plugin插件开源库[os-maven-plugin](https://github.com/trustin/os-maven-plugin)
