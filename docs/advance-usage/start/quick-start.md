@@ -95,5 +95,3 @@ docker run --network=host -it primihub/primihub-node:latest ./primihub-cli --ser
 
 在这个例子中primihub-cli会使用默认参数向***node 0***请求一个ABY3的三方逻辑回归测试任务，关于cli可以指定的参数请见 ***[公共参数](../create-tasks/cli-params)***
 ::: -->
-
-
