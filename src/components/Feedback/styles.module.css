@@ -25,6 +25,14 @@
   .widget .reaction:hover {
     border: black 1px solid;
   }
+
+  html[data-theme="dark"] .widget .reaction:hover {
+    border: #606770 1px solid;
+  }
+
+  html[data-theme="dark"] .widget .reaction {
+    border: #606770 1px solid;
+  }
    
   .widget .footer {
     margin-top: 10px;

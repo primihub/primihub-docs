@@ -193,7 +193,7 @@ const config = {
             ],
           },
         ],
-        copyright: `<p>Copyright © ${new Date().getFullYear()} PrimiHub Project, Inc. Built with Docusaurus.</p><p>111</p>`,
+        copyright: `Copyright © ${new Date().getFullYear()} PrimiHub Project, Inc. Built with Docusaurus. <br><a style='color: white'href="https://happyreact.com/">Feedback Widget by Happy React</a>`,
       },
       colorMode: {
         defaultMode: 'light',
