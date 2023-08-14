@@ -27,6 +27,10 @@ const config = {
     defaultLocale: 'zh-cn',
     locales: ['zh-cn', 'en'],
   },
+  
+  plugins: [[ require.resolve('docusaurus-lunr-search'), {
+    languages: ['en', 'zh'] // language codes
+  }]],
 
   presets: [
     [
@@ -65,6 +69,9 @@ const config = {
         },
       }),
     ],
+  ],
+  scripts:[
+    {src: 'https://hm.baidu.com/hm.js?bf065b71d1590208a69fb8ec84279904',  async: true}
   ],
   // scripts: [
   //   'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
@@ -186,7 +193,7 @@ const config = {
             ],
           },
         ],
-        copyright: `<p>Copyright © ${new Date().getFullYear()} PrimiHub Project, Inc. Built with Docusaurus.</p><p>111</p>`,
+        copyright: `Copyright © ${new Date().getFullYear()} PrimiHub Project, Inc. Built with Docusaurus. <br><a style='color: white'href="https://happyreact.com/">Feedback Widget by Happy React</a>`,
       },
       colorMode: {
         defaultMode: 'light',
