@@ -9,7 +9,7 @@ sidebar_position: 4
 ## 提交任务
 *** 提交基于关键字(keyword)查询的PIR任务的参数说明 ***
 
-下载二进制文件或本地编译启动，在代码根目录下执行以下命令，通过`docker-compose`启动时，先执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器中，再执行以下命令：
+如果是通过下载二进制文件或本地编译启动，编译完成后在代码根目录下执行以下命令；如果是通过docker-compose启动，先执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器中，再执行以下命令。
 
 ```bash
 ./primihub-cli --task_config_file="example/keyword_pir_task_conf.json"
