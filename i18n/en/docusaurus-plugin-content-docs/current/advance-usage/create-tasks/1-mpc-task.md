@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Example: launching an MPC logistic regression task：
 
-If starting locally, run the following command from the compiled root directory,if starting with docker-compose, enter the primihub-node0 container by running `docker exec -it primihub-node0 bash`,and run the following command:
+If starting locally, run the following command from the compiled root directory. If starting with docker-compose, enter the `primihub-node0` container by running `docker exec -it primihub-node0 bash`, then run the following command.
 
 ```bash
 ./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
