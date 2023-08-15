@@ -235,5 +235,20 @@
   },
   "site-description": {
     "message": "开源隐私计算平台 PrimiHub 官方文档"
+  },
+  "feedback-header": {
+    "message": "此页面是否有帮助？"
+  },
+  "feedback-vote-yes-1": {
+    "message": "感谢您的反馈，点个"
+  },
+  "feedback-vote-yes-2": {
+    "message": "支持一下 PrimiHub 吧！"
+  },
+  "feedback-vote-no-1": {
+    "message": "感谢您的反馈，点击"
+  },
+  "feedback-vote-no-2": {
+    "message": "反馈您的问题吧！"
   }
 }

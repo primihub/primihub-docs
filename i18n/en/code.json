@@ -288,5 +288,20 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "feedback-header": {
+    "message": "Was this page helpful?"
+  },
+  "feedback-vote-yes-1": {
+    "message": "Thank you for your feedback, click a"
+  },
+  "feedback-vote-yes-2": {
+    "message": "to support PrimiHub!"
+  },
+  "feedback-vote-no-1": {
+    "message": "Thank you for your feedback, click"
+  },
+  "feedback-vote-no-2": {
+    "message": "to feedback your question!"
   }
 }
