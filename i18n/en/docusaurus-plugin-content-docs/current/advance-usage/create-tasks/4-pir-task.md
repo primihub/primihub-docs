@@ -7,7 +7,7 @@ sidebar_position: 4
 
 *** PIR Task Parameters Description ***
 
-If starting locally, run the following command from the compiled root directory,if starting with docker-compose, enter the primihub-node0 container by running`docker exec -it primihub-node0 bash` ，and run the following command：
+If starting locally, run the following command from the compiled root directory. If starting with docker-compose, enter the `primihub-node0` container by running `docker exec -it primihub-node0 bash`, then run the following command.
 
 ```bash
 ./primihub-cli --task_config_file="example/keyword_pir_task_conf.json"
