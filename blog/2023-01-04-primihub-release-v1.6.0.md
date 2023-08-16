@@ -1,7 +1,7 @@
 ---
 slug: primihub-release-v1.6.0
 title: 2023年首个版本，PrimiHub v1.6.0 发布
-authors: fuxingbit
+authors: PrimiHub
 tags: [release]
 ---
 

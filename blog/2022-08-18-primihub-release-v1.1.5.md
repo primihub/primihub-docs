@@ -1,7 +1,7 @@
 ---
 slug: primihub-release-v1.1.5
 title: PrimiHub v1.1.5 发布
-authors: fuxingbit
+authors: PrimiHub
 tags: [release]
 ---
 

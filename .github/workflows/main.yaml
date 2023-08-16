@@ -19,9 +19,8 @@ jobs:
         node-version: 16.x
         cache: 'npm'
     - run: |
-        npm install yarn -g
-        yarn
-        yarn build
+        npm install
+        npm run build
   
   # docker-image-build-and-publish:
   #   runs-on: ubuntu-latest

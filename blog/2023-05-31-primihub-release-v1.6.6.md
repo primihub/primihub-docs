@@ -1,7 +1,7 @@
 ---
 slug: primihub-release-v1.6.6
-title: 重要更新！v1.6.6 发布
-authors: fuxingbit
+title: 重要更新！PrimiHub v1.6.6 发布
+authors: PrimiHub
 tags: [release]
 ---
 
