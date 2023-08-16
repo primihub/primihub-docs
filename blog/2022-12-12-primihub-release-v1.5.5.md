@@ -1,7 +1,7 @@
 ---
 slug: primihub-release-v1.5.5
-title: 喜大普奔！PrimiHub v1.5.5 发布，新增使用Redis做数据集发现
-authors: fuxingbit
+title: 喜大普奔！PrimiHub v1.5.5 发布
+authors: PrimiHub
 tags: [release]
 ---
 

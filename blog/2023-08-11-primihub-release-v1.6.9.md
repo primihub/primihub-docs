@@ -1,7 +1,7 @@
 ---
 slug: primihub-release-v1.6.9
 title: PrimiHub v1.6.9 发布
-authors: primihub
+authors: PrimiHub
 tags: [release]
 ---
 
