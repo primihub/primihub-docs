@@ -1,7 +1,7 @@
 ---
 slug: primihub-release-v1.6.4
 title: PrimiHub v1.6.4 发布
-authors: fuxingbit
+authors: PrimiHub
 tags: [release]
 ---
 
