@@ -3,19 +3,20 @@ import { Widget } from '@happyreact/react';
  
 import '@happyreact/react/theme.css';
 import styles from './styles.module.css';
+import Translate, { translate } from '@docusaurus/Translate';
 
 
 const VotedYes = () => {
-  return <span>感谢您的反馈，点个 <a href='https://github.com/primihub/primihub'>Star✨</a> 支持一下 PrimiHub 吧！😊</span>;
+  return <><Translate id="feedback-vote-yes-1">感谢您的反馈，点个</Translate> <a href='https://github.com/primihub/primihub'>Star✨</a> <Translate id="feedback-vote-yes-2">支持一下 PrimiHub 吧！</Translate>😊</>
 };
  
 const VotedNo = () => {
-  return <span>感谢您的反馈，点击 <a href='https://github.com/primihub/primihub/issues/new/choose'>Issue</a> 反馈您的问题吧！😊。</span>;
+  return <><Translate id="feedback-vote-no-1">感谢您的反馈，点击</Translate> <a href='https://github.com/primihub/primihub/issues/new/choose'>Issue</a> <Translate id="feedback-vote-no-2">反馈您的问题吧！</Translate>😊。</>;
 };
  
 export default function Feedback({ resource }) {
   const [reaction, setReaction] = useState(null);
-  const isReacted = reaction === '是' || reaction === '否';
+  const isReacted = reaction === '👍' || reaction === '👎';
   
   const _resource = String(resource).replace(/\//g, '-');
  
@@ -26,7 +27,7 @@ export default function Feedback({ resource }) {
 
   return (
     <div className={styles.root}>
-      <h3 className={styles.title}>此页面是否有帮助？</h3>
+      <h3 className={styles.title}>{translate({message:'feedback-header'})}</h3>
       {!isReacted ? (
         <div className="">
           <Widget
@@ -42,7 +43,7 @@ export default function Feedback({ resource }) {
             onReaction={handleReaction}
           />
         </div>
-      ) : reaction === '否' ? (
+      ) : reaction === '👎' ? (
         <VotedNo />
       ) : (
         <VotedYes />
