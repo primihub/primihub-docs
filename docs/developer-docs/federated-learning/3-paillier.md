@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 description: Paillier半同态下进行联邦模型训练
 keywords: [HFL, Logistic Regression, Paillier]
 ---

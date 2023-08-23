@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 description: 基于ChatGLM-6B实现横向联邦大模型训练
 keywords: [HFL, LLM, FedAvg]
 ---
-# 横向联邦大模型
+# LLM
 
 目前 PrimiHub 已支持基于 ChatGLM-6B 的联邦大模型，本文档将演示如何使用 PrimiHub 实现联邦大模型。
 

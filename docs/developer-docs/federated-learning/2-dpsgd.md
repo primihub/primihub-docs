@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 description: 梯度扰动差分隐私算法
 keywords: [Gradient, Differential Privacy, DP-SGD]
 ---
