@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0
+sidebar_position: 4
 description: 纵向联邦简介及纵向XGBoost算法
 keywords: [VFL, XGBoost, Paillier]
 ---

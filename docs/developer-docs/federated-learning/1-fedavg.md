@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 description: 横向联邦简介及FedAvg算法原理
 keywords: [HFL, FedAvg]
 ---
