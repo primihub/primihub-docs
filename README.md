@@ -1,58 +1,37 @@
-# Website
+# Primihub Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This is the source code for [PrimiHub Docs](https://docs.primihub.com/).
 
-## Installation
+We really apprecitate it if you would contribute to the content or the theme. You can do your contribution as follows. 
 
+# Contribution
+This site is built with [Docusaurus 2](https://docusaurus.io/). 
+
+Site content is written in Markdown format located in `/docs`. For simple edits, you can directly edit the file on GitHub and generate a Pull Request.
+
+## Prerequisite
+This project requires Node.js to be v14.0.0 or higher. Install Node.js in your local machine if necessary.
+
+## Run & Edit Locally
+Clone the repo, then edit and run it locally. 
 ```shell
-yarn
+yarn # install dependencies 
+yarn start # This command opens up a browser window and will apply your local changes without having to restart.
 ```
 
-## Local Development
+## Routing
+Each route you browse at https://docs.primihub.com/ comes with a markdown file in this project at `/docs`. 
 
-```shell
-yarn start
-```
+For example, the file for https://docs.primihub.com/docs/developer-docs/roadmap is `/docs/developer-docs/roadmap.md`.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+### Route with multiple pages
+It will generate a default index page for a route which contains sub files. You need to create a `_category_.json` file in route folder. See `/docs/developer-docs/core-concept` for more deail.
 
-## Build
+## How to Insert an Image
+1. Prepare your image files and place them in `/static/img` folder, e.g. `/static/img/xxx.jpeg`
+2. Refer the image in markdown file with `![image desc](/img/xxxx.jpeg)`
 
-```shell
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```shell
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```shell
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
-
-## Contribution
-Please feel free to help us to improve all the documents.
-
-### Docs
-Create a Markdown file in a approprate directory under `i18n/xxx/docusaurus-plugin-content-docs`.
-
-Considering we have multilingua in this repository, you could find the right directory base on different language:
-
-| Language | Directory |
-|---|---|
-| English | `en` |
-| Chinese | `zh-cn` |
-
+## Meta data
 Beside the content, please don't forget adding the following metadata at the header of a Markdown file:
 
 ```yaml
@@ -62,22 +41,10 @@ description: This is a brief introduction to the content
 
 > The metadata will make the search engine index our content easily.
 
-### Blog
-Please feel free to post your articles here. It should be related to data computation protection, even not related to PrimiHub.
-
-Please be aware of the following convention:
-
-* Put your articles under the [blog](blog) directory in Markdown format
-* Make sure your Markdown file name starts with the date format
-* Add the necessary front metadata in your Markdown file
-  * The metadata could contain `slug`, `title`, `authors`, and `tags`
-* Put all images under the [images](blog/images/) directory, and give them a readable name
-* Please put the author's information into [authors.yml](blog/authors.yml) if there is a new author
-
-### Menu
+## Menu
 Please update [sidebars.js](sidebars.js) if you want to add a new menu item.
 
-### Localization
+## Localization
 Please put translation items into the following JSON file if you want to add a translation for English:
 
 ```
