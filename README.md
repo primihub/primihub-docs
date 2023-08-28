@@ -25,7 +25,7 @@ Each route you browse at https://docs.primihub.com/ comes with a markdown file i
 For example, the file for https://docs.primihub.com/docs/developer-docs/roadmap is `/docs/developer-docs/roadmap.md`.
 
 ### Route with multiple pages
-It will generate a default index page for a route which contains sub files. You need to create a `_category.json_` file in route folder. See `/docs/developer-docs/core-concept` for more deail.
+It will generate a default index page for a route which contains sub files. You need to create a `_category_.json` file in route folder. See `/docs/developer-docs/core-concept` for more deail.
 
 ## How to Insert an Image
 1. Prepare your image files and place them in `/static/img` folder, e.g. `/static/img/xxx.jpeg`
