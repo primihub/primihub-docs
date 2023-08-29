@@ -162,7 +162,7 @@ keywords: [FL, Logistic Regression]
   - 多分类
 
     ```bash
-    submit example/FL/logistic_regression/vfl_multiclass_plaintext.json
+    ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_multiclass_plaintext.json"
     ```
 
 - Python SDK启动
