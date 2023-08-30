@@ -1,10 +1,10 @@
 ---
-sidebar_position: 11
+sidebar_position: 6
 description: PrimiHub 开源社区治理
 keywords: [PrimiHub, 开源社区治理]
 ---
 
-# PrimiHub 开源社区治理
+# 开源社区治理
 
 为了给对 PrimiHub 项目感兴趣的人营造一个自由学习交流的空间，现推出 PrimiHub 开源社区。欢迎小伙伴踊跃发言～
 

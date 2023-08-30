@@ -1,10 +1,20 @@
 ---
-sidebar_position: 2
+sidebar_position: 0
+keywords: [protocols, primihub]
+description: PrimiHub 安全协议的实现
 ---
 
+# 安全协议
 
-# Paillier
+PrimiHub 实现了多种安全协议，下面介绍几种对典型安全协议的实现方法和API设计。
 
+你还可以自行扩展其他安全协议的实现。
+
+## aby3
+
+## Falcon
+
+## Paillier
 *** Paillier密码系统的底层优化实现 ***
 
 :::tip 主要依据的论文
@@ -20,40 +30,40 @@ Ma H, Han S, Lei H. Optimized Paillier's Cryptosystem with Fast Encryption and D
 
 :::
 
-## c++ API
+### c++ API
 
-### opt_paillier_keygen
+#### opt_paillier_keygen
 该函数实现了改良的密钥生成逻辑，支持高效地生成112 bit安全级别的密钥对。
 
-### opt_paillier_set_plaintext, opt_paillier_get_plaintext
+#### opt_paillier_set_plaintext, opt_paillier_get_plaintext
  set函数实现了正负整数向明文域的编码。get函数实现了明文域向整数的编码。
 
-### opt_paillier_encrypt
+#### opt_paillier_encrypt
 实现了无需私钥参与的加密算法，
 
-### opt_paillier_encrypt_crt
+#### opt_paillier_encrypt_crt
 在加密方使用自己的公钥加密时，可调用需私钥参与的基于中国剩余定理的加密优化实现。
 
-### opt_paillier_encrypt_crt_fb
+#### opt_paillier_encrypt_crt_fb
 基于fixed-base优化算法，设置了滑动窗口大小为4 bit，同时使用了中国剩余定理优化，可进一步提升加密效率。
 
-### opt_paillier_decrypt
+#### opt_paillier_decrypt
 实现了Paillier解密算法
 
-### opt_paillier_decrypt_crt
+#### opt_paillier_decrypt_crt
 实现了基于中国剩余定理的解密优化算法，此外在合数模分解之上实现了指数优化算法。
 
-### opt_paillier_add
+#### opt_paillier_add
 实现了同态加法，需传入两个密文，输出同态加法的密文结果。
 
-### opt_paillier_constant_mul
+#### opt_paillier_constant_mul
 实现了常量乘法，其中op1是密文，op2是明文，输出op2乘以op1加密的明文的密态结果。
 
-### opt_paillier_freepubkey，opt_paillier_freeprvkey
+#### opt_paillier_freepubkey，opt_paillier_freeprvkey
 内存资源的释放接口。
 
-## Python API
-### opt_paillier_c2py_warpper
+### Python API
+#### opt_paillier_c2py_warpper
 
 ##### class Opt_paillier_public_key(object)
 
@@ -152,7 +162,7 @@ checked: [1, 1, 1, 1]
 ========================================================
 ```
 
-### opt_paillier_pack_c2py_warpper
+#### opt_paillier_pack_c2py_warpper
 
 ##### class Opt_paillier_pack_ciphertext(object)
 
@@ -248,3 +258,6 @@ The avg decryption cost is 46.557745933532715 ms.
 The avg addition   cost is 1.897873878479004 ms.
 ========================================================
 ```
+
+## VOLE
+

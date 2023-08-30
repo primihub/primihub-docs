@@ -104,26 +104,26 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'advance-usage/start/quick-start',
+            docId: 'quick-start-platform/quick-start-platform',
             position: 'left',
-            label: '文档',
+            label: '🔥在线体验',
           },
           {
             type: 'doc',
-            docId: 'developer-docs/roadmap',
+            docId: 'advance-usage/start/quick-start',
             position: 'left',
-            label: '开发者',
+            label: '本地体验',
+          },
+          {
+            type: 'doc',
+            docId: 'developer-docs/architect',
+            position: 'left',
+            label: '进阶开发',
           },
           {
             to: 'blog',
             label: 'Blog',
             position: 'left'
-          },
-          {
-            type: 'doc',
-            docId: 'quick-start-platform/quick-start-platform',
-            position: 'left',
-            label: '🔥在线体验',
           },
           {
             href: 'https://github.com/primihub/primihub',
