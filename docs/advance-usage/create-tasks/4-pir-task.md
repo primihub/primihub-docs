@@ -91,7 +91,7 @@ I20230614 18:19:37.850311    56 node.cc:118] number of timeout task status need 
 
 # 匿踪查询（PIR）预生成DB数据库任务
 在有些场景下，被查询端的数据变化不是很频繁的，这种情况下可以将数据做离线处理，预生成查询过程中使用的数据库，供在线过程查询使用，以提高查询效率
-此过程与在线服务是完全独立的两个流程，在线任务会首先搜素预指定的cache位置是否存在与设置的数据集id相同名称的数据库cache文件，如果存在则使用cache数据，否则按照一般流程执行。
+此过程与在线服务是完全独立的两个流程，在线任务会首先搜索预指定的cache位置是否存在与设置的数据集id相同名称的数据库cache文件，如果存在则使用cache数据，否则按照一般流程执行。
 ## 提交生成DB数据库任务
 ```bash
 ./primihub-cli --task_config_file="example/keyword_pir_db_build_task_conf.json"
