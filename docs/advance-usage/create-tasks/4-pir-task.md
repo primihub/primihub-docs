@@ -42,7 +42,7 @@ I20230614 18:19:30.371521    62 node.cc:858] create worker thread future for tas
 I20230614 18:19:30.371630    66 node.cc:821] begin to execute task
 I20230614 18:19:30.374213    65 worker.cc:122] Request id: 3d1b4923-648e-4613-b244-b8ae168437be update party: CLIENT status to: RUNNING
 I20230614 18:19:30.374786    66 worker.cc:61] Worker::execute task type: 2
-I20230614 18:19:30.374992    66 worker.cc:70] Worker start execute task 
+I20230614 18:19:30.374992    66 worker.cc:70] Worker start execute task
 I20230614 18:19:30.375034    62 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 3d1b4923-648e-4613-b244-b8ae168437be finished
 I20230614 18:19:30.376495    67 worker.cc:122] Request id: 3d1b4923-648e-4613-b244-b8ae168437be update party: SERVER status to: RUNNING
 I20230614 18:19:30.385742    66 receiver.cpp:159] Created OPRFReceiver for 3 items
@@ -67,7 +67,7 @@ I20230614 18:19:30.372799    61 node.cc:821] begin to execute task
 I20230614 18:19:30.377077    61 worker.cc:61] Worker::execute task type: 2
 I20230614 18:19:30.377228    61 keyword_pir_server_task.cc:107] enter KeywordPIRServerTask ctr
 I20230614 18:19:30.377333    61 keyword_pir_server_task.cc:109] exit KeywordPIRServerTask ctr
-I20230614 18:19:30.377377    61 worker.cc:70] Worker start execute task 
+I20230614 18:19:30.377377    61 worker.cc:70] Worker start execute task
 I20230614 18:19:30.377425    58 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 3d1b4923-648e-4613-b244-b8ae168437be finished
 I20230614 18:19:30.402772    61 sender_db.cpp:767] Start inserting 50 items in SenderDB
 I20230614 18:19:30.436977    61 sender_db.cpp:829] Found 50 new items to insert in SenderDB
@@ -88,3 +88,16 @@ I20230614 18:19:37.850311    56 node.cc:118] number of timeout task status need 
 | params.pirType | INT32 | 1或0 | 1：基于关键字的隐匿查询，0:基于ID |
 | params.outputFullFilename | STRING | "data/result/pir_result.csv" | 指定结果保存文件路径 |
 | party_datasets | STRING | "keyword_pir_server_data" | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送匿踪查询请求。pir服务端加载该标识符对应文件生成pir数据库 |
+
+# 匿踪查询（PIR）预生成DB数据库任务
+在有些场景下，被查询端的数据变化不是很频繁的，这种情况下可以将数据做离线处理，预生成查询过程中使用的数据库，供在线过程查询使用，以提高查询效率
+此过程与在线服务是完全独立的两个流程，在线任务会首先搜索预指定的cache位置是否存在与设置的数据集id相同名称的数据库cache文件，如果存在则使用cache数据，否则按照一般流程执行。
+## 提交生成DB数据库任务
+```bash
+./primihub-cli --task_config_file="example/keyword_pir_db_build_task_conf.json"
+```
+## 参数说明
+| 参数| 数据类型 | 参数示例 | 参数说明
+| ---- | ---- | ---- | ---- |
+| params.pirType | INT32 | 1 | 1：基于关键字的隐匿查询任务 |
+| params.DbInfo | STRING | “data/cache/keyword_pir_server_data” | 指定生产的数据cache存储的路径 |

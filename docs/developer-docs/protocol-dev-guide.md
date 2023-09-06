@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
+keywords: [protocal, primihub]
+description: PrimiHub 安全协议和算法的扩展
 ---
 
-# PrimiHub安全协议开发指南
+# 扩展安全协议和算法
 
 *** 如何开发一个安全协议 *** 
 

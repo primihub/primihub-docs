@@ -34,7 +34,7 @@ I20230614 17:25:05.469089    59 node.cc:1073]  🤖️ Fininsh create worker nod
 I20230614 17:25:05.469316    59 node.cc:858] create worker thread future for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
 I20230614 17:25:05.469419    63 node.cc:821] begin to execute task
 I20230614 17:25:05.471896    62 worker.cc:122] Request id: 043795b3-66f4-490b-8d50-124608432c12 update party: CLIENT status to: RUNNING
-I20230614 17:25:05.472594    63 worker.cc:70] Worker start execute task 
+I20230614 17:25:05.472594    63 worker.cc:70] Worker start execute task
 I20230614 17:25:05.472652    59 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
 I20230614 17:25:05.473728    62 worker.cc:122] Request id: 043795b3-66f4-490b-8d50-124608432c12 update party: SERVER status to: RUNNING
 I20230614 17:25:05.488062    63 psi_kkrt_task.cc:372] start recv.
@@ -53,7 +53,7 @@ I20230614 17:25:05.469933    54 node.cc:1069]  🤖️ Start create worker node1
 I20230614 17:25:05.469978    54 node.cc:1073]  🤖️ Fininsh create worker node1 worker id: 043795b3-66f4-490b-8d50-124608432c12
 I20230614 17:25:05.470230    54 node.cc:858] create worker thread future for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
 I20230614 17:25:05.470335    57 node.cc:821] begin to execute task
-I20230614 17:25:05.474314    57 worker.cc:70] Worker start execute task 
+I20230614 17:25:05.474314    57 worker.cc:70] Worker start execute task
 I20230614 17:25:05.474380    54 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 043795b3-66f4-490b-8d50-124608432c12 finished
 I20230614 17:25:05.497123    57 psi_kkrt_task.cc:386] start send
 I20230614 17:25:05.701987    57 psi_kkrt_task.cc:402] kkrt psi run success
@@ -68,6 +68,6 @@ I20230614 17:25:05.713833    57 psi_task.cc:212] Save PSI result to data/result/
 | params.psiType | INT32 | 0或者1 | 0：求数据交集，1：求数据差集 |
 | params.psiTag | INT32 | 0或者1 | psi支持多种底层协议实现，通过该参数区分，0：ECDH,1：KKRT |
 | params.outputFullFilename | STRING | "data/result/psi_result.csv" | 客户端结果文件保存路径 |
-| params.sync_result_to_server | INT32 | 0或者1 | 客户端是否将结果同步到服务端。 1：推送，0：不推送 |
+| params.sync_result_to_server | INT32 | 0或者1 | 客户端是否将交集结果同步到服务端。 1：同步，0：不同步 |
 | params.server_outputFullFilname | STRING | "data/result/server/psi_result.csv" | 服务端结果文件保存路径 |
 | party_datasets | STRING | "psi_client_data,psi_server_data" | 该参数值为psi服务的客户端和服务端数据标识符，系统调度节点通过该标识符找到注册该数据的工作节点。（当前在用例在node0中注册客户端数据，在config/primihub_node0.yaml中，添加数据的保存路径，设置该数据的description为"psi_client_data"，作为该数据标志符。标志符由用户自主设置，请求任务中的参数值与配置文件中的值保持一致） |

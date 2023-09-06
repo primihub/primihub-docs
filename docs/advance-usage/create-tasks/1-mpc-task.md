@@ -6,10 +6,55 @@ sidebar_position: 1
 # 多方安全计算（MPC）任务
 
 多方安全计算（Multi-Party Computation，MPC）功能是指多个参与方在不暴露私有数据的情况下，共同完成一项计算任务的过程。
+## MPC任务
+### MPC LR（逻辑回归）
+```bash
+./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
+```
+### MPC 四则运算
 
-## 提交任务
+```bash
+./primihub-cli --task_config_file="example/mpc_add_task_conf.json"
+```
+```bash
+./primihub-cli --task_config_file="example/mpc_sub_task_conf.json"
+```
+```bash
+./primihub-cli --task_config_file="example/mpc_mul_task_conf.json"
+```
+```bash
+./primihub-cli --task_config_file="example/mpc_div_task_conf.json"
+```
+### MPC 联合统计
+对于联合统计，当前平台已经实现了最大值，最小值，平均值，以及求和的功能
+#### 提交统计最大值任务
+```bash
+./primihub-cli --task_config_file="example/mpc_statistics_max_task_conf.json"
+```
+#### 提交统计最小值任务
+```bash
+./primihub-cli --task_config_file="example/mpc_statistics_min_task_conf.json"
+```
+#### 提交统计平均值任务
+```bash
+./primihub-cli --task_config_file="example/mpc_statistics_avg_task_conf.json"
+```
+#### 提交统计总和任务
+```bash
+./primihub-cli --task_config_file="example/mpc_statistics_sum_task_conf.json"
+```
+### MPC 数据预处理任务
+对于使用的数据集，有时候并不是完全就可以直接使用的，在数据采集过程中会有部分数据缺失，异常以及其他的问题存在，因此，对数据进行预处理是必不可少的步骤，在隐私计算中同样适用，在通过数据使用隐私计算平台的过程中也需要根据数据的真实情况对数据做部分预处理。
+对于横向场景，实现了缺失值/异常值的处理流程，可通过如下命令发起相关任务
+```bash
+./primihub-cli --task_config_file="example/mpc_missing_value_task_conf.json"
+```
 
-启动一个MPC的逻辑回归任务：
+## MPC LR 任务示例详解
+
+### 提交MPC LR任务
+
+执行一个MPC的逻辑回归任务：
 
 如果是通过下载二进制文件或本地编译启动，编译完成后在代码根目录下执行以下命令；如果是通过docker-compose启动，先执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器中，再执行以下命令。
 
@@ -42,7 +87,7 @@ I20230614 17:46:15.549294    61 node.cc:1073]  🤖️ Fininsh create worker nod
 I20230614 17:46:15.549533    61 node.cc:858] create worker thread future for task: job_id : 100 task_id: 200 request id: 28ca8b00-c1bf-414d-a9f3-0752d2f1a55c finished
 I20230614 17:46:15.549640    67 node.cc:821] begin to execute task
 I20230614 17:46:15.552394    66 worker.cc:122] Request id: 28ca8b00-c1bf-414d-a9f3-0752d2f1a55c update party: PARTY0 status to: RUNNING
-I20230614 17:46:15.553223    67 worker.cc:70] Worker start execute task 
+I20230614 17:46:15.553223    67 worker.cc:70] Worker start execute task
 I20230614 17:46:15.553269    67 logistic.cc:131] party_name: PARTY0
 I20230614 17:46:15.553288    61 node.cc:875] create worker thread for task: job_id : 100 task_id: 200 request id: 28ca8b00-c1bf-414d-a9f3-0752d2f1a55c finished
 I20230614 17:46:15.553335    67 logistic.cc:158] Train data train_party_0, test data .
@@ -90,7 +135,7 @@ node1 和 node2 日志和 node0 类似，省略。
 ```
 
 MPC任务除了支持逻辑回归外、还支持四则运算、求均求和最大最小值统计、缺失值异常值处理等，具体各任务的示例配置请参考 `example目录下的mpc_*.json` 文件
-## 参数说明
+### LR任务参数说明
 
 | 参数| 数据类型 | 参数示例 | 参数说明
 | ---- | ---- | ---- | ---- |
@@ -101,3 +146,4 @@ MPC任务除了支持逻辑回归外、还支持四则运算、求均求和最�
 | party_datasets.PARTY0 | STRING | test_party_0,train_party_0 | 训练数据集 |
 | party_datasets.PARTY1 | STRING | test_party_1,train_party_1 | 训练数据集 |
 | party_datasets.PARTY2 | STRING | test_party_2,train_party_2 | 训练数据集 |
+
