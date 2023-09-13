@@ -6,8 +6,10 @@ sidebar_position: 4
 # 匿踪查询（PIR）任务
 
 隐私查询（Private Information Retrieval，PIR）功能是指在不暴露参与方私有数据的情况下，实现对数据的查询和分析。
+
 ## 提交任务
-*** 提交基于关键字(keyword)查询的PIR任务的参数说明 ***
+
+***提交基于关键字(keyword)查询的PIR任务的参数说明***
 
 如果是通过下载二进制文件或本地编译启动，编译完成后在代码根目录下执行以下命令；如果是通过docker-compose启动，先执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器中，再执行以下命令。
 
@@ -90,13 +92,18 @@ I20230614 18:19:37.850311    56 node.cc:118] number of timeout task status need 
 | party_datasets | STRING | "keyword_pir_server_data" | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送匿踪查询请求。pir服务端加载该标识符对应文件生成pir数据库 |
 
 # 匿踪查询（PIR）预生成DB数据库任务
+
 在有些场景下，被查询端的数据变化不是很频繁的，这种情况下可以将数据做离线处理，预生成查询过程中使用的数据库，供在线过程查询使用，以提高查询效率
 此过程与在线服务是完全独立的两个流程，在线任务会首先搜索预指定的cache位置是否存在与设置的数据集id相同名称的数据库cache文件，如果存在则使用cache数据，否则按照一般流程执行。
+
 ## 提交生成DB数据库任务
+
 ```bash
 ./primihub-cli --task_config_file="example/keyword_pir_db_build_task_conf.json"
 ```
+
 ## 参数说明
+
 | 参数| 数据类型 | 参数示例 | 参数说明
 | ---- | ---- | ---- | ---- |
 | params.pirType | INT32 | 1 | 1：基于关键字的隐匿查询任务 |

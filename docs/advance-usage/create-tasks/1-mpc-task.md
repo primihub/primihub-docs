@@ -6,46 +6,66 @@ sidebar_position: 1
 # 多方安全计算（MPC）任务
 
 多方安全计算（Multi-Party Computation，MPC）功能是指多个参与方在不暴露私有数据的情况下，共同完成一项计算任务的过程。
+
 ## MPC任务
+
 ### MPC LR（逻辑回归）
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_lr_task_conf.json"
 ```
+
 ### MPC 四则运算
 
 ```bash
 ./primihub-cli --task_config_file="example/mpc_add_task_conf.json"
 ```
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_sub_task_conf.json"
 ```
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_mul_task_conf.json"
 ```
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_div_task_conf.json"
 ```
+
 ### MPC 联合统计
+
 对于联合统计，当前平台已经实现了最大值，最小值，平均值，以及求和的功能
+
 #### 提交统计最大值任务
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_statistics_max_task_conf.json"
 ```
+
 #### 提交统计最小值任务
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_statistics_min_task_conf.json"
 ```
+
 #### 提交统计平均值任务
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_statistics_avg_task_conf.json"
 ```
+
 #### 提交统计总和任务
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_statistics_sum_task_conf.json"
 ```
+
 ### MPC 数据预处理任务
+
 对于使用的数据集，有时候并不是完全就可以直接使用的，在数据采集过程中会有部分数据缺失，异常以及其他的问题存在，因此，对数据进行预处理是必不可少的步骤，在隐私计算中同样适用，在通过数据使用隐私计算平台的过程中也需要根据数据的真实情况对数据做部分预处理。
 对于横向场景，实现了缺失值/异常值的处理流程，可通过如下命令发起相关任务
+
 ```bash
 ./primihub-cli --task_config_file="example/mpc_missing_value_task_conf.json"
 ```
@@ -135,6 +155,7 @@ node1 和 node2 日志和 node0 类似，省略。
 ```
 
 MPC任务除了支持逻辑回归外、还支持四则运算、求均求和最大最小值统计、缺失值异常值处理等，具体各任务的示例配置请参考 `example目录下的mpc_*.json` 文件
+
 ### LR任务参数说明
 
 | 参数| 数据类型 | 参数示例 | 参数说明
@@ -146,4 +167,3 @@ MPC任务除了支持逻辑回归外、还支持四则运算、求均求和最�
 | party_datasets.PARTY0 | STRING | test_party_0,train_party_0 | 训练数据集 |
 | party_datasets.PARTY1 | STRING | test_party_1,train_party_1 | 训练数据集 |
 | party_datasets.PARTY2 | STRING | test_party_2,train_party_2 | 训练数据集 |
-

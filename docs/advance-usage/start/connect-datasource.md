@@ -37,7 +37,8 @@ datasets:
 ```
 
 ## 通过grpc接口注册
-```
+
+```shell
 ./bazel-bin/src/primihub/reg-cli --config_file=./example/register_example/reg_dataset_meta.json
 # 参数说明
 # --server=ip:port 需要注册数据集的节点信息
@@ -45,16 +46,19 @@ datasets:
 ```
 
 ## 数据集字段定义
+
 ***数据集通过yaml文件注册参数说明***
 
 当前支持的数据源的类型有csv, mysql以及sqlite三种数据类型，对于不支持的数据源类型可以通过扩展实现相应数据源读取driver来扩展，具体如何实现，请参考可扩展性章节
 
 ### csv类型数据
+
 * description：数据集ID，要求全局唯一
 * model: 数据源类型，`csv`
 * source: csv文件对于 `Node` 运行机器能够访问的路径
 
 ### mysql类型数据
+
 * description：数据集ID，要求全局唯一
 * model: 数据源类型，`mysql`
 * host: 数据库所在主机地址，例如 "127.0.0.1"
@@ -65,6 +69,7 @@ datasets:
 * tableName: 数据源对应的数据表名称，例如 "psi_client"
 
 ### sqlite类型数据
+
 * description：数据集ID，要求全局唯一
 * model: 数据源类型，`sqlite`
 * source: sqlite数据库文件对于 `Node` 运行机器能够访问的路径

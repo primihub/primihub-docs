@@ -7,15 +7,18 @@ description: PrimiHub 管理平台设计
 # 管理平台
 
 ## 架构设计
-![primihub frame](/img/primihub_frame.png) 
+
+![primihub frame](/img/primihub_frame.png)
 
 目前是由各业务方（包括gateway、service、meta、node）进行协作方合作申请，再通过各自业务方的网关（gateway）进行数据复制，审核和认证，最后通知多方的node节点进行联邦计算和MPC等任务。
 
 由于各个业务方的服务是独立部署的，且进行数据集交换的数据只是数据的简介和数据集节点地址信息，并不会泄露真正的数据，而通过node节点任务的执行保证了隐私计算的一系列安全操作。
 
 ### 服务部署
+
 在装本地服务前需要先启动node服务（完整的服务体验通常要两个以上）
 需要安装git下载代码
+
 #### primihub-meta
 
     git clone https://github.com/primihub/primihub-meta.git
@@ -43,6 +46,7 @@ description: PrimiHub 管理平台设计
         └─primihub-webconsole
 
 ### 三个模块
+
 - 中心节点 __primihub-meta__: 用于群组交流，共享资源和资源查询
 - 服务节点 __primihub-service__: 提供了大多数的服务和API
 - 管理平台 __primihub-webconsole__: 可视化操作控制台
@@ -50,16 +54,20 @@ description: PrimiHub 管理平台设计
 下面是展开介绍。
 
 ## 中心节点
+
 管理平台中心节点是基于spring boot，并用maven编译
+
 ### 服务开始
+
 首先在启动项目之前需要用到以下依赖
+
 - [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
 - [maven](https://maven.apache.org/download.cgi)
 - [nacos 2.0.3](https://github.com/alibaba/nacos/releases/tag/2.0.3) or [2.0.4](https://github.com/alibaba/nacos/releases/tag/2.0.4)
 - [mysql 5.0+](https://dev.mysql.com/downloads/mysql)
 
-
 ### 修改配置
+
 本地配置文件:
 
     ./meta-api/src/main/resources
@@ -114,6 +122,7 @@ description: PrimiHub 管理平台设计
 或者在mysql管理端手动执行"init.sql".
 
 ### 编译打包
+
 运行以下命令:
 
     mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true -Dos.detected.classifier=linux-x86_64
@@ -122,19 +131,23 @@ description: PrimiHub 管理平台设计
 只要完成信息出现就编译成功了
 
 ### 运行
+
 运行前需要确保所依赖的项目都是可用的而且配置文件都正确
 
     java -jar -Dfile.encoding=UTF-8 ./meta-api/target/*-SNAPSHOT.jar --server.port=8099
 
 执行完命令后检查下列端口是否启动:
-    
+
     http://localhost:8099/fusion/healthConnection
 
 ## 服务节点
+
 管理平台服务是基于spring cloud构建的，并用maven进行编译
 
 ### 服务开始
+
 首先在启动项目之前需要用到以下依赖
+
 - [jdk 1.8](https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html)
 - [maven](https://maven.apache.org/download.cgi)
 - [nacos 2.0.3](https://github.com/alibaba/nacos/releases/tag/2.0.3) or [2.0.4](https://github.com/alibaba/nacos/releases/tag/2.0.4)
@@ -143,6 +156,7 @@ description: PrimiHub 管理平台设计
 - [RabbitMQ](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.10.6)
 
 ### 修改配置
+
 需要先找到这两个位置:
 
     ./application/src/main/resources/
@@ -176,7 +190,7 @@ description: PrimiHub 管理平台设计
         init.sql
         redis.yaml
 
-接下来我们需要登录nacos的配置地址(usually http://localhost:8848/nacos) ,创建 base.json,database.yaml,redis.yaml这三个文件到你所配置的namespace下
+接下来我们需要登录nacos的配置地址(usually <http://localhost:8848/nacos>) ,创建 base.json,database.yaml,redis.yaml这三个文件到你所配置的namespace下
 
 然后修改这些配置的依赖地址.
 
@@ -187,7 +201,6 @@ description: PrimiHub 管理平台设计
             username: 
             url: 
             password: 
-
 
 然后我们定位到这个路径:
 
@@ -204,6 +217,7 @@ description: PrimiHub 管理平台设计
 注意的是：在base.json中需要修改以grpc前缀配置node grpc的地址
 
 ### 编译打包
+
 在linux下需要运行以下命令
 
     mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true -Dos.detected.classifier=linux-x86_64
@@ -213,29 +227,38 @@ description: PrimiHub 管理平台设计
 只要完成信息出现就编译成功了
 
 ### 运行
+
 运行前需要确保所依赖的项目都是可用的而且配置文件都正确
 
     java -jar -Dfile.encoding=UTF-8 ./application/target/*-SNAPSHOT.jar --server.port=8090
     java -jar -Dfile.encoding=UTF-8 ./gateway/target/*-SNAPSHOT.jar --server.port=8088
 
 在不同的终端执行上面两条命令，然后检查下列端口是否启动:
-    
+
     http://localhost:8088/sys/user/login
 
 ## 控制台
+
 ### 准备依赖
+
 会用到 [node](https://nodejs.org/en/), [git](https://git-scm.com/). 项目是以如下标准为基础的[ES2015+](https://es6.ruanyifeng.com/)、[Vue.Js](https://vuejs.org/)、[Vuex](https://vuex.vuejs.org/)、[Vue-Router](https://router.vuejs.org/)、[antv-x6](https://x6.antv.vision/zh) 和 [vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/).
 
 ### 服务开始
+
 1.进入项目一下目录
+
 ```bash
 cd primihub-webconsole
 ```
+
 2.安装npm依赖
+
 ```bash
 npm install
 ```
+
 3.修改“vue.config.js”这个文件中target变量, 改成需要连接的网关地址
+
 ```bash
 proxy: {
   '/dev-api': {
@@ -248,7 +271,9 @@ proxy: {
   }
 }
 ```
+
 4.启动项目
+
 ```bash
 npm run dev
 

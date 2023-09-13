@@ -5,18 +5,25 @@ keywords: [隐私求交, PSI]
 ---
 
 # 隐私求交（PSI）任务
+
 隐私求交（Private Set Intersection，PSI）功能是指在不暴露参与方私有数据的情况下，实现两个或多个参与方之间的数据交集计算。
+
 ## 提交任务
 
 如果是通过下载二进制文件或本地编译启动，编译完成后在代码根目录下执行以下命令；如果是通过docker-compose启动，先执行 `docker exec -it primihub-node0 bash` 进入到 `primihub-node0` 容器中，再执行以下命令（以下两个任务使用了不同协议）。
+
 ```bash
 ./primihub-cli --task_config_file="example/psi_ecdh_task_conf.json"
 ```
+
 或：
+
 ```bash
 ./primihub-cli --task_config_file="example/psi_kkrt_task_conf.json"
 ```
+
 ## 检查结果
+
 分别观察`node0`和`node1`的日志，有如下输出则代表任务运行成功，可参考参数说明中的结果文件路径验证生成的结果文件是否正确
 
 ```
@@ -59,6 +66,7 @@ I20230614 17:25:05.497123    57 psi_kkrt_task.cc:386] start send
 I20230614 17:25:05.701987    57 psi_kkrt_task.cc:402] kkrt psi run success
 I20230614 17:25:05.713833    57 psi_task.cc:212] Save PSI result to data/result/server/psi_result.csv.
 ```
+
 ## 参数说明
 
 | 参数| 数据类型 | 参数示例 | 参数说明

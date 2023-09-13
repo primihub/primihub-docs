@@ -6,11 +6,12 @@ keywords: [docker-compose]
 
 # docker-compose单机部署
 
-*** 部署完整的PrimiHub隐私计算管理平台 *** 
+***部署完整的PrimiHub隐私计算管理平台***
 
 :::tip
 为避免端口冲突，请尽量使用干净的机器
 :::
+
 ### 部署要求
 
 * 机器配置最低8核16G，磁盘40G
@@ -28,8 +29,11 @@ bash deploy.sh
 
 ### 查看部署结果
 
-```bash
-# docker-compose ps -a
+```shell
+docker-compose ps -a
+```
+
+```shell
 NAME                COMMAND                  SERVICE             STATUS              PORTS
 application0        "/bin/sh -c 'java -j…"   application0        running (healthy)   
 application1        "/bin/sh -c 'java -j…"   application1        running             
@@ -64,6 +68,7 @@ docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all
 ```
 
 然后配置收集所有docker容器的日志
+
 ```bash
 # vim /etc/docker/daemon.json  添加以下内容
 {
@@ -77,6 +82,7 @@ docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all
 ```
 
 配置好之后重启docker服务
+
 ```bash
 systemctl restart docker
 ```
@@ -85,11 +91,11 @@ systemctl restart docker
 
 docker-compose.yaml 文件中的nginx1、nginx2、nginx3 模拟 3 个机构的管理后台，启动完成后在浏览器分别访问
 
-http://机器IP:30811
+<http://机器IP:30811>
 
-http://机器IP:30812
+<http://机器IP:30812>
 
-http://机器IP:30813
+<http://机器IP:30813>
 
 默认用户密码都是 admin / 123456
 
