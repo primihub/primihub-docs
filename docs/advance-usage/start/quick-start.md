@@ -11,10 +11,11 @@ displayed_sidebar: lensonsSidebar
 测试机器的最低配置要求 4核16G，支持`avx` 指令集，可通过`lscpu | grep avx` 验证，docker-compose版本2.0以上
 :::
 
-### 安装[docker](https://docs.docker.com/install/overview/)和[docker-compose](https://docs.docker.com/compose/install/) 
+### 安装[docker](https://docs.docker.com/install/overview/)和[docker-compose](https://docs.docker.com/compose/install/)
 
 可参照官方文档自行安装或者下载我们整理好的安装包
-```
+
+```shell
 wget https://primihub.oss-cn-beijing.aliyuncs.com/dev/docker20.10.tar.gz
 tar xf docker20.10.tar.gz
 cd docker20.10
@@ -35,7 +36,8 @@ cd primihub
 ```
 
 :::tip
-* 国内用户如访问GitHub缓慢可使用Gitee仓库地址：https://gitee.com/primihub/primihub.git
+
+* 国内用户如访问GitHub缓慢可使用Gitee仓库地址：<https://gitee.com/primihub/primihub.git>
 * 当前支持的平台为： `amd64`，`arm64`
 :::
 
@@ -65,13 +67,18 @@ primihub-node2      "/bin/bash -c './pri…"   node2               running      
 ```
 
 查看日志
+
+```shell
+docker logs -f primihub-node0
 ```
-# docker logs -f primihub-node0
+
+```shell
 I20230619 19:18:38.774282     1 service.cc:205] 💾 Restore dataset from local storage...
 I20230619 19:18:39.279953     1 service.cc:171] 📃 Load default datasets from config: /app/config/primihub_node0.yaml
 I20230619 19:18:40.231341     1 main.cc:55] server runing in no tls mode
 I20230619 19:18:40.232587     1 main.cc:86]  💻 Node listening on port: 50050
 ```
+
 ### 创建任务
 
 启动成功后可以参考[创建任务](https://docs.primihub.com/docs/category/%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1)页面发起任务。

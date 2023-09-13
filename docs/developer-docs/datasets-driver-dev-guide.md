@@ -5,9 +5,11 @@ description: PrimiHub 扩展不同访问方式的数据源
 ---
 
 # 如何接入自己的数据源类型
+
 当前PrimiHub支持的数据源类型有csv，mysql以及sqlite，对于其他数据类型的数据源则需要扩展实现新的Driver
 
 ## 实现Driver类
+
 ```cpp
 class XXXDriver : public DataDriver,
                   public std::enable_shared_from_this<XXXDriver> {
@@ -24,7 +26,9 @@ class XXXDriver : public DataDriver,
 ```
 
 ## 实现Cursor类
+
 Cursor表示一个对数据源类型读取的实例，真正实现对数据源的读取和写入
+
 ```cpp
 class XXXCursor : public Cursor {
  public:
@@ -40,7 +44,9 @@ class XXXCursor : public Cursor {
 ```
 
 ## 实现数据源访问信息DataAccessInfo类
+
 AccessInfo中保存了当前数据源的访问方式
+
 ```cpp
 struct XXXAccessInfo : public DataSetAccessInfo {
   XXXAccessInfo() = default;
@@ -53,6 +59,7 @@ struct XXXAccessInfo : public DataSetAccessInfo {
 ```
 
 ## 将Driver注册到Factory中
+
 ```cpp
 // 将新增的driver加入到生成driver的工厂中
 class DataDirverFactory;

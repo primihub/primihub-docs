@@ -8,11 +8,10 @@ sidebar_position: 1
 
 ## 简介
 
-
-
 Java SDK是为了让用户能够简单配置后node地址后填充指定的参数即可发起一个PSI、PIR、XGB等任务。具有易上手性、易使用性。
 
 ## 任务参数详解
+
 ```base
     任务主类
     com.primihub.sdk.task.param.TaskParam       
@@ -35,10 +34,7 @@ Java SDK是为了让用户能够简单配置后node地址后填充指定的参�
         com.primihub.sdk.task.param.TaskComponentParam
 ```
 
-
-
 ## 发起一个任务
-
 
 ```java
 package com.primihub;

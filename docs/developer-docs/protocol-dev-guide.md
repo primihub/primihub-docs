@@ -6,7 +6,7 @@ description: PrimiHub 安全协议和算法的扩展
 
 # 扩展安全协议和算法
 
-*** 如何开发一个安全协议 *** 
+***如何开发一个安全协议***
 
 :::tip
 
@@ -18,8 +18,8 @@ description: PrimiHub 安全协议和算法的扩展
 
 ## 如何开发一个新的多方安全计算协议
 
-
 ### 要继承实现的类
+
 1. 算子（ Envaluator）
 用于计算共享数据，以乘法举例
 
@@ -27,7 +27,7 @@ description: PrimiHub 安全协议和算法的扩展
 sf64Matrix<D> Envaluator::mul(const sf64Matrix<D>& left, const sf64Matrix<D>& right)；
 ```
 
-2.  密文数据表示 （Encryptor）
+2. 密文数据表示 （Encryptor）
 使用通信子与参与方交换数据，表示为本地数据。以int数据为例
 
 ```c++
@@ -52,20 +52,24 @@ Sh3Task Sh3Encryptor::remoteInt(Sh3Task dep, si64 & dest)
 用于协议生成SecretShare随机数
 
 ### 使用的类
+
 - 运行时 （Runtime）：管理用于通信子执行的异步任务列表，在算子（ Envaluator）和密文数据表示 （Encryptor）中需要传入唯一的Runtime对象引用。
 - ShareOT：不经意传输工具，会使用通信子。可以根据需要继承实现ShareOT的变种。
 - 本地数据类型  ：数fp、矩阵fpMatrix，具体见代码type包
 - 共享数据类型：浮点共享sf64、整型共享si64、矩阵si64Matrix/sf64Matrix，具体见代码type包
 
 ## 算法开发
+
 算法在安全协议之上开发，使用协议中的定义的
+
 - 算子（ Envaluator）
 - 密文数据表示 （Encryptor）
 - 通信子 (CommPkg)
 - Share随机数生成和交换( ShareGen)
 
 算法对象初始化过程如下伪代码：
-```c++ 
+
+```c++
 // 创建通信子
 CommPkg comm (party0_channel, party1_channel, ...)
 

@@ -15,6 +15,7 @@ keywords: [docker-compose]
 ## 部署步骤
 
 1. 安装docker和docker-compose（在3台机器上都执行）
+
 ```bash
 wget https://primihub.oss-cn-beijing.aliyuncs.com/dev/docker20.10.tar.gz
 tar xf docker20.10.tar.gz
@@ -22,7 +23,8 @@ cd docker20.10
 bash install_docker.sh
 ```
 
-2. 部署平台 
+2. 部署平台
+
 ```bash
 # 下载代码 （在三台机器上都执行）
 git clone https://github.com/primihub/primihub-deploy.git
@@ -41,8 +43,12 @@ bash deploy.sh
 ```
 
 ### 查看部署结果
-```bash
-# docker-compose ps -a
+
+```shell
+docker-compose ps -a
+```
+
+```shell
 NAME                COMMAND                  SERVICE             STATUS              PORTS
 application         "/bin/sh -c 'java -j…"   application         running (healthy)   
 gateway             "/bin/sh -c 'java -j…"   gateway             running             
@@ -64,6 +70,7 @@ docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all
 ```
 
 配置收集所有docker容器的日志
+
 ```bash
 # vim /etc/docker/daemon.json  添加以下内容
 {
@@ -77,29 +84,29 @@ docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all
 ```
 
 配置好之后重启docker服务
+
 ```bash
 systemctl restart docker
 ```
-
 
 ### 访问页面
 
 3台机器都启动完成后，在浏览器分别访问
 
-http://第一台机器的IP:30080
+<http://第一台机器的IP:30080>
 
-http://第二台机器的IP:30080
+<http://第二台机器的IP:30080>
 
-http://第三台机器的IP:30080
+<http://第三台机器的IP:30080>
 
 默认用户密码都是 admin / 123456
 
 平台的使用说明请参考 [管理平台操作说明手册](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 
-
 ### 停止服务
 
 在3台机器上都执行
+
 ```bash
 docker-compose down
 ```
