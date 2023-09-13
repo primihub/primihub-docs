@@ -39,9 +39,9 @@ keywords: [FL, Component]
         <td><font color="red">&#x2717;</font></td>
     </tr>
     <tr>
-        <td rowspan="12">Preprocessing</td>
+        <td rowspan="13">Preprocessing</td>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.KBinsDiscretizer.html">KBinsDiscretizer</a></td>
-        <td><font color="red">&#x2717;</font></td>
+        <td>&#x2713;</td>
         <td>&#x2713;</td>
     </tr>
     <tr>
@@ -61,7 +61,7 @@ keywords: [FL, Component]
     </tr>
     <tr>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html">RobustScaler</a></td>
-        <td><font color="red">&#x2717;</font></td>
+        <td>&#x2713;</td>
         <td>&#x2713;</td>
     </tr>
     <tr>
@@ -91,6 +91,11 @@ keywords: [FL, Component]
     </tr>
     <tr>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">OrdinalEncoder</a></td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+    </tr>
+    <tr>
+        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html">QuantileTransformer</a></td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
     </tr>
