@@ -49,7 +49,8 @@ apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
 Download the compiled binaries and check out the latest version on GitHub [release page](https://github.com/primihub/primihub/releases).
 
 ```shell
-curl -L https://github.com/primihub/primihub/releases/download/1.6.6/primihub-linux-amd64.tar.gz | tar xz
+export TAG=1.6.10
+curl -L https://github.com/primihub/primihub/releases/download/$TAG/primihub-linux-amd64.tar.gz | tar xz
 ```
 
 After downloading and unpacking, execute `start_server.sh` to start the node
