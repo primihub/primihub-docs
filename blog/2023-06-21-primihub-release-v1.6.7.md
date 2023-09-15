@@ -16,7 +16,7 @@ tags: [release]
 - MPC增加联合统计功能
 - MPC通信方式改为gRPC
 
-## 优化:
+## 优化
 
 - 修复联邦任务json文件中无'data_set'和'task_name'，使用Python SDK提交任务报错的bug
 - 修复docker提交横向联邦任务获取不到第三方ip地址的bug
