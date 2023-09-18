@@ -47,12 +47,25 @@ bash run.sh
 apt-get install -y python3 python3-dev libgmp-dev python3-pip libmysqlclient-dev
 ```
 
-下载编译好的二进制文件，在GitHub [release页面](https://github.com/primihub/primihub/releases) 可以查看最新版本。如果是ARM机器请对应替换下面链接中的包为 primihub-linux-arm64.tar.gz
+下载编译好的二进制文件，在GitHub [release页面](https://github.com/primihub/primihub/releases) 可以查看最新版本。
+
+<Tabs>
+<TabItem value="AMD64">
 
 ```shell
 export TAG=1.6.10
 curl -L https://github.com/primihub/primihub/releases/download/$TAG/primihub-linux-amd64.tar.gz | tar xz
 ```
+
+</TabItem>
+<TabItem value="ARM64">
+
+```shell
+export TAG=1.6.10
+curl -L https://github.com/primihub/primihub/releases/download/$TAG/primihub-linux-arm64.tar.gz | tar xz
+```
+</TabItem>
+</Tabs>
 
 在下载解压完成后，执行`start_server.sh`启动节点
 
