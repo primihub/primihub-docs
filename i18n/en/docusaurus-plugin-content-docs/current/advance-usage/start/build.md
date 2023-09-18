@@ -2,24 +2,30 @@
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Build
 
 ## Build Tools
 
 Linux environment configuration refer to [Dockerfile](https://github.com/primihub/primihub/blob/develop/Dockerfile) 
 
-For `ubuntu 20.04` ，run the following command to set up the base environment
-```
-apt update 
+<Tabs>
+<TabItem value="Ubuntu 20.04">
+
+```shell
+apt update
 apt install -y python3 python3-dev gcc-8 g++-8 python-dev libgmp-dev cmake libmysqlclient-dev
 apt install -y automake ca-certificates git libtool m4 patch pkg-config unzip make wget curl zip ninja-build npm
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 
 npm install -g @bazel/bazelisk
 ```
+</TabItem>
+<TabItem value="CentOS 7">
 
-`CentOS 7` system basic environment configuration
-```
+```shell
 yum -y install epel-release
 yum -y install python-devel gmp-devel centos-release-scl libtool ninja-build git npm make
 yum -y install devtoolset-8-gcc*
@@ -38,6 +44,9 @@ mv libstdc++.so.6.0.26 /usr/lib64
 rm -f /usr/lib64/libstdc++.so.6
 ln -s /usr/lib64/libstdc++.so.6.0.26 /usr/lib64/libstdc++.so.6
 ```
+</TabItem>
+</Tabs>
+
 ## Get the code
 
 ```bash
@@ -45,12 +54,11 @@ git clone https://github.com/primihub/primihub.git
 ```
 
 ## Build
-:::tip  If you don't have direct access to an open source repository like github, you'll need to set up your own proxy and set the *** HTTPS_PROXY ***   environment variable  
-  Example： https_proxy=http://127.0.0.1:7890
 
-:::
+<Tabs>
+<TabItem value="Linux & MacOS">
 
-### linux & Mac
+### Linux & MacOS
 * Linux Environment: gcc-8，g++-8，python3.7 and higher，python3.7-dev，cmake-3.20
 * Mac Environment: clang 12+，python3.7 and higher，cmake-3.20
 
@@ -73,11 +81,18 @@ I20230619 18:53:17.816563 29477 grpc_impl.cc:49] PutMeta to node: [:127.0.0.1:79
 I20230619 18:53:17.817224 29477 main.cc:55] server runing in no tls mode
 I20230619 18:53:17.818142 29477 main.cc:86]  💻 Node listening on port: 50050
 ```
-### windows 
+
+</TabItem>
+<TabItem value="Windows">
+
+### Windows 
 
 ***Not supported yet, you can use WSL ***
 
-### docker
+</TabItem>
+<TabItem value="Docker">
+
+### Docker
 Use the Dockerfile in the root directory to build the docker image
 
 ```
@@ -87,7 +102,8 @@ If the dependencies can't be downloaded during `build`, you can add a proxy to `
 ```
 docker build --build-arg "HTTP_PROXY=http://your proxy address" --build-arg "HTTPS_PROXY=http://your proxy address" -t primihub/primihub-node .
 ```
-
+</TabItem>
+</Tabs>
 
 :::caution Apple M1 docker build problems
 
