@@ -11,7 +11,7 @@ sidebar_position: 1
 * <https://node3.primihub.com>
 
 ### 管理平台操作说明手册
-管理平台操作说明手册请查看 [这里]](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
+管理平台操作说明手册请查看 [这里](https://m74hgjmt55.feishu.cn/file/boxcnXqmyAG9VpqjaCb7RP7Isjg)
 ### 平台常见问题解答
 平台使用过程中的常见问题请参考 [这里](https://m74hgjmt55.feishu.cn/docx/KHdmdvRKZoAXkgxT06scFPPynod)
 ### 测试资源下载
