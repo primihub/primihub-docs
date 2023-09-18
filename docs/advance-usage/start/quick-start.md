@@ -4,11 +4,15 @@ description: 使用 docker-compose 启动PrimiHub
 keywords: [多方安全计算, MPC]
 displayed_sidebar: lensonsSidebar
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # docker-compose启动
 
 :::tip
-测试机器的最低配置要求 4核16G，支持`avx` 指令集，可通过`lscpu | grep avx` 验证，docker-compose版本2.0以上
+* 测试机器的最低配置要求 4核16G，支持`avx` 指令集，可通过`lscpu | grep avx` 验证
+* docker-compose版本2.0以上
+* 支持 `amd64`，`arm64` 平台
 :::
 
 ### 安装[docker](https://docs.docker.com/install/overview/)和[docker-compose](https://docs.docker.com/compose/install/)
@@ -29,17 +33,22 @@ docker-compose version
 ### 启动节点
 
 下载仓库并进入到代码根目录：
+<Tabs>
+  <TabItem value="Github">
 
-```shell
-git clone https://github.com/primihub/primihub.git
-cd primihub
-```
+  ```shell
+  git clone https://github.com/primihub/primihub.git
+  cd primihub
+  ```
+  </TabItem>
+  <TabItem value="Gitee">
 
-:::tip
-
-* 国内用户如访问GitHub缓慢可使用Gitee仓库地址：<https://gitee.com/primihub/primihub.git>
-* 当前支持的平台为： `amd64`，`arm64`
-:::
+  ```shell
+  git clone https://gitee.com/primihub/primihub.git
+  cd primihub
+  ```
+  </TabItem>
+</Tabs>
 
 使用 `docker-compose` 启动容器。
 容器包括: 三个meta service服务、三个primihub-node节点

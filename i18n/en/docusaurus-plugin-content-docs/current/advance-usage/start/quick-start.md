@@ -7,7 +7,9 @@ keywords: [MPC, QuickStart]
 # Quick Start
 
 :::tip
-Minimum machine configuration requirement 4C16G
+* Minimum machine configuration requirement 4C16G
+* docker-compose version 2.0 or above
+* Currently supported platforms are： `amd64`，`arm64`
 :::
 
 ### Install [docker](https://docs.docker.com/install/overview/) and [docker-compose](https://docs.docker.com/compose/install/)
@@ -31,9 +33,6 @@ Download the code and switch to the code root path
 git clone https://github.com/primihub/primihub.git
 cd primihub
 ```
-:::tip
-* Currently supported platforms are： `amd64`，`arm64`
-:::
 
 Start up three docker containers using docker-compose.
 The container includes: three meta serives, three primihub-nodes

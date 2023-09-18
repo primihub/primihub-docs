@@ -27,17 +27,6 @@ wget https://primihub.oss-cn-beijing.aliyuncs.com/tools/meta_service.tar.gz
 tar -zxf meta_service.tar.gz
 cd meta_service
 bash run.sh
-```
-Start three meta service services by default
-
-The service logs are stored in the meta_log0, meta_log1, and meta_log2 files in the current directory
-
-Check if the service is running properly by using the command ``ps -ef | grep fusion-simple.jar``
-```
-ps -ef | grep fusion-simple.jar
-root     298757       1 99 13:33 pts/8    00:00:10 java -jar fusion-simple.jar --server.port=7877 --grpc.server.port=7977 --db.path=/home/cuibo/meta_service/storage/node0 --collaborate=http://127.0.0.1:7878/,http://127.0.0.1:7879/
-root     298758       1 99 13:33 pts/8    00:00:10 java -jar fusion-simple.jar --server.port=7878 --grpc.server.port=7978 --db.path=/home/cuibo/meta_service/storage/node1 --collaborate=http://127.0.0.1:7877/,http://127.0.0.1:7879/
-root     298759       1 99 13:33 pts/8    00:00:10 java -jar fusion-simple.jar --server.port=7879 --grpc.server.port=7979 --db.path=/home/cuibo/meta_service/storage/node2 --collaborate=http://127.0.0.1:7878/,http://127.0.0.1:7877/
 ``` -->
 
 ## Run Node
