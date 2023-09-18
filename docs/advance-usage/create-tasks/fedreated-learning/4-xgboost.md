@@ -3,6 +3,10 @@ sidebar_position: 4
 description: 创建XGBoost任务
 keywords: [FL, XGBoost]
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # XGBoost
 
 <table>
@@ -24,28 +28,40 @@ keywords: [FL, XGBoost]
 
 ### Paillier同态模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/xgboost/hetero_xgb.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/xgboost/hetero_xgb.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### 预测
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/xgboost/hetero_xgb_infer.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/xgboost/hetero_xgb_infer.json
 ```
+
+</TabItem>
+</Tabs>

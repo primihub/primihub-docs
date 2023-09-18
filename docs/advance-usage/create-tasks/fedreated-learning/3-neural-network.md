@@ -3,6 +3,10 @@ sidebar_position: 3
 description: 创建神经网络任务
 keywords: [FL, Neural Network]
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Neural Network
 
 <table>
@@ -28,126 +32,144 @@ keywords: [FL, Neural Network]
 
 ### 明文模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_binclass_plaintext.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_multiclass_plaintext.json"
     ```
 
-  - 回归
+- 回归
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_regression_plaintext.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/neural_network/hfl_binclass_plaintext.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/neural_network/hfl_multiclass_plaintext.json
     ```
 
-  - 回归
+- 回归
 
     ```bash
     submit example/FL/neural_network/hfl_regression_plaintext.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### DPSGD模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_binclass_dpsgd.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_multiclass_dpsgd.json"
     ```
 
-  - 回归
+- 回归
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_regression_dpsgd.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/neural_network/hfl_binclass_dpsgd.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/neural_network/hfl_multiclass_dpsgd.json
     ```
 
-  - 回归
+- 回归
 
     ```bash
     submit example/FL/neural_network/hfl_regression_dpsgd.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### 预测
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_binclass_predict.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_multiclass_predict.json"
     ```
 
-  - 回归
+- 回归
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/neural_network/hfl_regression_predict.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/neural_network/hfl_binclass_predict.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/neural_network/hfl_multiclass_predict.json
     ```
 
-  - 回归
+- 回归
 
     ```bash
     submit example/FL/neural_network/hfl_regression_predict.json
     ```
+
+</TabItem>
+</Tabs>
