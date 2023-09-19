@@ -3,6 +3,10 @@ sidebar_position: 2
 description: 创建逻辑回归任务
 keywords: [FL, Logistic Regression]
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Logistic Regression
 
 <table>
@@ -41,200 +45,242 @@ keywords: [FL, Logistic Regression]
 
 ### 明文模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_plaintext.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_multiclass_plaintext.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_binclass_plaintext.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_multiclass_plaintext.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### DPSGD模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_dpsgd.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_multiclass_dpsgd.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_binclass_dpsgd.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_multiclass_dpsgd.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### Paillier同态模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_paillier.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_binclass_paillier.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### 预测
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_binclass_predict.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/hfl_multiclass_predict.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_binclass_predict.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/logistic_regression/hfl_multiclass_predict.json
     ```
 
+</TabItem>
+</Tabs>
+
 ## 纵向联邦
 
 ### 明文模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_binclass_plaintext.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_multiclass_plaintext.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/vfl_binclass_plaintext.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/logistic_regression/vfl_multiclass_plaintext.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### CKKS同态模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_binclass_ckks.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_multiclass_ckks.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/vfl_binclass_ckks.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/logistic_regression/vfl_multiclass_ckks.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### 预测
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 二分类
+- 二分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_binclass_predict.json"
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/logistic_regression/vfl_multiclass_predict.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 二分类
+<TabItem value="Python SDK">
+
+- 二分类
 
     ```bash
     submit example/FL/logistic_regression/vfl_binclass_predict.json
     ```
 
-  - 多分类
+- 多分类
 
     ```bash
     submit example/FL/logistic_regression/vfl_multiclass_predict.json
     ```
+
+</TabItem>
+</Tabs>

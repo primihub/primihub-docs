@@ -3,6 +3,10 @@ sidebar_position: 6
 description: 创建Preprocessing任务
 keywords: [FL, Preprocessing]
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Preprocessing
 
 <table>
@@ -59,9 +63,13 @@ keywords: [FL, Preprocessing]
         <td>特征编码：序数</td>
     </tr>
     <tr>
-        <td rowspan="1">Transformation</td>
+        <td rowspan="2">Transformation</td>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.QuantileTransformer.html">QuantileTransformer</a></td>
         <td>特征变换：均匀分布、高斯分布</td>
+    </tr>
+    <tr>
+        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.SplineTransformer.html">SplineTransformer</a></td>
+        <td>特征变换：基于B-spline</td>
     </tr>
     <tr>
         <td rowspan="1">Imputation</td>
@@ -76,256 +84,378 @@ keywords: [FL, Preprocessing]
 
 ### KBinsDiscretizer
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_kbinsdiscretizer.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_kbinsdiscretizer.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### MaxAbsScaler
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_maxabsscaler.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_maxabsscaler.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### MinMaxScaler
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_minmaxscaler.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_minmaxscaler.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### StandardScaler
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_standardscaler.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_standardscaler.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### RobustScaler
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_robustscaler.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_robustscaler.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### LabelBinarizer
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_labelbinarizer.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_labelbinarizer.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### LabelEncoder
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_labelencoder.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_labelencoder.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### MultiLabelBinarizer
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_multilabelbinarizer.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_multilabelbinarizer.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### OneHotEncoder
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_onehotencoder.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_onehotencoder.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### OrdinalEncoder
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_ordinalencoder.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_ordinalencoder.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### QuantileTransformer
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_quantiletransformer.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_quantiletransformer.json
 ```
 
+</TabItem>
+</Tabs>
+
+### SplineTransformer
+
+<Tabs>
+<TabItem value="CLI">
+
+```bash
+./primihub-cli --task_config_file="example/FL/preprocessing/hfl_splinetransformer.json"
+```
+
+</TabItem>
+
+<TabItem value="Python SDK">
+
+```bash
+submit example/FL/preprocessing/hfl_splinetransformer.json
+```
+
+</TabItem>
+</Tabs>
+
 ### SimpleImputer
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
-  - 数字型数据
+- 数字型数据
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_simpleimputer_numeric.json"
     ```
 
-  - 字符型数据
+- 字符型数据
 
     ```bash
     ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_simpleimputer_string.json"
     ```
 
-- Python SDK启动
+</TabItem>
 
-  - 数字型数据
+<TabItem value="Python SDK">
+
+- 数字型数据
 
     ```bash
     submit example/FL/preprocessing/hfl_simpleimputer_numeric.json
     ```
 
-  - 字符型数据
+- 字符型数据
 
     ```bash
     submit example/FL/preprocessing/hfl_simpleimputer_string.json
     ```
 
+</TabItem>
+</Tabs>
+
 ### Pipeline Demo
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_pipeline.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_pipeline.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### transform
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/hfl_transform.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/hfl_transform.json
 ```
 
+</TabItem>
+</Tabs>
+
 ## 纵向联邦
 
 ### Normalizer
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/vfl_normalizer.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/vfl_normalizer.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### Pipeline Demo
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/vfl_pipeline.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/vfl_pipeline.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### transform
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/preprocessing/vfl_transform.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/preprocessing/vfl_transform.json
 ```
+
+</TabItem>
+</Tabs>

@@ -3,6 +3,10 @@ sidebar_position: 1
 description: 创建线性回归任务
 keywords: [FL, Linear Regression]
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Linear Regression
 
 <table>
@@ -41,100 +45,142 @@ keywords: [FL, Linear Regression]
 
 ### 明文模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/hfl_plaintext.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/hfl_plaintext.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### DPSGD模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/hfl_dpsgd.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/hfl_dpsgd.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### Paillier同态模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/hfl_paillier.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/hfl_paillier.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### 预测
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/hfl_predict.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/hfl_predict.json
 ```
 
+</TabItem>
+</Tabs>
+
 ## 纵向联邦
 
 ### 明文模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/vfl_plaintext.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/vfl_plaintext.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### CKKS同态模式训练
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/vfl_ckks.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/vfl_ckks.json
 ```
 
+</TabItem>
+</Tabs>
+
 ### 预测
 
-- CLI命令启动
+<Tabs>
+<TabItem value="CLI">
 
 ```bash
 ./primihub-cli --task_config_file="example/FL/linear_regression/vfl_predict.json"
 ```
 
-- Python SDK启动
+</TabItem>
+
+<TabItem value="Python SDK">
 
 ```bash
 submit example/FL/linear_regression/vfl_predict.json
 ```
+
+</TabItem>
+</Tabs>
