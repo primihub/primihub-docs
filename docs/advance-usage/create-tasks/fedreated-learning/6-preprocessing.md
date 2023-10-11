@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
         <td>样本缩放：范数等于1</td>
     </tr>
     <tr>
-        <td rowspan="5">Encoding</td>
+        <td rowspan="6">Encoding</td>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelBinarizer.html">LabelBinarizer</a></td>
         <td>标签编码：one-hot</td>
     </tr>
@@ -61,6 +61,10 @@ import TabItem from '@theme/TabItem';
     <tr>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">OrdinalEncoder</a></td>
         <td>特征编码：序数</td>
+    </tr>
+    <tr>
+        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.TargetEncoder.html">TargetEncoder</a></td>
+        <td>特征编码：基于targets</td>
     </tr>
     <tr>
         <td rowspan="2">Transformation</td>
@@ -277,6 +281,26 @@ submit example/FL/preprocessing/hfl_onehotencoder.json
 
 ```bash
 submit example/FL/preprocessing/hfl_ordinalencoder.json
+```
+
+</TabItem>
+</Tabs>
+
+### TargetEncoder
+
+<Tabs>
+<TabItem value="CLI">
+
+```bash
+./primihub-cli --task_config_file="example/FL/preprocessing/hfl_targetencoder.json"
+```
+
+</TabItem>
+
+<TabItem value="Python SDK">
+
+```bash
+submit example/FL/preprocessing/hfl_targetencoder.json
 ```
 
 </TabItem>

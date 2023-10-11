@@ -39,7 +39,7 @@ keywords: [FL, Component]
         <td><font color="red">&#x2717;</font></td>
     </tr>
     <tr>
-        <td rowspan="14">Preprocessing</td>
+        <td rowspan="15">Preprocessing</td>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.KBinsDiscretizer.html">KBinsDiscretizer</a></td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -91,6 +91,11 @@ keywords: [FL, Component]
     </tr>
     <tr>
         <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html">OrdinalEncoder</a></td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+    </tr>
+    <tr>
+        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.TargetEncoder.html">TargetEncoder</a></td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
     </tr>
