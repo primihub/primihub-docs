@@ -31,7 +31,7 @@ For example, the file for <https://docs.primihub.com/docs/developer-docs/roadmap
 
 ### Route with multiple pages
 
-It will generate a default index page for a route which contains sub files. You need to create a `_category_.json` file in route folder. See `/docs/developer-docs/core-concept` for more deail.
+It will generate a default index page for a route which contains sub files. You need to create a `_category_.json` file in route folder. See `/docs/developer-docs/core-concept` for more details.
 
 ## How to Insert an Image
 

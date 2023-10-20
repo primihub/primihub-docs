@@ -51,7 +51,7 @@ sudo apt-get install m4
 ```shell
 W20230619 18:50:22.585558 21601 grpc_impl.cc:52] PutMeta to Node [:127.0.0.1:7977:0:] rpc failed. 14: failed to connect to all addresses
 W20230619 18:50:22.585599 21601 grpc_impl.cc:59] PutMeta to Node [:127.0.0.1:7977:0:] rpc failed. reaches max retry times: 3 abort this operation
-I20230619 18:50:22.586076 21601 main.cc:55] server runing in no tls mode
+I20230619 18:50:22.586076 21601 main.cc:55] server running in no tls mode
 I20230619 18:50:22.586817 21601 main.cc:86]  💻 Node listening on port: 50050
 ```
 
