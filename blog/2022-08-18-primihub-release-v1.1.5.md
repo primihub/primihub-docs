@@ -13,7 +13,7 @@ tags: [release]
 
 1. Python SDK: Basic MPC API support: remote function, channel.
 2. FL: feature-engineering
-3. PSI/PIR paramaters enhancement.
+3. PSI/PIR parameters enhancement.
 4. E2E test
 
 ## 相关仓库

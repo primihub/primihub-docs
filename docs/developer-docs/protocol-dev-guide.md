@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-keywords: [protocal, primihub]
+keywords: [protocol, primihub]
 description: PrimiHub 安全协议和算法的扩展
 ---
 

@@ -84,7 +84,7 @@ docker logs -f primihub-node0
 ```shell
 I20230619 19:18:38.774282     1 service.cc:205] 💾 Restore dataset from local storage...
 I20230619 19:18:39.279953     1 service.cc:171] 📃 Load default datasets from config: /app/config/primihub_node0.yaml
-I20230619 19:18:40.231341     1 main.cc:55] server runing in no tls mode
+I20230619 19:18:40.231341     1 main.cc:55] server running in no tls mode
 I20230619 19:18:40.232587     1 main.cc:86]  💻 Node listening on port: 50050
 ```
 
