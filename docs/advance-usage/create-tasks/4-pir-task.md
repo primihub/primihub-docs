@@ -3,9 +3,9 @@ sidebar_position: 4
 ---
 
 
-# 匿踪查询（PIR）任务
+# 隐匿查询（PIR）任务
 
-隐私查询（Private Information Retrieval，PIR）功能是指在不暴露参与方私有数据的情况下，实现对数据的查询和分析。
+隐匿查询（Private Information Retrieval，PIR）功能是指在不暴露参与方私有数据的情况下，实现对数据的查询和分析。
 
 ## 提交任务
 
@@ -89,9 +89,9 @@ I20230614 18:19:37.850311    56 node.cc:118] number of timeout task status need 
 | params.clientData | STRING | HXfUhjJ... | 表示需要检索pir数据库中关键字的记录，（对于查询的每个关键字作为一条单独的记录，支持多个关键字同时查询）， 在任务发起后，通过该标识获取对应client节点端的数据配置并加载数据，用例中数据注册到节点node1中，在config目录中对应的配置文件为primihub_node1.yaml, 设置该数据为 "keyword_pir_server_data" 对应的文件中包含的字符串 |
 | params.pirType | INT32 | 1或0 | 1：基于关键字的隐匿查询，0:基于ID |
 | params.outputFullFilename | STRING | "data/result/pir_result.csv" | 指定结果保存文件路径 |
-| party_datasets | STRING | "keyword_pir_server_data" | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送匿踪查询请求。pir服务端加载该标识符对应文件生成pir数据库 |
+| party_datasets | STRING | "keyword_pir_server_data" | 该参数值为pir服务的服务端数据标识符，系统调度节点通过数据标识符找到注册对应数据的工作节点，pir客户端节点将向该节点发送隐匿查询请求。pir服务端加载该标识符对应文件生成pir数据库 |
 
-# 匿踪查询（PIR）预生成DB数据库任务
+# 隐匿查询（PIR）预生成DB数据库任务
 
 在有些场景下，被查询端的数据变化不是很频繁的，这种情况下可以将数据做离线处理，预生成查询过程中使用的数据库，供在线过程查询使用，以提高查询效率
 此过程与在线服务是完全独立的两个流程，在线任务会首先搜索预指定的cache位置是否存在与设置的数据集id相同名称的数据库cache文件，如果存在则使用cache数据，否则按照一般流程执行。
