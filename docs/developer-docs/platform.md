@@ -220,9 +220,14 @@ description: PrimiHub 管理平台设计
 
 在linux下需要运行以下命令
 
+    cd primihub-sdk
     mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true -Dos.detected.classifier=linux-x86_64
+    cd primihub-service
+    mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true
 
-当操作系统是windows或者是mac需要改这个参数"-Dos.detected.classifier"，改为"windows-x86_64" or "osx-x86_64".
+当操作系统是windows或者是mac需要改这个参数 "-Dos.detected.classifier"，改为 "windows-x86_64" or "osx-x86_64"。
+
+当操作系统是 ARM 架构时，参数 "-Dos.detected.classifier" 改为 "linux-aarch_64"
 
 只要完成信息出现就编译成功了
 
