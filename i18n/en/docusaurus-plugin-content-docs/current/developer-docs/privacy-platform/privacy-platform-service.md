@@ -74,7 +74,10 @@ Note: In base.json, you need to change the address where node grpc is prefixed w
 ## 编译打包
 Execute the following command:
 
+    cd primihub-sdk
     mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true -Dos.detected.classifier=linux-x86_64
+    cd primihub-service
+    mvn clean install -Dmaven.test.skip=true -Dasciidoctor.skip=true
 
 For windows or mac, change "-Dos.detected.classifier" to "windows-x86_64" or "osx-x86_64".
 
