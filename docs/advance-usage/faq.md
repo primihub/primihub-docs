@@ -80,3 +80,14 @@ sed -ri 's/127.0.0.1/'$host_ip'/g' config/node*.yaml
 ```
 
 其他系统环境请参考os-maven-plugin插件开源库[os-maven-plugin](https://github.com/trustin/os-maven-plugin)
+
+在jetbrain的IDEA中，可以通过UI运行protobuf的maven插件来生成gRPC相关的class文件。生成后刷新maven可拉取相关依赖。如果报错操作系统问题，请修改`pom.xml`中的os配置，见上一步。（其他IDE请自行查询maven命令，注意携带命令参数）
+
+<p align="center">
+    <img src="/img/docs/contribute/6.png" width='60%'/>
+</p>
+
+出现其他编译问题，请尝试：
+1. 尝试运行 `mvn clean` 后，再次执行插件proto编译
+2. 更换maven版本为 `3.8`
+3. 若还是无法解决，请将错误log和使用的jdk版本、maven版本、os环境收集发送给我们，帮助我们更快解决。
